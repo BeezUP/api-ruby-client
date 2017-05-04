@@ -34,8 +34,8 @@ describe 'SecurityApi' do
   # unit tests for login
   # Login
   # User Login - The login will give your tokens
+  # @param request 
   # @param [Hash] opts the optional parameters
-  # @option opts [LoginRequest] :request 
   # @return [ApiCredentials]
   describe 'login test' do
     it "should work" do
@@ -46,8 +46,8 @@ describe 'SecurityApi' do
   # unit tests for lost_password
   # Lost password
   # Lost password - Your password will be regenerated and sent to your email
+  # @param email Your email
   # @param [Hash] opts the optional parameters
-  # @option opts [Email] :email Your email
   # @return [nil]
   describe 'lost_password test' do
     it "should work" do
@@ -58,8 +58,8 @@ describe 'SecurityApi' do
   # unit tests for register
   # User Registration
   # User Registration - Create a new user on BeezUP
+  # @param request 
   # @param [Hash] opts the optional parameters
-  # @option opts [RegisterRequest] :request 
   # @return [nil]
   describe 'register test' do
     it "should work" do

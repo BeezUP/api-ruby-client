@@ -35,7 +35,7 @@ module SwaggerClient
       {
         :'pagination_result' => :'BeezUPCommonPaginationResult',
         :'products' => :'Array<ReportByProduct>',
-        :'links' => :'Array<BeezUPCommonLink2>'
+        :'links' => :'ReportByProductResponseLinks'
       }
     end
 
@@ -58,9 +58,7 @@ module SwaggerClient
       end
 
       if attributes.has_key?(:'links')
-        if (value = attributes[:'links']).is_a?(Array)
-          self.links = value
-        end
+        self.links = attributes[:'links']
       end
 
     end

@@ -28,6 +28,10 @@ module SwaggerClient
 
     attr_accessor :advanced_filters
 
+    attr_accessor :page_size
+
+    attr_accessor :page_number
+
     attr_accessor :product_state
 
     attr_accessor :product_filters
@@ -42,6 +46,8 @@ module SwaggerClient
         :'category_filter' => :'categoryFilter',
         :'indicator_filters' => :'indicatorFilters',
         :'advanced_filters' => :'advancedFilters',
+        :'page_size' => :'pageSize',
+        :'page_number' => :'pageNumber',
         :'product_state' => :'productState',
         :'product_filters' => :'productFilters'
       }
@@ -56,6 +62,8 @@ module SwaggerClient
         :'category_filter' => :'ReportCategoryFilter',
         :'indicator_filters' => :'Array<ReportIndicatorFilter>',
         :'advanced_filters' => :'ReportAdvancedFilters',
+        :'page_size' => :'PageSize',
+        :'page_number' => :'PageNumber',
         :'product_state' => :'ProductStateFilter',
         :'product_filters' => :'ProductFilters'
       }
@@ -93,6 +101,14 @@ module SwaggerClient
 
       if attributes.has_key?(:'advancedFilters')
         self.advanced_filters = attributes[:'advancedFilters']
+      end
+
+      if attributes.has_key?(:'pageSize')
+        self.page_size = attributes[:'pageSize']
+      end
+
+      if attributes.has_key?(:'pageNumber')
+        self.page_number = attributes[:'pageNumber']
       end
 
       if attributes.has_key?(:'productState')
@@ -144,6 +160,8 @@ module SwaggerClient
           category_filter == o.category_filter &&
           indicator_filters == o.indicator_filters &&
           advanced_filters == o.advanced_filters &&
+          page_size == o.page_size &&
+          page_number == o.page_number &&
           product_state == o.product_state &&
           product_filters == o.product_filters
     end
@@ -157,7 +175,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [channel_id, begin_period_utc_date, end_period_utc_date, category_filter, indicator_filters, advanced_filters, product_state, product_filters].hash
+      [channel_id, begin_period_utc_date, end_period_utc_date, category_filter, indicator_filters, advanced_filters, page_size, page_number, product_state, product_filters].hash
     end
 
     # Builds the object from hash

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **login**
-> ApiCredentials login(opts)
+> ApiCredentials login(request)
 
 Login
 
@@ -23,13 +23,12 @@ require 'swagger_client'
 
 api_instance = SwaggerClient::SecurityApi.new
 
-opts = { 
-  request: SwaggerClient::LoginRequest.new # LoginRequest | 
-}
+request = SwaggerClient::LoginRequest.new # LoginRequest | 
+
 
 begin
   #Login
-  result = api_instance.login(opts)
+  result = api_instance.login(request)
   p result
 rescue SwaggerClient::ApiError => e
   puts "Exception when calling SecurityApi->login: #{e}"
@@ -40,7 +39,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**LoginRequest**](LoginRequest.md)|  | [optional] 
+ **request** | [**LoginRequest**](LoginRequest.md)|  | 
 
 ### Return type
 
@@ -58,7 +57,7 @@ No authorization required
 
 
 # **lost_password**
-> lost_password(opts)
+> lost_password(email)
 
 Lost password
 
@@ -71,13 +70,12 @@ require 'swagger_client'
 
 api_instance = SwaggerClient::SecurityApi.new
 
-opts = { 
-  email: SwaggerClient::Email.new # Email | Your email
-}
+email = SwaggerClient::BeezUPCommonEmail.new # BeezUPCommonEmail | Your email
+
 
 begin
   #Lost password
-  api_instance.lost_password(opts)
+  api_instance.lost_password(email)
 rescue SwaggerClient::ApiError => e
   puts "Exception when calling SecurityApi->lost_password: #{e}"
 end
@@ -87,7 +85,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **email** | [**Email**](Email.md)| Your email | [optional] 
+ **email** | [**BeezUPCommonEmail**](BeezUPCommonEmail.md)| Your email | 
 
 ### Return type
 
@@ -105,7 +103,7 @@ No authorization required
 
 
 # **register**
-> register(opts)
+> register(request)
 
 User Registration
 
@@ -118,13 +116,12 @@ require 'swagger_client'
 
 api_instance = SwaggerClient::SecurityApi.new
 
-opts = { 
-  request: SwaggerClient::RegisterRequest.new # RegisterRequest | 
-}
+request = SwaggerClient::RegisterRequest.new # RegisterRequest | 
+
 
 begin
   #User Registration
-  api_instance.register(opts)
+  api_instance.register(request)
 rescue SwaggerClient::ApiError => e
   puts "Exception when calling SecurityApi->register: #{e}"
 end
@@ -134,7 +131,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**RegisterRequest**](RegisterRequest.md)|  | [optional] 
+ **request** | [**RegisterRequest**](RegisterRequest.md)|  | 
 
 ### Return type
 

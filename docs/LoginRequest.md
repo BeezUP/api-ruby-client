@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**login** | [**Email**](Email.md) |  | 
+**login** | [**BeezUPCommonEmail**](BeezUPCommonEmail.md) |  | 
 **password** | **String** | Your password | 
 
 

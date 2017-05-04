@@ -13,26 +13,25 @@ require 'date'
 
 module SwaggerClient
 
-  class LoginRequest
-    attr_accessor :login
+  class ReportByChannelResponseLinks
+    attr_accessor :enable_all_products
 
-    # Your password
-    attr_accessor :password
+    attr_accessor :disable_all_products
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'login' => :'login',
-        :'password' => :'password'
+        :'enable_all_products' => :'enableAllProducts',
+        :'disable_all_products' => :'disableAllProducts'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'login' => :'BeezUPCommonEmail',
-        :'password' => :'String'
+        :'enable_all_products' => :'LinksOptimiseLink',
+        :'disable_all_products' => :'LinksOptimiseLink'
       }
     end
 
@@ -44,12 +43,12 @@ module SwaggerClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'login')
-        self.login = attributes[:'login']
+      if attributes.has_key?(:'enableAllProducts')
+        self.enable_all_products = attributes[:'enableAllProducts']
       end
 
-      if attributes.has_key?(:'password')
-        self.password = attributes[:'password']
+      if attributes.has_key?(:'disableAllProducts')
+        self.disable_all_products = attributes[:'disableAllProducts']
       end
 
     end
@@ -58,22 +57,12 @@ module SwaggerClient
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @login.nil?
-        invalid_properties.push("invalid value for 'login', login cannot be nil.")
-      end
-
-      if @password.nil?
-        invalid_properties.push("invalid value for 'password', password cannot be nil.")
-      end
-
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @login.nil?
-      return false if @password.nil?
       return true
     end
 
@@ -82,8 +71,8 @@ module SwaggerClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          login == o.login &&
-          password == o.password
+          enable_all_products == o.enable_all_products &&
+          disable_all_products == o.disable_all_products
     end
 
     # @see the `==` method
@@ -95,7 +84,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [login, password].hash
+      [enable_all_products, disable_all_products].hash
     end
 
     # Builds the object from hash

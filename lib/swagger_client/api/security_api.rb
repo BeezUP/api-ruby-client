@@ -21,23 +21,25 @@ module SwaggerClient
 
     # Login
     # User Login - The login will give your tokens
+    # @param request 
     # @param [Hash] opts the optional parameters
-    # @option opts [LoginRequest] :request 
     # @return [ApiCredentials]
-    def login(opts = {})
-      data, _status_code, _headers = login_with_http_info(opts)
+    def login(request, opts = {})
+      data, _status_code, _headers = login_with_http_info(request, opts)
       return data
     end
 
     # Login
     # User Login - The login will give your tokens
+    # @param request 
     # @param [Hash] opts the optional parameters
-    # @option opts [LoginRequest] :request 
     # @return [Array<(ApiCredentials, Fixnum, Hash)>] ApiCredentials data, response status code and response headers
-    def login_with_http_info(opts = {})
+    def login_with_http_info(request, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: SecurityApi.login ..."
       end
+      # verify the required parameter 'request' is set
+      fail ArgumentError, "Missing the required parameter 'request' when calling SecurityApi.login" if request.nil?
       # resource path
       local_var_path = "/v2/public/security/login".sub('{format}','json')
 
@@ -55,7 +57,7 @@ module SwaggerClient
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(opts[:'request'])
+      post_body = @api_client.object_to_http_body(request)
       auth_names = []
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
@@ -72,23 +74,25 @@ module SwaggerClient
 
     # Lost password
     # Lost password - Your password will be regenerated and sent to your email
+    # @param email Your email
     # @param [Hash] opts the optional parameters
-    # @option opts [Email] :email Your email
     # @return [nil]
-    def lost_password(opts = {})
-      lost_password_with_http_info(opts)
+    def lost_password(email, opts = {})
+      lost_password_with_http_info(email, opts)
       return nil
     end
 
     # Lost password
     # Lost password - Your password will be regenerated and sent to your email
+    # @param email Your email
     # @param [Hash] opts the optional parameters
-    # @option opts [Email] :email Your email
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def lost_password_with_http_info(opts = {})
+    def lost_password_with_http_info(email, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: SecurityApi.lost_password ..."
       end
+      # verify the required parameter 'email' is set
+      fail ArgumentError, "Missing the required parameter 'email' when calling SecurityApi.lost_password" if email.nil?
       # resource path
       local_var_path = "/v2/public/security/lostpassword".sub('{format}','json')
 
@@ -106,7 +110,7 @@ module SwaggerClient
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(opts[:'email'])
+      post_body = @api_client.object_to_http_body(email)
       auth_names = []
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
@@ -122,23 +126,25 @@ module SwaggerClient
 
     # User Registration
     # User Registration - Create a new user on BeezUP
+    # @param request 
     # @param [Hash] opts the optional parameters
-    # @option opts [RegisterRequest] :request 
     # @return [nil]
-    def register(opts = {})
-      register_with_http_info(opts)
+    def register(request, opts = {})
+      register_with_http_info(request, opts)
       return nil
     end
 
     # User Registration
     # User Registration - Create a new user on BeezUP
+    # @param request 
     # @param [Hash] opts the optional parameters
-    # @option opts [RegisterRequest] :request 
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def register_with_http_info(opts = {})
+    def register_with_http_info(request, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: SecurityApi.register ..."
       end
+      # verify the required parameter 'request' is set
+      fail ArgumentError, "Missing the required parameter 'request' when calling SecurityApi.register" if request.nil?
       # resource path
       local_var_path = "/v2/public/security/register".sub('{format}','json')
 
@@ -156,7 +162,7 @@ module SwaggerClient
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(opts[:'request'])
+      post_body = @api_client.object_to_http_body(request)
       auth_names = []
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
