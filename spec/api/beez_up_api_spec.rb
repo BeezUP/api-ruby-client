@@ -1076,7 +1076,7 @@ describe 'BeezUPApi' do
   # 
   # @param store_id Your store identifier
   # @param [Hash] opts the optional parameters
-  # @return [Rulelist]
+  # @return [RuleList]
   describe 'get_rules test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

@@ -4564,7 +4564,7 @@ Name | Type | Description  | Notes
 
 
 # **get_rules**
-> Rulelist get_rules(store_id, )
+> RuleList get_rules(store_id, )
 
 Gets the list of rules for a given store
 
@@ -4602,7 +4602,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Rulelist**](Rulelist.md)
+[**RuleList**](RuleList.md)
 
 ### Authorization
 

@@ -4602,7 +4602,7 @@ module SwaggerClient
     # 
     # @param store_id Your store identifier
     # @param [Hash] opts the optional parameters
-    # @return [Rulelist]
+    # @return [RuleList]
     def get_rules(store_id, opts = {})
       data, _status_code, _headers = get_rules_with_http_info(store_id, opts)
       return data
@@ -4612,7 +4612,7 @@ module SwaggerClient
     # 
     # @param store_id Your store identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Rulelist, Fixnum, Hash)>] Rulelist data, response status code and response headers
+    # @return [Array<(RuleList, Fixnum, Hash)>] RuleList data, response status code and response headers
     def get_rules_with_http_info(store_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: BeezUPApi.get_rules ..."
@@ -4644,7 +4644,7 @@ module SwaggerClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Rulelist')
+        :return_type => 'RuleList')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: BeezUPApi#get_rules\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
