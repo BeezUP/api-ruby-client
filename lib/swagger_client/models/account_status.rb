@@ -17,6 +17,7 @@ module SwaggerClient
     ACTIVE = "Active".freeze
     SYSTEM_BLOCKED = "SystemBlocked".freeze
     USER_BLOCKED = "UserBlocked".freeze
+    NOT_ACTIVATED = "NotActivated".freeze
   end
 
 end
