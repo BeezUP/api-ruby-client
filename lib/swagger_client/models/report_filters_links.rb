@@ -16,18 +16,22 @@ module SwaggerClient
   class ReportFiltersLinks
     attr_accessor :_self
 
+    attr_accessor :save
+
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'_self' => :'self'
+        :'_self' => :'self',
+        :'save' => :'save'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'_self' => :'LinksGetReportFiltersLink'
+        :'_self' => :'LinksGetReportFiltersLink',
+        :'save' => :'LinksSaveReportFilterLink'
       }
     end
 
@@ -41,6 +45,10 @@ module SwaggerClient
 
       if attributes.has_key?(:'self')
         self._self = attributes[:'self']
+      end
+
+      if attributes.has_key?(:'save')
+        self.save = attributes[:'save']
       end
 
     end
@@ -63,7 +71,8 @@ module SwaggerClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          _self == o._self
+          _self == o._self &&
+          save == o.save
     end
 
     # @see the `==` method
@@ -75,7 +84,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [_self].hash
+      [_self, save].hash
     end
 
     # Builds the object from hash

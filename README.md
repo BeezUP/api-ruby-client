@@ -520,6 +520,7 @@ Class | Method | HTTP request | Description
  - [SwaggerClient::LinksSaveCreditCardInfoLink](docs/LinksSaveCreditCardInfoLink.md)
  - [SwaggerClient::LinksSavePersonalInfoLink](docs/LinksSavePersonalInfoLink.md)
  - [SwaggerClient::LinksSaveProfilePictureInfoLink](docs/LinksSaveProfilePictureInfoLink.md)
+ - [SwaggerClient::LinksSaveReportFilterLink](docs/LinksSaveReportFilterLink.md)
  - [SwaggerClient::LinksSaveStoreAlertLink](docs/LinksSaveStoreAlertLink.md)
  - [SwaggerClient::LinksSetChannelCatalogMarketplaceSettingsLink](docs/LinksSetChannelCatalogMarketplaceSettingsLink.md)
  - [SwaggerClient::LinksShareLink](docs/LinksShareLink.md)
