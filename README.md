@@ -342,6 +342,7 @@ Class | Method | HTTP request | Description
  - [SwaggerClient::CatalogColumns](docs/CatalogColumns.md)
  - [SwaggerClient::Categories](docs/Categories.md)
  - [SwaggerClient::Category](docs/Category.md)
+ - [SwaggerClient::CategoryMappingState](docs/CategoryMappingState.md)
  - [SwaggerClient::CategoryMappingStatus](docs/CategoryMappingStatus.md)
  - [SwaggerClient::ChangeCustomColumnExpressionRequest](docs/ChangeCustomColumnExpressionRequest.md)
  - [SwaggerClient::ChangeCustomColumnRequest](docs/ChangeCustomColumnRequest.md)
