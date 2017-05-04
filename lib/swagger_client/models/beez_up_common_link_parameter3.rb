@@ -14,7 +14,7 @@ require 'date'
 module SwaggerClient
 
   class BeezUPCommonLinkParameter3
-    # The value of the parameter
+    # The value of the parameter. It can be an integer a string or an object.
     attr_accessor :value
 
     attr_accessor :required
@@ -76,7 +76,7 @@ module SwaggerClient
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'value' => :'String',
+        :'value' => :'Object',
         :'required' => :'BOOLEAN',
         :'_in' => :'String',
         :'type' => :'String',

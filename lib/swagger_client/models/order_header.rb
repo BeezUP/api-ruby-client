@@ -39,10 +39,10 @@ module SwaggerClient
     # The purchase date of this order
     attr_accessor :order_purchase_utc_date
 
-    # The last modification UTC date done by BeezUP of this order.
+    # The last modification UTC date done by BeezUP of this order
     attr_accessor :order_last_modification_utc_date
 
-    # The last modification UTC date done by the marketplace on this order.
+    # The last modification UTC date done by the marketplace on this order
     attr_accessor :order_marketplace_last_modification_utc_date
 
     attr_accessor :order_buyer_name

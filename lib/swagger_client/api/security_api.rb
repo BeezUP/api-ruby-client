@@ -70,54 +70,6 @@ module SwaggerClient
       return data, status_code, headers
     end
 
-    # Log out the current user from go2
-    # Log out the current user from go2
-    # @param [Hash] opts the optional parameters
-    # @return [nil]
-    def logout(opts = {})
-      logout_with_http_info(opts)
-      return nil
-    end
-
-    # Log out the current user from go2
-    # Log out the current user from go2
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def logout_with_http_info(opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: SecurityApi.logout ..."
-      end
-      # resource path
-      local_var_path = "/v2/user/customer/security/logout".sub('{format}','json')
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = ['api_key']
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: SecurityApi#logout\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
     # Lost password
     # Lost password - Your password will be regenerated and sent to your email
     # @param [Hash] opts the optional parameters

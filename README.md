@@ -54,24 +54,17 @@ Please follow the [installation](#installation) procedure and then run the follo
 # Load the gem
 require 'swagger_client'
 
-# Setup authorization
-SwaggerClient.configure do |config|
-  # Configure API key authorization: api_key
-  config.api_key['Ocp-Apim-Subscription-Key'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  #config.api_key_prefix['Ocp-Apim-Subscription-Key'] = 'Bearer'
-end
+api_instance = SwaggerClient::GroupsApi.new
 
-api_instance = SwaggerClient::AccountApi.new
-
-email_activation_id = "email_activation_id_example" # String | The email activation id received by email.
+list_group_name = "list_group_name_example" # String | The list group name your want to get
 
 
 begin
-  #Activate the user account
-  api_instance.activate_user_account(email_activation_id)
+  #Get list of values related to this group name
+  result = api_instance.get_public_list_group(list_group_name)
+  p result
 rescue SwaggerClient::ApiError => e
-  puts "Exception when calling AccountApi->activate_user_account: #{e}"
+  puts "Exception when calling GroupsApi->get_public_list_group: #{e}"
 end
 
 ```
@@ -82,172 +75,172 @@ All URIs are relative to *https://api.beezup.comv2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*SwaggerClient::AccountApi* | [**activate_user_account**](docs/AccountApi.md#activate_user_account) | **POST** /v2/user/customer/account/activate | Activate the user account
-*SwaggerClient::AccountApi* | [**change_password**](docs/AccountApi.md#change_password) | **POST** /v2/user/customer/account/changePassword | Change user password
-*SwaggerClient::AccountApi* | [**get_credit_card_info**](docs/AccountApi.md#get_credit_card_info) | **GET** /v2/user/customer/account/creditCardInfo | Get credit card information
-*SwaggerClient::AccountApi* | [**get_user_account_info**](docs/AccountApi.md#get_user_account_info) | **GET** /v2/user/customer/account | Get user account information
-*SwaggerClient::AccountApi* | [**resend_email_activation**](docs/AccountApi.md#resend_email_activation) | **POST** /v2/user/customer/account/resendEmailActivation | Resend email activation
-*SwaggerClient::AccountApi* | [**save_company_info**](docs/AccountApi.md#save_company_info) | **PUT** /v2/user/customer/account/companyInfo | Change company information
-*SwaggerClient::AccountApi* | [**save_credit_card_info**](docs/AccountApi.md#save_credit_card_info) | **PUT** /v2/user/customer/account/creditCardInfo | Save user credit card info
-*SwaggerClient::AccountApi* | [**save_personal_info**](docs/AccountApi.md#save_personal_info) | **PUT** /v2/user/customer/account/personalInfo | Save user personal information
-*SwaggerClient::AccountApi* | [**save_profile_picture_info**](docs/AccountApi.md#save_profile_picture_info) | **PUT** /v2/user/customer/account/profilePictureInfo | Change user picture information
-*SwaggerClient::AlertsApi* | [**get_store_alerts**](docs/AlertsApi.md#get_store_alerts) | **GET** /v2/user/customer/stores/{storeId}/alerts | Get store's alerts
-*SwaggerClient::AlertsApi* | [**save_store_alert**](docs/AlertsApi.md#save_store_alert) | **PUT** /v2/user/customer/stores/{storeId}/alerts/{alertId} | Save store alert
-*SwaggerClient::AutoApi* | [**auto_configure_auto_import_interval**](docs/AutoApi.md#auto_configure_auto_import_interval) | **POST** /v2/user/catalogs/{storeId}/autoImport/scheduling/interval | Configure Auto Import Interval
-*SwaggerClient::AutoApi* | [**auto_delete_auto_import**](docs/AutoApi.md#auto_delete_auto_import) | **DELETE** /v2/user/catalogs/{storeId}/autoImport | Delete Auto Import
-*SwaggerClient::AutoApi* | [**auto_get_auto_import_configuration**](docs/AutoApi.md#auto_get_auto_import_configuration) | **GET** /v2/user/catalogs/{storeId}/autoImport | Get the auto import configuration
-*SwaggerClient::AutoApi* | [**auto_pause_auto_import**](docs/AutoApi.md#auto_pause_auto_import) | **POST** /v2/user/catalogs/{storeId}/autoImport/pause | Pause Auto Import
-*SwaggerClient::AutoApi* | [**auto_resume_auto_import**](docs/AutoApi.md#auto_resume_auto_import) | **POST** /v2/user/catalogs/{storeId}/autoImport/resume | Resume Auto Import
-*SwaggerClient::AutoApi* | [**auto_schedule_auto_import**](docs/AutoApi.md#auto_schedule_auto_import) | **POST** /v2/user/catalogs/{storeId}/autoImport/scheduling/schedules | Configure Auto Import Schedules
-*SwaggerClient::AutoApi* | [**auto_start_auto_import**](docs/AutoApi.md#auto_start_auto_import) | **POST** /v2/user/catalogs/{storeId}/autoImport/start | Start Auto Import Manually
-*SwaggerClient::AutoApi* | [**importation_activate_auto_import**](docs/AutoApi.md#importation_activate_auto_import) | **POST** /v2/user/catalogs/{storeId}/autoImport | Activate the auto importation of the last successful manual catalog importation.
-*SwaggerClient::AutoTransitionsApi* | [**configure_automatic_transitions**](docs/AutoTransitionsApi.md#configure_automatic_transitions) | **POST** /v2/user/marketplaces/orders/automaticTransitions | Configure automatic order status transitions
-*SwaggerClient::AutoTransitionsApi* | [**get_automatic_transitions**](docs/AutoTransitionsApi.md#get_automatic_transitions) | **GET** /v2/user/marketplaces/orders/automaticTransitions | Get automatic order status transition list
-*SwaggerClient::BatchesApi* | [**change_order_list**](docs/BatchesApi.md#change_order_list) | **POST** /v2/user/marketplaces/orders/batches/changeOrders/{changeOrderType} | Batches the change order operation.
-*SwaggerClient::BatchesApi* | [**clear_merchant_order_info_list**](docs/BatchesApi.md#clear_merchant_order_info_list) | **POST** /v2/user/marketplaces/orders/batches/clearMerchantOrderInfos | Batches the clear merchant order info operation.
-*SwaggerClient::BatchesApi* | [**set_merchant_order_info_list**](docs/BatchesApi.md#set_merchant_order_info_list) | **POST** /v2/user/marketplaces/orders/batches/setMerchantOrderInfos | Batches the set merchant order info operation.
-*SwaggerClient::CatalogApi* | [**catalog_change_catalog_column_user_name**](docs/CatalogApi.md#catalog_change_catalog_column_user_name) | **POST** /v2/user/catalogs/{storeId}/catalogColumns/{columnId}/rename | Change Catalog Column User Name
-*SwaggerClient::CatalogApi* | [**catalog_change_custom_column_expression**](docs/CatalogApi.md#catalog_change_custom_column_expression) | **PUT** /v2/user/catalogs/{storeId}/customColumns/{columnId}/expression | Change custom column expression
-*SwaggerClient::CatalogApi* | [**catalog_change_custom_column_user_name**](docs/CatalogApi.md#catalog_change_custom_column_user_name) | **POST** /v2/user/catalogs/{storeId}/customColumns/{columnId}/rename | Change Custom Column User Name
-*SwaggerClient::CatalogApi* | [**catalog_compute_expression**](docs/CatalogApi.md#catalog_compute_expression) | **POST** /v2/user/catalogs/{storeId}/customColumns/computeExpression | Compute the expression for this catalog.
-*SwaggerClient::CatalogApi* | [**catalog_delete_custom_column**](docs/CatalogApi.md#catalog_delete_custom_column) | **DELETE** /v2/user/catalogs/{storeId}/customColumns/{columnId} | Delete custom column
-*SwaggerClient::CatalogApi* | [**catalog_get_catalog_columns**](docs/CatalogApi.md#catalog_get_catalog_columns) | **GET** /v2/user/catalogs/{storeId}/catalogColumns | Get catalog column list
-*SwaggerClient::CatalogApi* | [**catalog_get_categories**](docs/CatalogApi.md#catalog_get_categories) | **GET** /v2/user/catalogs/{storeId}/categories | Get category list
-*SwaggerClient::CatalogApi* | [**catalog_get_custom_column_expression**](docs/CatalogApi.md#catalog_get_custom_column_expression) | **GET** /v2/user/catalogs/{storeId}/customColumns/{columnId}/expression | Get the encrypted custom column expression
-*SwaggerClient::CatalogApi* | [**catalog_get_custom_columns**](docs/CatalogApi.md#catalog_get_custom_columns) | **GET** /v2/user/catalogs/{storeId}/customColumns | Get custom column list
-*SwaggerClient::CatalogApi* | [**catalog_get_product**](docs/CatalogApi.md#catalog_get_product) | **GET** /v2/user/catalogs/{storeId}/products/{productId} | Get product
-*SwaggerClient::CatalogApi* | [**catalog_get_products**](docs/CatalogApi.md#catalog_get_products) | **POST** /v2/user/catalogs/{storeId}/products | Get product list
-*SwaggerClient::CatalogApi* | [**catalog_get_random_products**](docs/CatalogApi.md#catalog_get_random_products) | **GET** /v2/user/catalogs/{storeId}/products/random | Get random product list
-*SwaggerClient::CatalogApi* | [**catalog_save_custom_column**](docs/CatalogApi.md#catalog_save_custom_column) | **PUT** /v2/user/catalogs/{storeId}/customColumns/{columnId} | Create or replace a custom column
-*SwaggerClient::CatalogApi* | [**importation_get_manual_update_last_input_config**](docs/CatalogApi.md#importation_get_manual_update_last_input_config) | **GET** /v2/user/catalogs/{storeId}/inputConfiguration | Get the last input configuration
-*SwaggerClient::ChannelCatalogsCategoryMappingsApi* | [**get_channel_catalog_categories**](docs/ChannelCatalogsCategoryMappingsApi.md#get_channel_catalog_categories) | **GET** /v2/user/channelCatalogs/{channelCatalogId}/categoryMappings | Get channel catalog categories
-*SwaggerClient::ChannelCatalogsCategoryMappingsApi* | [**map_channel_catalog_category**](docs/ChannelCatalogsCategoryMappingsApi.md#map_channel_catalog_category) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/categoryMappings/map | Map channel catalog category
-*SwaggerClient::ChannelCatalogsCategoryMappingsApi* | [**unmap_channel_catalog_category**](docs/ChannelCatalogsCategoryMappingsApi.md#unmap_channel_catalog_category) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/categoryMappings/unmap | Unmap channel catalog category
-*SwaggerClient::ChannelCatalogsColumnMappingsApi* | [**map_channel_catalog_columns**](docs/ChannelCatalogsColumnMappingsApi.md#map_channel_catalog_columns) | **PUT** /v2/user/channelCatalogs/{channelCatalogId}/columnMappings | Configure channel catalog column mappings
-*SwaggerClient::ChannelCatalogsExclusionFiltersApi* | [**configure_channel_catalog_exclusion_filters**](docs/ChannelCatalogsExclusionFiltersApi.md#configure_channel_catalog_exclusion_filters) | **PUT** /v2/user/channelCatalogs/{channelCatalogId}/exclusionFilters | Configure channel catalog exclusion filters
-*SwaggerClient::ChannelCatalogsExclusionFiltersApi* | [**get_channel_catalog_exclusion_filter_operators**](docs/ChannelCatalogsExclusionFiltersApi.md#get_channel_catalog_exclusion_filter_operators) | **GET** /v2/user/channelCatalogs/exclusionFilterOperators | Get channel catalog exclusion filter operators
-*SwaggerClient::ChannelCatalogsGlobalApi* | [**create_channel_catalog**](docs/ChannelCatalogsGlobalApi.md#create_channel_catalog) | **POST** /v2/user/channelCatalogs/ | Create a new channel catalog
-*SwaggerClient::ChannelCatalogsGlobalApi* | [**delete_channel_catalog**](docs/ChannelCatalogsGlobalApi.md#delete_channel_catalog) | **DELETE** /v2/user/channelCatalogs/{channelCatalogId} | Delete the channel catalog
-*SwaggerClient::ChannelCatalogsGlobalApi* | [**get_channel_catalog**](docs/ChannelCatalogsGlobalApi.md#get_channel_catalog) | **GET** /v2/user/channelCatalogs/{channelCatalogId} | Get the channel catalog information
-*SwaggerClient::ChannelCatalogsGlobalApi* | [**get_channel_catalogs**](docs/ChannelCatalogsGlobalApi.md#get_channel_catalogs) | **GET** /v2/user/channelCatalogs/ | List all your current channel catalogs
-*SwaggerClient::ChannelCatalogsProductsApi* | [**get_channel_catalog_product_info**](docs/ChannelCatalogsProductsApi.md#get_channel_catalog_product_info) | **GET** /v2/user/channelCatalogs/{channelCatalogId}/products/{productId} | Get channel catalog product information
-*SwaggerClient::ChannelCatalogsProductsApi* | [**get_channel_catalog_product_info_list**](docs/ChannelCatalogsProductsApi.md#get_channel_catalog_product_info_list) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/products | Get channel catalog product information list
-*SwaggerClient::ChannelCatalogsProductsOptimisationApi* | [**disable_channel_catalog_product**](docs/ChannelCatalogsProductsOptimisationApi.md#disable_channel_catalog_product) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/disable | Disable channel catalog product
-*SwaggerClient::ChannelCatalogsProductsOptimisationApi* | [**reenable_channel_catalog_product**](docs/ChannelCatalogsProductsOptimisationApi.md#reenable_channel_catalog_product) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/reenable | Reenable channel catalog product
-*SwaggerClient::ChannelCatalogsProductsOverridesApi* | [**delete_channel_catalog_product_value_override**](docs/ChannelCatalogsProductsOverridesApi.md#delete_channel_catalog_product_value_override) | **DELETE** /v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides/{channelColumnId} | Delete a specific channel catalog product value override
-*SwaggerClient::ChannelCatalogsProductsOverridesApi* | [**override_channel_catalog_product_overrides**](docs/ChannelCatalogsProductsOverridesApi.md#override_channel_catalog_product_overrides) | **PUT** /v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides | Override channel catalog product values
-*SwaggerClient::ChannelCatalogsSettingsApi* | [**configure_channel_catalog_cost_settings**](docs/ChannelCatalogsSettingsApi.md#configure_channel_catalog_cost_settings) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/settings/cost | Disable a channel catalog
-*SwaggerClient::ChannelCatalogsSettingsApi* | [**configure_channel_catalog_general_settings**](docs/ChannelCatalogsSettingsApi.md#configure_channel_catalog_general_settings) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/settings/general | Disable a channel catalog
-*SwaggerClient::ChannelCatalogsSettingsApi* | [**disable_channel_catalog**](docs/ChannelCatalogsSettingsApi.md#disable_channel_catalog) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/disable | Disable a channel catalog
-*SwaggerClient::ChannelCatalogsSettingsApi* | [**enable_channel_catalog**](docs/ChannelCatalogsSettingsApi.md#enable_channel_catalog) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/enable | Enable a channel catalog
-*SwaggerClient::ChannelsGlobalApi* | [**get_channel_categories**](docs/ChannelsGlobalApi.md#get_channel_categories) | **GET** /v2/user/channels/{channelId}/categories | Get channel categories
-*SwaggerClient::ChannelsGlobalApi* | [**get_channel_columns**](docs/ChannelsGlobalApi.md#get_channel_columns) | **POST** /v2/user/channels/{channelId}/columns | Get channel columns
-*SwaggerClient::ChannelsGlobalApi* | [**get_channel_info**](docs/ChannelsGlobalApi.md#get_channel_info) | **GET** /v2/user/channels/{channelId} | Get channel information
-*SwaggerClient::ChannelsGlobalApi* | [**get_current_channels**](docs/ChannelsGlobalApi.md#get_current_channels) | **GET** /v2/user/channels/ | List all available channel for this store
-*SwaggerClient::ContractsApi* | [**create_contract**](docs/ContractsApi.md#create_contract) | **POST** /v2/user/customer/contracts | Create a new contract
-*SwaggerClient::ContractsApi* | [**delete_next_contract**](docs/ContractsApi.md#delete_next_contract) | **DELETE** /v2/user/customer/contracts/next | Delete your next contract
-*SwaggerClient::ContractsApi* | [**get_billing_periods**](docs/ContractsApi.md#get_billing_periods) | **GET** /v2/user/customer/billingPeriods | Get billing periods conditions
-*SwaggerClient::ContractsApi* | [**get_contracts**](docs/ContractsApi.md#get_contracts) | **GET** /v2/user/customer/contracts | Get contract list
-*SwaggerClient::ContractsApi* | [**get_offer**](docs/ContractsApi.md#get_offer) | **POST** /v2/user/customer/offers | Get offer pricing
-*SwaggerClient::ContractsApi* | [**get_standard_offers**](docs/ContractsApi.md#get_standard_offers) | **GET** /v2/user/customer/offers | Get all standard offers
-*SwaggerClient::ContractsApi* | [**reactivate_current_contract**](docs/ContractsApi.md#reactivate_current_contract) | **POST** /v2/user/customer/contracts/current/reenableAutoRenewal | Reactivate your terminated contract.
-*SwaggerClient::ContractsApi* | [**terminate_current_contract**](docs/ContractsApi.md#terminate_current_contract) | **POST** /v2/user/customer/contracts/current/disableAutoRenewal | Schedule termination of your current contract at the end of the commitment.
-*SwaggerClient::ExportsApi* | [**export_orders**](docs/ExportsApi.md#export_orders) | **POST** /v2/user/marketplaces/orders/exportations | Export orders
-*SwaggerClient::ExportsApi* | [**get_order_exportations**](docs/ExportsApi.md#get_order_exportations) | **GET** /v2/user/marketplaces/orders/exportations | Get the order exportation list
-*SwaggerClient::FriendsApi* | [**get_friend_info**](docs/FriendsApi.md#get_friend_info) | **GET** /v2/user/customer/friends/{userId} | Get friend information
-*SwaggerClient::GlobalApi* | [**catalog_get_beez_up_columns**](docs/GlobalApi.md#catalog_get_beez_up_columns) | **GET** /v2/user/catalogs/beezupColumns | Get the BeezUP columns
-*SwaggerClient::GlobalApi* | [**get_marketplace_accounts_synchronization**](docs/GlobalApi.md#get_marketplace_accounts_synchronization) | **GET** /v2/user/marketplaces/orders/status | Get marketplace accounts synchronization status
-*SwaggerClient::GlobalApi* | [**harvest_all**](docs/GlobalApi.md#harvest_all) | **POST** /v2/user/marketplaces/orders/harvest | Harvest orders from all marketplaces
 *SwaggerClient::GroupsApi* | [**get_public_list_group**](docs/GroupsApi.md#get_public_list_group) | **GET** /v2/public/lov/groups/{listGroupName} | Get list of values related to this group name
 *SwaggerClient::GroupsApi* | [**get_public_list_group_names**](docs/GroupsApi.md#get_public_list_group_names) | **GET** /v2/public/lov/groups | Get list of group of list name
-*SwaggerClient::GroupsApi* | [**get_user_list_group**](docs/GroupsApi.md#get_user_list_group) | **GET** /v2/user/lov/groups/{listGroupName} | Get list of values related to this group name
-*SwaggerClient::GroupsApi* | [**get_user_list_group_names**](docs/GroupsApi.md#get_user_list_group_names) | **GET** /v2/user/lov/groups | Get list of group of list name
-*SwaggerClient::ImportationCatalogInfoApi* | [**importation_configure_catalog_column**](docs/ImportationCatalogInfoApi.md#importation_configure_catalog_column) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId} | Configure catalog column
-*SwaggerClient::ImportationCatalogInfoApi* | [**importation_delete_custom_column**](docs/ImportationCatalogInfoApi.md#importation_delete_custom_column) | **DELETE** /v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId} | Delete Custom Column
-*SwaggerClient::ImportationCatalogInfoApi* | [**importation_get_custom_column_expression**](docs/ImportationCatalogInfoApi.md#importation_get_custom_column_expression) | **GET** /v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/expression | Get the encrypted custom column expression in this importation
-*SwaggerClient::ImportationCatalogInfoApi* | [**importation_get_custom_columns**](docs/ImportationCatalogInfoApi.md#importation_get_custom_columns) | **GET** /v2/user/catalogs/{storeId}/importations/{executionId}/customColumns | Get custom columns currently place in this importation
-*SwaggerClient::ImportationCatalogInfoApi* | [**importation_get_detected_catalog_columns**](docs/ImportationCatalogInfoApi.md#importation_get_detected_catalog_columns) | **GET** /v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns | Get detected catalog columns during this importation.
-*SwaggerClient::ImportationCatalogInfoApi* | [**importation_get_product_sample**](docs/ImportationCatalogInfoApi.md#importation_get_product_sample) | **GET** /v2/user/catalogs/{storeId}/importations/{executionId}/productSamples/{productSampleIndex} | Get the product sample related to this importation with all columns (catalog and custom)
-*SwaggerClient::ImportationCatalogInfoApi* | [**importation_get_product_sample_custom_column_value**](docs/ImportationCatalogInfoApi.md#importation_get_product_sample_custom_column_value) | **GET** /v2/user/catalogs/{storeId}/importations/{executionId}/productSamples/{productSampleIndex}/customColumns/{columnId} | Get product sample custom column value related to this importation.
-*SwaggerClient::ImportationCatalogInfoApi* | [**importation_ignore_column**](docs/ImportationCatalogInfoApi.md#importation_ignore_column) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/ignore | Ignore Column
-*SwaggerClient::ImportationCatalogInfoApi* | [**importation_map_catalog_column**](docs/ImportationCatalogInfoApi.md#importation_map_catalog_column) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/map | Map catalog column to a BeezUP column
-*SwaggerClient::ImportationCatalogInfoApi* | [**importation_map_custom_column**](docs/ImportationCatalogInfoApi.md#importation_map_custom_column) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/map | Map custom column to a BeezUP column
-*SwaggerClient::ImportationCatalogInfoApi* | [**importation_reattend_column**](docs/ImportationCatalogInfoApi.md#importation_reattend_column) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/reattend | Reattend Column
-*SwaggerClient::ImportationCatalogInfoApi* | [**importation_save_custom_column**](docs/ImportationCatalogInfoApi.md#importation_save_custom_column) | **PUT** /v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId} | Create or replace a custom column
-*SwaggerClient::ImportationCatalogInfoApi* | [**importation_unmap_catalog_column**](docs/ImportationCatalogInfoApi.md#importation_unmap_catalog_column) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/unmap | Unmap catalog column
-*SwaggerClient::ImportationCatalogInfoApi* | [**importation_unmap_custom_column**](docs/ImportationCatalogInfoApi.md#importation_unmap_custom_column) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/unmap | Unmap custom column
-*SwaggerClient::ImportationProcessApi* | [**importation_cancel**](docs/ImportationProcessApi.md#importation_cancel) | **DELETE** /v2/user/catalogs/{storeId}/importations/{executionId} | Cancel importation
-*SwaggerClient::ImportationProcessApi* | [**importation_commit**](docs/ImportationProcessApi.md#importation_commit) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/commit | Commit Importation
-*SwaggerClient::ImportationProcessApi* | [**importation_commit_columns**](docs/ImportationProcessApi.md#importation_commit_columns) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/commitColumns | Commit columns
-*SwaggerClient::ImportationProcessApi* | [**importation_configure_remaining_catalog_columns**](docs/ImportationProcessApi.md#importation_configure_remaining_catalog_columns) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/configureRemainingCatalogColumns | Configure remaining catalog columns
-*SwaggerClient::ImportationProcessApi* | [**importation_get_importation_monitoring**](docs/ImportationProcessApi.md#importation_get_importation_monitoring) | **GET** /v2/user/catalogs/{storeId}/importations/{executionId} | Get the importation status
-*SwaggerClient::ImportationProcessApi* | [**importation_get_reportings**](docs/ImportationProcessApi.md#importation_get_reportings) | **GET** /v2/user/catalogs/{storeId}/importations | Get the latest catalog importation reporting
-*SwaggerClient::ImportationProcessApi* | [**importation_start_manual_update**](docs/ImportationProcessApi.md#importation_start_manual_update) | **POST** /v2/user/catalogs/{storeId}/importations | Start Manual Import
-*SwaggerClient::ImportationProcessApi* | [**importation_technical_progression**](docs/ImportationProcessApi.md#importation_technical_progression) | **GET** /v2/user/catalogs/{storeId}/importations/{executionId}/technicalProgression | Get technical progression
-*SwaggerClient::InvoicesApi* | [**get_invoices**](docs/InvoicesApi.md#get_invoices) | **GET** /v2/user/customer/invoices | Get all your invoices
 *SwaggerClient::LOVApi* | [**get_public_list_names**](docs/LOVApi.md#get_public_list_names) | **GET** /v2/public/lov/ | Get all list names
 *SwaggerClient::LOVApi* | [**get_public_list_of_values**](docs/LOVApi.md#get_public_list_of_values) | **GET** /v2/public/lov/{listName} | Get the list of values related to this list name
-*SwaggerClient::LOVApi* | [**get_user_list_names**](docs/LOVApi.md#get_user_list_names) | **GET** /v2/user/lov/ | Get all list names
-*SwaggerClient::LOVApi* | [**get_user_list_of_values**](docs/LOVApi.md#get_user_list_of_values) | **GET** /v2/user/lov/{listName} | Get the list of values related to this list name
-*SwaggerClient::ListApi* | [**get_order_list_full**](docs/ListApi.md#get_order_list_full) | **POST** /v2/user/marketplaces/orders/list/full | Get order list with all order properties and all order items.
-*SwaggerClient::ListApi* | [**get_order_list_light**](docs/ListApi.md#get_order_list_light) | **POST** /v2/user/marketplaces/orders/list/light | Get order list without details
-*SwaggerClient::MarketplacesChannelCatalogsGlobalApi* | [**get_marketplace_account_stores**](docs/MarketplacesChannelCatalogsGlobalApi.md#get_marketplace_account_stores) | **GET** /v2/user/marketplaces/channelcatalogs/ | Get  you marketplace channel catalog list
-*SwaggerClient::MarketplacesChannelCatalogsPublicationsApi* | [**get_publications**](docs/MarketplacesChannelCatalogsPublicationsApi.md#get_publications) | **GET** /v2/user/marketplaces/channelcatalogs/publications/{marketplaceTechnicalCode}/{accountId}/history | Fetch the publication history for an account, sorted by descending start date
-*SwaggerClient::MarketplacesChannelCatalogsSettingsApi* | [**get_channel_catalog_marketplace_properties**](docs/MarketplacesChannelCatalogsSettingsApi.md#get_channel_catalog_marketplace_properties) | **GET** /v2/user/marketplaces/channelcatalogs/{channelCatalogId}/properties | Get the marketplace properties for a channel catalog
-*SwaggerClient::MarketplacesChannelCatalogsSettingsApi* | [**get_channel_catalog_marketplace_settings**](docs/MarketplacesChannelCatalogsSettingsApi.md#get_channel_catalog_marketplace_settings) | **GET** /v2/user/marketplaces/channelcatalogs/{channelCatalogId}/settings | Get the marketplace settings for a channel catalog
-*SwaggerClient::MarketplacesChannelCatalogsSettingsApi* | [**set_channel_catalog_marketplace_settings**](docs/MarketplacesChannelCatalogsSettingsApi.md#set_channel_catalog_marketplace_settings) | **POST** /v2/user/marketplaces/channelcatalogs/{channelCatalogId}/settings | Save new marketplace settings for a channel catalog
-*SwaggerClient::OneOrderApi* | [**change_order**](docs/OneOrderApi.md#change_order) | **POST** /v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/{changeOrderType} | Change order status
-*SwaggerClient::OneOrderApi* | [**clear_merchant_order_info**](docs/OneOrderApi.md#clear_merchant_order_info) | **POST** /v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/clearMerchantOrderInfo | Clear the merchant info related to this order
-*SwaggerClient::OneOrderApi* | [**get_order**](docs/OneOrderApi.md#get_order) | **GET** /v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId} | Get order details
-*SwaggerClient::OneOrderApi* | [**get_order_history**](docs/OneOrderApi.md#get_order_history) | **GET** /v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/history | Get the harvest history and the change status operations
-*SwaggerClient::OneOrderApi* | [**harvest_order**](docs/OneOrderApi.md#harvest_order) | **POST** /v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/harvest | Harvest a specific order from the marketplace
-*SwaggerClient::OneOrderApi* | [**set_merchant_order_info**](docs/OneOrderApi.md#set_merchant_order_info) | **POST** /v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/setMerchantOrderInfo | Associate your merchant order identifier to this order
-*SwaggerClient::OptimisationsApi* | [**optimise**](docs/OptimisationsApi.md#optimise) | **POST** /v2/user/analytics/{storeId}/optimisations/{actionName} | Optimise products
-*SwaggerClient::OptimisationsApi* | [**optimise_by_category**](docs/OptimisationsApi.md#optimise_by_category) | **POST** /v2/user/analytics/{storeId}/optimisations/bycategory/{catalogCategoryId}/{actionName} | Optimise products's category
-*SwaggerClient::OptimisationsApi* | [**optimise_by_channel**](docs/OptimisationsApi.md#optimise_by_channel) | **POST** /v2/user/analytics/{storeId}/optimisations/bychannel/{channelId}/{actionName} | Optimise products's category
-*SwaggerClient::OptimisationsApi* | [**optimise_by_product**](docs/OptimisationsApi.md#optimise_by_product) | **POST** /v2/user/analytics/{storeId}/optimisations/byproduct/{productId}/{actionName} | Optimise products
-*SwaggerClient::ReportsApi* | [**delete_report_filter**](docs/ReportsApi.md#delete_report_filter) | **DELETE** /v2/user/analytics/{storeId}/reports/filters/{reportFilterId} | Delete the report filter
-*SwaggerClient::ReportsApi* | [**export_store_report_by_category**](docs/ReportsApi.md#export_store_report_by_category) | **POST** /v2/user/analytics/{storeId}/reports/bycategory/export | Export the report by category
-*SwaggerClient::ReportsApi* | [**export_store_report_by_channel**](docs/ReportsApi.md#export_store_report_by_channel) | **POST** /v2/user/analytics/{storeId}/reports/bychannel/export | Export the report by channel
-*SwaggerClient::ReportsApi* | [**export_store_report_by_product**](docs/ReportsApi.md#export_store_report_by_product) | **POST** /v2/user/analytics/{storeId}/reports/byproduct/export | Export the report by product
-*SwaggerClient::ReportsApi* | [**get_report_filter**](docs/ReportsApi.md#get_report_filter) | **GET** /v2/user/analytics/{storeId}/reports/filters/{reportFilterId} | Get the report filter description
-*SwaggerClient::ReportsApi* | [**get_report_filters**](docs/ReportsApi.md#get_report_filters) | **GET** /v2/user/analytics/{storeId}/reports/filters | Get report filter list for the given store
-*SwaggerClient::ReportsApi* | [**get_store_report_by_category**](docs/ReportsApi.md#get_store_report_by_category) | **POST** /v2/user/analytics/{storeId}/reports/bycategory | Get the report by category
-*SwaggerClient::ReportsApi* | [**get_store_report_by_channel**](docs/ReportsApi.md#get_store_report_by_channel) | **POST** /v2/user/analytics/{storeId}/reports/bychannel | Get the report by channel
-*SwaggerClient::ReportsApi* | [**get_store_report_by_day**](docs/ReportsApi.md#get_store_report_by_day) | **POST** /v2/user/analytics/{storeId}/reports/byday | Get the report by day
-*SwaggerClient::ReportsApi* | [**get_store_report_by_day_export**](docs/ReportsApi.md#get_store_report_by_day_export) | **POST** /v2/user/analytics/{storeId}/reports/byday/export | Get the report by day
-*SwaggerClient::ReportsApi* | [**get_store_report_by_product**](docs/ReportsApi.md#get_store_report_by_product) | **POST** /v2/user/analytics/{storeId}/reports/byproduct | Get the report by product
-*SwaggerClient::ReportsApi* | [**save_report_filter**](docs/ReportsApi.md#save_report_filter) | **PUT** /v2/user/analytics/{storeId}/reports/filters/{reportFilterId} | Save the report filter
-*SwaggerClient::RightsApi* | [**get_rights**](docs/RightsApi.md#get_rights) | **POST** /v2/user/customer/stores/{storeId}/rights | Get store's rights
-*SwaggerClient::RulesApi* | [**create_rule**](docs/RulesApi.md#create_rule) | **POST** /v2/user/analytics/{storeId}/rules | Rule creation
-*SwaggerClient::RulesApi* | [**delete_rule**](docs/RulesApi.md#delete_rule) | **DELETE** /v2/user/analytics/{storeId}/rules/{ruleId} | Delete Rule
-*SwaggerClient::RulesApi* | [**disable_rule**](docs/RulesApi.md#disable_rule) | **POST** /v2/user/analytics/{storeId}/rules/{ruleId}/disable | Disable rule
-*SwaggerClient::RulesApi* | [**enable_rule**](docs/RulesApi.md#enable_rule) | **POST** /v2/user/analytics/{storeId}/rules/{ruleId}/enable | Enable rule
-*SwaggerClient::RulesApi* | [**get_rule**](docs/RulesApi.md#get_rule) | **GET** /v2/user/analytics/{storeId}/rules/{ruleId} | Gets the rule
-*SwaggerClient::RulesApi* | [**get_rules**](docs/RulesApi.md#get_rules) | **GET** /v2/user/analytics/{storeId}/rules | Gets the list of rules for a given store
-*SwaggerClient::RulesApi* | [**get_rules_executions**](docs/RulesApi.md#get_rules_executions) | **GET** /v2/user/analytics/{storeId}/rules/executions | Get the rules execution history
-*SwaggerClient::RulesApi* | [**move_down_rule**](docs/RulesApi.md#move_down_rule) | **POST** /v2/user/analytics/{storeId}/rules/{ruleId}/movedown | Move the rule down
-*SwaggerClient::RulesApi* | [**move_up_rule**](docs/RulesApi.md#move_up_rule) | **POST** /v2/user/analytics/{storeId}/rules/{ruleId}/moveup | Move the rule up
-*SwaggerClient::RulesApi* | [**run_rule**](docs/RulesApi.md#run_rule) | **POST** /v2/user/analytics/{storeId}/rules/{ruleId}/run | Run rule
-*SwaggerClient::RulesApi* | [**run_rules**](docs/RulesApi.md#run_rules) | **POST** /v2/user/analytics/{storeId}/rules/run | Run all rules for this store
-*SwaggerClient::RulesApi* | [**update_rule**](docs/RulesApi.md#update_rule) | **PATCH** /v2/user/analytics/{storeId}/rules/{ruleId} | Update Rule
 *SwaggerClient::SecurityApi* | [**login**](docs/SecurityApi.md#login) | **POST** /v2/public/security/login | Login
-*SwaggerClient::SecurityApi* | [**logout**](docs/SecurityApi.md#logout) | **POST** /v2/user/customer/security/logout | Log out the current user from go2
 *SwaggerClient::SecurityApi* | [**lost_password**](docs/SecurityApi.md#lost_password) | **POST** /v2/public/security/lostpassword | Lost password
 *SwaggerClient::SecurityApi* | [**register**](docs/SecurityApi.md#register) | **POST** /v2/public/security/register | User Registration
-*SwaggerClient::SharesApi* | [**delete_share**](docs/SharesApi.md#delete_share) | **DELETE** /v2/user/customer/stores/{storeId}/shares/{userId} | Delete a share to another user
-*SwaggerClient::SharesApi* | [**get_shares**](docs/SharesApi.md#get_shares) | **GET** /v2/user/customer/stores/{storeId}/shares | Get shares related to this store
-*SwaggerClient::SharesApi* | [**share**](docs/SharesApi.md#share) | **POST** /v2/user/customer/stores/{storeId}/shares | Share a store to another user
-*SwaggerClient::StoresApi* | [**create_store**](docs/StoresApi.md#create_store) | **POST** /v2/user/customer/stores | Create a new store
-*SwaggerClient::StoresApi* | [**delete_store**](docs/StoresApi.md#delete_store) | **DELETE** /v2/user/customer/stores/{storeId} | Delete a store
-*SwaggerClient::StoresApi* | [**get_store**](docs/StoresApi.md#get_store) | **GET** /v2/user/customer/stores/{storeId} | Get store's information
-*SwaggerClient::StoresApi* | [**get_stores**](docs/StoresApi.md#get_stores) | **GET** /v2/user/customer/stores | Get store list
-*SwaggerClient::StoresApi* | [**update_store**](docs/StoresApi.md#update_store) | **PATCH** /v2/user/customer/stores/{storeId} | Update some store's information.
-*SwaggerClient::TrackingApi* | [**get_store_tracked_clicks**](docs/TrackingApi.md#get_store_tracked_clicks) | **GET** /v2/user/analytics/{storeId}/tracking/clicks | Get the latest clicks tracked
-*SwaggerClient::TrackingApi* | [**get_store_tracked_external_orders**](docs/TrackingApi.md#get_store_tracked_external_orders) | **GET** /v2/user/analytics/{storeId}/tracking/externalorders | Get the latest external orders tracked
-*SwaggerClient::TrackingApi* | [**get_store_tracked_orders**](docs/TrackingApi.md#get_store_tracked_orders) | **GET** /v2/user/analytics/{storeId}/tracking/orders | Get the latest orders tracked
-*SwaggerClient::TrackingApi* | [**get_store_tracking_status**](docs/TrackingApi.md#get_store_tracking_status) | **GET** /v2/user/analytics/{storeId}/tracking/status | Get store tracking synchronization status
-*SwaggerClient::TrackingApi* | [**get_tracking_status**](docs/TrackingApi.md#get_tracking_status) | **GET** /v2/user/analytics/tracking/status | Display the synchronization status of the clicks and orders
+*SwaggerClient::UserLOVApi* | [**get_user_list_group**](docs/UserLOVApi.md#get_user_list_group) | **GET** /v2/user/lov/groups/{listGroupName} | Get list of values related to this group name
+*SwaggerClient::UserLOVApi* | [**get_user_list_group_names**](docs/UserLOVApi.md#get_user_list_group_names) | **GET** /v2/user/lov/groups | Get list of group of list name
+*SwaggerClient::UserLOVApi* | [**get_user_list_names**](docs/UserLOVApi.md#get_user_list_names) | **GET** /v2/user/lov/ | Get all list names
+*SwaggerClient::UserLOVApi* | [**get_user_list_of_values**](docs/UserLOVApi.md#get_user_list_of_values) | **GET** /v2/user/lov/{listName} | Get the list of values related to this list name
+*SwaggerClient::V2UserAnalyticsApi* | [**create_rule**](docs/V2UserAnalyticsApi.md#create_rule) | **POST** /v2/user/analytics/{storeId}/rules | Rule creation
+*SwaggerClient::V2UserAnalyticsApi* | [**delete_report_filter**](docs/V2UserAnalyticsApi.md#delete_report_filter) | **DELETE** /v2/user/analytics/{storeId}/reports/filters/{reportFilterId} | Delete the report filter
+*SwaggerClient::V2UserAnalyticsApi* | [**delete_rule**](docs/V2UserAnalyticsApi.md#delete_rule) | **DELETE** /v2/user/analytics/{storeId}/rules/{ruleId} | Delete Rule
+*SwaggerClient::V2UserAnalyticsApi* | [**disable_rule**](docs/V2UserAnalyticsApi.md#disable_rule) | **POST** /v2/user/analytics/{storeId}/rules/{ruleId}/disable | Disable rule
+*SwaggerClient::V2UserAnalyticsApi* | [**enable_rule**](docs/V2UserAnalyticsApi.md#enable_rule) | **POST** /v2/user/analytics/{storeId}/rules/{ruleId}/enable | Enable rule
+*SwaggerClient::V2UserAnalyticsApi* | [**export_store_report_by_category**](docs/V2UserAnalyticsApi.md#export_store_report_by_category) | **POST** /v2/user/analytics/{storeId}/reports/bycategory/export | Export the report by category
+*SwaggerClient::V2UserAnalyticsApi* | [**export_store_report_by_channel**](docs/V2UserAnalyticsApi.md#export_store_report_by_channel) | **POST** /v2/user/analytics/{storeId}/reports/bychannel/export | Export the report by channel
+*SwaggerClient::V2UserAnalyticsApi* | [**export_store_report_by_product**](docs/V2UserAnalyticsApi.md#export_store_report_by_product) | **POST** /v2/user/analytics/{storeId}/reports/byproduct/export | Export the report by product
+*SwaggerClient::V2UserAnalyticsApi* | [**get_report_filter**](docs/V2UserAnalyticsApi.md#get_report_filter) | **GET** /v2/user/analytics/{storeId}/reports/filters/{reportFilterId} | Get the report filter description
+*SwaggerClient::V2UserAnalyticsApi* | [**get_report_filters**](docs/V2UserAnalyticsApi.md#get_report_filters) | **GET** /v2/user/analytics/{storeId}/reports/filters | Get report filter list for the given store
+*SwaggerClient::V2UserAnalyticsApi* | [**get_rule**](docs/V2UserAnalyticsApi.md#get_rule) | **GET** /v2/user/analytics/{storeId}/rules/{ruleId} | Gets the rule
+*SwaggerClient::V2UserAnalyticsApi* | [**get_rules**](docs/V2UserAnalyticsApi.md#get_rules) | **GET** /v2/user/analytics/{storeId}/rules | Gets the list of rules for a given store
+*SwaggerClient::V2UserAnalyticsApi* | [**get_rules_executions**](docs/V2UserAnalyticsApi.md#get_rules_executions) | **GET** /v2/user/analytics/{storeId}/rules/executions | Get the rules execution history
+*SwaggerClient::V2UserAnalyticsApi* | [**get_store_report_by_category**](docs/V2UserAnalyticsApi.md#get_store_report_by_category) | **POST** /v2/user/analytics/{storeId}/reports/bycategory | Get the report by category
+*SwaggerClient::V2UserAnalyticsApi* | [**get_store_report_by_channel**](docs/V2UserAnalyticsApi.md#get_store_report_by_channel) | **POST** /v2/user/analytics/{storeId}/reports/bychannel | Get the report by channel
+*SwaggerClient::V2UserAnalyticsApi* | [**get_store_report_by_day**](docs/V2UserAnalyticsApi.md#get_store_report_by_day) | **POST** /v2/user/analytics/{storeId}/reports/byday | Get the report by day
+*SwaggerClient::V2UserAnalyticsApi* | [**get_store_report_by_day_export**](docs/V2UserAnalyticsApi.md#get_store_report_by_day_export) | **POST** /v2/user/analytics/{storeId}/reports/byday/export | Get the report by day
+*SwaggerClient::V2UserAnalyticsApi* | [**get_store_report_by_product**](docs/V2UserAnalyticsApi.md#get_store_report_by_product) | **POST** /v2/user/analytics/{storeId}/reports/byproduct | Get the report by product
+*SwaggerClient::V2UserAnalyticsApi* | [**get_store_tracked_clicks**](docs/V2UserAnalyticsApi.md#get_store_tracked_clicks) | **GET** /v2/user/analytics/{storeId}/tracking/clicks | Get the latest clicks tracked
+*SwaggerClient::V2UserAnalyticsApi* | [**get_store_tracked_external_orders**](docs/V2UserAnalyticsApi.md#get_store_tracked_external_orders) | **GET** /v2/user/analytics/{storeId}/tracking/externalorders | Get the latest external orders tracked
+*SwaggerClient::V2UserAnalyticsApi* | [**get_store_tracked_orders**](docs/V2UserAnalyticsApi.md#get_store_tracked_orders) | **GET** /v2/user/analytics/{storeId}/tracking/orders | Get the latest orders tracked
+*SwaggerClient::V2UserAnalyticsApi* | [**get_store_tracking_status**](docs/V2UserAnalyticsApi.md#get_store_tracking_status) | **GET** /v2/user/analytics/{storeId}/tracking/status | Get store tracking synchronization status
+*SwaggerClient::V2UserAnalyticsApi* | [**get_tracking_status**](docs/V2UserAnalyticsApi.md#get_tracking_status) | **GET** /v2/user/analytics/tracking/status | Display the synchronization status of the clicks and orders
+*SwaggerClient::V2UserAnalyticsApi* | [**move_down_rule**](docs/V2UserAnalyticsApi.md#move_down_rule) | **POST** /v2/user/analytics/{storeId}/rules/{ruleId}/movedown | Move the rule down
+*SwaggerClient::V2UserAnalyticsApi* | [**move_up_rule**](docs/V2UserAnalyticsApi.md#move_up_rule) | **POST** /v2/user/analytics/{storeId}/rules/{ruleId}/moveup | Move the rule up
+*SwaggerClient::V2UserAnalyticsApi* | [**optimise**](docs/V2UserAnalyticsApi.md#optimise) | **POST** /v2/user/analytics/{storeId}/optimisations/{actionName} | Optimise products
+*SwaggerClient::V2UserAnalyticsApi* | [**optimise_by_category**](docs/V2UserAnalyticsApi.md#optimise_by_category) | **POST** /v2/user/analytics/{storeId}/optimisations/bycategory/{catalogCategoryId}/{actionName} | Optimise products's category
+*SwaggerClient::V2UserAnalyticsApi* | [**optimise_by_channel**](docs/V2UserAnalyticsApi.md#optimise_by_channel) | **POST** /v2/user/analytics/{storeId}/optimisations/bychannel/{channelId}/{actionName} | Optimise products's category
+*SwaggerClient::V2UserAnalyticsApi* | [**optimise_by_product**](docs/V2UserAnalyticsApi.md#optimise_by_product) | **POST** /v2/user/analytics/{storeId}/optimisations/byproduct/{productId}/{actionName} | Optimise products
+*SwaggerClient::V2UserAnalyticsApi* | [**run_rule**](docs/V2UserAnalyticsApi.md#run_rule) | **POST** /v2/user/analytics/{storeId}/rules/{ruleId}/run | Run rule
+*SwaggerClient::V2UserAnalyticsApi* | [**run_rules**](docs/V2UserAnalyticsApi.md#run_rules) | **POST** /v2/user/analytics/{storeId}/rules/run | Run all rules for this store
+*SwaggerClient::V2UserAnalyticsApi* | [**save_report_filter**](docs/V2UserAnalyticsApi.md#save_report_filter) | **PUT** /v2/user/analytics/{storeId}/reports/filters/{reportFilterId} | Save the report filter
+*SwaggerClient::V2UserAnalyticsApi* | [**update_rule**](docs/V2UserAnalyticsApi.md#update_rule) | **PATCH** /v2/user/analytics/{storeId}/rules/{ruleId} | Update Rule
+*SwaggerClient::V2UserCatalogsApi* | [**auto_configure_auto_import_interval**](docs/V2UserCatalogsApi.md#auto_configure_auto_import_interval) | **POST** /v2/user/catalogs/{storeId}/autoImport/scheduling/interval | Configure Auto Import Interval
+*SwaggerClient::V2UserCatalogsApi* | [**auto_delete_auto_import**](docs/V2UserCatalogsApi.md#auto_delete_auto_import) | **DELETE** /v2/user/catalogs/{storeId}/autoImport | Delete Auto Import
+*SwaggerClient::V2UserCatalogsApi* | [**auto_get_auto_import_configuration**](docs/V2UserCatalogsApi.md#auto_get_auto_import_configuration) | **GET** /v2/user/catalogs/{storeId}/autoImport | Get the auto import configuration
+*SwaggerClient::V2UserCatalogsApi* | [**auto_pause_auto_import**](docs/V2UserCatalogsApi.md#auto_pause_auto_import) | **POST** /v2/user/catalogs/{storeId}/autoImport/pause | Pause Auto Import
+*SwaggerClient::V2UserCatalogsApi* | [**auto_resume_auto_import**](docs/V2UserCatalogsApi.md#auto_resume_auto_import) | **POST** /v2/user/catalogs/{storeId}/autoImport/resume | Resume Auto Import
+*SwaggerClient::V2UserCatalogsApi* | [**auto_schedule_auto_import**](docs/V2UserCatalogsApi.md#auto_schedule_auto_import) | **POST** /v2/user/catalogs/{storeId}/autoImport/scheduling/schedules | Configure Auto Import Schedules
+*SwaggerClient::V2UserCatalogsApi* | [**auto_start_auto_import**](docs/V2UserCatalogsApi.md#auto_start_auto_import) | **POST** /v2/user/catalogs/{storeId}/autoImport/start | Start Auto Import Manually
+*SwaggerClient::V2UserCatalogsApi* | [**catalog_change_catalog_column_user_name**](docs/V2UserCatalogsApi.md#catalog_change_catalog_column_user_name) | **POST** /v2/user/catalogs/{storeId}/catalogColumns/{columnId}/rename | Change Catalog Column User Name
+*SwaggerClient::V2UserCatalogsApi* | [**catalog_change_custom_column_expression**](docs/V2UserCatalogsApi.md#catalog_change_custom_column_expression) | **PUT** /v2/user/catalogs/{storeId}/customColumns/{columnId}/expression | Change custom column expression
+*SwaggerClient::V2UserCatalogsApi* | [**catalog_change_custom_column_user_name**](docs/V2UserCatalogsApi.md#catalog_change_custom_column_user_name) | **POST** /v2/user/catalogs/{storeId}/customColumns/{columnId}/rename | Change Custom Column User Name
+*SwaggerClient::V2UserCatalogsApi* | [**catalog_compute_expression**](docs/V2UserCatalogsApi.md#catalog_compute_expression) | **POST** /v2/user/catalogs/{storeId}/customColumns/computeExpression | Compute the expression for this catalog.
+*SwaggerClient::V2UserCatalogsApi* | [**catalog_delete_custom_column**](docs/V2UserCatalogsApi.md#catalog_delete_custom_column) | **DELETE** /v2/user/catalogs/{storeId}/customColumns/{columnId} | Delete custom column
+*SwaggerClient::V2UserCatalogsApi* | [**catalog_get_beez_up_columns**](docs/V2UserCatalogsApi.md#catalog_get_beez_up_columns) | **GET** /v2/user/catalogs/beezupColumns | Get the BeezUP columns
+*SwaggerClient::V2UserCatalogsApi* | [**catalog_get_catalog_columns**](docs/V2UserCatalogsApi.md#catalog_get_catalog_columns) | **GET** /v2/user/catalogs/{storeId}/catalogColumns | Get catalog column list
+*SwaggerClient::V2UserCatalogsApi* | [**catalog_get_categories**](docs/V2UserCatalogsApi.md#catalog_get_categories) | **GET** /v2/user/catalogs/{storeId}/categories | Get category list
+*SwaggerClient::V2UserCatalogsApi* | [**catalog_get_custom_column_expression**](docs/V2UserCatalogsApi.md#catalog_get_custom_column_expression) | **GET** /v2/user/catalogs/{storeId}/customColumns/{columnId}/expression | Get the encrypted custom column expression
+*SwaggerClient::V2UserCatalogsApi* | [**catalog_get_custom_columns**](docs/V2UserCatalogsApi.md#catalog_get_custom_columns) | **GET** /v2/user/catalogs/{storeId}/customColumns | Get custom column list
+*SwaggerClient::V2UserCatalogsApi* | [**catalog_get_product**](docs/V2UserCatalogsApi.md#catalog_get_product) | **GET** /v2/user/catalogs/{storeId}/products/{productId} | Get product
+*SwaggerClient::V2UserCatalogsApi* | [**catalog_get_products**](docs/V2UserCatalogsApi.md#catalog_get_products) | **POST** /v2/user/catalogs/{storeId}/products | Get product list
+*SwaggerClient::V2UserCatalogsApi* | [**catalog_get_random_products**](docs/V2UserCatalogsApi.md#catalog_get_random_products) | **GET** /v2/user/catalogs/{storeId}/products/random | Get random product list
+*SwaggerClient::V2UserCatalogsApi* | [**catalog_save_custom_column**](docs/V2UserCatalogsApi.md#catalog_save_custom_column) | **PUT** /v2/user/catalogs/{storeId}/customColumns/{columnId} | Create or replace a custom column
+*SwaggerClient::V2UserCatalogsApi* | [**importation_activate_auto_import**](docs/V2UserCatalogsApi.md#importation_activate_auto_import) | **POST** /v2/user/catalogs/{storeId}/autoImport | Activate the auto importation of the last successful manual catalog importation.
+*SwaggerClient::V2UserCatalogsApi* | [**importation_cancel**](docs/V2UserCatalogsApi.md#importation_cancel) | **DELETE** /v2/user/catalogs/{storeId}/importations/{executionId} | Cancel importation
+*SwaggerClient::V2UserCatalogsApi* | [**importation_commit**](docs/V2UserCatalogsApi.md#importation_commit) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/commit | Commit Importation
+*SwaggerClient::V2UserCatalogsApi* | [**importation_commit_columns**](docs/V2UserCatalogsApi.md#importation_commit_columns) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/commitColumns | Commit columns
+*SwaggerClient::V2UserCatalogsApi* | [**importation_configure_catalog_column**](docs/V2UserCatalogsApi.md#importation_configure_catalog_column) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId} | Configure catalog column
+*SwaggerClient::V2UserCatalogsApi* | [**importation_configure_remaining_catalog_columns**](docs/V2UserCatalogsApi.md#importation_configure_remaining_catalog_columns) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/configureRemainingCatalogColumns | Configure remaining catalog columns
+*SwaggerClient::V2UserCatalogsApi* | [**importation_delete_custom_column**](docs/V2UserCatalogsApi.md#importation_delete_custom_column) | **DELETE** /v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId} | Delete Custom Column
+*SwaggerClient::V2UserCatalogsApi* | [**importation_get_custom_column_expression**](docs/V2UserCatalogsApi.md#importation_get_custom_column_expression) | **GET** /v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/expression | Get the encrypted custom column expression in this importation
+*SwaggerClient::V2UserCatalogsApi* | [**importation_get_custom_columns**](docs/V2UserCatalogsApi.md#importation_get_custom_columns) | **GET** /v2/user/catalogs/{storeId}/importations/{executionId}/customColumns | Get custom columns currently place in this importation
+*SwaggerClient::V2UserCatalogsApi* | [**importation_get_detected_catalog_columns**](docs/V2UserCatalogsApi.md#importation_get_detected_catalog_columns) | **GET** /v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns | Get detected catalog columns during this importation.
+*SwaggerClient::V2UserCatalogsApi* | [**importation_get_importation_monitoring**](docs/V2UserCatalogsApi.md#importation_get_importation_monitoring) | **GET** /v2/user/catalogs/{storeId}/importations/{executionId} | Get the importation status
+*SwaggerClient::V2UserCatalogsApi* | [**importation_get_manual_update_last_input_config**](docs/V2UserCatalogsApi.md#importation_get_manual_update_last_input_config) | **GET** /v2/user/catalogs/{storeId}/inputConfiguration | Get the last input configuration
+*SwaggerClient::V2UserCatalogsApi* | [**importation_get_product_sample**](docs/V2UserCatalogsApi.md#importation_get_product_sample) | **GET** /v2/user/catalogs/{storeId}/importations/{executionId}/productSamples/{productSampleIndex} | Get the product sample related to this importation with all columns (catalog and custom)
+*SwaggerClient::V2UserCatalogsApi* | [**importation_get_product_sample_custom_column_value**](docs/V2UserCatalogsApi.md#importation_get_product_sample_custom_column_value) | **GET** /v2/user/catalogs/{storeId}/importations/{executionId}/productSamples/{productSampleIndex}/customColumns/{columnId} | Get product sample custom column value related to this importation.
+*SwaggerClient::V2UserCatalogsApi* | [**importation_get_reportings**](docs/V2UserCatalogsApi.md#importation_get_reportings) | **GET** /v2/user/catalogs/{storeId}/importations | Get the latest catalog importation reporting
+*SwaggerClient::V2UserCatalogsApi* | [**importation_ignore_column**](docs/V2UserCatalogsApi.md#importation_ignore_column) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/ignore | Ignore Column
+*SwaggerClient::V2UserCatalogsApi* | [**importation_map_catalog_column**](docs/V2UserCatalogsApi.md#importation_map_catalog_column) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/map | Map catalog column to a BeezUP column
+*SwaggerClient::V2UserCatalogsApi* | [**importation_map_custom_column**](docs/V2UserCatalogsApi.md#importation_map_custom_column) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/map | Map custom column to a BeezUP column
+*SwaggerClient::V2UserCatalogsApi* | [**importation_reattend_column**](docs/V2UserCatalogsApi.md#importation_reattend_column) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/reattend | Reattend Column
+*SwaggerClient::V2UserCatalogsApi* | [**importation_save_custom_column**](docs/V2UserCatalogsApi.md#importation_save_custom_column) | **PUT** /v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId} | Create or replace a custom column
+*SwaggerClient::V2UserCatalogsApi* | [**importation_start_manual_update**](docs/V2UserCatalogsApi.md#importation_start_manual_update) | **POST** /v2/user/catalogs/{storeId}/importations | Start Manual Import
+*SwaggerClient::V2UserCatalogsApi* | [**importation_technical_progression**](docs/V2UserCatalogsApi.md#importation_technical_progression) | **GET** /v2/user/catalogs/{storeId}/importations/{executionId}/technicalProgression | Get technical progression
+*SwaggerClient::V2UserCatalogsApi* | [**importation_unmap_catalog_column**](docs/V2UserCatalogsApi.md#importation_unmap_catalog_column) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/unmap | Unmap catalog column
+*SwaggerClient::V2UserCatalogsApi* | [**importation_unmap_custom_column**](docs/V2UserCatalogsApi.md#importation_unmap_custom_column) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/unmap | Unmap custom column
+*SwaggerClient::V2UserChannelCatalogsApi* | [**configure_channel_catalog_cost_settings**](docs/V2UserChannelCatalogsApi.md#configure_channel_catalog_cost_settings) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/settings/cost | Disable a channel catalog
+*SwaggerClient::V2UserChannelCatalogsApi* | [**configure_channel_catalog_exclusion_filters**](docs/V2UserChannelCatalogsApi.md#configure_channel_catalog_exclusion_filters) | **PUT** /v2/user/channelCatalogs/{channelCatalogId}/exclusionFilters | Configure channel catalog exclusion filters
+*SwaggerClient::V2UserChannelCatalogsApi* | [**configure_channel_catalog_general_settings**](docs/V2UserChannelCatalogsApi.md#configure_channel_catalog_general_settings) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/settings/general | Disable a channel catalog
+*SwaggerClient::V2UserChannelCatalogsApi* | [**create_channel_catalog**](docs/V2UserChannelCatalogsApi.md#create_channel_catalog) | **POST** /v2/user/channelCatalogs/ | Create a new channel catalog
+*SwaggerClient::V2UserChannelCatalogsApi* | [**delete_channel_catalog**](docs/V2UserChannelCatalogsApi.md#delete_channel_catalog) | **DELETE** /v2/user/channelCatalogs/{channelCatalogId} | Delete the channel catalog
+*SwaggerClient::V2UserChannelCatalogsApi* | [**delete_channel_catalog_product_value_override**](docs/V2UserChannelCatalogsApi.md#delete_channel_catalog_product_value_override) | **DELETE** /v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides/{channelColumnId} | Delete a specific channel catalog product value override
+*SwaggerClient::V2UserChannelCatalogsApi* | [**disable_channel_catalog**](docs/V2UserChannelCatalogsApi.md#disable_channel_catalog) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/disable | Disable a channel catalog
+*SwaggerClient::V2UserChannelCatalogsApi* | [**disable_channel_catalog_product**](docs/V2UserChannelCatalogsApi.md#disable_channel_catalog_product) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/disable | Disable channel catalog product
+*SwaggerClient::V2UserChannelCatalogsApi* | [**enable_channel_catalog**](docs/V2UserChannelCatalogsApi.md#enable_channel_catalog) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/enable | Enable a channel catalog
+*SwaggerClient::V2UserChannelCatalogsApi* | [**get_channel_catalog**](docs/V2UserChannelCatalogsApi.md#get_channel_catalog) | **GET** /v2/user/channelCatalogs/{channelCatalogId} | Get the channel catalog information
+*SwaggerClient::V2UserChannelCatalogsApi* | [**get_channel_catalog_categories**](docs/V2UserChannelCatalogsApi.md#get_channel_catalog_categories) | **GET** /v2/user/channelCatalogs/{channelCatalogId}/categoryMappings | Get channel catalog categories
+*SwaggerClient::V2UserChannelCatalogsApi* | [**get_channel_catalog_exclusion_filter_operators**](docs/V2UserChannelCatalogsApi.md#get_channel_catalog_exclusion_filter_operators) | **GET** /v2/user/channelCatalogs/exclusionFilterOperators | Get channel catalog exclusion filter operators
+*SwaggerClient::V2UserChannelCatalogsApi* | [**get_channel_catalog_product_info**](docs/V2UserChannelCatalogsApi.md#get_channel_catalog_product_info) | **GET** /v2/user/channelCatalogs/{channelCatalogId}/products/{productId} | Get channel catalog product information
+*SwaggerClient::V2UserChannelCatalogsApi* | [**get_channel_catalog_product_info_list**](docs/V2UserChannelCatalogsApi.md#get_channel_catalog_product_info_list) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/products | Get channel catalog product information list
+*SwaggerClient::V2UserChannelCatalogsApi* | [**get_channel_catalogs**](docs/V2UserChannelCatalogsApi.md#get_channel_catalogs) | **GET** /v2/user/channelCatalogs/ | List all your current channel catalogs
+*SwaggerClient::V2UserChannelCatalogsApi* | [**map_channel_catalog_category**](docs/V2UserChannelCatalogsApi.md#map_channel_catalog_category) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/categoryMappings/map | Map channel catalog category
+*SwaggerClient::V2UserChannelCatalogsApi* | [**map_channel_catalog_columns**](docs/V2UserChannelCatalogsApi.md#map_channel_catalog_columns) | **PUT** /v2/user/channelCatalogs/{channelCatalogId}/columnMappings | Configure channel catalog column mappings
+*SwaggerClient::V2UserChannelCatalogsApi* | [**override_channel_catalog_product_overrides**](docs/V2UserChannelCatalogsApi.md#override_channel_catalog_product_overrides) | **PUT** /v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides | Override channel catalog product values
+*SwaggerClient::V2UserChannelCatalogsApi* | [**reenable_channel_catalog_product**](docs/V2UserChannelCatalogsApi.md#reenable_channel_catalog_product) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/reenable | Reenable channel catalog product
+*SwaggerClient::V2UserChannelCatalogsApi* | [**unmap_channel_catalog_category**](docs/V2UserChannelCatalogsApi.md#unmap_channel_catalog_category) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/categoryMappings/unmap | Unmap channel catalog category
+*SwaggerClient::V2UserChannelsApi* | [**get_channel_categories**](docs/V2UserChannelsApi.md#get_channel_categories) | **GET** /v2/user/channels/{channelId}/categories | Get channel categories
+*SwaggerClient::V2UserChannelsApi* | [**get_channel_columns**](docs/V2UserChannelsApi.md#get_channel_columns) | **POST** /v2/user/channels/{channelId}/columns | Get channel columns
+*SwaggerClient::V2UserChannelsApi* | [**get_channel_info**](docs/V2UserChannelsApi.md#get_channel_info) | **GET** /v2/user/channels/{channelId} | Get channel information
+*SwaggerClient::V2UserChannelsApi* | [**get_current_channels**](docs/V2UserChannelsApi.md#get_current_channels) | **GET** /v2/user/channels/ | List all available channel for this store
+*SwaggerClient::V2UserCustomerApi* | [**activate_user_account**](docs/V2UserCustomerApi.md#activate_user_account) | **POST** /v2/user/customer/account/activate | Activate the user account
+*SwaggerClient::V2UserCustomerApi* | [**change_password**](docs/V2UserCustomerApi.md#change_password) | **POST** /v2/user/customer/account/changePassword | Change user password
+*SwaggerClient::V2UserCustomerApi* | [**create_contract**](docs/V2UserCustomerApi.md#create_contract) | **POST** /v2/user/customer/contracts | Create a new contract
+*SwaggerClient::V2UserCustomerApi* | [**create_store**](docs/V2UserCustomerApi.md#create_store) | **POST** /v2/user/customer/stores | Create a new store
+*SwaggerClient::V2UserCustomerApi* | [**delete_next_contract**](docs/V2UserCustomerApi.md#delete_next_contract) | **DELETE** /v2/user/customer/contracts/next | Delete your next contract
+*SwaggerClient::V2UserCustomerApi* | [**delete_share**](docs/V2UserCustomerApi.md#delete_share) | **DELETE** /v2/user/customer/stores/{storeId}/shares/{userId} | Delete a share to another user
+*SwaggerClient::V2UserCustomerApi* | [**delete_store**](docs/V2UserCustomerApi.md#delete_store) | **DELETE** /v2/user/customer/stores/{storeId} | Delete a store
+*SwaggerClient::V2UserCustomerApi* | [**get_billing_periods**](docs/V2UserCustomerApi.md#get_billing_periods) | **GET** /v2/user/customer/billingPeriods | Get billing periods conditions
+*SwaggerClient::V2UserCustomerApi* | [**get_contracts**](docs/V2UserCustomerApi.md#get_contracts) | **GET** /v2/user/customer/contracts | Get contract list
+*SwaggerClient::V2UserCustomerApi* | [**get_credit_card_info**](docs/V2UserCustomerApi.md#get_credit_card_info) | **GET** /v2/user/customer/account/creditCardInfo | Get credit card information
+*SwaggerClient::V2UserCustomerApi* | [**get_friend_info**](docs/V2UserCustomerApi.md#get_friend_info) | **GET** /v2/user/customer/friends/{userId} | Get friend information
+*SwaggerClient::V2UserCustomerApi* | [**get_invoices**](docs/V2UserCustomerApi.md#get_invoices) | **GET** /v2/user/customer/invoices | Get all your invoices
+*SwaggerClient::V2UserCustomerApi* | [**get_offer**](docs/V2UserCustomerApi.md#get_offer) | **POST** /v2/user/customer/offers | Get offer pricing
+*SwaggerClient::V2UserCustomerApi* | [**get_rights**](docs/V2UserCustomerApi.md#get_rights) | **POST** /v2/user/customer/stores/{storeId}/rights | Get store's rights
+*SwaggerClient::V2UserCustomerApi* | [**get_shares**](docs/V2UserCustomerApi.md#get_shares) | **GET** /v2/user/customer/stores/{storeId}/shares | Get shares related to this store
+*SwaggerClient::V2UserCustomerApi* | [**get_standard_offers**](docs/V2UserCustomerApi.md#get_standard_offers) | **GET** /v2/user/customer/offers | Get all standard offers
+*SwaggerClient::V2UserCustomerApi* | [**get_store**](docs/V2UserCustomerApi.md#get_store) | **GET** /v2/user/customer/stores/{storeId} | Get store's information
+*SwaggerClient::V2UserCustomerApi* | [**get_store_alerts**](docs/V2UserCustomerApi.md#get_store_alerts) | **GET** /v2/user/customer/stores/{storeId}/alerts | Get store's alerts
+*SwaggerClient::V2UserCustomerApi* | [**get_stores**](docs/V2UserCustomerApi.md#get_stores) | **GET** /v2/user/customer/stores | Get store list
+*SwaggerClient::V2UserCustomerApi* | [**get_user_account_info**](docs/V2UserCustomerApi.md#get_user_account_info) | **GET** /v2/user/customer/account | Get user account information
+*SwaggerClient::V2UserCustomerApi* | [**logout**](docs/V2UserCustomerApi.md#logout) | **POST** /v2/user/customer/security/logout | Log out the current user from go2
+*SwaggerClient::V2UserCustomerApi* | [**reactivate_current_contract**](docs/V2UserCustomerApi.md#reactivate_current_contract) | **POST** /v2/user/customer/contracts/current/reenableAutoRenewal | Reactivate your terminated contract.
+*SwaggerClient::V2UserCustomerApi* | [**resend_email_activation**](docs/V2UserCustomerApi.md#resend_email_activation) | **POST** /v2/user/customer/account/resendEmailActivation | Resend email activation
+*SwaggerClient::V2UserCustomerApi* | [**save_company_info**](docs/V2UserCustomerApi.md#save_company_info) | **PUT** /v2/user/customer/account/companyInfo | Change company information
+*SwaggerClient::V2UserCustomerApi* | [**save_credit_card_info**](docs/V2UserCustomerApi.md#save_credit_card_info) | **PUT** /v2/user/customer/account/creditCardInfo | Save user credit card info
+*SwaggerClient::V2UserCustomerApi* | [**save_personal_info**](docs/V2UserCustomerApi.md#save_personal_info) | **PUT** /v2/user/customer/account/personalInfo | Save user personal information
+*SwaggerClient::V2UserCustomerApi* | [**save_profile_picture_info**](docs/V2UserCustomerApi.md#save_profile_picture_info) | **PUT** /v2/user/customer/account/profilePictureInfo | Change user picture information
+*SwaggerClient::V2UserCustomerApi* | [**save_store_alert**](docs/V2UserCustomerApi.md#save_store_alert) | **PUT** /v2/user/customer/stores/{storeId}/alerts/{alertId} | Save store alert
+*SwaggerClient::V2UserCustomerApi* | [**share**](docs/V2UserCustomerApi.md#share) | **POST** /v2/user/customer/stores/{storeId}/shares | Share a store to another user
+*SwaggerClient::V2UserCustomerApi* | [**terminate_current_contract**](docs/V2UserCustomerApi.md#terminate_current_contract) | **POST** /v2/user/customer/contracts/current/disableAutoRenewal | Schedule termination of your current contract at the end of the commitment.
+*SwaggerClient::V2UserCustomerApi* | [**update_store**](docs/V2UserCustomerApi.md#update_store) | **PATCH** /v2/user/customer/stores/{storeId} | Update some store's information.
+*SwaggerClient::V2UserMarketplacesChannelCatalogsApi* | [**get_channel_catalog_marketplace_properties**](docs/V2UserMarketplacesChannelCatalogsApi.md#get_channel_catalog_marketplace_properties) | **GET** /v2/user/marketplaces/channelcatalogs/{channelCatalogId}/properties | Get the marketplace properties for a channel catalog
+*SwaggerClient::V2UserMarketplacesChannelCatalogsApi* | [**get_channel_catalog_marketplace_settings**](docs/V2UserMarketplacesChannelCatalogsApi.md#get_channel_catalog_marketplace_settings) | **GET** /v2/user/marketplaces/channelcatalogs/{channelCatalogId}/settings | Get the marketplace settings for a channel catalog
+*SwaggerClient::V2UserMarketplacesChannelCatalogsApi* | [**get_marketplace_account_stores**](docs/V2UserMarketplacesChannelCatalogsApi.md#get_marketplace_account_stores) | **GET** /v2/user/marketplaces/channelcatalogs/ | Get  you marketplace channel catalog list
+*SwaggerClient::V2UserMarketplacesChannelCatalogsApi* | [**get_publications**](docs/V2UserMarketplacesChannelCatalogsApi.md#get_publications) | **GET** /v2/user/marketplaces/channelcatalogs/publications/{marketplaceTechnicalCode}/{accountId}/history | Fetch the publication history for an account, sorted by descending start date
+*SwaggerClient::V2UserMarketplacesChannelCatalogsApi* | [**set_channel_catalog_marketplace_settings**](docs/V2UserMarketplacesChannelCatalogsApi.md#set_channel_catalog_marketplace_settings) | **POST** /v2/user/marketplaces/channelcatalogs/{channelCatalogId}/settings | Save new marketplace settings for a channel catalog
+*SwaggerClient::V2UserMarketplacesOrdersApi* | [**change_order**](docs/V2UserMarketplacesOrdersApi.md#change_order) | **POST** /v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/{changeOrderType} | Change your marketplace Order Information (accept, ship, etc.)
+*SwaggerClient::V2UserMarketplacesOrdersApi* | [**change_order_list**](docs/V2UserMarketplacesOrdersApi.md#change_order_list) | **POST** /v2/user/marketplaces/orders/batches/changeOrders/{changeOrderType} | Send a batch of operations to change your marketplace Order information (accept, ship, etc.)
+*SwaggerClient::V2UserMarketplacesOrdersApi* | [**clear_merchant_order_info**](docs/V2UserMarketplacesOrdersApi.md#clear_merchant_order_info) | **POST** /v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/clearMerchantOrderInfo | Clear an Order's merchant information
+*SwaggerClient::V2UserMarketplacesOrdersApi* | [**clear_merchant_order_info_list**](docs/V2UserMarketplacesOrdersApi.md#clear_merchant_order_info_list) | **POST** /v2/user/marketplaces/orders/batches/clearMerchantOrderInfos | Send a batch of operations to clear an Order's merchant information
+*SwaggerClient::V2UserMarketplacesOrdersApi* | [**configure_automatic_transitions**](docs/V2UserMarketplacesOrdersApi.md#configure_automatic_transitions) | **POST** /v2/user/marketplaces/orders/automaticTransitions | Configure new or existing automatic Order status transition
+*SwaggerClient::V2UserMarketplacesOrdersApi* | [**export_orders**](docs/V2UserMarketplacesOrdersApi.md#export_orders) | **POST** /v2/user/marketplaces/orders/exportations | Request a new Order report exportation to be generated
+*SwaggerClient::V2UserMarketplacesOrdersApi* | [**get_automatic_transitions**](docs/V2UserMarketplacesOrdersApi.md#get_automatic_transitions) | **GET** /v2/user/marketplaces/orders/automaticTransitions | Get list of configured automatic Order status transitions
+*SwaggerClient::V2UserMarketplacesOrdersApi* | [**get_marketplace_accounts_synchronization**](docs/V2UserMarketplacesOrdersApi.md#get_marketplace_accounts_synchronization) | **GET** /v2/user/marketplaces/orders/status | Get current synchronization status between your marketplaces and BeezUP accounts
+*SwaggerClient::V2UserMarketplacesOrdersApi* | [**get_order**](docs/V2UserMarketplacesOrdersApi.md#get_order) | **GET** /v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId} | Get full Order and Order Item(s) properties
+*SwaggerClient::V2UserMarketplacesOrdersApi* | [**get_order_exportations**](docs/V2UserMarketplacesOrdersApi.md#get_order_exportations) | **GET** /v2/user/marketplaces/orders/exportations | Get a paginated list of Order report exportations
+*SwaggerClient::V2UserMarketplacesOrdersApi* | [**get_order_history**](docs/V2UserMarketplacesOrdersApi.md#get_order_history) | **GET** /v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/history | Get an Order's harvest and change history
+*SwaggerClient::V2UserMarketplacesOrdersApi* | [**get_order_list_full**](docs/V2UserMarketplacesOrdersApi.md#get_order_list_full) | **POST** /v2/user/marketplaces/orders/list/full | Get a paginated list of all Orders with all Order and Order Item(s) properties
+*SwaggerClient::V2UserMarketplacesOrdersApi* | [**get_order_list_light**](docs/V2UserMarketplacesOrdersApi.md#get_order_list_light) | **POST** /v2/user/marketplaces/orders/list/light | Get a paginated list of all Orders without details
+*SwaggerClient::V2UserMarketplacesOrdersApi* | [**harvest_all**](docs/V2UserMarketplacesOrdersApi.md#harvest_all) | **POST** /v2/user/marketplaces/orders/harvest | Send harvest request to all your marketplaces
+*SwaggerClient::V2UserMarketplacesOrdersApi* | [**harvest_order**](docs/V2UserMarketplacesOrdersApi.md#harvest_order) | **POST** /v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/harvest | Send harvest request for a single Order
+*SwaggerClient::V2UserMarketplacesOrdersApi* | [**set_merchant_order_info**](docs/V2UserMarketplacesOrdersApi.md#set_merchant_order_info) | **POST** /v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/setMerchantOrderInfo | Set an Order's merchant information
+*SwaggerClient::V2UserMarketplacesOrdersApi* | [**set_merchant_order_info_list**](docs/V2UserMarketplacesOrdersApi.md#set_merchant_order_info_list) | **POST** /v2/user/marketplaces/orders/batches/setMerchantOrderInfos | Send a batch of operations to set an Order's merchant information
 
 
 ## Documentation for Models
@@ -294,6 +287,7 @@ Class | Method | HTTP request | Description
  - [SwaggerClient::BeezUPCommonColumnImportance](docs/BeezUPCommonColumnImportance.md)
  - [SwaggerClient::BeezUPCommonCountryIsoCodeAlpha3](docs/BeezUPCommonCountryIsoCodeAlpha3.md)
  - [SwaggerClient::BeezUPCommonCurrencyCode](docs/BeezUPCommonCurrencyCode.md)
+ - [SwaggerClient::BeezUPCommonDocUrl](docs/BeezUPCommonDocUrl.md)
  - [SwaggerClient::BeezUPCommonEmail](docs/BeezUPCommonEmail.md)
  - [SwaggerClient::BeezUPCommonErrorResponseMessage](docs/BeezUPCommonErrorResponseMessage.md)
  - [SwaggerClient::BeezUPCommonErrorSummary](docs/BeezUPCommonErrorSummary.md)
@@ -315,6 +309,7 @@ Class | Method | HTTP request | Description
  - [SwaggerClient::BeezUPCommonMarketplaceTechnicalCode](docs/BeezUPCommonMarketplaceTechnicalCode.md)
  - [SwaggerClient::BeezUPCommonOperationId](docs/BeezUPCommonOperationId.md)
  - [SwaggerClient::BeezUPCommonPaginationResult](docs/BeezUPCommonPaginationResult.md)
+ - [SwaggerClient::BeezUPCommonPaginationResultLinks](docs/BeezUPCommonPaginationResultLinks.md)
  - [SwaggerClient::BeezUPCommonProductBasicInfo](docs/BeezUPCommonProductBasicInfo.md)
  - [SwaggerClient::BeezUPCommonProductId](docs/BeezUPCommonProductId.md)
  - [SwaggerClient::BeezUPCommonStoreId](docs/BeezUPCommonStoreId.md)
@@ -394,7 +389,6 @@ Class | Method | HTTP request | Description
  - [SwaggerClient::ClickIncludedAndVariablePrice](docs/ClickIncludedAndVariablePrice.md)
  - [SwaggerClient::ColumnConfiguration](docs/ColumnConfiguration.md)
  - [SwaggerClient::ColumnCultureName](docs/ColumnCultureName.md)
- - [SwaggerClient::ColumnCustomConfiguration](docs/ColumnCustomConfiguration.md)
  - [SwaggerClient::ColumnFormat](docs/ColumnFormat.md)
  - [SwaggerClient::ColumnId](docs/ColumnId.md)
  - [SwaggerClient::ColumnMapping](docs/ColumnMapping.md)
@@ -562,6 +556,7 @@ Class | Method | HTTP request | Description
  - [SwaggerClient::OrderOperationResponse](docs/OrderOperationResponse.md)
  - [SwaggerClient::PageNumber](docs/PageNumber.md)
  - [SwaggerClient::PageSize](docs/PageSize.md)
+ - [SwaggerClient::PaginationRequestParameters](docs/PaginationRequestParameters.md)
  - [SwaggerClient::PaymentMethod](docs/PaymentMethod.md)
  - [SwaggerClient::PerformanceIndicatorFormula](docs/PerformanceIndicatorFormula.md)
  - [SwaggerClient::PerformanceIndicatorFormulaOperatorName](docs/PerformanceIndicatorFormulaOperatorName.md)
@@ -574,7 +569,9 @@ Class | Method | HTTP request | Description
  - [SwaggerClient::Processing](docs/Processing.md)
  - [SwaggerClient::Product](docs/Product.md)
  - [SwaggerClient::ProductFilters](docs/ProductFilters.md)
+ - [SwaggerClient::ProductOverrideWithCatalogValue](docs/ProductOverrideWithCatalogValue.md)
  - [SwaggerClient::ProductOverrides](docs/ProductOverrides.md)
+ - [SwaggerClient::ProductOverridesWithCatalogValues](docs/ProductOverridesWithCatalogValues.md)
  - [SwaggerClient::ProductSample](docs/ProductSample.md)
  - [SwaggerClient::ProductStateFilter](docs/ProductStateFilter.md)
  - [SwaggerClient::ProductValues](docs/ProductValues.md)

@@ -70,7 +70,7 @@ module SwaggerClient
         :'product_title' => :'String',
         :'product_image_url' => :'String',
         :'product_active' => :'BOOLEAN',
-        :'overrides' => :'ProductOverrides',
+        :'overrides' => :'ProductOverridesWithCatalogValues',
         :'disabled' => :'BOOLEAN',
         :'category_mapped' => :'BOOLEAN',
         :'excluded' => :'BOOLEAN',
@@ -159,10 +159,6 @@ module SwaggerClient
         invalid_properties.push("invalid value for 'product_image_url', product_image_url cannot be nil.")
       end
 
-      if @product_active.nil?
-        invalid_properties.push("invalid value for 'product_active', product_active cannot be nil.")
-      end
-
       if @overrides.nil?
         invalid_properties.push("invalid value for 'overrides', overrides cannot be nil.")
       end
@@ -193,7 +189,6 @@ module SwaggerClient
       return false if @product_sku.nil?
       return false if @product_title.nil?
       return false if @product_image_url.nil?
-      return false if @product_active.nil?
       return false if @overrides.nil?
       return false if @disabled.nil?
       return false if @category_mapped.nil?

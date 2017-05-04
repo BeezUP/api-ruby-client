@@ -23,6 +23,7 @@ module SwaggerClient
     SPECIAL_INT = "SpecialInt".freeze
     IN_STOCK = "InStock".freeze
     UNKNOWN = "Unknown".freeze
+    IMAGE_URL = "ImageUrl".freeze
   end
 
 end

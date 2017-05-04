@@ -14,18 +14,38 @@ require 'date'
 module SwaggerClient
 
   class GetChannelCatalogProductInfoListRequest
-    # The product sku to search
+    # Search by product sku. If null the filter will not be taken in account.
     attr_accessor :sku
 
-    # The  product title to search
+    # Search by product title. If null the filter will not be taken in account.
     attr_accessor :title
+
+    # Search overrided products. If null the filter will not be taken in account.
+    attr_accessor :overrided
+
+    # Search disabled products. If null the filter will not be taken in account.
+    attr_accessor :disabled
+
+    # Search product with category mapped with the channel. If null the filter will not be taken in account.
+    attr_accessor :category_mapped
+
+    # Search excluded products by at least an exclusion filter. If null the filter will not be taken in account.
+    attr_accessor :excluded
+
+    # If false, search for product absent from the current catalog. If null the filter will not be taken in account.
+    attr_accessor :active
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'sku' => :'sku',
-        :'title' => :'title'
+        :'title' => :'title',
+        :'overrided' => :'overrided',
+        :'disabled' => :'disabled',
+        :'category_mapped' => :'categoryMapped',
+        :'excluded' => :'excluded',
+        :'active' => :'active'
       }
     end
 
@@ -33,7 +53,12 @@ module SwaggerClient
     def self.swagger_types
       {
         :'sku' => :'String',
-        :'title' => :'String'
+        :'title' => :'String',
+        :'overrided' => :'BOOLEAN',
+        :'disabled' => :'BOOLEAN',
+        :'category_mapped' => :'BOOLEAN',
+        :'excluded' => :'BOOLEAN',
+        :'active' => :'BOOLEAN'
       }
     end
 
@@ -51,6 +76,26 @@ module SwaggerClient
 
       if attributes.has_key?(:'title')
         self.title = attributes[:'title']
+      end
+
+      if attributes.has_key?(:'overrided')
+        self.overrided = attributes[:'overrided']
+      end
+
+      if attributes.has_key?(:'disabled')
+        self.disabled = attributes[:'disabled']
+      end
+
+      if attributes.has_key?(:'categoryMapped')
+        self.category_mapped = attributes[:'categoryMapped']
+      end
+
+      if attributes.has_key?(:'excluded')
+        self.excluded = attributes[:'excluded']
+      end
+
+      if attributes.has_key?(:'active')
+        self.active = attributes[:'active']
       end
 
     end
@@ -74,7 +119,12 @@ module SwaggerClient
       return true if self.equal?(o)
       self.class == o.class &&
           sku == o.sku &&
-          title == o.title
+          title == o.title &&
+          overrided == o.overrided &&
+          disabled == o.disabled &&
+          category_mapped == o.category_mapped &&
+          excluded == o.excluded &&
+          active == o.active
     end
 
     # @see the `==` method
@@ -86,7 +136,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [sku, title].hash
+      [sku, title, overrided, disabled, category_mapped, excluded, active].hash
     end
 
     # Builds the object from hash

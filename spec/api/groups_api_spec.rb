@@ -54,27 +54,4 @@ describe 'GroupsApi' do
     end
   end
 
-  # unit tests for get_user_list_group
-  # Get list of values related to this group name
-  # 
-  # @param list_group_name The list group name your want to get
-  # @param [Hash] opts the optional parameters
-  # @return [Array<BeezUPCommonLOVLink2>]
-  describe 'get_user_list_group test' do
-    it "should work" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  # unit tests for get_user_list_group_names
-  # Get list of group of list name
-  # 
-  # @param [Hash] opts the optional parameters
-  # @return [Array<BeezUPCommonLOVLink2>]
-  describe 'get_user_list_group_names test' do
-    it "should work" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
 end

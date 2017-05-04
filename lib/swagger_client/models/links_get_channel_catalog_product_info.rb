@@ -14,6 +14,8 @@ require 'date'
 module SwaggerClient
 
   class LinksGetChannelCatalogProductInfo
+    attr_accessor :doc_url
+
     # The description of the link
     attr_accessor :description
 
@@ -34,6 +36,7 @@ module SwaggerClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'doc_url' => :'docUrl',
         :'description' => :'description',
         :'href' => :'href',
         :'operation_id' => :'operationId',
@@ -47,6 +50,7 @@ module SwaggerClient
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'doc_url' => :'BeezUPCommonDocUrl',
         :'description' => :'String',
         :'href' => :'BeezUPCommonHref',
         :'operation_id' => :'BeezUPCommonOperationId',
@@ -64,6 +68,10 @@ module SwaggerClient
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
+
+      if attributes.has_key?(:'docUrl')
+        self.doc_url = attributes[:'docUrl']
+      end
 
       if attributes.has_key?(:'description')
         self.description = attributes[:'description']
@@ -115,6 +123,7 @@ module SwaggerClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          doc_url == o.doc_url &&
           description == o.description &&
           href == o.href &&
           operation_id == o.operation_id &&
@@ -133,7 +142,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [description, href, operation_id, method, parameters, templated, info].hash
+      [doc_url, description, href, operation_id, method, parameters, templated, info].hash
     end
 
     # Builds the object from hash

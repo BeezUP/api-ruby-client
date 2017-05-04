@@ -55,28 +55,4 @@ describe 'LOVApi' do
     end
   end
 
-  # unit tests for get_user_list_names
-  # Get all list names
-  # 
-  # @param [Hash] opts the optional parameters
-  # @return [Array<BeezUPCommonLOVLink2>]
-  describe 'get_user_list_names test' do
-    it "should work" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  # unit tests for get_user_list_of_values
-  # Get the list of values related to this list name
-  # 
-  # @param list_name The list of value name your want to get
-  # @param [Hash] opts the optional parameters
-  # @option opts [Array<String>] :accept_language Indicates that the client accepts the following languages.
-  # @return [Array<BeezUPCommonListOfValueItem>]
-  describe 'get_user_list_of_values test' do
-    it "should work" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
 end

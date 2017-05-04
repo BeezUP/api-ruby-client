@@ -28,6 +28,10 @@ module SwaggerClient
 
     attr_accessor :advanced_filters
 
+    attr_accessor :page_size
+
+    attr_accessor :page_number
+
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -37,7 +41,9 @@ module SwaggerClient
         :'end_period_utc_date' => :'endPeriodUtcDate',
         :'category_filter' => :'categoryFilter',
         :'indicator_filters' => :'indicatorFilters',
-        :'advanced_filters' => :'advancedFilters'
+        :'advanced_filters' => :'advancedFilters',
+        :'page_size' => :'pageSize',
+        :'page_number' => :'pageNumber'
       }
     end
 
@@ -49,7 +55,9 @@ module SwaggerClient
         :'end_period_utc_date' => :'DateTime',
         :'category_filter' => :'ReportCategoryFilter',
         :'indicator_filters' => :'Array<ReportIndicatorFilter>',
-        :'advanced_filters' => :'ReportAdvancedFilters'
+        :'advanced_filters' => :'ReportAdvancedFilters',
+        :'page_size' => :'PageSize',
+        :'page_number' => :'PageNumber'
       }
     end
 
@@ -85,6 +93,14 @@ module SwaggerClient
 
       if attributes.has_key?(:'advancedFilters')
         self.advanced_filters = attributes[:'advancedFilters']
+      end
+
+      if attributes.has_key?(:'pageSize')
+        self.page_size = attributes[:'pageSize']
+      end
+
+      if attributes.has_key?(:'pageNumber')
+        self.page_number = attributes[:'pageNumber']
       end
 
     end
@@ -127,7 +143,9 @@ module SwaggerClient
           end_period_utc_date == o.end_period_utc_date &&
           category_filter == o.category_filter &&
           indicator_filters == o.indicator_filters &&
-          advanced_filters == o.advanced_filters
+          advanced_filters == o.advanced_filters &&
+          page_size == o.page_size &&
+          page_number == o.page_number
     end
 
     # @see the `==` method
@@ -139,7 +157,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [channel_id, begin_period_utc_date, end_period_utc_date, category_filter, indicator_filters, advanced_filters].hash
+      [channel_id, begin_period_utc_date, end_period_utc_date, category_filter, indicator_filters, advanced_filters, page_size, page_number].hash
     end
 
     # Builds the object from hash

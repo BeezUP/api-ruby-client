@@ -14,6 +14,9 @@ require 'date'
 module SwaggerClient
 
   class BeezUPCommonUserErrorMessage
+    # The documentation related to this operation.
+    attr_accessor :doc_url
+
     # the error code. The error code can be a pattern containing the argument's name
     attr_accessor :code
 
@@ -30,6 +33,7 @@ module SwaggerClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'doc_url' => :'docUrl',
         :'code' => :'code',
         :'message' => :'message',
         :'culture_name' => :'cultureName',
@@ -40,6 +44,7 @@ module SwaggerClient
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'doc_url' => :'String',
         :'code' => :'String',
         :'message' => :'String',
         :'culture_name' => :'String',
@@ -54,6 +59,10 @@ module SwaggerClient
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
+
+      if attributes.has_key?(:'docUrl')
+        self.doc_url = attributes[:'docUrl']
+      end
 
       if attributes.has_key?(:'code')
         self.code = attributes[:'code']
@@ -103,6 +112,7 @@ module SwaggerClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          doc_url == o.doc_url &&
           code == o.code &&
           message == o.message &&
           culture_name == o.culture_name &&
@@ -118,7 +128,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [code, message, culture_name, arguments].hash
+      [doc_url, code, message, culture_name, arguments].hash
     end
 
     # Builds the object from hash

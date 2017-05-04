@@ -102,10 +102,6 @@ module SwaggerClient
         invalid_properties.push("invalid value for 'product_image_url', product_image_url cannot be nil.")
       end
 
-      if @product_active.nil?
-        invalid_properties.push("invalid value for 'product_active', product_active cannot be nil.")
-      end
-
       return invalid_properties
     end
 
@@ -116,7 +112,6 @@ module SwaggerClient
       return false if @product_sku.nil?
       return false if @product_title.nil?
       return false if @product_image_url.nil?
-      return false if @product_active.nil?
       return true
     end
 

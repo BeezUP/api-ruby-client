@@ -43,17 +43,6 @@ describe 'SecurityApi' do
     end
   end
 
-  # unit tests for logout
-  # Log out the current user from go2
-  # Log out the current user from go2
-  # @param [Hash] opts the optional parameters
-  # @return [nil]
-  describe 'logout test' do
-    it "should work" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
   # unit tests for lost_password
   # Lost password
   # Lost password - Your password will be regenerated and sent to your email

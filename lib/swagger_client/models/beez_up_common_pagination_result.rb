@@ -17,7 +17,6 @@ module SwaggerClient
     # The entry count currently returned
     attr_accessor :entry_count
 
-    # The navigation links 'first', 'last', 'next', 'previous'
     attr_accessor :links
 
     # The page count
@@ -41,7 +40,7 @@ module SwaggerClient
     def self.swagger_types
       {
         :'entry_count' => :'Integer',
-        :'links' => :'Array<BeezUPCommonLink2>',
+        :'links' => :'BeezUPCommonPaginationResultLinks',
         :'page_count' => :'Integer',
         :'total_entry_count' => :'Integer'
       }
@@ -60,9 +59,7 @@ module SwaggerClient
       end
 
       if attributes.has_key?(:'links')
-        if (value = attributes[:'links']).is_a?(Array)
-          self.links = value
-        end
+        self.links = attributes[:'links']
       end
 
       if attributes.has_key?(:'pageCount')
