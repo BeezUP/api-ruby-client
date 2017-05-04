@@ -1190,7 +1190,7 @@ describe 'BeezUPApi' do
   # @param format 
   # @param request 
   # @param [Hash] opts the optional parameters
-  # @return [Array<BeezUPCommonLink2>]
+  # @return [BeezUPCommonLink3]
   describe 'get_store_report_by_day_export test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

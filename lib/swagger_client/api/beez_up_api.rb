@@ -5111,7 +5111,7 @@ module SwaggerClient
     # @param format 
     # @param request 
     # @param [Hash] opts the optional parameters
-    # @return [Array<BeezUPCommonLink2>]
+    # @return [BeezUPCommonLink3]
     def get_store_report_by_day_export(store_id, format, request, opts = {})
       data, _status_code, _headers = get_store_report_by_day_export_with_http_info(store_id, format, request, opts)
       return data
@@ -5123,7 +5123,7 @@ module SwaggerClient
     # @param format 
     # @param request 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Array<BeezUPCommonLink2>, Fixnum, Hash)>] Array<BeezUPCommonLink2> data, response status code and response headers
+    # @return [Array<(BeezUPCommonLink3, Fixnum, Hash)>] BeezUPCommonLink3 data, response status code and response headers
     def get_store_report_by_day_export_with_http_info(store_id, format, request, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: BeezUPApi.get_store_report_by_day_export ..."
@@ -5164,7 +5164,7 @@ module SwaggerClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Array<BeezUPCommonLink2>')
+        :return_type => 'BeezUPCommonLink3')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: BeezUPApi#get_store_report_by_day_export\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

@@ -5047,7 +5047,7 @@ Name | Type | Description  | Notes
 
 
 # **get_store_report_by_day_export**
-> Array&lt;BeezUPCommonLink2&gt; get_store_report_by_day_export(store_id, format, request)
+> BeezUPCommonLink3 get_store_report_by_day_export(store_id, format, request)
 
 Get the report by day
 
@@ -5093,7 +5093,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Array&lt;BeezUPCommonLink2&gt;**](BeezUPCommonLink2.md)
+[**BeezUPCommonLink3**](BeezUPCommonLink3.md)
 
 ### Authorization
 

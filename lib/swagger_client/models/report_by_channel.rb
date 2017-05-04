@@ -40,7 +40,6 @@ module SwaggerClient
     # The performance indicator based on the performance indicator formula indicated in the request for this channel
     attr_accessor :performance_indicator
 
-    # The action list on this channel
     attr_accessor :links
 
 
@@ -72,7 +71,7 @@ module SwaggerClient
         :'turn_over' => :'Float',
         :'margin' => :'Float',
         :'performance_indicator' => :'Float',
-        :'links' => :'Array<BeezUPCommonLink2>'
+        :'links' => :'ReportByChannelLinks'
       }
     end
 
@@ -121,9 +120,7 @@ module SwaggerClient
       end
 
       if attributes.has_key?(:'links')
-        if (value = attributes[:'links']).is_a?(Array)
-          self.links = value
-        end
+        self.links = attributes[:'links']
       end
 
     end

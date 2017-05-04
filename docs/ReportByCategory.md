@@ -13,6 +13,6 @@ Name | Type | Description | Notes
 **turn_over** | **Float** | The Turnover for this category | 
 **margin** | **Float** | The margin for this category | 
 **performance_indicator** | **Float** | The performance indicator based on the performance indicator formula indicated in the request for this category | 
-**links** | [**Array&lt;BeezUPCommonLink2&gt;**](BeezUPCommonLink2.md) | The action list on this catagory | [optional] 
+**links** | [**ReportByCategoryLinks**](ReportByCategoryLinks.md) |  | [optional] 
 
 

@@ -12,6 +12,6 @@ Name | Type | Description | Notes
 **turn_over** | **Float** | The Turnover for this product | 
 **margin** | **Float** | The margin for this product | 
 **performance_indicator** | **Float** | The performance indicator based on the performance indicator formula indicated in the request for this product | 
-**links** | [**Array&lt;BeezUPCommonLink2&gt;**](BeezUPCommonLink2.md) | The action list on this product | 
+**links** | [**ReportByProductLinks**](ReportByProductLinks.md) |  | 
 
 
