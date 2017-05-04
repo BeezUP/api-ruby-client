@@ -369,7 +369,7 @@ Class | Method | HTTP request | Description
  - [SwaggerClient::ChannelCatalogProductInfoLinks](docs/ChannelCatalogProductInfoLinks.md)
  - [SwaggerClient::ChannelCatalogProductInfoList](docs/ChannelCatalogProductInfoList.md)
  - [SwaggerClient::ChannelCatalogProductInfoListLinks](docs/ChannelCatalogProductInfoListLinks.md)
- - [SwaggerClient::ChannelCatalogStatus](docs/ChannelCatalogStatus.md)
+ - [SwaggerClient::ChannelCatalogState](docs/ChannelCatalogState.md)
  - [SwaggerClient::ChannelCategory](docs/ChannelCategory.md)
  - [SwaggerClient::ChannelCategoryChannelCode](docs/ChannelCategoryChannelCode.md)
  - [SwaggerClient::ChannelCategoryColumnOverride](docs/ChannelCategoryColumnOverride.md)

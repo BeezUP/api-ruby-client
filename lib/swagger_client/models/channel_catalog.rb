@@ -43,7 +43,7 @@ module SwaggerClient
 
     attr_accessor :export_url
 
-    attr_accessor :status
+    attr_accessor :state
 
     # Indicates the actions you can do on a channel catalog
     attr_accessor :links
@@ -65,7 +65,7 @@ module SwaggerClient
         :'column_mappings' => :'columnMappings',
         :'exclusion_filters' => :'exclusionFilters',
         :'export_url' => :'exportUrl',
-        :'status' => :'status',
+        :'state' => :'state',
         :'links' => :'links'
       }
     end
@@ -86,7 +86,7 @@ module SwaggerClient
         :'column_mappings' => :'ColumnMappingWithNameList',
         :'exclusion_filters' => :'ExclusionFilters',
         :'export_url' => :'BeezUPCommonHttpUrl',
-        :'status' => :'ChannelCatalogStatus',
+        :'state' => :'ChannelCatalogState',
         :'links' => :'Array<BeezUPCommonLink2>'
       }
     end
@@ -151,8 +151,8 @@ module SwaggerClient
         self.export_url = attributes[:'exportUrl']
       end
 
-      if attributes.has_key?(:'status')
-        self.status = attributes[:'status']
+      if attributes.has_key?(:'state')
+        self.state = attributes[:'state']
       end
 
       if attributes.has_key?(:'links')
@@ -203,8 +203,8 @@ module SwaggerClient
         invalid_properties.push("invalid value for 'cost_settings', cost_settings cannot be nil.")
       end
 
-      if @status.nil?
-        invalid_properties.push("invalid value for 'status', status cannot be nil.")
+      if @state.nil?
+        invalid_properties.push("invalid value for 'state', state cannot be nil.")
       end
 
       if @links.nil?
@@ -226,7 +226,7 @@ module SwaggerClient
       return false if @store_id.nil?
       return false if @general_settings.nil?
       return false if @cost_settings.nil?
-      return false if @status.nil?
+      return false if @state.nil?
       return false if @links.nil?
       return true
     end
@@ -249,7 +249,7 @@ module SwaggerClient
           column_mappings == o.column_mappings &&
           exclusion_filters == o.exclusion_filters &&
           export_url == o.export_url &&
-          status == o.status &&
+          state == o.state &&
           links == o.links
     end
 
@@ -262,7 +262,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [channel_id, channel_name, channel_image_url, product_count, enabled, is_marketplace, channel_catalog_id, store_id, general_settings, cost_settings, column_mappings, exclusion_filters, export_url, status, links].hash
+      [channel_id, channel_name, channel_image_url, product_count, enabled, is_marketplace, channel_catalog_id, store_id, general_settings, cost_settings, column_mappings, exclusion_filters, export_url, state, links].hash
     end
 
     # Builds the object from hash

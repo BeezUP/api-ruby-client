@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **column_mappings** | [**ColumnMappingWithNameList**](ColumnMappingWithNameList.md) |  | [optional] 
 **exclusion_filters** | [**ExclusionFilters**](ExclusionFilters.md) |  | [optional] 
 **export_url** | [**BeezUPCommonHttpUrl**](BeezUPCommonHttpUrl.md) |  | [optional] 
-**status** | [**ChannelCatalogStatus**](ChannelCatalogStatus.md) |  | 
+**state** | [**ChannelCatalogState**](ChannelCatalogState.md) |  | 
 **links** | [**Array&lt;BeezUPCommonLink2&gt;**](BeezUPCommonLink2.md) | Indicates the actions you can do on a channel catalog | 
 
 
