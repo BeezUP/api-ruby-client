@@ -32,7 +32,7 @@ module SwaggerClient
     def self.swagger_types
       {
         :'links' => :'Array<BeezUPCommonLink2>',
-        :'channel_catalogs' => :'Array<ChannelCatalogHeader>'
+        :'channel_catalogs' => :'Array<ChannelCatalog>'
       }
     end
 

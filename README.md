@@ -355,8 +355,6 @@ Class | Method | HTTP request | Description
  - [SwaggerClient::ChannelCatalogCategoryMapping](docs/ChannelCatalogCategoryMapping.md)
  - [SwaggerClient::ChannelCatalogCategoryMappingInfo](docs/ChannelCatalogCategoryMappingInfo.md)
  - [SwaggerClient::ChannelCatalogCategoryMappings](docs/ChannelCatalogCategoryMappings.md)
- - [SwaggerClient::ChannelCatalogHeader](docs/ChannelCatalogHeader.md)
- - [SwaggerClient::ChannelCatalogHeaderLinks](docs/ChannelCatalogHeaderLinks.md)
  - [SwaggerClient::ChannelCatalogList](docs/ChannelCatalogList.md)
  - [SwaggerClient::ChannelCatalogMarketplaceProperties](docs/ChannelCatalogMarketplaceProperties.md)
  - [SwaggerClient::ChannelCatalogMarketplacePropertiesLinks](docs/ChannelCatalogMarketplacePropertiesLinks.md)
