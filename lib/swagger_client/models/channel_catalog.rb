@@ -20,6 +20,9 @@ module SwaggerClient
 
     attr_accessor :channel_image_url
 
+    # The product count exported considering category mapping. Not all filters have been applied.
+    attr_accessor :product_count
+
     # Indicates if the channel catalog is active
     attr_accessor :enabled
 
@@ -52,6 +55,7 @@ module SwaggerClient
         :'channel_id' => :'channelId',
         :'channel_name' => :'channelName',
         :'channel_image_url' => :'channelImageUrl',
+        :'product_count' => :'productCount',
         :'enabled' => :'enabled',
         :'is_marketplace' => :'isMarketplace',
         :'channel_catalog_id' => :'channelCatalogId',
@@ -72,6 +76,7 @@ module SwaggerClient
         :'channel_id' => :'BeezUPCommonChannelId',
         :'channel_name' => :'BeezUPCommonChannelName',
         :'channel_image_url' => :'BeezUPCommonHttpUrl',
+        :'product_count' => :'Integer',
         :'enabled' => :'BOOLEAN',
         :'is_marketplace' => :'BOOLEAN',
         :'channel_catalog_id' => :'BeezUPCommonChannelCatalogId',
@@ -104,6 +109,10 @@ module SwaggerClient
 
       if attributes.has_key?(:'channelImageUrl')
         self.channel_image_url = attributes[:'channelImageUrl']
+      end
+
+      if attributes.has_key?(:'productCount')
+        self.product_count = attributes[:'productCount']
       end
 
       if attributes.has_key?(:'enabled')
@@ -170,12 +179,36 @@ module SwaggerClient
         invalid_properties.push("invalid value for 'channel_image_url', channel_image_url cannot be nil.")
       end
 
+      if @enabled.nil?
+        invalid_properties.push("invalid value for 'enabled', enabled cannot be nil.")
+      end
+
+      if @is_marketplace.nil?
+        invalid_properties.push("invalid value for 'is_marketplace', is_marketplace cannot be nil.")
+      end
+
       if @channel_catalog_id.nil?
         invalid_properties.push("invalid value for 'channel_catalog_id', channel_catalog_id cannot be nil.")
       end
 
       if @store_id.nil?
         invalid_properties.push("invalid value for 'store_id', store_id cannot be nil.")
+      end
+
+      if @general_settings.nil?
+        invalid_properties.push("invalid value for 'general_settings', general_settings cannot be nil.")
+      end
+
+      if @cost_settings.nil?
+        invalid_properties.push("invalid value for 'cost_settings', cost_settings cannot be nil.")
+      end
+
+      if @status.nil?
+        invalid_properties.push("invalid value for 'status', status cannot be nil.")
+      end
+
+      if @links.nil?
+        invalid_properties.push("invalid value for 'links', links cannot be nil.")
       end
 
       return invalid_properties
@@ -187,8 +220,14 @@ module SwaggerClient
       return false if @channel_id.nil?
       return false if @channel_name.nil?
       return false if @channel_image_url.nil?
+      return false if @enabled.nil?
+      return false if @is_marketplace.nil?
       return false if @channel_catalog_id.nil?
       return false if @store_id.nil?
+      return false if @general_settings.nil?
+      return false if @cost_settings.nil?
+      return false if @status.nil?
+      return false if @links.nil?
       return true
     end
 
@@ -200,6 +239,7 @@ module SwaggerClient
           channel_id == o.channel_id &&
           channel_name == o.channel_name &&
           channel_image_url == o.channel_image_url &&
+          product_count == o.product_count &&
           enabled == o.enabled &&
           is_marketplace == o.is_marketplace &&
           channel_catalog_id == o.channel_catalog_id &&
@@ -222,7 +262,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [channel_id, channel_name, channel_image_url, enabled, is_marketplace, channel_catalog_id, store_id, general_settings, cost_settings, column_mappings, exclusion_filters, export_url, status, links].hash
+      [channel_id, channel_name, channel_image_url, product_count, enabled, is_marketplace, channel_catalog_id, store_id, general_settings, cost_settings, column_mappings, exclusion_filters, export_url, status, links].hash
     end
 
     # Builds the object from hash
