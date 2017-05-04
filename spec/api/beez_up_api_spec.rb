@@ -653,7 +653,7 @@ describe 'BeezUPApi' do
   # @param format 
   # @param request 
   # @param [Hash] opts the optional parameters
-  # @return [Array<BeezUPCommonLink2>]
+  # @return [BeezUPCommonLink3]
   describe 'export_store_report_by_category test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -667,7 +667,7 @@ describe 'BeezUPApi' do
   # @param format 
   # @param request 
   # @param [Hash] opts the optional parameters
-  # @return [Array<BeezUPCommonLink2>]
+  # @return [BeezUPCommonLink3]
   describe 'export_store_report_by_channel test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -681,7 +681,7 @@ describe 'BeezUPApi' do
   # @param format 
   # @param request 
   # @param [Hash] opts the optional parameters
-  # @return [Array<BeezUPCommonLink2>]
+  # @return [BeezUPCommonLink3]
   describe 'export_store_report_by_product test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1076,7 +1076,7 @@ describe 'BeezUPApi' do
   # 
   # @param store_id Your store identifier
   # @param [Hash] opts the optional parameters
-  # @return [Rules]
+  # @return [Rulelist]
   describe 'get_rules test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

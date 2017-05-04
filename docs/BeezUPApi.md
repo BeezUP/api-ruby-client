@@ -2754,7 +2754,7 @@ nil (empty response body)
 
 
 # **export_store_report_by_category**
-> Array&lt;BeezUPCommonLink2&gt; export_store_report_by_category(store_id, format, request)
+> BeezUPCommonLink3 export_store_report_by_category(store_id, format, request)
 
 Export the report by category
 
@@ -2800,7 +2800,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Array&lt;BeezUPCommonLink2&gt;**](BeezUPCommonLink2.md)
+[**BeezUPCommonLink3**](BeezUPCommonLink3.md)
 
 ### Authorization
 
@@ -2814,7 +2814,7 @@ Name | Type | Description  | Notes
 
 
 # **export_store_report_by_channel**
-> Array&lt;BeezUPCommonLink2&gt; export_store_report_by_channel(store_id, format, request)
+> BeezUPCommonLink3 export_store_report_by_channel(store_id, format, request)
 
 Export the report by channel
 
@@ -2860,7 +2860,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Array&lt;BeezUPCommonLink2&gt;**](BeezUPCommonLink2.md)
+[**BeezUPCommonLink3**](BeezUPCommonLink3.md)
 
 ### Authorization
 
@@ -2874,7 +2874,7 @@ Name | Type | Description  | Notes
 
 
 # **export_store_report_by_product**
-> Array&lt;BeezUPCommonLink2&gt; export_store_report_by_product(store_id, format, request)
+> BeezUPCommonLink3 export_store_report_by_product(store_id, format, request)
 
 Export the report by product
 
@@ -2920,7 +2920,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Array&lt;BeezUPCommonLink2&gt;**](BeezUPCommonLink2.md)
+[**BeezUPCommonLink3**](BeezUPCommonLink3.md)
 
 ### Authorization
 
@@ -4564,7 +4564,7 @@ Name | Type | Description  | Notes
 
 
 # **get_rules**
-> Rules get_rules(store_id, )
+> Rulelist get_rules(store_id, )
 
 Gets the list of rules for a given store
 
@@ -4602,7 +4602,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Rules**](Rules.md)
+[**Rulelist**](Rulelist.md)
 
 ### Authorization
 

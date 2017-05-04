@@ -13,35 +13,21 @@ require 'date'
 
 module SwaggerClient
 
-  class ReportFilter
-    # Report filter identifier
-    attr_accessor :report_filter_id
-
-    # Report filter name
-    attr_accessor :report_filter_name
-
-    attr_accessor :parameters
-
-    attr_accessor :links
+  class ReportFilterHeaderLinks
+    attr_accessor :_self
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'report_filter_id' => :'reportFilterId',
-        :'report_filter_name' => :'reportFilterName',
-        :'parameters' => :'parameters',
-        :'links' => :'links'
+        :'_self' => :'self'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'report_filter_id' => :'String',
-        :'report_filter_name' => :'String',
-        :'parameters' => :'ReportFilterParameters',
-        :'links' => :'ReportFilterLinks'
+        :'_self' => :'LinksGetReportFilterLink'
       }
     end
 
@@ -53,20 +39,8 @@ module SwaggerClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'reportFilterId')
-        self.report_filter_id = attributes[:'reportFilterId']
-      end
-
-      if attributes.has_key?(:'reportFilterName')
-        self.report_filter_name = attributes[:'reportFilterName']
-      end
-
-      if attributes.has_key?(:'parameters')
-        self.parameters = attributes[:'parameters']
-      end
-
-      if attributes.has_key?(:'links')
-        self.links = attributes[:'links']
+      if attributes.has_key?(:'self')
+        self._self = attributes[:'self']
       end
 
     end
@@ -75,27 +49,12 @@ module SwaggerClient
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @report_filter_id.nil?
-        invalid_properties.push("invalid value for 'report_filter_id', report_filter_id cannot be nil.")
-      end
-
-      if @report_filter_name.nil?
-        invalid_properties.push("invalid value for 'report_filter_name', report_filter_name cannot be nil.")
-      end
-
-      if @parameters.nil?
-        invalid_properties.push("invalid value for 'parameters', parameters cannot be nil.")
-      end
-
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @report_filter_id.nil?
-      return false if @report_filter_name.nil?
-      return false if @parameters.nil?
       return true
     end
 
@@ -104,10 +63,7 @@ module SwaggerClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          report_filter_id == o.report_filter_id &&
-          report_filter_name == o.report_filter_name &&
-          parameters == o.parameters &&
-          links == o.links
+          _self == o._self
     end
 
     # @see the `==` method
@@ -119,7 +75,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [report_filter_id, report_filter_name, parameters, links].hash
+      [_self].hash
     end
 
     # Builds the object from hash

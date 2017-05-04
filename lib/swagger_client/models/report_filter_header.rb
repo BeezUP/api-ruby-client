@@ -20,7 +20,6 @@ module SwaggerClient
     # Report filter name
     attr_accessor :report_filter_name
 
-    # The list of action you can do on the filter subject
     attr_accessor :links
 
 
@@ -38,7 +37,7 @@ module SwaggerClient
       {
         :'report_filter_id' => :'String',
         :'report_filter_name' => :'String',
-        :'links' => :'Array<BeezUPCommonLink2>'
+        :'links' => :'ReportFilterHeaderLinks'
       }
     end
 
@@ -59,9 +58,7 @@ module SwaggerClient
       end
 
       if attributes.has_key?(:'links')
-        if (value = attributes[:'links']).is_a?(Array)
-          self.links = value
-        end
+        self.links = attributes[:'links']
       end
 
     end

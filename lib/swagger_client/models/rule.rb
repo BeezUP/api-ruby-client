@@ -42,7 +42,6 @@ module SwaggerClient
     # Rule validity end utc date
     attr_accessor :validity_end_utc_date
 
-    # Links to retrieve/action on other entities
     attr_accessor :links
 
 
@@ -76,7 +75,7 @@ module SwaggerClient
         :'enabled' => :'BOOLEAN',
         :'validity_start_utc_date' => :'DateTime',
         :'validity_end_utc_date' => :'DateTime',
-        :'links' => :'Array<BeezUPCommonLink2>'
+        :'links' => :'DefinitionsruleLinks'
       }
     end
 
@@ -129,9 +128,7 @@ module SwaggerClient
       end
 
       if attributes.has_key?(:'links')
-        if (value = attributes[:'links']).is_a?(Array)
-          self.links = value
-        end
+        self.links = attributes[:'links']
       end
 
     end

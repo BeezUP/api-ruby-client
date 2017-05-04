@@ -49,7 +49,6 @@ module SwaggerClient
     # The url for the excel report for this execution
     attr_accessor :report_url
 
-    # Links to retrieve/action on this rule execution
     attr_accessor :links
 
 
@@ -89,7 +88,7 @@ module SwaggerClient
         :'user_id' => :'String',
         :'execution_source' => :'RuleExecutionReportingExecutionSource',
         :'report_url' => :'String',
-        :'links' => :'Array<BeezUPCommonLink2>'
+        :'links' => :'DefinitionsruleExecutionReportingLinks'
       }
     end
 
@@ -154,9 +153,7 @@ module SwaggerClient
       end
 
       if attributes.has_key?(:'links')
-        if (value = attributes[:'links']).is_a?(Array)
-          self.links = value
-        end
+        self.links = attributes[:'links']
       end
 
     end
