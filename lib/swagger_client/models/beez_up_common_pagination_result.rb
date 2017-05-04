@@ -17,22 +17,22 @@ module SwaggerClient
     # The entry count currently returned
     attr_accessor :entry_count
 
-    attr_accessor :links
-
     # The page count
     attr_accessor :page_count
 
     # The total entry count
     attr_accessor :total_entry_count
 
+    attr_accessor :links
+
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'entry_count' => :'entryCount',
-        :'links' => :'links',
         :'page_count' => :'pageCount',
-        :'total_entry_count' => :'totalEntryCount'
+        :'total_entry_count' => :'totalEntryCount',
+        :'links' => :'links'
       }
     end
 
@@ -40,9 +40,9 @@ module SwaggerClient
     def self.swagger_types
       {
         :'entry_count' => :'Integer',
-        :'links' => :'BeezUPCommonPaginationResultLinks',
         :'page_count' => :'Integer',
-        :'total_entry_count' => :'Integer'
+        :'total_entry_count' => :'Integer',
+        :'links' => :'BeezUPCommonPaginationResultLinks'
       }
     end
 
@@ -58,16 +58,16 @@ module SwaggerClient
         self.entry_count = attributes[:'entryCount']
       end
 
-      if attributes.has_key?(:'links')
-        self.links = attributes[:'links']
-      end
-
       if attributes.has_key?(:'pageCount')
         self.page_count = attributes[:'pageCount']
       end
 
       if attributes.has_key?(:'totalEntryCount')
         self.total_entry_count = attributes[:'totalEntryCount']
+      end
+
+      if attributes.has_key?(:'links')
+        self.links = attributes[:'links']
       end
 
     end
@@ -139,9 +139,9 @@ module SwaggerClient
       return true if self.equal?(o)
       self.class == o.class &&
           entry_count == o.entry_count &&
-          links == o.links &&
           page_count == o.page_count &&
-          total_entry_count == o.total_entry_count
+          total_entry_count == o.total_entry_count &&
+          links == o.links
     end
 
     # @see the `==` method
@@ -153,7 +153,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [entry_count, links, page_count, total_entry_count].hash
+      [entry_count, page_count, total_entry_count, links].hash
     end
 
     # Builds the object from hash

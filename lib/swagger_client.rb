@@ -447,17 +447,10 @@ require 'swagger_client/models/vat_number'
 require 'swagger_client/models/what_i_do'
 
 # APIs
+require 'swagger_client/api/beez_up_api'
 require 'swagger_client/api/groups_api'
 require 'swagger_client/api/lov_api'
 require 'swagger_client/api/security_api'
-require 'swagger_client/api/user_lov_api'
-require 'swagger_client/api/v2_user_analytics_api'
-require 'swagger_client/api/v2_user_catalogs_api'
-require 'swagger_client/api/v2_user_channel_catalogs_api'
-require 'swagger_client/api/v2_user_channels_api'
-require 'swagger_client/api/v2_user_customer_api'
-require 'swagger_client/api/v2_user_marketplaces_channel_catalogs_api'
-require 'swagger_client/api/v2_user_marketplaces_orders_api'
 
 module SwaggerClient
   class << self

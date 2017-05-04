@@ -14,7 +14,6 @@ require 'date'
 module SwaggerClient
 
   class BeezUPCommonUserErrorMessage
-    # The documentation related to this operation.
     attr_accessor :doc_url
 
     # the error code. The error code can be a pattern containing the argument's name
@@ -44,7 +43,7 @@ module SwaggerClient
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'doc_url' => :'String',
+        :'doc_url' => :'BeezUPCommonDocUrl',
         :'code' => :'String',
         :'message' => :'String',
         :'culture_name' => :'String',
