@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **channel_id** | [**BeezUPCommonChannelId**](BeezUPCommonChannelId.md) |  | 
 **channel_name** | [**BeezUPCommonChannelName**](BeezUPCommonChannelName.md) |  | 
 **channel_image_url** | [**BeezUPCommonHttpUrl**](BeezUPCommonHttpUrl.md) |  | 
-**product_count** | **Integer** | The product count exported considering category mapping. Not all filters have been applied. | [optional] 
+**product_count** | **Integer** | The product count exported considering category mapping. Not all filters have been applied. | 
 **enabled** | **BOOLEAN** | Indicates if the channel catalog is active | 
 **is_marketplace** | **BOOLEAN** | Indicates if this channel catalog is related to a marketplace | 
 **channel_catalog_id** | [**BeezUPCommonChannelCatalogId**](BeezUPCommonChannelCatalogId.md) |  | 

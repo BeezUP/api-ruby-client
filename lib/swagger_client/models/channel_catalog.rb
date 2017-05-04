@@ -179,6 +179,10 @@ module SwaggerClient
         invalid_properties.push("invalid value for 'channel_image_url', channel_image_url cannot be nil.")
       end
 
+      if @product_count.nil?
+        invalid_properties.push("invalid value for 'product_count', product_count cannot be nil.")
+      end
+
       if @enabled.nil?
         invalid_properties.push("invalid value for 'enabled', enabled cannot be nil.")
       end
@@ -220,6 +224,7 @@ module SwaggerClient
       return false if @channel_id.nil?
       return false if @channel_name.nil?
       return false if @channel_image_url.nil?
+      return false if @product_count.nil?
       return false if @enabled.nil?
       return false if @is_marketplace.nil?
       return false if @channel_catalog_id.nil?
