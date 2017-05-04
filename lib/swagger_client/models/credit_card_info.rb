@@ -77,10 +77,6 @@ module SwaggerClient
         invalid_properties.push("invalid value for 'card_number', card_number cannot be nil.")
       end
 
-      if @card_verification_code.nil?
-        invalid_properties.push("invalid value for 'card_verification_code', card_verification_code cannot be nil.")
-      end
-
       if @expiration_month.nil?
         invalid_properties.push("invalid value for 'expiration_month', expiration_month cannot be nil.")
       end
@@ -96,7 +92,6 @@ module SwaggerClient
     # @return true if the model is valid
     def valid?
       return false if @card_number.nil?
-      return false if @card_verification_code.nil?
       return false if @expiration_month.nil?
       return false if @expiration_year.nil?
       return true
