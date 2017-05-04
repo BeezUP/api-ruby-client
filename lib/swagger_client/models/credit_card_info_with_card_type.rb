@@ -16,8 +16,6 @@ module SwaggerClient
   class CreditCardInfoWithCardType
     attr_accessor :card_number
 
-    attr_accessor :card_verification_code
-
     attr_accessor :expiration_month
 
     attr_accessor :expiration_year
@@ -30,7 +28,6 @@ module SwaggerClient
     def self.attribute_map
       {
         :'card_number' => :'cardNumber',
-        :'card_verification_code' => :'cardVerificationCode',
         :'expiration_month' => :'expirationMonth',
         :'expiration_year' => :'expirationYear',
         :'card_type' => :'cardType'
@@ -41,7 +38,6 @@ module SwaggerClient
     def self.swagger_types
       {
         :'card_number' => :'CardNumber',
-        :'card_verification_code' => :'CardVerificationCode',
         :'expiration_month' => :'ExpirationMonth',
         :'expiration_year' => :'ExpirationYear',
         :'card_type' => :'String'
@@ -58,10 +54,6 @@ module SwaggerClient
 
       if attributes.has_key?(:'cardNumber')
         self.card_number = attributes[:'cardNumber']
-      end
-
-      if attributes.has_key?(:'cardVerificationCode')
-        self.card_verification_code = attributes[:'cardVerificationCode']
       end
 
       if attributes.has_key?(:'expirationMonth')
@@ -86,10 +78,6 @@ module SwaggerClient
         invalid_properties.push("invalid value for 'card_number', card_number cannot be nil.")
       end
 
-      if @card_verification_code.nil?
-        invalid_properties.push("invalid value for 'card_verification_code', card_verification_code cannot be nil.")
-      end
-
       if @expiration_month.nil?
         invalid_properties.push("invalid value for 'expiration_month', expiration_month cannot be nil.")
       end
@@ -109,7 +97,6 @@ module SwaggerClient
     # @return true if the model is valid
     def valid?
       return false if @card_number.nil?
-      return false if @card_verification_code.nil?
       return false if @expiration_month.nil?
       return false if @expiration_year.nil?
       return false if @card_type.nil?
@@ -122,7 +109,6 @@ module SwaggerClient
       return true if self.equal?(o)
       self.class == o.class &&
           card_number == o.card_number &&
-          card_verification_code == o.card_verification_code &&
           expiration_month == o.expiration_month &&
           expiration_year == o.expiration_year &&
           card_type == o.card_type
@@ -137,7 +123,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [card_number, card_verification_code, expiration_month, expiration_year, card_type].hash
+      [card_number, expiration_month, expiration_year, card_type].hash
     end
 
     # Builds the object from hash
