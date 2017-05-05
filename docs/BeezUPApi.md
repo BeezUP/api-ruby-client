@@ -4061,7 +4061,7 @@ Name | Type | Description  | Notes
 
 
 # **get_order_exportations**
-> OrderExportations get_order_exportations(page_number, page_size)
+> OrderExportations get_order_exportations(page_number, page_size, store_id)
 
 Get a paginated list of Order report exportations
 
@@ -4083,10 +4083,12 @@ page_number = 1 # Integer | The page number you want to get
 
 page_size = 25 # Integer | The count of Order report exportations you want to get
 
+store_id = "store_id_example" # String | The store identifier to regroup the order exportations
+
 
 begin
   #Get a paginated list of Order report exportations
-  result = api_instance.get_order_exportations(page_number, page_size)
+  result = api_instance.get_order_exportations(page_number, page_size, store_id)
   p result
 rescue SwaggerClient::ApiError => e
   puts "Exception when calling BeezUPApi->get_order_exportations: #{e}"
@@ -4099,6 +4101,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page_number** | **Integer**| The page number you want to get | 
  **page_size** | **Integer**| The count of Order report exportations you want to get | 
+ **store_id** | **String**| The store identifier to regroup the order exportations | 
 
 ### Return type
 

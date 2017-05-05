@@ -31,6 +31,12 @@ describe 'ExportOrderListRequest' do
       expect(@instance).to be_instance_of(SwaggerClient::ExportOrderListRequest)
     end
   end
+  describe 'test attribute "store_id"' do
+    it 'should work' do
+       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   describe 'test attribute "order_list_request"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

@@ -6193,6 +6193,14 @@
             "minimum": 25,
             "maximum": 100,
             "x-example": 25
+          },
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "format": "guid",
+            "description": "The store identifier to regroup the order exportations"
           }
         ],
         "responses": {
@@ -14991,9 +14999,13 @@
     "exportOrderListRequest": {
       "type": "object",
       "required": [
+        "storeId",
         "orderListRequest"
       ],
       "properties": {
+        "storeId": {
+          "$ref": "https://api.swaggerhub.com/domains/BeezUP/api.beezup.com/v2#/definitions/BeezUP.Common.StoreId"
+        },
         "orderListRequest": {
           "$ref": "#/definitions/orderListRequest"
         }

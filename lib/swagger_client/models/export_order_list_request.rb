@@ -14,12 +14,15 @@ require 'date'
 module SwaggerClient
 
   class ExportOrderListRequest
+    attr_accessor :store_id
+
     attr_accessor :order_list_request
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'store_id' => :'storeId',
         :'order_list_request' => :'orderListRequest'
       }
     end
@@ -27,6 +30,7 @@ module SwaggerClient
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'store_id' => :'BeezUPCommonStoreId',
         :'order_list_request' => :'OrderListRequest'
       }
     end
@@ -39,6 +43,10 @@ module SwaggerClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
+      if attributes.has_key?(:'storeId')
+        self.store_id = attributes[:'storeId']
+      end
+
       if attributes.has_key?(:'orderListRequest')
         self.order_list_request = attributes[:'orderListRequest']
       end
@@ -49,6 +57,10 @@ module SwaggerClient
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @store_id.nil?
+        invalid_properties.push("invalid value for 'store_id', store_id cannot be nil.")
+      end
+
       if @order_list_request.nil?
         invalid_properties.push("invalid value for 'order_list_request', order_list_request cannot be nil.")
       end
@@ -59,6 +71,7 @@ module SwaggerClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @store_id.nil?
       return false if @order_list_request.nil?
       return true
     end
@@ -68,6 +81,7 @@ module SwaggerClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          store_id == o.store_id &&
           order_list_request == o.order_list_request
     end
 
@@ -80,7 +94,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [order_list_request].hash
+      [store_id, order_list_request].hash
     end
 
     # Builds the object from hash

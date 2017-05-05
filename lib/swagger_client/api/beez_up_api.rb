@@ -4062,10 +4062,11 @@ module SwaggerClient
     # 
     # @param page_number The page number you want to get
     # @param page_size The count of Order report exportations you want to get
+    # @param store_id The store identifier to regroup the order exportations
     # @param [Hash] opts the optional parameters
     # @return [OrderExportations]
-    def get_order_exportations(page_number, page_size, opts = {})
-      data, _status_code, _headers = get_order_exportations_with_http_info(page_number, page_size, opts)
+    def get_order_exportations(page_number, page_size, store_id, opts = {})
+      data, _status_code, _headers = get_order_exportations_with_http_info(page_number, page_size, store_id, opts)
       return data
     end
 
@@ -4073,9 +4074,10 @@ module SwaggerClient
     # 
     # @param page_number The page number you want to get
     # @param page_size The count of Order report exportations you want to get
+    # @param store_id The store identifier to regroup the order exportations
     # @param [Hash] opts the optional parameters
     # @return [Array<(OrderExportations, Fixnum, Hash)>] OrderExportations data, response status code and response headers
-    def get_order_exportations_with_http_info(page_number, page_size, opts = {})
+    def get_order_exportations_with_http_info(page_number, page_size, store_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: BeezUPApi.get_order_exportations ..."
       end
@@ -4095,6 +4097,8 @@ module SwaggerClient
         fail ArgumentError, 'invalid value for "page_size" when calling BeezUPApi.get_order_exportations, must be greater than or equal to 25.'
       end
 
+      # verify the required parameter 'store_id' is set
+      fail ArgumentError, "Missing the required parameter 'store_id' when calling BeezUPApi.get_order_exportations" if store_id.nil?
       # resource path
       local_var_path = "/v2/user/marketplaces/orders/exportations".sub('{format}','json')
 
@@ -4102,6 +4106,7 @@ module SwaggerClient
       query_params = {}
       query_params[:'pageNumber'] = page_number
       query_params[:'pageSize'] = page_size
+      query_params[:'storeId'] = store_id
 
       # header parameters
       header_params = {}

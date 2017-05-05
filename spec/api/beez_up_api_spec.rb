@@ -957,6 +957,7 @@ describe 'BeezUPApi' do
   # 
   # @param page_number The page number you want to get
   # @param page_size The count of Order report exportations you want to get
+  # @param store_id The store identifier to regroup the order exportations
   # @param [Hash] opts the optional parameters
   # @return [OrderExportations]
   describe 'get_order_exportations test' do
