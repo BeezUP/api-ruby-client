@@ -51,15 +51,15 @@ module SwaggerClient
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'_self' => :'DefinitionslinksGetRuleLink',
-        :'run' => :'DefinitionslinksRunRuleLink',
-        :'delete' => :'DefinitionslinksDeleteRuleLink',
-        :'moveup' => :'DefinitionslinksMoveUpRuleLink',
-        :'movedown' => :'DefinitionslinksMoveDownRuleLink',
-        :'enable' => :'DefinitionslinksEnableRuleLink',
-        :'disable' => :'DefinitionslinksDisableRuleLink',
-        :'update' => :'DefinitionslinksUpdateRuleLink',
-        :'report_filter' => :'DefinitionslinksGetReportFilterLink'
+        :'_self' => :'LinksGetRuleLink',
+        :'run' => :'LinksRunRuleLink',
+        :'delete' => :'LinksDeleteRuleLink',
+        :'moveup' => :'LinksMoveUpRuleLink',
+        :'movedown' => :'LinksMoveDownRuleLink',
+        :'enable' => :'LinksEnableRuleLink',
+        :'disable' => :'LinksDisableRuleLink',
+        :'update' => :'LinksUpdateRuleLink',
+        :'report_filter' => :'LinksGetReportFilterLink'
       }
     end
 
