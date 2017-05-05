@@ -13150,20 +13150,30 @@
           "type": "object",
           "required": [
             "useGravatarProfilePicture",
-            "defaultProfilePictureUrl"
+            "initialsProfilePictureUrl",
+            "gravatarProfilePictureUrl"
           ],
           "properties": {
-            "defaultProfilePictureUrl": {
-              "$ref": "#/definitions/defaultProfilePictureUrl"
+            "initialsProfilePictureUrl": {
+              "$ref": "#/definitions/initialsProfilePictureUrl"
+            },
+            "gravatarProfilePictureUrl": {
+              "$ref": "#/definitions/gravatarProfilePictureUrl"
             }
           }
         }
       ]
     },
-    "defaultProfilePictureUrl": {
-      "description": "Indicate the default url of your picture profil",
+    "initialsProfilePictureUrl": {
+      "description": "Indicate the url of your picture profil based on your initials",
       "pattern": "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\\/\\w \\.-]*)*\\/?$",
       "example": "https://dummyimage.com/50x50/000000/fff&text=AM",
+      "type": "string"
+    },
+    "gravatarProfilePictureUrl": {
+      "description": "Indicate the url of your picture profil based on gravatar",
+      "pattern": "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\\/\\w \\.-]*)*\\/?$",
+      "example": "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?d=mm",
       "type": "string"
     },
     "profilePictureInfo": {
