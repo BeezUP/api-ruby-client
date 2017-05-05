@@ -18,7 +18,7 @@ module SwaggerClient
 
     attr_accessor :column_mapping_status
 
-    attr_accessor :category_mapping_state
+    attr_accessor :category_mapping_status
 
     attr_accessor :api_setting_status
 
@@ -28,7 +28,7 @@ module SwaggerClient
       {
         :'exported_product_count' => :'exportedProductCount',
         :'column_mapping_status' => :'columnMappingStatus',
-        :'category_mapping_state' => :'categoryMappingState',
+        :'category_mapping_status' => :'categoryMappingStatus',
         :'api_setting_status' => :'apiSettingStatus'
       }
     end
@@ -38,7 +38,7 @@ module SwaggerClient
       {
         :'exported_product_count' => :'Integer',
         :'column_mapping_status' => :'ColumnMappingStatus',
-        :'category_mapping_state' => :'CategoryMappingState',
+        :'category_mapping_status' => :'CategoryMappingStatus',
         :'api_setting_status' => :'ApiSettingStatus'
       }
     end
@@ -59,8 +59,8 @@ module SwaggerClient
         self.column_mapping_status = attributes[:'columnMappingStatus']
       end
 
-      if attributes.has_key?(:'categoryMappingState')
-        self.category_mapping_state = attributes[:'categoryMappingState']
+      if attributes.has_key?(:'categoryMappingStatus')
+        self.category_mapping_status = attributes[:'categoryMappingStatus']
       end
 
       if attributes.has_key?(:'apiSettingStatus')
@@ -81,6 +81,10 @@ module SwaggerClient
         invalid_properties.push("invalid value for 'column_mapping_status', column_mapping_status cannot be nil.")
       end
 
+      if @category_mapping_status.nil?
+        invalid_properties.push("invalid value for 'category_mapping_status', category_mapping_status cannot be nil.")
+      end
+
       if @api_setting_status.nil?
         invalid_properties.push("invalid value for 'api_setting_status', api_setting_status cannot be nil.")
       end
@@ -93,6 +97,7 @@ module SwaggerClient
     def valid?
       return false if @exported_product_count.nil?
       return false if @column_mapping_status.nil?
+      return false if @category_mapping_status.nil?
       return false if @api_setting_status.nil?
       return true
     end
@@ -104,7 +109,7 @@ module SwaggerClient
       self.class == o.class &&
           exported_product_count == o.exported_product_count &&
           column_mapping_status == o.column_mapping_status &&
-          category_mapping_state == o.category_mapping_state &&
+          category_mapping_status == o.category_mapping_status &&
           api_setting_status == o.api_setting_status
     end
 
@@ -117,7 +122,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [exported_product_count, column_mapping_status, category_mapping_state, api_setting_status].hash
+      [exported_product_count, column_mapping_status, category_mapping_status, api_setting_status].hash
     end
 
     # Builds the object from hash
