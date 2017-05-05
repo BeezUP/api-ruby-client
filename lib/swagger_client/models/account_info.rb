@@ -14,10 +14,6 @@ require 'date'
 module SwaggerClient
 
   class AccountInfo
-    attr_accessor :info
-
-    attr_accessor :links
-
     attr_accessor :user_id
 
     attr_accessor :email
@@ -28,34 +24,38 @@ module SwaggerClient
 
     attr_accessor :company_info
 
-    attr_accessor :profile_picture_info
+    attr_accessor :profile_picture_url
+
+    attr_accessor :links
+
+    attr_accessor :info
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'info' => :'info',
-        :'links' => :'links',
         :'user_id' => :'userId',
         :'email' => :'email',
         :'personal_info' => :'personalInfo',
         :'status' => :'status',
         :'company_info' => :'companyInfo',
-        :'profile_picture_info' => :'profilePictureInfo'
+        :'profile_picture_url' => :'profilePictureUrl',
+        :'links' => :'links',
+        :'info' => :'info'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'info' => :'BeezUPCommonInfoSummaries',
-        :'links' => :'AccountInfoLinks',
         :'user_id' => :'BeezUPCommonUserId',
         :'email' => :'BeezUPCommonEmail',
         :'personal_info' => :'PersonalInfo',
         :'status' => :'AccountStatus',
         :'company_info' => :'CompanyInfo',
-        :'profile_picture_info' => :'ProfilePictureInfo'
+        :'profile_picture_url' => :'ProfilePictureUrl',
+        :'links' => :'AccountInfoLinks',
+        :'info' => :'BeezUPCommonInfoSummaries'
       }
     end
 
@@ -66,14 +66,6 @@ module SwaggerClient
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
-
-      if attributes.has_key?(:'info')
-        self.info = attributes[:'info']
-      end
-
-      if attributes.has_key?(:'links')
-        self.links = attributes[:'links']
-      end
 
       if attributes.has_key?(:'userId')
         self.user_id = attributes[:'userId']
@@ -95,8 +87,16 @@ module SwaggerClient
         self.company_info = attributes[:'companyInfo']
       end
 
-      if attributes.has_key?(:'profilePictureInfo')
-        self.profile_picture_info = attributes[:'profilePictureInfo']
+      if attributes.has_key?(:'profilePictureUrl')
+        self.profile_picture_url = attributes[:'profilePictureUrl']
+      end
+
+      if attributes.has_key?(:'links')
+        self.links = attributes[:'links']
+      end
+
+      if attributes.has_key?(:'info')
+        self.info = attributes[:'info']
       end
 
     end
@@ -105,12 +105,47 @@ module SwaggerClient
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @user_id.nil?
+        invalid_properties.push("invalid value for 'user_id', user_id cannot be nil.")
+      end
+
+      if @email.nil?
+        invalid_properties.push("invalid value for 'email', email cannot be nil.")
+      end
+
+      if @personal_info.nil?
+        invalid_properties.push("invalid value for 'personal_info', personal_info cannot be nil.")
+      end
+
+      if @status.nil?
+        invalid_properties.push("invalid value for 'status', status cannot be nil.")
+      end
+
+      if @company_info.nil?
+        invalid_properties.push("invalid value for 'company_info', company_info cannot be nil.")
+      end
+
+      if @profile_picture_url.nil?
+        invalid_properties.push("invalid value for 'profile_picture_url', profile_picture_url cannot be nil.")
+      end
+
+      if @links.nil?
+        invalid_properties.push("invalid value for 'links', links cannot be nil.")
+      end
+
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @user_id.nil?
+      return false if @email.nil?
+      return false if @personal_info.nil?
+      return false if @status.nil?
+      return false if @company_info.nil?
+      return false if @profile_picture_url.nil?
+      return false if @links.nil?
       return true
     end
 
@@ -119,14 +154,14 @@ module SwaggerClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          info == o.info &&
-          links == o.links &&
           user_id == o.user_id &&
           email == o.email &&
           personal_info == o.personal_info &&
           status == o.status &&
           company_info == o.company_info &&
-          profile_picture_info == o.profile_picture_info
+          profile_picture_url == o.profile_picture_url &&
+          links == o.links &&
+          info == o.info
     end
 
     # @see the `==` method
@@ -138,7 +173,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [info, links, user_id, email, personal_info, status, company_info, profile_picture_info].hash
+      [user_id, email, personal_info, status, company_info, profile_picture_url, links, info].hash
     end
 
     # Builds the object from hash

@@ -12910,37 +12910,43 @@
       "minimum": 2017,
       "maximum": 9000
     },
-    "accountInfo": {
+    "accountInfoLinks": {
+      "description": "The different actions you can make on this account",
       "type": "object",
       "properties": {
-        "info": {
-          "$ref": "https://api.swaggerhub.com/domains/BeezUP/api.beezup.com/v2#/definitions/BeezUP.Common.InfoSummaries"
+        "savePersonalInfo": {
+          "$ref": "#/definitions/links.savePersonalInfoLink"
         },
-        "links": {
-          "description": "The different actions you can make on this account",
-          "type": "object",
-          "properties": {
-            "savePersonalInfo": {
-              "$ref": "#/definitions/links.savePersonalInfoLink"
-            },
-            "changePassword": {
-              "$ref": "#/definitions/links.changePasswordLink"
-            },
-            "saveCompanyInfo": {
-              "$ref": "#/definitions/links.saveCompanyInfoLink"
-            },
-            "saveProfilePictureInfo": {
-              "$ref": "#/definitions/links.saveProfilePictureInfoLink"
-            },
-            "getCreditCardInfo": {
-              "$ref": "#/definitions/links.getCreditCardInfoLink"
-            },
-            "saveUserCreditCardLink": {
-              "$ref": "#/definitions/links.saveCreditCardInfoLink"
-            }
-          },
-          "additionalProperties": false
+        "changePassword": {
+          "$ref": "#/definitions/links.changePasswordLink"
         },
+        "saveCompanyInfo": {
+          "$ref": "#/definitions/links.saveCompanyInfoLink"
+        },
+        "saveProfilePictureInfo": {
+          "$ref": "#/definitions/links.saveProfilePictureInfoLink"
+        },
+        "getCreditCardInfo": {
+          "$ref": "#/definitions/links.getCreditCardInfoLink"
+        },
+        "saveUserCreditCardLink": {
+          "$ref": "#/definitions/links.saveCreditCardInfoLink"
+        }
+      },
+      "additionalProperties": false
+    },
+    "accountInfo": {
+      "type": "object",
+      "required": [
+        "userId",
+        "email",
+        "status",
+        "links",
+        "personalInfo",
+        "companyInfo",
+        "profilePictureUrl"
+      ],
+      "properties": {
         "userId": {
           "$ref": "https://api.swaggerhub.com/domains/BeezUP/api.beezup.com/v2#/definitions/BeezUP.Common.UserId"
         },
@@ -12956,8 +12962,14 @@
         "companyInfo": {
           "$ref": "#/definitions/companyInfo"
         },
-        "profilePictureInfo": {
-          "$ref": "#/definitions/profilePictureInfo"
+        "profilePictureUrl": {
+          "$ref": "#/definitions/profilePictureUrl"
+        },
+        "links": {
+          "$ref": "#/definitions/accountInfoLinks"
+        },
+        "info": {
+          "$ref": "https://api.swaggerhub.com/domains/BeezUP/api.beezup.com/v2#/definitions/BeezUP.Common.InfoSummaries"
         }
       }
     },
