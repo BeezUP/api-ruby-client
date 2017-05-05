@@ -37,7 +37,7 @@ describe 'ProfilePictureInfoWithDefault' do
     end
   end
 
-  describe 'test attribute "use_gravatar_profile_picture"' do
+  describe 'test attribute "profile_picture_selected"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

@@ -16,7 +16,7 @@ module SwaggerClient
   class ProfilePictureInfoWithDefault
     attr_accessor :profile_picture_url
 
-    attr_accessor :use_gravatar_profile_picture
+    attr_accessor :profile_picture_selected
 
     attr_accessor :initials_profile_picture_url
 
@@ -27,7 +27,7 @@ module SwaggerClient
     def self.attribute_map
       {
         :'profile_picture_url' => :'profilePictureUrl',
-        :'use_gravatar_profile_picture' => :'useGravatarProfilePicture',
+        :'profile_picture_selected' => :'profilePictureSelected',
         :'initials_profile_picture_url' => :'initialsProfilePictureUrl',
         :'gravatar_profile_picture_url' => :'gravatarProfilePictureUrl'
       }
@@ -37,7 +37,7 @@ module SwaggerClient
     def self.swagger_types
       {
         :'profile_picture_url' => :'ProfilePictureUrl',
-        :'use_gravatar_profile_picture' => :'UseGravatarProfilePicture',
+        :'profile_picture_selected' => :'ProfilePictureSelected',
         :'initials_profile_picture_url' => :'InitialsProfilePictureUrl',
         :'gravatar_profile_picture_url' => :'GravatarProfilePictureUrl'
       }
@@ -55,8 +55,8 @@ module SwaggerClient
         self.profile_picture_url = attributes[:'profilePictureUrl']
       end
 
-      if attributes.has_key?(:'useGravatarProfilePicture')
-        self.use_gravatar_profile_picture = attributes[:'useGravatarProfilePicture']
+      if attributes.has_key?(:'profilePictureSelected')
+        self.profile_picture_selected = attributes[:'profilePictureSelected']
       end
 
       if attributes.has_key?(:'initialsProfilePictureUrl')
@@ -73,8 +73,8 @@ module SwaggerClient
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @use_gravatar_profile_picture.nil?
-        invalid_properties.push("invalid value for 'use_gravatar_profile_picture', use_gravatar_profile_picture cannot be nil.")
+      if @profile_picture_selected.nil?
+        invalid_properties.push("invalid value for 'profile_picture_selected', profile_picture_selected cannot be nil.")
       end
 
       if @initials_profile_picture_url.nil?
@@ -91,7 +91,7 @@ module SwaggerClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @use_gravatar_profile_picture.nil?
+      return false if @profile_picture_selected.nil?
       return false if @initials_profile_picture_url.nil?
       return false if @gravatar_profile_picture_url.nil?
       return true
@@ -103,7 +103,7 @@ module SwaggerClient
       return true if self.equal?(o)
       self.class == o.class &&
           profile_picture_url == o.profile_picture_url &&
-          use_gravatar_profile_picture == o.use_gravatar_profile_picture &&
+          profile_picture_selected == o.profile_picture_selected &&
           initials_profile_picture_url == o.initials_profile_picture_url &&
           gravatar_profile_picture_url == o.gravatar_profile_picture_url
     end
@@ -117,7 +117,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [profile_picture_url, use_gravatar_profile_picture, initials_profile_picture_url, gravatar_profile_picture_url].hash
+      [profile_picture_url, profile_picture_selected, initials_profile_picture_url, gravatar_profile_picture_url].hash
     end
 
     # Builds the object from hash

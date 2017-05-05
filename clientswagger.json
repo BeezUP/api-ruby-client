@@ -12902,10 +12902,15 @@
       "example": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Marlon_Brando_%28cropped%29.jpg/220px-Marlon_Brando_%28cropped%29.jpg",
       "type": "string"
     },
-    "useGravatarProfilePicture": {
-      "description": "Your profile picture choice about usage of gravatar.",
-      "type": "boolean",
-      "example": true
+    "profilePictureSelected": {
+      "description": "Your profile picture choice about usage of gravatar picture, initials picture or uploaded picture.",
+      "type": "string",
+      "enum": [
+        "gravatar",
+        "initials",
+        "uploaded"
+      ],
+      "example": "initials"
     },
     "whatIDo": {
       "description": "Your role in your company",
@@ -13149,7 +13154,7 @@
         {
           "type": "object",
           "required": [
-            "useGravatarProfilePicture",
+            "profilePictureSelected",
             "initialsProfilePictureUrl",
             "gravatarProfilePictureUrl"
           ],
@@ -13178,15 +13183,15 @@
     },
     "profilePictureInfo": {
       "required": [
-        "useGravatarProfilePicture"
+        "profilePictureSelected"
       ],
       "type": "object",
       "properties": {
         "profilePictureUrl": {
           "$ref": "#/definitions/profilePictureUrl"
         },
-        "useGravatarProfilePicture": {
-          "$ref": "#/definitions/useGravatarProfilePicture"
+        "profilePictureSelected": {
+          "$ref": "#/definitions/profilePictureSelected"
         }
       }
     },
