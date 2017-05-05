@@ -107,7 +107,7 @@ module SwaggerClient
         :'order_currency_code' => :'BeezUPCommonCurrencyCode',
         :'processing' => :'Processing',
         :'etag' => :'Etag',
-        :'links' => :'Array<BeezUPCommonLink2>'
+        :'links' => :'DefinitionsorderHeaderLinks'
       }
     end
 
@@ -196,9 +196,7 @@ module SwaggerClient
       end
 
       if attributes.has_key?(:'links')
-        if (value = attributes[:'links']).is_a?(Array)
-          self.links = value
-        end
+        self.links = attributes[:'links']
       end
 
     end

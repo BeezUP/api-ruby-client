@@ -13,54 +13,51 @@ require 'date'
 
 module SwaggerClient
 
-  class UserFriendInfo
-    # Your friend's user id
-    attr_accessor :user_id
+  class LinksChangeOrderLink
+    attr_accessor :doc_url
 
-    # Your friend's user last name
-    attr_accessor :last_name
+    # The description of the link
+    attr_accessor :description
 
-    # Your friend's user first name
-    attr_accessor :first_name
+    attr_accessor :href
 
-    attr_accessor :email
+    attr_accessor :operation_id
 
-    attr_accessor :profile_picture_url
+    attr_accessor :method
 
-    attr_accessor :country_iso_code_alpha3
+    attr_accessor :parameters
 
-    # Your friend's user company name
-    attr_accessor :company
+    # indicates whether the href is templated or not
+    attr_accessor :templated
 
-    # Your friend's user occupation in his company
-    attr_accessor :what_i_do
+    attr_accessor :info
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'user_id' => :'userId',
-        :'last_name' => :'lastName',
-        :'first_name' => :'firstName',
-        :'email' => :'email',
-        :'profile_picture_url' => :'profilePictureUrl',
-        :'country_iso_code_alpha3' => :'countryIsoCodeAlpha3',
-        :'company' => :'company',
-        :'what_i_do' => :'whatIDo'
+        :'doc_url' => :'docUrl',
+        :'description' => :'description',
+        :'href' => :'href',
+        :'operation_id' => :'operationId',
+        :'method' => :'method',
+        :'parameters' => :'parameters',
+        :'templated' => :'templated',
+        :'info' => :'info'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'user_id' => :'String',
-        :'last_name' => :'String',
-        :'first_name' => :'String',
-        :'email' => :'FriendEmail',
-        :'profile_picture_url' => :'FriendProfilePictureUrl',
-        :'country_iso_code_alpha3' => :'FriendCountryIsoCodeAlpha3',
-        :'company' => :'String',
-        :'what_i_do' => :'String'
+        :'doc_url' => :'BeezUPCommonDocUrl',
+        :'description' => :'String',
+        :'href' => :'BeezUPCommonHref',
+        :'operation_id' => :'BeezUPCommonOperationId',
+        :'method' => :'BeezUPCommonHttpMethod',
+        :'parameters' => :'Hash<String, BeezUPCommonLinkParameter3>',
+        :'templated' => :'BOOLEAN',
+        :'info' => :'BeezUPCommonInfoSummaries'
       }
     end
 
@@ -72,36 +69,38 @@ module SwaggerClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'userId')
-        self.user_id = attributes[:'userId']
+      if attributes.has_key?(:'docUrl')
+        self.doc_url = attributes[:'docUrl']
       end
 
-      if attributes.has_key?(:'lastName')
-        self.last_name = attributes[:'lastName']
+      if attributes.has_key?(:'description')
+        self.description = attributes[:'description']
       end
 
-      if attributes.has_key?(:'firstName')
-        self.first_name = attributes[:'firstName']
+      if attributes.has_key?(:'href')
+        self.href = attributes[:'href']
       end
 
-      if attributes.has_key?(:'email')
-        self.email = attributes[:'email']
+      if attributes.has_key?(:'operationId')
+        self.operation_id = attributes[:'operationId']
       end
 
-      if attributes.has_key?(:'profilePictureUrl')
-        self.profile_picture_url = attributes[:'profilePictureUrl']
+      if attributes.has_key?(:'method')
+        self.method = attributes[:'method']
       end
 
-      if attributes.has_key?(:'countryIsoCodeAlpha3')
-        self.country_iso_code_alpha3 = attributes[:'countryIsoCodeAlpha3']
+      if attributes.has_key?(:'parameters')
+        if (value = attributes[:'parameters']).is_a?(Array)
+          self.parameters = value
+        end
       end
 
-      if attributes.has_key?(:'company')
-        self.company = attributes[:'company']
+      if attributes.has_key?(:'templated')
+        self.templated = attributes[:'templated']
       end
 
-      if attributes.has_key?(:'whatIDo')
-        self.what_i_do = attributes[:'whatIDo']
+      if attributes.has_key?(:'info')
+        self.info = attributes[:'info']
       end
 
     end
@@ -110,47 +109,12 @@ module SwaggerClient
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @user_id.nil?
-        invalid_properties.push("invalid value for 'user_id', user_id cannot be nil.")
-      end
-
-      if @last_name.nil?
-        invalid_properties.push("invalid value for 'last_name', last_name cannot be nil.")
-      end
-
-      if @first_name.nil?
-        invalid_properties.push("invalid value for 'first_name', first_name cannot be nil.")
-      end
-
-      if @email.nil?
-        invalid_properties.push("invalid value for 'email', email cannot be nil.")
-      end
-
-      if @country_iso_code_alpha3.nil?
-        invalid_properties.push("invalid value for 'country_iso_code_alpha3', country_iso_code_alpha3 cannot be nil.")
-      end
-
-      if @company.nil?
-        invalid_properties.push("invalid value for 'company', company cannot be nil.")
-      end
-
-      if @what_i_do.nil?
-        invalid_properties.push("invalid value for 'what_i_do', what_i_do cannot be nil.")
-      end
-
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @user_id.nil?
-      return false if @last_name.nil?
-      return false if @first_name.nil?
-      return false if @email.nil?
-      return false if @country_iso_code_alpha3.nil?
-      return false if @company.nil?
-      return false if @what_i_do.nil?
       return true
     end
 
@@ -159,14 +123,14 @@ module SwaggerClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          user_id == o.user_id &&
-          last_name == o.last_name &&
-          first_name == o.first_name &&
-          email == o.email &&
-          profile_picture_url == o.profile_picture_url &&
-          country_iso_code_alpha3 == o.country_iso_code_alpha3 &&
-          company == o.company &&
-          what_i_do == o.what_i_do
+          doc_url == o.doc_url &&
+          description == o.description &&
+          href == o.href &&
+          operation_id == o.operation_id &&
+          method == o.method &&
+          parameters == o.parameters &&
+          templated == o.templated &&
+          info == o.info
     end
 
     # @see the `==` method
@@ -178,7 +142,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [user_id, last_name, first_name, email, profile_picture_url, country_iso_code_alpha3, company, what_i_do].hash
+      [doc_url, description, href, operation_id, method, parameters, templated, info].hash
     end
 
     # Builds the object from hash

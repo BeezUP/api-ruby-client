@@ -277,7 +277,7 @@ module SwaggerClient
         :'order_currency_code' => :'BeezUPCommonCurrencyCode',
         :'processing' => :'Processing',
         :'etag' => :'Etag',
-        :'links' => :'Array<BeezUPCommonLink2>',
+        :'links' => :'DefinitionsorderHeaderLinks',
         :'order_market_place_channel' => :'String',
         :'order_total_tax' => :'Float',
         :'order_total_commission' => :'Float',
@@ -320,7 +320,7 @@ module SwaggerClient
         :'order_order_source_uri' => :'String',
         :'order_order_items_source_uri' => :'String',
         :'order_items' => :'Array<OrderItem>',
-        :'transition_links' => :'Array<BeezUPCommonLink2>'
+        :'transition_links' => :'OrderTransitionLinks'
       }
     end
 
@@ -409,9 +409,7 @@ module SwaggerClient
       end
 
       if attributes.has_key?(:'links')
-        if (value = attributes[:'links']).is_a?(Array)
-          self.links = value
-        end
+        self.links = attributes[:'links']
       end
 
       if attributes.has_key?(:'order_MarketPlaceChannel')
@@ -585,9 +583,7 @@ module SwaggerClient
       end
 
       if attributes.has_key?(:'transitionLinks')
-        if (value = attributes[:'transitionLinks']).is_a?(Array)
-          self.transition_links = value
-        end
+        self.transition_links = attributes[:'transitionLinks']
       end
 
     end

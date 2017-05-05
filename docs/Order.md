@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **order_currency_code** | [**BeezUPCommonCurrencyCode**](BeezUPCommonCurrencyCode.md) |  | [optional] 
 **processing** | [**Processing**](Processing.md) |  | 
 **etag** | [**Etag**](Etag.md) |  | 
-**links** | [**Array&lt;BeezUPCommonLink2&gt;**](BeezUPCommonLink2.md) |  | 
+**links** | [**DefinitionsorderHeaderLinks**](DefinitionsorderHeaderLinks.md) |  | 
 **order_market_place_channel** | **String** | Useful to identify the origin of the order. For example in Amazon. | [optional] 
 **order_total_tax** | **Float** | The total tax of this order | [optional] 
 **order_total_commission** | **Float** | The total commission of this order | [optional] 
@@ -65,6 +65,6 @@ Name | Type | Description | Notes
 **order_order_source_uri** | **String** | Technical information: The url to the source of this order. We received this information from the marketplace.  | [optional] 
 **order_order_items_source_uri** | **String** | Technical information: The url to the source of this order items. We received this information from the marketplace.  | [optional] 
 **order_items** | [**Array&lt;OrderItem&gt;**](OrderItem.md) |  | 
-**transition_links** | [**Array&lt;BeezUPCommonLink2&gt;**](BeezUPCommonLink2.md) |  | 
+**transition_links** | [**OrderTransitionLinks**](OrderTransitionLinks.md) |  | 
 
 

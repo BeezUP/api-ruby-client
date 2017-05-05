@@ -13,54 +13,21 @@ require 'date'
 
 module SwaggerClient
 
-  class UserFriendInfo
-    # Your friend's user id
-    attr_accessor :user_id
-
-    # Your friend's user last name
-    attr_accessor :last_name
-
-    # Your friend's user first name
-    attr_accessor :first_name
-
-    attr_accessor :email
-
-    attr_accessor :profile_picture_url
-
-    attr_accessor :country_iso_code_alpha3
-
-    # Your friend's user company name
-    attr_accessor :company
-
-    # Your friend's user occupation in his company
-    attr_accessor :what_i_do
+  class OrderHeaderLinks
+    attr_accessor :_self
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'user_id' => :'userId',
-        :'last_name' => :'lastName',
-        :'first_name' => :'firstName',
-        :'email' => :'email',
-        :'profile_picture_url' => :'profilePictureUrl',
-        :'country_iso_code_alpha3' => :'countryIsoCodeAlpha3',
-        :'company' => :'company',
-        :'what_i_do' => :'whatIDo'
+        :'_self' => :'self'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'user_id' => :'String',
-        :'last_name' => :'String',
-        :'first_name' => :'String',
-        :'email' => :'FriendEmail',
-        :'profile_picture_url' => :'FriendProfilePictureUrl',
-        :'country_iso_code_alpha3' => :'FriendCountryIsoCodeAlpha3',
-        :'company' => :'String',
-        :'what_i_do' => :'String'
+        :'_self' => :'DefinitionslinksGetOrderLink'
       }
     end
 
@@ -72,36 +39,8 @@ module SwaggerClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'userId')
-        self.user_id = attributes[:'userId']
-      end
-
-      if attributes.has_key?(:'lastName')
-        self.last_name = attributes[:'lastName']
-      end
-
-      if attributes.has_key?(:'firstName')
-        self.first_name = attributes[:'firstName']
-      end
-
-      if attributes.has_key?(:'email')
-        self.email = attributes[:'email']
-      end
-
-      if attributes.has_key?(:'profilePictureUrl')
-        self.profile_picture_url = attributes[:'profilePictureUrl']
-      end
-
-      if attributes.has_key?(:'countryIsoCodeAlpha3')
-        self.country_iso_code_alpha3 = attributes[:'countryIsoCodeAlpha3']
-      end
-
-      if attributes.has_key?(:'company')
-        self.company = attributes[:'company']
-      end
-
-      if attributes.has_key?(:'whatIDo')
-        self.what_i_do = attributes[:'whatIDo']
+      if attributes.has_key?(:'self')
+        self._self = attributes[:'self']
       end
 
     end
@@ -110,32 +49,8 @@ module SwaggerClient
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @user_id.nil?
-        invalid_properties.push("invalid value for 'user_id', user_id cannot be nil.")
-      end
-
-      if @last_name.nil?
-        invalid_properties.push("invalid value for 'last_name', last_name cannot be nil.")
-      end
-
-      if @first_name.nil?
-        invalid_properties.push("invalid value for 'first_name', first_name cannot be nil.")
-      end
-
-      if @email.nil?
-        invalid_properties.push("invalid value for 'email', email cannot be nil.")
-      end
-
-      if @country_iso_code_alpha3.nil?
-        invalid_properties.push("invalid value for 'country_iso_code_alpha3', country_iso_code_alpha3 cannot be nil.")
-      end
-
-      if @company.nil?
-        invalid_properties.push("invalid value for 'company', company cannot be nil.")
-      end
-
-      if @what_i_do.nil?
-        invalid_properties.push("invalid value for 'what_i_do', what_i_do cannot be nil.")
+      if @_self.nil?
+        invalid_properties.push("invalid value for '_self', _self cannot be nil.")
       end
 
       return invalid_properties
@@ -144,13 +59,7 @@ module SwaggerClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @user_id.nil?
-      return false if @last_name.nil?
-      return false if @first_name.nil?
-      return false if @email.nil?
-      return false if @country_iso_code_alpha3.nil?
-      return false if @company.nil?
-      return false if @what_i_do.nil?
+      return false if @_self.nil?
       return true
     end
 
@@ -159,14 +68,7 @@ module SwaggerClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          user_id == o.user_id &&
-          last_name == o.last_name &&
-          first_name == o.first_name &&
-          email == o.email &&
-          profile_picture_url == o.profile_picture_url &&
-          country_iso_code_alpha3 == o.country_iso_code_alpha3 &&
-          company == o.company &&
-          what_i_do == o.what_i_do
+          _self == o._self
     end
 
     # @see the `==` method
@@ -178,7 +80,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [user_id, last_name, first_name, email, profile_picture_url, country_iso_code_alpha3, company, what_i_do].hash
+      [_self].hash
     end
 
     # Builds the object from hash
