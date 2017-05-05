@@ -20,6 +20,9 @@ module SwaggerClient
 
     attr_accessor :channel_logo_url
 
+    # Indicates if we have more detailed information about this channel
+    attr_accessor :description_available
+
     attr_accessor :links
 
 
@@ -29,6 +32,7 @@ module SwaggerClient
         :'channel_id' => :'channelId',
         :'channel_name' => :'channelName',
         :'channel_logo_url' => :'channelLogoUrl',
+        :'description_available' => :'descriptionAvailable',
         :'links' => :'links'
       }
     end
@@ -39,7 +43,8 @@ module SwaggerClient
         :'channel_id' => :'BeezUPCommonChannelId',
         :'channel_name' => :'BeezUPCommonChannelName',
         :'channel_logo_url' => :'BeezUPCommonHttpUrl',
-        :'links' => :'AvailableChannelLink'
+        :'description_available' => :'BOOLEAN',
+        :'links' => :'ChannelHeaderLinks'
       }
     end
 
@@ -61,6 +66,12 @@ module SwaggerClient
 
       if attributes.has_key?(:'channelLogoUrl')
         self.channel_logo_url = attributes[:'channelLogoUrl']
+      end
+
+      if attributes.has_key?(:'descriptionAvailable')
+        self.description_available = attributes[:'descriptionAvailable']
+      else
+        self.description_available = false
       end
 
       if attributes.has_key?(:'links')
@@ -85,6 +96,10 @@ module SwaggerClient
         invalid_properties.push("invalid value for 'channel_logo_url', channel_logo_url cannot be nil.")
       end
 
+      if @description_available.nil?
+        invalid_properties.push("invalid value for 'description_available', description_available cannot be nil.")
+      end
+
       if @links.nil?
         invalid_properties.push("invalid value for 'links', links cannot be nil.")
       end
@@ -98,6 +113,7 @@ module SwaggerClient
       return false if @channel_id.nil?
       return false if @channel_name.nil?
       return false if @channel_logo_url.nil?
+      return false if @description_available.nil?
       return false if @links.nil?
       return true
     end
@@ -110,6 +126,7 @@ module SwaggerClient
           channel_id == o.channel_id &&
           channel_name == o.channel_name &&
           channel_logo_url == o.channel_logo_url &&
+          description_available == o.description_available &&
           links == o.links
     end
 
@@ -122,7 +139,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [channel_id, channel_name, channel_logo_url, links].hash
+      [channel_id, channel_name, channel_logo_url, description_available, links].hash
     end
 
     # Builds the object from hash

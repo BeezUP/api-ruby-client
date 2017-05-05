@@ -47,7 +47,7 @@ module SwaggerClient
     def self.swagger_types
       {
         :'channel_column_id' => :'BeezUPCommonChannelColumnId',
-        :'channel_column_name' => :'ChannelColumnName',
+        :'channel_column_name' => :'BeezUPCommonChannelColumnName',
         :'channel_column_description' => :'ChannelColumnDescription',
         :'show_in_mapping' => :'ChannelColumnShowInMapping',
         :'position' => :'Integer',
