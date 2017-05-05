@@ -43,7 +43,7 @@ describe 'ChannelCatalogStatus' do
     end
   end
 
-  describe 'test attribute "category_mapping_status"' do
+  describe 'test attribute "category_mapping_state"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
