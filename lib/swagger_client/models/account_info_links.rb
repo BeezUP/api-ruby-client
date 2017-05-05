@@ -97,12 +97,47 @@ module SwaggerClient
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @save_personal_info.nil?
+        invalid_properties.push("invalid value for 'save_personal_info', save_personal_info cannot be nil.")
+      end
+
+      if @change_password.nil?
+        invalid_properties.push("invalid value for 'change_password', change_password cannot be nil.")
+      end
+
+      if @save_company_info.nil?
+        invalid_properties.push("invalid value for 'save_company_info', save_company_info cannot be nil.")
+      end
+
+      if @get_profile_picture_info.nil?
+        invalid_properties.push("invalid value for 'get_profile_picture_info', get_profile_picture_info cannot be nil.")
+      end
+
+      if @save_profile_picture_info.nil?
+        invalid_properties.push("invalid value for 'save_profile_picture_info', save_profile_picture_info cannot be nil.")
+      end
+
+      if @get_credit_card_info.nil?
+        invalid_properties.push("invalid value for 'get_credit_card_info', get_credit_card_info cannot be nil.")
+      end
+
+      if @save_user_credit_card_link.nil?
+        invalid_properties.push("invalid value for 'save_user_credit_card_link', save_user_credit_card_link cannot be nil.")
+      end
+
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @save_personal_info.nil?
+      return false if @change_password.nil?
+      return false if @save_company_info.nil?
+      return false if @get_profile_picture_info.nil?
+      return false if @save_profile_picture_info.nil?
+      return false if @get_credit_card_info.nil?
+      return false if @save_user_credit_card_link.nil?
       return true
     end
 

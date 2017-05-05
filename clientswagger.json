@@ -12936,6 +12936,15 @@
     "accountInfoLinks": {
       "description": "The different actions you can make on this account",
       "type": "object",
+      "required": [
+        "savePersonalInfo",
+        "changePassword",
+        "getProfilePictureInfo",
+        "saveCompanyInfo",
+        "saveProfilePictureInfo",
+        "getCreditCardInfo",
+        "saveUserCreditCardLink"
+      ],
       "properties": {
         "savePersonalInfo": {
           "$ref": "#/definitions/links.savePersonalInfoLink"
