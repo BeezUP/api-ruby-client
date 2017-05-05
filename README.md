@@ -442,6 +442,7 @@ Class | Method | HTTP request | Description
  - [SwaggerClient::CustomColumn](docs/CustomColumn.md)
  - [SwaggerClient::CustomColumns](docs/CustomColumns.md)
  - [SwaggerClient::DateSearchType](docs/DateSearchType.md)
+ - [SwaggerClient::DefaultProfilePictureUrl](docs/DefaultProfilePictureUrl.md)
  - [SwaggerClient::DetectedCatalogColumn](docs/DetectedCatalogColumn.md)
  - [SwaggerClient::DetectedCatalogColumns](docs/DetectedCatalogColumns.md)
  - [SwaggerClient::DisplayGroupName](docs/DisplayGroupName.md)

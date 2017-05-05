@@ -12885,7 +12885,7 @@
       ]
     },
     "profilePictureUrl": {
-      "description": "Can be null if you choose to use gravatar picture profil, if not you must indicate the url of your picture profil.",
+      "description": "Indicate the url of your picture profil",
       "pattern": "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\\/\\w \\.-]*)*\\/?$",
       "example": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Marlon_Brando_%28cropped%29.jpg/220px-Marlon_Brando_%28cropped%29.jpg",
       "type": "string"
@@ -13108,15 +13108,15 @@
     "profilePictureInfoResponse": {
       "type": "object",
       "required": [
-        "links",
-        "profilePictureInfo"
+        "profilePictureInfo",
+        "links"
       ],
       "properties": {
-        "links": {
-          "$ref": "#/definitions/profilePictureInfoResponseLinks"
-        },
         "profilePictureInfo": {
           "$ref": "#/definitions/profilePictureInfoWithDefault"
+        },
+        "links": {
+          "$ref": "#/definitions/profilePictureInfoResponseLinks"
         }
       }
     },
@@ -13129,15 +13129,21 @@
           "type": "object",
           "required": [
             "useGravatarProfilePicture",
-            "defaultPictureUrl"
+            "defaultProfilePictureUrl"
           ],
           "properties": {
-            "defaultPictureUrl": {
-              "$ref": "#/definitions/profilePictureUrl"
+            "defaultProfilePictureUrl": {
+              "$ref": "#/definitions/defaultProfilePictureUrl"
             }
           }
         }
       ]
+    },
+    "defaultProfilePictureUrl": {
+      "description": "Indicate the default url of your picture profil",
+      "pattern": "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\\/\\w \\.-]*)*\\/?$",
+      "example": "https://dummyimage.com/50x50/000000/fff&text=AM",
+      "type": "string"
     },
     "profilePictureInfo": {
       "required": [

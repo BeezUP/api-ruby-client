@@ -43,7 +43,7 @@ describe 'ProfilePictureInfoWithDefault' do
     end
   end
 
-  describe 'test attribute "default_picture_url"' do
+  describe 'test attribute "default_profile_picture_url"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
