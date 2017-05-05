@@ -430,6 +430,7 @@
       "in": "path",
       "required": true,
       "type": "string",
+      "format": "uuid",
       "x-example": "00000000000000000000000000000000000000000000000"
     },
     "changeOrderTypeParameter": {
@@ -15483,15 +15484,48 @@
       }
     },
     "orderLinks": {
-      "type": "object",
-      "required": [
-        "self"
-      ],
-      "properties": {
-        "self": {
-          "$ref": "#definitions/links.GetOrderLink"
+      "allOf": [
+        {
+          "$ref": "#/definitions/orderHeaderLinks"
+        },
+        {
+          "type": "object",
+          "required": [
+            "self"
+          ],
+          "properties": {
+            "history": {
+              "$ref": "#definitions/links.GetOrderHistoryLink"
+            }
+          }
         }
-      }
+      ]
+    },
+    "links.GetOrderHistoryLink": {
+      "allOf": [
+        {
+          "$ref": "https://api.swaggerhub.com/domains/BeezUP/api.beezup.com/v2#/definitions/BeezUP.Common.Link3"
+        },
+        {
+          "example": {
+            "href": "/v2/user/marketplaces/orders/Amazon/1001/00000000000000000000000000000000000000000000000/history",
+            "method": "GET"
+          }
+        }
+      ]
+    },
+    "links.SetMerchantOrderInfoLink": {
+      "allOf": [
+        {
+          "$ref": "https://api.swaggerhub.com/domains/BeezUP/api.beezup.com/v2#/definitions/BeezUP.Common.Link3"
+        },
+        {
+          "example": {
+            "href": "/v2/user/marketplaces/orders/Amazon/1001/00000000000000000000000000000000000000000000000/setMerchantOrderInfo",
+            "method": "POST"
+          }
+        }
+      ]
     },
     "order": {
       "allOf": [

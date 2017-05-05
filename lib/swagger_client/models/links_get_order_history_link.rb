@@ -13,25 +13,51 @@ require 'date'
 
 module SwaggerClient
 
-  class OrderLinks
-    attr_accessor :_self
+  class LinksGetOrderHistoryLink
+    attr_accessor :doc_url
 
-    attr_accessor :history
+    # The description of the link
+    attr_accessor :description
+
+    attr_accessor :href
+
+    attr_accessor :operation_id
+
+    attr_accessor :method
+
+    attr_accessor :parameters
+
+    # indicates whether the href is templated or not
+    attr_accessor :templated
+
+    attr_accessor :info
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'_self' => :'self',
-        :'history' => :'history'
+        :'doc_url' => :'docUrl',
+        :'description' => :'description',
+        :'href' => :'href',
+        :'operation_id' => :'operationId',
+        :'method' => :'method',
+        :'parameters' => :'parameters',
+        :'templated' => :'templated',
+        :'info' => :'info'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'_self' => :'DefinitionslinksGetOrderLink',
-        :'history' => :'DefinitionslinksGetOrderHistoryLink'
+        :'doc_url' => :'BeezUPCommonDocUrl',
+        :'description' => :'String',
+        :'href' => :'BeezUPCommonHref',
+        :'operation_id' => :'BeezUPCommonOperationId',
+        :'method' => :'BeezUPCommonHttpMethod',
+        :'parameters' => :'Hash<String, BeezUPCommonLinkParameter3>',
+        :'templated' => :'BOOLEAN',
+        :'info' => :'BeezUPCommonInfoSummaries'
       }
     end
 
@@ -43,12 +69,38 @@ module SwaggerClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'self')
-        self._self = attributes[:'self']
+      if attributes.has_key?(:'docUrl')
+        self.doc_url = attributes[:'docUrl']
       end
 
-      if attributes.has_key?(:'history')
-        self.history = attributes[:'history']
+      if attributes.has_key?(:'description')
+        self.description = attributes[:'description']
+      end
+
+      if attributes.has_key?(:'href')
+        self.href = attributes[:'href']
+      end
+
+      if attributes.has_key?(:'operationId')
+        self.operation_id = attributes[:'operationId']
+      end
+
+      if attributes.has_key?(:'method')
+        self.method = attributes[:'method']
+      end
+
+      if attributes.has_key?(:'parameters')
+        if (value = attributes[:'parameters']).is_a?(Array)
+          self.parameters = value
+        end
+      end
+
+      if attributes.has_key?(:'templated')
+        self.templated = attributes[:'templated']
+      end
+
+      if attributes.has_key?(:'info')
+        self.info = attributes[:'info']
       end
 
     end
@@ -57,17 +109,12 @@ module SwaggerClient
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @_self.nil?
-        invalid_properties.push("invalid value for '_self', _self cannot be nil.")
-      end
-
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @_self.nil?
       return true
     end
 
@@ -76,8 +123,14 @@ module SwaggerClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          _self == o._self &&
-          history == o.history
+          doc_url == o.doc_url &&
+          description == o.description &&
+          href == o.href &&
+          operation_id == o.operation_id &&
+          method == o.method &&
+          parameters == o.parameters &&
+          templated == o.templated &&
+          info == o.info
     end
 
     # @see the `==` method
@@ -89,7 +142,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [_self, history].hash
+      [doc_url, description, href, operation_id, method, parameters, templated, info].hash
     end
 
     # Builds the object from hash
