@@ -14772,6 +14772,10 @@
     "orderExportations": {
       "description": "The list of Order report exportations",
       "type": "object",
+      "required": [
+        "paginationResult",
+        "exportations"
+      ],
       "properties": {
         "paginationResult": {
           "$ref": "https://api.swaggerhub.com/domains/BeezUP/api.beezup.com/v2#/definitions/BeezUP.Common.PaginationResult"
@@ -14997,6 +15001,7 @@
       }
     },
     "exportOrderListRequest": {
+      "description": "The message request to export order list. The store identifier is requested to regroup the exportations.",
       "type": "object",
       "required": [
         "storeId",

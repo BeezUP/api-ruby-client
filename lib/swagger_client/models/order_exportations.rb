@@ -59,12 +59,22 @@ module SwaggerClient
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @pagination_result.nil?
+        invalid_properties.push("invalid value for 'pagination_result', pagination_result cannot be nil.")
+      end
+
+      if @exportations.nil?
+        invalid_properties.push("invalid value for 'exportations', exportations cannot be nil.")
+      end
+
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @pagination_result.nil?
+      return false if @exportations.nil?
       return true
     end
 
