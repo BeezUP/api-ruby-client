@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **channel_name** | [**BeezUPCommonChannelName**](BeezUPCommonChannelName.md) |  | 
 **channel_logo_url** | [**BeezUPCommonHttpUrl**](BeezUPCommonHttpUrl.md) |  | 
 **description_available** | **BOOLEAN** | Indicates if we have more detailed information about this channel | [default to false]
+**is_marketplace** | **BOOLEAN** | Indicates if the channel is a marketplace | [default to false]
 **links** | [**ChannelHeaderLinks**](ChannelHeaderLinks.md) |  | 
 
 
