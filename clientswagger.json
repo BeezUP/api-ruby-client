@@ -4626,6 +4626,29 @@
       }
     },
     "/v2/user/customer/account/profilePictureInfo": {
+      "get": {
+        "tags": [
+          "BeezUP"
+        ],
+        "summary": "Get profile picture information",
+        "operationId": "GetProfilePictureInfo",
+        "responses": {
+          "200": {
+            "description": "Profile picture information",
+            "schema": {
+              "$ref": "#/definitions/profilePictureInfoResponse"
+            }
+          },
+          "default": {
+            "$ref": "https://api.swaggerhub.com/domains/BeezUP/api.beezup.com/v2#/responses/GeneralError"
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      },
       "put": {
         "tags": [
           "BeezUP"
@@ -12923,6 +12946,9 @@
         "saveCompanyInfo": {
           "$ref": "#/definitions/links.saveCompanyInfoLink"
         },
+        "getProfilePictureInfo": {
+          "$ref": "#/definitions/links.getProfilePictureInfoLink"
+        },
         "saveProfilePictureInfo": {
           "$ref": "#/definitions/links.saveProfilePictureInfoLink"
         },
@@ -12934,6 +12960,19 @@
         }
       },
       "additionalProperties": false
+    },
+    "links.getProfilePictureInfoLink": {
+      "allOf": [
+        {
+          "$ref": "https://api.swaggerhub.com/domains/BeezUP/api.beezup.com/v2#/definitions/BeezUP.Common.Link3"
+        },
+        {
+          "example": {
+            "href": "/v2/user/customer/account/profilePictureInfo",
+            "method": "GET"
+          }
+        }
+      ]
     },
     "accountInfo": {
       "type": "object",
@@ -13048,6 +13087,28 @@
         },
         "accountingEmails": {
           "$ref": "#/definitions/accountingEmails"
+        }
+      }
+    },
+    "profilePictureInfoResponseLinks": {
+      "type": "object",
+      "properties": {
+        "self": {
+          "$ref": "#/definitions/links.getProfilePictureInfoLink"
+        },
+        "save": {
+          "$ref": "#/definitions/links.saveProfilePictureInfoLink"
+        }
+      }
+    },
+    "profilePictureInfoResponse": {
+      "type": "object",
+      "properties": {
+        "links": {
+          "$ref": "#/definitions/profilePictureInfoResponseLinks"
+        },
+        "profilePictureInfo": {
+          "$ref": "#/definitions/profilePictureInfo"
         }
       }
     },

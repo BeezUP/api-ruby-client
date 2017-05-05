@@ -4297,6 +4297,55 @@ module SwaggerClient
       return data, status_code, headers
     end
 
+    # Get profile picture information
+    # 
+    # @param [Hash] opts the optional parameters
+    # @return [ProfilePictureInfoResponse]
+    def get_profile_picture_info(opts = {})
+      data, _status_code, _headers = get_profile_picture_info_with_http_info(opts)
+      return data
+    end
+
+    # Get profile picture information
+    # 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(ProfilePictureInfoResponse, Fixnum, Hash)>] ProfilePictureInfoResponse data, response status code and response headers
+    def get_profile_picture_info_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: BeezUPApi.get_profile_picture_info ..."
+      end
+      # resource path
+      local_var_path = "/v2/user/customer/account/profilePictureInfo".sub('{format}','json')
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['api_key']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'ProfilePictureInfoResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: BeezUPApi#get_profile_picture_info\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Fetch the publication history for an account, sorted by descending start date
     # 
     # @param marketplace_technical_code Marketplace Technical Code to query (required)

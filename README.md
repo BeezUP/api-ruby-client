@@ -159,6 +159,7 @@ Class | Method | HTTP request | Description
 *SwaggerClient::BeezUPApi* | [**get_order_history**](docs/BeezUPApi.md#get_order_history) | **GET** /v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/history | Get an Order's harvest and change history
 *SwaggerClient::BeezUPApi* | [**get_order_list_full**](docs/BeezUPApi.md#get_order_list_full) | **POST** /v2/user/marketplaces/orders/list/full | Get a paginated list of all Orders with all Order and Order Item(s) properties
 *SwaggerClient::BeezUPApi* | [**get_order_list_light**](docs/BeezUPApi.md#get_order_list_light) | **POST** /v2/user/marketplaces/orders/list/light | Get a paginated list of all Orders without details
+*SwaggerClient::BeezUPApi* | [**get_profile_picture_info**](docs/BeezUPApi.md#get_profile_picture_info) | **GET** /v2/user/customer/account/profilePictureInfo | Get profile picture information
 *SwaggerClient::BeezUPApi* | [**get_publications**](docs/BeezUPApi.md#get_publications) | **GET** /v2/user/marketplaces/channelcatalogs/publications/{marketplaceTechnicalCode}/{accountId}/history | Fetch the publication history for an account, sorted by descending start date
 *SwaggerClient::BeezUPApi* | [**get_report_filter**](docs/BeezUPApi.md#get_report_filter) | **GET** /v2/user/analytics/{storeId}/reports/filters/{reportFilterId} | Get the report filter description
 *SwaggerClient::BeezUPApi* | [**get_report_filters**](docs/BeezUPApi.md#get_report_filters) | **GET** /v2/user/analytics/{storeId}/reports/filters | Get report filter list for the given store
@@ -513,6 +514,7 @@ Class | Method | HTTP request | Description
  - [SwaggerClient::LinksGetCreditCardInfoLink](docs/LinksGetCreditCardInfoLink.md)
  - [SwaggerClient::LinksGetMarketplaceAccountStoresLink](docs/LinksGetMarketplaceAccountStoresLink.md)
  - [SwaggerClient::LinksGetOrderLink](docs/LinksGetOrderLink.md)
+ - [SwaggerClient::LinksGetProfilePictureInfoLink](docs/LinksGetProfilePictureInfoLink.md)
  - [SwaggerClient::LinksGetPublicationsLink](docs/LinksGetPublicationsLink.md)
  - [SwaggerClient::LinksGetReportFilterLink](docs/LinksGetReportFilterLink.md)
  - [SwaggerClient::LinksGetReportFiltersLink](docs/LinksGetReportFiltersLink.md)
@@ -608,6 +610,8 @@ Class | Method | HTTP request | Description
  - [SwaggerClient::ProductValues](docs/ProductValues.md)
  - [SwaggerClient::Products](docs/Products.md)
  - [SwaggerClient::ProfilePictureInfo](docs/ProfilePictureInfo.md)
+ - [SwaggerClient::ProfilePictureInfoResponse](docs/ProfilePictureInfoResponse.md)
+ - [SwaggerClient::ProfilePictureInfoResponseLinks](docs/ProfilePictureInfoResponseLinks.md)
  - [SwaggerClient::ProfilePictureUrl](docs/ProfilePictureUrl.md)
  - [SwaggerClient::PromotionalCodeValidity](docs/PromotionalCodeValidity.md)
  - [SwaggerClient::PublicationFeedReporting](docs/PublicationFeedReporting.md)

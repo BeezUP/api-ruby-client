@@ -81,6 +81,7 @@ Method | HTTP request | Description
 [**get_order_history**](BeezUPApi.md#get_order_history) | **GET** /v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/history | Get an Order&#39;s harvest and change history
 [**get_order_list_full**](BeezUPApi.md#get_order_list_full) | **POST** /v2/user/marketplaces/orders/list/full | Get a paginated list of all Orders with all Order and Order Item(s) properties
 [**get_order_list_light**](BeezUPApi.md#get_order_list_light) | **POST** /v2/user/marketplaces/orders/list/light | Get a paginated list of all Orders without details
+[**get_profile_picture_info**](BeezUPApi.md#get_profile_picture_info) | **GET** /v2/user/customer/account/profilePictureInfo | Get profile picture information
 [**get_publications**](BeezUPApi.md#get_publications) | **GET** /v2/user/marketplaces/channelcatalogs/publications/{marketplaceTechnicalCode}/{accountId}/history | Fetch the publication history for an account, sorted by descending start date
 [**get_report_filter**](BeezUPApi.md#get_report_filter) | **GET** /v2/user/analytics/{storeId}/reports/filters/{reportFilterId} | Get the report filter description
 [**get_report_filters**](BeezUPApi.md#get_report_filters) | **GET** /v2/user/analytics/{storeId}/reports/filters | Get report filter list for the given store
@@ -4271,6 +4272,52 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OrderListLight**](OrderListLight.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **get_profile_picture_info**
+> ProfilePictureInfoResponse get_profile_picture_info
+
+Get profile picture information
+
+### Example
+```ruby
+# load the gem
+require 'swagger_client'
+# setup authorization
+SwaggerClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Ocp-Apim-Subscription-Key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Ocp-Apim-Subscription-Key'] = 'Bearer'
+end
+
+api_instance = SwaggerClient::BeezUPApi.new
+
+begin
+  #Get profile picture information
+  result = api_instance.get_profile_picture_info
+  p result
+rescue SwaggerClient::ApiError => e
+  puts "Exception when calling BeezUPApi->get_profile_picture_info: #{e}"
+end
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**ProfilePictureInfoResponse**](ProfilePictureInfoResponse.md)
 
 ### Authorization
 
