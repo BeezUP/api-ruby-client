@@ -138,14 +138,6 @@
       "description": "All security operations"
     },
     {
-      "name": "LOV",
-      "description": "All LOV operations"
-    },
-    {
-      "name": "Groups",
-      "description": "All LOV groups operations"
-    },
-    {
       "name": "Marketplaces - Channel catalogs - Global",
       "description": "Operations to fetch your marketplace account related to your channel catalogs"
     },
@@ -180,6 +172,18 @@
     {
       "name": "Exports",
       "description": "All Order report exportation operations"
+    },
+    {
+      "name": "Public Channels",
+      "description": "All our public channels operations"
+    },
+    {
+      "name": "LOV",
+      "description": "All LOV operations"
+    },
+    {
+      "name": "Groups",
+      "description": "All LOV groups operations"
     },
     {
       "name": "LOV",
@@ -5561,151 +5565,6 @@
         ]
       }
     },
-    "/v2/user/lov/": {
-      "get": {
-        "summary": "Get all list names",
-        "operationId": "GetUserListNames",
-        "tags": [
-          "BeezUP"
-        ],
-        "responses": {
-          "200": {
-            "description": "Get the list names",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "https://api.swaggerhub.com/domains/BeezUP/api.beezup.com/v2#/definitions/BeezUP.Common.LOVLink2"
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "api_key": []
-          }
-        ]
-      }
-    },
-    "/v2/user/lov/{listName}": {
-      "get": {
-        "tags": [
-          "BeezUP"
-        ],
-        "summary": "Get the list of values related to this list name",
-        "operationId": "GetUserListOfValues",
-        "parameters": [
-          {
-            "name": "listName",
-            "in": "path",
-            "required": true,
-            "description": "The list of value name your want to get",
-            "type": "string"
-          },
-          {
-            "name": "Accept-Language",
-            "description": "Indicates that the client accepts the following languages.",
-            "in": "header",
-            "required": false,
-            "type": "array",
-            "items": {
-              "type": "string",
-              "collectionFormat": "csv"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Get the list of values",
-            "headers": {
-              "Content-Language": {
-                "description": "Indicates the language use in the response",
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "collectionFormat": "csv"
-                }
-              }
-            },
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "https://api.swaggerhub.com/domains/BeezUP/api.beezup.com/v2#/definitions/BeezUP.Common.ListOfValueItem"
-              }
-            }
-          },
-          "404": {
-            "description": "The list is unreachable or not found"
-          }
-        },
-        "security": [
-          {
-            "api_key": []
-          }
-        ]
-      }
-    },
-    "/v2/user/lov/groups": {
-      "get": {
-        "tags": [
-          "BeezUP"
-        ],
-        "summary": "Get list of group of list name",
-        "operationId": "GetUserListGroupNames",
-        "responses": {
-          "200": {
-            "description": "Get the list of group names",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "https://api.swaggerhub.com/domains/BeezUP/api.beezup.com/v2#/definitions/BeezUP.Common.LOVLink2"
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "api_key": []
-          }
-        ]
-      }
-    },
-    "/v2/user/lov/groups/{listGroupName}": {
-      "get": {
-        "tags": [
-          "BeezUP"
-        ],
-        "summary": "Get list of values related to this group name",
-        "operationId": "GetUserListGroup",
-        "parameters": [
-          {
-            "name": "listGroupName",
-            "in": "path",
-            "required": true,
-            "description": "The list group name your want to get",
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Get the list of group names",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "https://api.swaggerhub.com/domains/BeezUP/api.beezup.com/v2#/definitions/BeezUP.Common.LOVLink2"
-              }
-            }
-          },
-          "403": {
-            "description": "The list is unreachable or not found"
-          }
-        },
-        "security": [
-          {
-            "api_key": []
-          }
-        ]
-      }
-    },
     "/v2/user/marketplaces/channelcatalogs/": {
       "get": {
         "tags": [
@@ -6736,6 +6595,238 @@
           }
         },
         "deprecated": false,
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/BeezUP/public_channels/2.0/": {
+      "get": {
+        "tags": [
+          "Public Channels"
+        ],
+        "summary": "The channel list regrouped by country",
+        "operationId": "GetChannelsByCountry",
+        "responses": {
+          "200": {
+            "description": "Channel list regrouped by country",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              },
+              "example": {
+                "FRA": "/v2/public/FRA",
+                "DEU": "/v2/public/DEU",
+                "ESP": "/v2/public/ESP",
+                "ITA": "/v2/public/ITA",
+                "GBR": "/v2/public/GBR"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/BeezUP/public_channels/2.0/{countryIsoCode}": {
+      "get": {
+        "tags": [
+          "Public Channels"
+        ],
+        "summary": "The channel list for one country",
+        "operationId": "GetChannels",
+        "parameters": [
+          {
+            "name": "countryIsoCode",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The country iso code alpha 3 based on this: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3#Decoding_table \\\nTo know which country are available you have to use the operation: GetChannelsByCountry\n"
+          },
+          {
+            "name": "Accept-Encoding",
+            "description": "Allows the client to indicate wether it accepts a compressed encoding to reduce traffic size.",
+            "in": "header",
+            "required": true,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "collectionFormat": "csv"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The channel list for one country",
+            "schema": {
+              "$ref": "#/definitions/channelInfoList"
+            },
+            "examples": {
+              "application/json": {
+                "channels": [
+                  {
+                    "name": "Amazon Direct FRA",
+                    "homeUrl": "http://www.amazon.fr",
+                    "logoUrl": "http://beezupcdn.blob.core.windows.net/comparators/Amazon%2520Direct%2520FRA.png",
+                    "tags": [
+                      "Marketplace"
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          "404": {
+            "description": "Channel country not found",
+            "schema": {
+              "$ref": "https://api.swaggerhub.com/domains/BeezUP/api.beezup.com/v2#/definitions/BeezUP.Common.ErrorResponseMessage"
+            }
+          },
+          "default": {
+            "$ref": "https://api.swaggerhub.com/domains/BeezUP/api.beezup.com/v2#/responses/GeneralError"
+          }
+        }
+      }
+    },
+    "/v2/user/lov/": {
+      "get": {
+        "summary": "Get all list names",
+        "operationId": "GetUserListNames",
+        "tags": [
+          "BeezUP"
+        ],
+        "responses": {
+          "200": {
+            "description": "Get the list names",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "https://api.swaggerhub.com/domains/BeezUP/api.beezup.com/v2#/definitions/BeezUP.Common.LOVLink2"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/v2/user/lov/{listName}": {
+      "get": {
+        "tags": [
+          "BeezUP"
+        ],
+        "summary": "Get the list of values related to this list name",
+        "operationId": "GetUserListOfValues",
+        "parameters": [
+          {
+            "name": "listName",
+            "in": "path",
+            "required": true,
+            "description": "The list of value name your want to get",
+            "type": "string"
+          },
+          {
+            "name": "Accept-Language",
+            "description": "Indicates that the client accepts the following languages.",
+            "in": "header",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "collectionFormat": "csv"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get the list of values",
+            "headers": {
+              "Content-Language": {
+                "description": "Indicates the language use in the response",
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "collectionFormat": "csv"
+                }
+              }
+            },
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "https://api.swaggerhub.com/domains/BeezUP/api.beezup.com/v2#/definitions/BeezUP.Common.ListOfValueItem"
+              }
+            }
+          },
+          "404": {
+            "description": "The list is unreachable or not found"
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/v2/user/lov/groups": {
+      "get": {
+        "tags": [
+          "BeezUP"
+        ],
+        "summary": "Get list of group of list name",
+        "operationId": "GetUserListGroupNames",
+        "responses": {
+          "200": {
+            "description": "Get the list of group names",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "https://api.swaggerhub.com/domains/BeezUP/api.beezup.com/v2#/definitions/BeezUP.Common.LOVLink2"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/v2/user/lov/groups/{listGroupName}": {
+      "get": {
+        "tags": [
+          "BeezUP"
+        ],
+        "summary": "Get list of values related to this group name",
+        "operationId": "GetUserListGroup",
+        "parameters": [
+          {
+            "name": "listGroupName",
+            "in": "path",
+            "required": true,
+            "description": "The list group name your want to get",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get the list of group names",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "https://api.swaggerhub.com/domains/BeezUP/api.beezup.com/v2#/definitions/BeezUP.Common.LOVLink2"
+              }
+            }
+          },
+          "403": {
+            "description": "The list is unreachable or not found"
+          }
+        },
         "security": [
           {
             "api_key": []
@@ -16307,6 +16398,17 @@
         }
       }
     },
+    "channelInfoList": {
+      "type": "object",
+      "properties": {
+        "channels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/channelInfo"
+          }
+        }
+      }
+    },
     "loginRequest": {
       "required": [
         "login",
@@ -16456,13 +16558,6 @@
       ]
     },
     {
-      "name": "User - List of Values",
-      "tags": [
-        "LOV",
-        "Groups"
-      ]
-    },
-    {
       "name": "Marketplaces - Channel catalogs",
       "tags": [
         "Marketplaces - Channel catalogs - Global",
@@ -16479,6 +16574,19 @@
         "Order",
         "Batches",
         "Exports"
+      ]
+    },
+    {
+      "name": "Public - Channels",
+      "tags": [
+        "Public Channels"
+      ]
+    },
+    {
+      "name": "User - List of Values",
+      "tags": [
+        "LOV",
+        "Groups"
       ]
     },
     {
