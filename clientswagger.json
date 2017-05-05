@@ -12887,7 +12887,7 @@
     "profilePictureUrl": {
       "description": "Can be null if you choose to use gravatar picture profil, if not you must indicate the url of your picture profil.",
       "pattern": "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\\/\\w \\.-]*)*\\/?$",
-      "example": "http://www.mydomain.com",
+      "example": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Marlon_Brando_%28cropped%29.jpg/220px-Marlon_Brando_%28cropped%29.jpg",
       "type": "string"
     },
     "useGravatarProfilePicture": {
@@ -13092,6 +13092,10 @@
     },
     "profilePictureInfoResponseLinks": {
       "type": "object",
+      "required": [
+        "self",
+        "save"
+      ],
       "properties": {
         "self": {
           "$ref": "#/definitions/links.getProfilePictureInfoLink"
@@ -13103,14 +13107,37 @@
     },
     "profilePictureInfoResponse": {
       "type": "object",
+      "required": [
+        "links",
+        "profilePictureInfo"
+      ],
       "properties": {
         "links": {
           "$ref": "#/definitions/profilePictureInfoResponseLinks"
         },
         "profilePictureInfo": {
-          "$ref": "#/definitions/profilePictureInfo"
+          "$ref": "#/definitions/profilePictureInfoWithDefault"
         }
       }
+    },
+    "profilePictureInfoWithDefault": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/profilePictureInfo"
+        },
+        {
+          "type": "object",
+          "required": [
+            "useGravatarProfilePicture",
+            "defaultPictureUrl"
+          ],
+          "properties": {
+            "defaultPictureUrl": {
+              "$ref": "#/definitions/profilePictureUrl"
+            }
+          }
+        }
+      ]
     },
     "profilePictureInfo": {
       "required": [

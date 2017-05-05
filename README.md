@@ -612,6 +612,7 @@ Class | Method | HTTP request | Description
  - [SwaggerClient::ProfilePictureInfo](docs/ProfilePictureInfo.md)
  - [SwaggerClient::ProfilePictureInfoResponse](docs/ProfilePictureInfoResponse.md)
  - [SwaggerClient::ProfilePictureInfoResponseLinks](docs/ProfilePictureInfoResponseLinks.md)
+ - [SwaggerClient::ProfilePictureInfoWithDefault](docs/ProfilePictureInfoWithDefault.md)
  - [SwaggerClient::ProfilePictureUrl](docs/ProfilePictureUrl.md)
  - [SwaggerClient::PromotionalCodeValidity](docs/PromotionalCodeValidity.md)
  - [SwaggerClient::PublicationFeedReporting](docs/PublicationFeedReporting.md)

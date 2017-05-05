@@ -13,25 +13,29 @@ require 'date'
 
 module SwaggerClient
 
-  class ProfilePictureInfoResponseLinks
-    attr_accessor :_self
+  class ProfilePictureInfoWithDefault
+    attr_accessor :profile_picture_url
 
-    attr_accessor :save
+    attr_accessor :use_gravatar_profile_picture
+
+    attr_accessor :default_picture_url
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'_self' => :'self',
-        :'save' => :'save'
+        :'profile_picture_url' => :'profilePictureUrl',
+        :'use_gravatar_profile_picture' => :'useGravatarProfilePicture',
+        :'default_picture_url' => :'defaultPictureUrl'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'_self' => :'LinksGetProfilePictureInfoLink',
-        :'save' => :'LinksSaveProfilePictureInfoLink'
+        :'profile_picture_url' => :'ProfilePictureUrl',
+        :'use_gravatar_profile_picture' => :'UseGravatarProfilePicture',
+        :'default_picture_url' => :'ProfilePictureUrl'
       }
     end
 
@@ -43,12 +47,16 @@ module SwaggerClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'self')
-        self._self = attributes[:'self']
+      if attributes.has_key?(:'profilePictureUrl')
+        self.profile_picture_url = attributes[:'profilePictureUrl']
       end
 
-      if attributes.has_key?(:'save')
-        self.save = attributes[:'save']
+      if attributes.has_key?(:'useGravatarProfilePicture')
+        self.use_gravatar_profile_picture = attributes[:'useGravatarProfilePicture']
+      end
+
+      if attributes.has_key?(:'defaultPictureUrl')
+        self.default_picture_url = attributes[:'defaultPictureUrl']
       end
 
     end
@@ -57,12 +65,12 @@ module SwaggerClient
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @_self.nil?
-        invalid_properties.push("invalid value for '_self', _self cannot be nil.")
+      if @use_gravatar_profile_picture.nil?
+        invalid_properties.push("invalid value for 'use_gravatar_profile_picture', use_gravatar_profile_picture cannot be nil.")
       end
 
-      if @save.nil?
-        invalid_properties.push("invalid value for 'save', save cannot be nil.")
+      if @default_picture_url.nil?
+        invalid_properties.push("invalid value for 'default_picture_url', default_picture_url cannot be nil.")
       end
 
       return invalid_properties
@@ -71,8 +79,8 @@ module SwaggerClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @_self.nil?
-      return false if @save.nil?
+      return false if @use_gravatar_profile_picture.nil?
+      return false if @default_picture_url.nil?
       return true
     end
 
@@ -81,8 +89,9 @@ module SwaggerClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          _self == o._self &&
-          save == o.save
+          profile_picture_url == o.profile_picture_url &&
+          use_gravatar_profile_picture == o.use_gravatar_profile_picture &&
+          default_picture_url == o.default_picture_url
     end
 
     # @see the `==` method
@@ -94,7 +103,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [_self, save].hash
+      [profile_picture_url, use_gravatar_profile_picture, default_picture_url].hash
     end
 
     # Builds the object from hash

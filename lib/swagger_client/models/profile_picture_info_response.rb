@@ -31,7 +31,7 @@ module SwaggerClient
     def self.swagger_types
       {
         :'links' => :'ProfilePictureInfoResponseLinks',
-        :'profile_picture_info' => :'ProfilePictureInfo'
+        :'profile_picture_info' => :'ProfilePictureInfoWithDefault'
       }
     end
 
@@ -57,12 +57,22 @@ module SwaggerClient
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @links.nil?
+        invalid_properties.push("invalid value for 'links', links cannot be nil.")
+      end
+
+      if @profile_picture_info.nil?
+        invalid_properties.push("invalid value for 'profile_picture_info', profile_picture_info cannot be nil.")
+      end
+
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @links.nil?
+      return false if @profile_picture_info.nil?
       return true
     end
 
