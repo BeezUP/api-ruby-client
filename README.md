@@ -576,6 +576,7 @@ Class | Method | HTTP request | Description
  - [SwaggerClient::OrderIdentifier](docs/OrderIdentifier.md)
  - [SwaggerClient::OrderIdentifierWithETag](docs/OrderIdentifierWithETag.md)
  - [SwaggerClient::OrderItem](docs/OrderItem.md)
+ - [SwaggerClient::OrderLinks](docs/OrderLinks.md)
  - [SwaggerClient::OrderListFull](docs/OrderListFull.md)
  - [SwaggerClient::OrderListLight](docs/OrderListLight.md)
  - [SwaggerClient::OrderListRequest](docs/OrderListRequest.md)

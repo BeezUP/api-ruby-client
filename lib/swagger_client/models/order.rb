@@ -277,7 +277,7 @@ module SwaggerClient
         :'order_currency_code' => :'BeezUPCommonCurrencyCode',
         :'processing' => :'Processing',
         :'etag' => :'Etag',
-        :'links' => :'DefinitionsorderHeaderLinks',
+        :'links' => :'OrderLinks',
         :'order_market_place_channel' => :'String',
         :'order_total_tax' => :'Float',
         :'order_total_commission' => :'Float',

@@ -15364,6 +15364,17 @@
         }
       }
     },
+    "orderLinks": {
+      "type": "object",
+      "required": [
+        "self"
+      ],
+      "properties": {
+        "self": {
+          "$ref": "#definitions/links.GetOrderLink"
+        }
+      }
+    },
     "order": {
       "allOf": [
         {
@@ -15389,6 +15400,9 @@
             "transitionLinks"
           ],
           "properties": {
+            "links": {
+              "$ref": "#/definitions/orderLinks"
+            },
             "order_MarketPlaceChannel": {
               "description": "Useful to identify the origin of the order. For example in Amazon.",
               "type": "string",
