@@ -56,6 +56,7 @@ Method | HTTP request | Description
 [**export_store_report_by_channel**](BeezUPApi.md#export_store_report_by_channel) | **POST** /v2/user/analytics/{storeId}/reports/bychannel/export | Export the report by channel
 [**export_store_report_by_product**](BeezUPApi.md#export_store_report_by_product) | **POST** /v2/user/analytics/{storeId}/reports/byproduct/export | Export the report by product
 [**get_automatic_transitions**](BeezUPApi.md#get_automatic_transitions) | **GET** /v2/user/marketplaces/orders/automaticTransitions | Get list of configured automatic Order status transitions
+[**get_available_channels**](BeezUPApi.md#get_available_channels) | **GET** /v2/user/channels/ | List all available channel for this store
 [**get_billing_periods**](BeezUPApi.md#get_billing_periods) | **GET** /v2/user/customer/billingPeriods | Get billing periods conditions
 [**get_channel_catalog**](BeezUPApi.md#get_channel_catalog) | **GET** /v2/user/channelCatalogs/{channelCatalogId} | Get the channel catalog information
 [**get_channel_catalog_categories**](BeezUPApi.md#get_channel_catalog_categories) | **GET** /v2/user/channelCatalogs/{channelCatalogId}/categoryMappings | Get channel catalog categories
@@ -70,7 +71,6 @@ Method | HTTP request | Description
 [**get_channel_info**](BeezUPApi.md#get_channel_info) | **GET** /v2/user/channels/{channelId} | Get channel information
 [**get_contracts**](BeezUPApi.md#get_contracts) | **GET** /v2/user/customer/contracts | Get contract list
 [**get_credit_card_info**](BeezUPApi.md#get_credit_card_info) | **GET** /v2/user/customer/account/creditCardInfo | Get credit card information
-[**get_current_channels**](BeezUPApi.md#get_current_channels) | **GET** /v2/user/channels/ | List all available channel for this store
 [**get_friend_info**](BeezUPApi.md#get_friend_info) | **GET** /v2/user/customer/friends/{userId} | Get friend information
 [**get_invoices**](BeezUPApi.md#get_invoices) | **GET** /v2/user/customer/invoices | Get all your invoices
 [**get_marketplace_account_stores**](BeezUPApi.md#get_marketplace_account_stores) | **GET** /v2/user/marketplaces/channelcatalogs/ | Get  you marketplace channel catalog list
@@ -2980,6 +2980,58 @@ This endpoint does not need any parameter.
 
 
 
+# **get_available_channels**
+> Array&lt;ChannelHeader&gt; get_available_channels(store_id)
+
+List all available channel for this store
+
+### Example
+```ruby
+# load the gem
+require 'swagger_client'
+# setup authorization
+SwaggerClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Ocp-Apim-Subscription-Key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Ocp-Apim-Subscription-Key'] = 'Bearer'
+end
+
+api_instance = SwaggerClient::BeezUPApi.new
+
+store_id = "04730364-9826-4ff3-92e4-51fccd02bf10" # String | The store identifier
+
+
+begin
+  #List all available channel for this store
+  result = api_instance.get_available_channels(store_id)
+  p result
+rescue SwaggerClient::ApiError => e
+  puts "Exception when calling BeezUPApi->get_available_channels: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **store_id** | **String**| The store identifier | 
+
+### Return type
+
+[**Array&lt;ChannelHeader&gt;**](ChannelHeader.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
 # **get_billing_periods**
 > BillingPeriods get_billing_periods
 
@@ -3690,58 +3742,6 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**CreditCardInfoResponse**](CreditCardInfoResponse.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
-# **get_current_channels**
-> Array&lt;ChannelHeader&gt; get_current_channels(store_id)
-
-List all available channel for this store
-
-### Example
-```ruby
-# load the gem
-require 'swagger_client'
-# setup authorization
-SwaggerClient.configure do |config|
-  # Configure API key authorization: api_key
-  config.api_key['Ocp-Apim-Subscription-Key'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  #config.api_key_prefix['Ocp-Apim-Subscription-Key'] = 'Bearer'
-end
-
-api_instance = SwaggerClient::BeezUPApi.new
-
-store_id = "04730364-9826-4ff3-92e4-51fccd02bf10" # String | The store identifier
-
-
-begin
-  #List all available channel for this store
-  result = api_instance.get_current_channels(store_id)
-  p result
-rescue SwaggerClient::ApiError => e
-  puts "Exception when calling BeezUPApi->get_current_channels: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **store_id** | **String**| The store identifier | 
-
-### Return type
-
-[**Array&lt;ChannelHeader&gt;**](ChannelHeader.md)
 
 ### Authorization
 

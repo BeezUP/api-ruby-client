@@ -2944,6 +2944,60 @@ module SwaggerClient
       return data, status_code, headers
     end
 
+    # List all available channel for this store
+    # 
+    # @param store_id The store identifier
+    # @param [Hash] opts the optional parameters
+    # @return [Array<ChannelHeader>]
+    def get_available_channels(store_id, opts = {})
+      data, _status_code, _headers = get_available_channels_with_http_info(store_id, opts)
+      return data
+    end
+
+    # List all available channel for this store
+    # 
+    # @param store_id The store identifier
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Array<ChannelHeader>, Fixnum, Hash)>] Array<ChannelHeader> data, response status code and response headers
+    def get_available_channels_with_http_info(store_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: BeezUPApi.get_available_channels ..."
+      end
+      # verify the required parameter 'store_id' is set
+      fail ArgumentError, "Missing the required parameter 'store_id' when calling BeezUPApi.get_available_channels" if store_id.nil?
+      # resource path
+      local_var_path = "/v2/user/channels/".sub('{format}','json')
+
+      # query parameters
+      query_params = {}
+      query_params[:'storeId'] = store_id
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['api_key']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Array<ChannelHeader>')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: BeezUPApi#get_available_channels\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Get billing periods conditions
     # 
     # @param [Hash] opts the optional parameters
@@ -3683,60 +3737,6 @@ module SwaggerClient
         :return_type => 'CreditCardInfoResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: BeezUPApi#get_credit_card_info\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # List all available channel for this store
-    # 
-    # @param store_id The store identifier
-    # @param [Hash] opts the optional parameters
-    # @return [Array<ChannelHeader>]
-    def get_current_channels(store_id, opts = {})
-      data, _status_code, _headers = get_current_channels_with_http_info(store_id, opts)
-      return data
-    end
-
-    # List all available channel for this store
-    # 
-    # @param store_id The store identifier
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(Array<ChannelHeader>, Fixnum, Hash)>] Array<ChannelHeader> data, response status code and response headers
-    def get_current_channels_with_http_info(store_id, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: BeezUPApi.get_current_channels ..."
-      end
-      # verify the required parameter 'store_id' is set
-      fail ArgumentError, "Missing the required parameter 'store_id' when calling BeezUPApi.get_current_channels" if store_id.nil?
-      # resource path
-      local_var_path = "/v2/user/channels/".sub('{format}','json')
-
-      # query parameters
-      query_params = {}
-      query_params[:'storeId'] = store_id
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = ['api_key']
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'Array<ChannelHeader>')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: BeezUPApi#get_current_channels\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

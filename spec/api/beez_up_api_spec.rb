@@ -699,6 +699,18 @@ describe 'BeezUPApi' do
     end
   end
 
+  # unit tests for get_available_channels
+  # List all available channel for this store
+  # 
+  # @param store_id The store identifier
+  # @param [Hash] opts the optional parameters
+  # @return [Array<ChannelHeader>]
+  describe 'get_available_channels test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for get_billing_periods
   # Get billing periods conditions
   # 
@@ -863,18 +875,6 @@ describe 'BeezUPApi' do
   # @param [Hash] opts the optional parameters
   # @return [CreditCardInfoResponse]
   describe 'get_credit_card_info test' do
-    it "should work" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  # unit tests for get_current_channels
-  # List all available channel for this store
-  # 
-  # @param store_id The store identifier
-  # @param [Hash] opts the optional parameters
-  # @return [Array<ChannelHeader>]
-  describe 'get_current_channels test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

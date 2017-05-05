@@ -134,6 +134,7 @@ Class | Method | HTTP request | Description
 *SwaggerClient::BeezUPApi* | [**export_store_report_by_channel**](docs/BeezUPApi.md#export_store_report_by_channel) | **POST** /v2/user/analytics/{storeId}/reports/bychannel/export | Export the report by channel
 *SwaggerClient::BeezUPApi* | [**export_store_report_by_product**](docs/BeezUPApi.md#export_store_report_by_product) | **POST** /v2/user/analytics/{storeId}/reports/byproduct/export | Export the report by product
 *SwaggerClient::BeezUPApi* | [**get_automatic_transitions**](docs/BeezUPApi.md#get_automatic_transitions) | **GET** /v2/user/marketplaces/orders/automaticTransitions | Get list of configured automatic Order status transitions
+*SwaggerClient::BeezUPApi* | [**get_available_channels**](docs/BeezUPApi.md#get_available_channels) | **GET** /v2/user/channels/ | List all available channel for this store
 *SwaggerClient::BeezUPApi* | [**get_billing_periods**](docs/BeezUPApi.md#get_billing_periods) | **GET** /v2/user/customer/billingPeriods | Get billing periods conditions
 *SwaggerClient::BeezUPApi* | [**get_channel_catalog**](docs/BeezUPApi.md#get_channel_catalog) | **GET** /v2/user/channelCatalogs/{channelCatalogId} | Get the channel catalog information
 *SwaggerClient::BeezUPApi* | [**get_channel_catalog_categories**](docs/BeezUPApi.md#get_channel_catalog_categories) | **GET** /v2/user/channelCatalogs/{channelCatalogId}/categoryMappings | Get channel catalog categories
@@ -148,7 +149,6 @@ Class | Method | HTTP request | Description
 *SwaggerClient::BeezUPApi* | [**get_channel_info**](docs/BeezUPApi.md#get_channel_info) | **GET** /v2/user/channels/{channelId} | Get channel information
 *SwaggerClient::BeezUPApi* | [**get_contracts**](docs/BeezUPApi.md#get_contracts) | **GET** /v2/user/customer/contracts | Get contract list
 *SwaggerClient::BeezUPApi* | [**get_credit_card_info**](docs/BeezUPApi.md#get_credit_card_info) | **GET** /v2/user/customer/account/creditCardInfo | Get credit card information
-*SwaggerClient::BeezUPApi* | [**get_current_channels**](docs/BeezUPApi.md#get_current_channels) | **GET** /v2/user/channels/ | List all available channel for this store
 *SwaggerClient::BeezUPApi* | [**get_friend_info**](docs/BeezUPApi.md#get_friend_info) | **GET** /v2/user/customer/friends/{userId} | Get friend information
 *SwaggerClient::BeezUPApi* | [**get_invoices**](docs/BeezUPApi.md#get_invoices) | **GET** /v2/user/customer/invoices | Get all your invoices
 *SwaggerClient::BeezUPApi* | [**get_marketplace_account_stores**](docs/BeezUPApi.md#get_marketplace_account_stores) | **GET** /v2/user/marketplaces/channelcatalogs/ | Get  you marketplace channel catalog list
@@ -275,6 +275,7 @@ Class | Method | HTTP request | Description
  - [SwaggerClient::AutomaticTransition](docs/AutomaticTransition.md)
  - [SwaggerClient::AutomaticTransitionInfo](docs/AutomaticTransitionInfo.md)
  - [SwaggerClient::AutomaticTransitionInfos](docs/AutomaticTransitionInfos.md)
+ - [SwaggerClient::AvailableChannelLink](docs/AvailableChannelLink.md)
  - [SwaggerClient::BatchOrderOperationResponse](docs/BatchOrderOperationResponse.md)
  - [SwaggerClient::BeezUPColumnConfiguration](docs/BeezUPColumnConfiguration.md)
  - [SwaggerClient::BeezUPCommonBeezUPColumnName](docs/BeezUPCommonBeezUPColumnName.md)
@@ -379,11 +380,11 @@ Class | Method | HTTP request | Description
  - [SwaggerClient::ChannelColumn](docs/ChannelColumn.md)
  - [SwaggerClient::ChannelColumnConfiguration](docs/ChannelColumnConfiguration.md)
  - [SwaggerClient::ChannelColumnDescription](docs/ChannelColumnDescription.md)
+ - [SwaggerClient::ChannelColumnName](docs/ChannelColumnName.md)
  - [SwaggerClient::ChannelColumnRestrictedValues](docs/ChannelColumnRestrictedValues.md)
  - [SwaggerClient::ChannelColumnShowInMapping](docs/ChannelColumnShowInMapping.md)
  - [SwaggerClient::ChannelFirstLevelCategory](docs/ChannelFirstLevelCategory.md)
  - [SwaggerClient::ChannelHeader](docs/ChannelHeader.md)
- - [SwaggerClient::ChannelHeaderLinks](docs/ChannelHeaderLinks.md)
  - [SwaggerClient::ChannelInfo](docs/ChannelInfo.md)
  - [SwaggerClient::ChannelInfoDetails](docs/ChannelInfoDetails.md)
  - [SwaggerClient::ChannelInfoKeyNumbers](docs/ChannelInfoKeyNumbers.md)
