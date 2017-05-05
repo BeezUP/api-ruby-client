@@ -7,5 +7,6 @@ Name | Type | Description | Notes
 **delete_store** | [**LinksDeleteStoreLink**](LinksDeleteStoreLink.md) |  | [optional] 
 **update_store** | [**LinksUpdateStoreLink**](LinksUpdateStoreLink.md) |  | [optional] 
 **get_shares** | [**LinksGetSharesLink**](LinksGetSharesLink.md) |  | [optional] 
+**share** | [**LinksShareLink**](LinksShareLink.md) |  | [optional] 
 
 

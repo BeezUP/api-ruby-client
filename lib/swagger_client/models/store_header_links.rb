@@ -22,6 +22,8 @@ module SwaggerClient
 
     attr_accessor :get_shares
 
+    attr_accessor :share
+
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -29,7 +31,8 @@ module SwaggerClient
         :'_self' => :'self',
         :'delete_store' => :'deleteStore',
         :'update_store' => :'updateStore',
-        :'get_shares' => :'getShares'
+        :'get_shares' => :'getShares',
+        :'share' => :'share'
       }
     end
 
@@ -39,7 +42,8 @@ module SwaggerClient
         :'_self' => :'LinksGetStoreLink',
         :'delete_store' => :'LinksDeleteStoreLink',
         :'update_store' => :'LinksUpdateStoreLink',
-        :'get_shares' => :'LinksGetSharesLink'
+        :'get_shares' => :'LinksGetSharesLink',
+        :'share' => :'LinksShareLink'
       }
     end
 
@@ -67,6 +71,10 @@ module SwaggerClient
         self.get_shares = attributes[:'getShares']
       end
 
+      if attributes.has_key?(:'share')
+        self.share = attributes[:'share']
+      end
+
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -90,7 +98,8 @@ module SwaggerClient
           _self == o._self &&
           delete_store == o.delete_store &&
           update_store == o.update_store &&
-          get_shares == o.get_shares
+          get_shares == o.get_shares &&
+          share == o.share
     end
 
     # @see the `==` method
@@ -102,7 +111,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [_self, delete_store, update_store, get_shares].hash
+      [_self, delete_store, update_store, get_shares, share].hash
     end
 
     # Builds the object from hash
