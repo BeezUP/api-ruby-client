@@ -107,7 +107,7 @@ module SwaggerClient
         :'order_currency_code' => :'BeezUPCommonCurrencyCode',
         :'processing' => :'Processing',
         :'etag' => :'Etag',
-        :'links' => :'DefinitionsorderHeaderLinks'
+        :'links' => :'OrderHeaderLinks'
       }
     end
 

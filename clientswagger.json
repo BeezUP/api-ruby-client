@@ -15424,7 +15424,7 @@
       ],
       "properties": {
         "self": {
-          "$ref": "#definitions/links.GetOrderLink"
+          "$ref": "#/definitions/links.GetOrderLink"
         }
       }
     },
@@ -15516,7 +15516,7 @@
           "$ref": "#/definitions/etag"
         },
         "links": {
-          "$ref": "#definitions/orderHeaderLinks"
+          "$ref": "#/definitions/orderHeaderLinks"
         }
       }
     },
@@ -15632,7 +15632,7 @@
           ],
           "properties": {
             "history": {
-              "$ref": "#definitions/links.GetOrderHistoryLink"
+              "$ref": "#/definitions/links.GetOrderHistoryLink"
             }
           }
         }
@@ -15781,7 +15781,7 @@
               "example": "France"
             },
             "order_Shipping_AddressCountryIsoCodeAlpha2": {
-              "description": "The shipping address country iso code alpha 2 (see http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Decoding_table for more details)",
+              "description": "The shipping address country iso code alpha 2 (see http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#/decoding_table for more details)",
               "type": "string",
               "example": "FR"
             },
@@ -15880,7 +15880,7 @@
               "example": "France"
             },
             "order_Buyer_AddressCountryIsoCodeAlpha2": {
-              "description": "The Buyer address country iso code alpha 2 (see http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Decoding_table for more details)",
+              "description": "The Buyer address country iso code alpha 2 (see http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#/decoding_table for more details)",
               "type": "string",
               "example": "FR"
             },
