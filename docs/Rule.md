@@ -13,6 +13,6 @@ Name | Type | Description | Notes
 **enabled** | **BOOLEAN** | Is the rule enabled | 
 **validity_start_utc_date** | **DateTime** | Rule validity start utc date | [optional] 
 **validity_end_utc_date** | **DateTime** | Rule validity end utc date | [optional] 
-**links** | [**DefinitionsruleLinks**](DefinitionsruleLinks.md) |  | 
+**links** | [**RuleLinks**](RuleLinks.md) |  | 
 
 
