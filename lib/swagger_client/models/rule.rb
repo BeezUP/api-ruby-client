@@ -75,7 +75,7 @@ module SwaggerClient
         :'enabled' => :'BOOLEAN',
         :'validity_start_utc_date' => :'DateTime',
         :'validity_end_utc_date' => :'DateTime',
-        :'links' => :'RuleLinks'
+        :'links' => :'DefinitionsruleLinks'
       }
     end
 

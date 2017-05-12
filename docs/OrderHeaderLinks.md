@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**_self** | [**LinksGetOrderLink**](LinksGetOrderLink.md) |  | 
+**_self** | [**DefinitionslinksGetOrderLink**](DefinitionslinksGetOrderLink.md) |  | 
 
 

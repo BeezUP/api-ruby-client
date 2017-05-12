@@ -16,6 +16,6 @@ Name | Type | Description | Notes
 **user_id** | **String** | The userId that executed the rule if any | [optional] 
 **execution_source** | [**RuleExecutionReportingExecutionSource**](RuleExecutionReportingExecutionSource.md) |  | 
 **report_url** | **String** | The url for the excel report for this execution | [optional] 
-**links** | [**RuleExecutionReportingLinks**](RuleExecutionReportingLinks.md) |  | [optional] 
+**links** | [**DefinitionsruleExecutionReportingLinks**](DefinitionsruleExecutionReportingLinks.md) |  | [optional] 
 
 

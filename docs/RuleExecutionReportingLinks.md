@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rule** | [**LinksGetRuleLink**](LinksGetRuleLink.md) |  | [optional] 
+**rule** | [**DefinitionslinksGetRuleLink**](DefinitionslinksGetRuleLink.md) |  | [optional] 
 
 

@@ -246,8 +246,6 @@ Class | Method | HTTP request | Description
 *SwaggerClient::GroupsApi* | [**get_public_list_group_names**](docs/GroupsApi.md#get_public_list_group_names) | **GET** /v2/public/lov/groups | Get list of group of list name
 *SwaggerClient::LOVApi* | [**get_public_list_names**](docs/LOVApi.md#get_public_list_names) | **GET** /v2/public/lov/ | Get all list names
 *SwaggerClient::LOVApi* | [**get_public_list_of_values**](docs/LOVApi.md#get_public_list_of_values) | **GET** /v2/public/lov/{listName} | Get the list of values related to this list name
-*SwaggerClient::PublicChannelsApi* | [**get_channels**](docs/PublicChannelsApi.md#get_channels) | **GET** /BeezUP/public_channels/2.0/{countryIsoCode} | The channel list for one country
-*SwaggerClient::PublicChannelsApi* | [**get_channels_by_country**](docs/PublicChannelsApi.md#get_channels_by_country) | **GET** /BeezUP/public_channels/2.0/ | The channel list regrouped by country
 *SwaggerClient::SecurityApi* | [**login**](docs/SecurityApi.md#login) | **POST** /v2/public/security/login | Login
 *SwaggerClient::SecurityApi* | [**lost_password**](docs/SecurityApi.md#lost_password) | **POST** /v2/public/security/lostpassword | Lost password
 *SwaggerClient::SecurityApi* | [**register**](docs/SecurityApi.md#register) | **POST** /v2/public/security/register | User Registration
@@ -389,7 +387,6 @@ Class | Method | HTTP request | Description
  - [SwaggerClient::ChannelInfo](docs/ChannelInfo.md)
  - [SwaggerClient::ChannelInfoDetails](docs/ChannelInfoDetails.md)
  - [SwaggerClient::ChannelInfoKeyNumbers](docs/ChannelInfoKeyNumbers.md)
- - [SwaggerClient::ChannelInfoList](docs/ChannelInfoList.md)
  - [SwaggerClient::ChannelInfoSalesContact](docs/ChannelInfoSalesContact.md)
  - [SwaggerClient::ChannelInfoTechnicalContact](docs/ChannelInfoTechnicalContact.md)
  - [SwaggerClient::ChannelRootCategory](docs/ChannelRootCategory.md)
