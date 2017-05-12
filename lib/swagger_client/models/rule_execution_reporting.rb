@@ -88,7 +88,7 @@ module SwaggerClient
         :'user_id' => :'String',
         :'execution_source' => :'RuleExecutionReportingExecutionSource',
         :'report_url' => :'String',
-        :'links' => :'DefinitionsruleExecutionReportingLinks'
+        :'links' => :'RuleExecutionReportingLinks'
       }
     end
 
