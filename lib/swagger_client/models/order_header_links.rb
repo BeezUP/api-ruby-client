@@ -27,7 +27,7 @@ module SwaggerClient
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'_self' => :'LinksGetOrderLink'
+        :'_self' => :'DefinitionslinksGetOrderLink'
       }
     end
 

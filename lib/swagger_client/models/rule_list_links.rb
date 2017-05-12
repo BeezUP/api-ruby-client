@@ -36,10 +36,10 @@ module SwaggerClient
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'_self' => :'LinksGetRulesLink',
-        :'create' => :'LinksCreateRuleLink',
-        :'history' => :'LinksGetRulesExecutionsLink',
-        :'run' => :'LinksRunRulesLink'
+        :'_self' => :'DefinitionslinksGetRulesLink',
+        :'create' => :'DefinitionslinksCreateRuleLink',
+        :'history' => :'DefinitionslinksGetRulesExecutionsLink',
+        :'run' => :'DefinitionslinksRunRulesLink'
       }
     end
 

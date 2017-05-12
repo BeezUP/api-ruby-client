@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**_self** | [**LinksGetOrderLink**](LinksGetOrderLink.md) |  | 
-**history** | [**LinksGetOrderHistoryLink**](LinksGetOrderHistoryLink.md) |  | [optional] 
+**_self** | [**DefinitionslinksGetOrderLink**](DefinitionslinksGetOrderLink.md) |  | 
+**history** | [**DefinitionslinksGetOrderHistoryLink**](DefinitionslinksGetOrderHistoryLink.md) |  | [optional] 
 
 

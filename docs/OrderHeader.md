@@ -22,6 +22,6 @@ Name | Type | Description | Notes
 **order_currency_code** | [**BeezUPCommonCurrencyCode**](BeezUPCommonCurrencyCode.md) |  | [optional] 
 **processing** | [**Processing**](Processing.md) |  | 
 **etag** | [**Etag**](Etag.md) |  | 
-**links** | [**OrderHeaderLinks**](OrderHeaderLinks.md) |  | 
+**links** | [**DefinitionsorderHeaderLinks**](DefinitionsorderHeaderLinks.md) |  | 
 
 
