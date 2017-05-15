@@ -1,8 +1,8 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Public - Security",
-    "description": "This API will allow you to create your account and to get your tokens. \\\nIf you lost your password, you have an operation to get it back.\n",
+    "title": "BeezUP API",
+    "description": "This is the RESTful API of BeezUP which allows you to manage everything related to BeezUP",
     "version": "2.0",
     "x-logo": {
       "url": "https://avatars0.githubusercontent.com/u/25665430",
@@ -14,10 +14,13 @@
     "license": {
       "name": "BeezUP",
       "url": "http://www.beezup.com"
-    }
+    },
+    "x-changeComment": "Change the product name from BeezUP API to UserApi to correspond to the reality\n"
   },
   "host": "api.beezup.com",
-  "basePath": "/v2",
+  "basePath": "v2",
+  "x-api-name": "V2PublicSecurity",
+  "x-api-namespace": "BeezUP.Customer.WebService",
   "schemes": [
     "https"
   ],
@@ -27,13 +30,9 @@
   "produces": [
     "application/json"
   ],
-  "tags": [
-    {
-      "name": "BeezUP"
-    }
-  ],
+  "tags": null,
   "paths": {
-    "/public/security/login": {
+    "/v2/public/security/login": {
       "post": {
         "tags": [
           {
@@ -75,7 +74,7 @@
         }
       }
     },
-    "/public/security/register": {
+    "/v2/public/security/register": {
       "post": {
         "tags": [
           {
@@ -114,7 +113,7 @@
         ]
       }
     },
-    "/public/security/lostpassword": {
+    "/v2/public/security/lostpassword": {
       "post": {
         "tags": [
           {
@@ -18384,17 +18383,12 @@
       }
     }
   },
+  "x-azure-api-id": "V2PublicSecurity",
   "externalDocs": {
     "description": "Find the documentation for BeezUP's API here",
-    "url": "https://api-docs.beezup.com/"
+    "url": "https://beezup.github.io/api-docs/"
   },
-  "securityDefinitions": {
-    "api_key": {
-      "type": "apiKey",
-      "in": "header",
-      "name": "Ocp-Apim-Subscription-Key"
-    }
-  },
+  "x-tagGroups": null,
   "parameters": {
     "executionId": {
       "name": "executionId",

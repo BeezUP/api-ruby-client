@@ -1,7 +1,7 @@
 =begin
-#Public - Security
+#BeezUP API
 
-#This API will allow you to create your account and to get your tokens. \\ If you lost your password, you have an operation to get it back. 
+#This is the RESTful API of BeezUP which allows you to manage everything related to BeezUP
 
 OpenAPI spec version: 2.0
 Contact: support@beezup.com
@@ -17,7 +17,7 @@ describe SwaggerClient::Configuration do
   before(:each) do
     # uncomment below to setup host and base_path
     #require 'URI'
-    #uri = URI.parse("https://api.beezup.com/v2")
+    #uri = URI.parse("https://api.beezup.comv2")
     #SwaggerClient.configure do |c|
     #  c.host = uri.host
     #  c.base_path = uri.path
@@ -27,14 +27,14 @@ describe SwaggerClient::Configuration do
   describe '#base_url' do
     it 'should have the default value' do
       # uncomment below to test default value of the base path
-      #expect(config.base_url).to eq("https://api.beezup.com/v2")
+      #expect(config.base_url).to eq("https://api.beezup.comv2")
     end
 
     it 'should remove trailing slashes' do
       [nil, '', '/', '//'].each do |base_path|
         config.base_path = base_path
         # uncomment below to test trailing slashes
-        #expect(config.base_url).to eq("https://api.beezup.com/v2")
+        #expect(config.base_url).to eq("https://api.beezup.comv2")
       end
     end
   end

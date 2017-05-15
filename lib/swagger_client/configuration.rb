@@ -1,7 +1,7 @@
 =begin
-#Public - Security
+#BeezUP API
 
-#This API will allow you to create your account and to get your tokens. \\ If you lost your password, you have an operation to get it back. 
+#This is the RESTful API of BeezUP which allows you to manage everything related to BeezUP
 
 OpenAPI spec version: 2.0
 Contact: support@beezup.com
@@ -124,7 +124,7 @@ module SwaggerClient
     def initialize
       @scheme = 'https'
       @host = 'api.beezup.com'
-      @base_path = '/v2'
+      @base_path = 'v2'
       @api_key = {}
       @api_key_prefix = {}
       @timeout = 0
@@ -189,13 +189,6 @@ module SwaggerClient
     # Returns Auth Settings hash for api client.
     def auth_settings
       {
-        'api_key' =>
-          {
-            type: 'api_key',
-            in: 'header',
-            key: 'Ocp-Apim-Subscription-Key',
-            value: api_key_with_prefix('Ocp-Apim-Subscription-Key')
-          },
       }
     end
   end

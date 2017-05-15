@@ -1,9 +1,9 @@
 # -*- encoding: utf-8 -*-
 #
 =begin
-#Public - Security
+#BeezUP API
 
-#This API will allow you to create your account and to get your tokens. \\ If you lost your password, you have an operation to get it back. 
+#This is the RESTful API of BeezUP which allows you to manage everything related to BeezUP
 
 OpenAPI spec version: 2.0
 Contact: support@beezup.com
@@ -21,8 +21,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Swagger-Codegen"]
   s.email       = ["support@beezup.com"]
   s.homepage    = "https://github.com/swagger-api/swagger-codegen"
-  s.summary     = "Public - Security Ruby Gem"
-  s.description = "This API will allow you to create your account and to get your tokens. \\ If you lost your password, you have an operation to get it back. "
+  s.summary     = "BeezUP API Ruby Gem"
+  s.description = "This is the RESTful API of BeezUP which allows you to manage everything related to BeezUP"
   # TODO uncommnet and update below with a proper license 
   #s.license     = "Apache 2.0"
   s.required_ruby_version = ">= 1.9"
