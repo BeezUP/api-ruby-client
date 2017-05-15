@@ -67,7 +67,7 @@ describe 'AccountInfoLinks' do
     end
   end
 
-  describe 'test attribute "save_user_credit_card_link"' do
+  describe 'test attribute "save_credit_card_info"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

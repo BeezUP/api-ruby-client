@@ -26,7 +26,7 @@ module SwaggerClient
 
     attr_accessor :get_credit_card_info
 
-    attr_accessor :save_user_credit_card_link
+    attr_accessor :save_credit_card_info
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -38,7 +38,7 @@ module SwaggerClient
         :'get_profile_picture_info' => :'getProfilePictureInfo',
         :'save_profile_picture_info' => :'saveProfilePictureInfo',
         :'get_credit_card_info' => :'getCreditCardInfo',
-        :'save_user_credit_card_link' => :'saveUserCreditCardLink'
+        :'save_credit_card_info' => :'saveCreditCardInfo'
       }
     end
 
@@ -51,7 +51,7 @@ module SwaggerClient
         :'get_profile_picture_info' => :'LinksGetProfilePictureInfoLink',
         :'save_profile_picture_info' => :'LinksSaveProfilePictureInfoLink',
         :'get_credit_card_info' => :'LinksGetCreditCardInfoLink',
-        :'save_user_credit_card_link' => :'LinksSaveCreditCardInfoLink'
+        :'save_credit_card_info' => :'LinksSaveCreditCardInfoLink'
       }
     end
 
@@ -87,8 +87,8 @@ module SwaggerClient
         self.get_credit_card_info = attributes[:'getCreditCardInfo']
       end
 
-      if attributes.has_key?(:'saveUserCreditCardLink')
-        self.save_user_credit_card_link = attributes[:'saveUserCreditCardLink']
+      if attributes.has_key?(:'saveCreditCardInfo')
+        self.save_credit_card_info = attributes[:'saveCreditCardInfo']
       end
 
     end
@@ -121,8 +121,8 @@ module SwaggerClient
         invalid_properties.push("invalid value for 'get_credit_card_info', get_credit_card_info cannot be nil.")
       end
 
-      if @save_user_credit_card_link.nil?
-        invalid_properties.push("invalid value for 'save_user_credit_card_link', save_user_credit_card_link cannot be nil.")
+      if @save_credit_card_info.nil?
+        invalid_properties.push("invalid value for 'save_credit_card_info', save_credit_card_info cannot be nil.")
       end
 
       return invalid_properties
@@ -137,7 +137,7 @@ module SwaggerClient
       return false if @get_profile_picture_info.nil?
       return false if @save_profile_picture_info.nil?
       return false if @get_credit_card_info.nil?
-      return false if @save_user_credit_card_link.nil?
+      return false if @save_credit_card_info.nil?
       return true
     end
 
@@ -152,7 +152,7 @@ module SwaggerClient
           get_profile_picture_info == o.get_profile_picture_info &&
           save_profile_picture_info == o.save_profile_picture_info &&
           get_credit_card_info == o.get_credit_card_info &&
-          save_user_credit_card_link == o.save_user_credit_card_link
+          save_credit_card_info == o.save_credit_card_info
     end
 
     # @see the `==` method
@@ -164,7 +164,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [save_personal_info, change_password, save_company_info, get_profile_picture_info, save_profile_picture_info, get_credit_card_info, save_user_credit_card_link].hash
+      [save_personal_info, change_password, save_company_info, get_profile_picture_info, save_profile_picture_info, get_credit_card_info, save_credit_card_info].hash
     end
 
     # Builds the object from hash
