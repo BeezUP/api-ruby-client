@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**_self** | [**LinksGetChannelCatalogProductInfo**](LinksGetChannelCatalogProductInfo.md) |  | [optional] 
+**_self** | [**LinksGetChannelCatalogProductInfoLink**](LinksGetChannelCatalogProductInfoLink.md) |  | [optional] 
 
 

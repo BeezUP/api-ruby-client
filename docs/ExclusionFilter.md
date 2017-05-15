@@ -10,5 +10,6 @@ Name | Type | Description | Notes
 **channel_column_id** | [**BeezUPCommonChannelColumnId**](BeezUPCommonChannelColumnId.md) |  | 
 **operator_name** | [**ExclusionFilterOperatorName**](ExclusionFilterOperatorName.md) |  | 
 **value** | **String** | The value indicate by the user when the filter operation requires it. | [optional] 
+**enabled** | **BOOLEAN** | indicates if the filter is currently active. | 
 
 

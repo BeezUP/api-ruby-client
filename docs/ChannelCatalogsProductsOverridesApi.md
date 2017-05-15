@@ -1,11 +1,11 @@
 # SwaggerClient::ChannelCatalogsProductsOverridesApi
 
-All URIs are relative to *https://api.beezup.comv2*
+All URIs are relative to *https://api.beezup.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete_channel_catalog_product_value_override**](ChannelCatalogsProductsOverridesApi.md#delete_channel_catalog_product_value_override) | **DELETE** /v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides/{channelColumnId} | Delete a specific channel catalog product value override
-[**override_channel_catalog_product_overrides**](ChannelCatalogsProductsOverridesApi.md#override_channel_catalog_product_overrides) | **PUT** /v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides | Override channel catalog product values
+[**delete_channel_catalog_product_value_override**](ChannelCatalogsProductsOverridesApi.md#delete_channel_catalog_product_value_override) | **DELETE** /user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides/{channelColumnId} | Delete a specific channel catalog product value override
+[**override_channel_catalog_product_overrides**](ChannelCatalogsProductsOverridesApi.md#override_channel_catalog_product_overrides) | **PUT** /user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides | Override channel catalog product values
 
 
 # **delete_channel_catalog_product_value_override**

@@ -3,9 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**entry_count** | **Integer** | The entry count currently returned | [optional] 
-**page_count** | **Integer** | The page count | [optional] 
-**total_entry_count** | **Integer** | The total entry count | [optional] 
-**links** | [**BeezUPCommonPaginationResultLinks**](BeezUPCommonPaginationResultLinks.md) |  | [optional] 
+**entry_count** | **Integer** | The entry count currently returned | 
+**page_count** | **Integer** | The page count | 
+**total_entry_count** | **Integer** | The total entry count | 
+**links** | [**BeezUPCommonPaginationResultLinks**](BeezUPCommonPaginationResultLinks.md) |  | 
 
 

@@ -1,7 +1,7 @@
 =begin
 #BeezUP API
 
-#This is the RESTful API of BeezUP which allows you to manage everything related to BeezUP
+## The REST API of BeezUP system ## Overview The REST APIs provide programmatic access to read and write BeezUP data.  Basically, with this API you will be able to do everything like you were with your browser on https://go.beezup.com !  The main features are: - Register and manage your account - Create and manage and share your stores with your friends/co-workers. - Import your product catalog and schedule the auto importation - Search the channels your want to use - Configure your channels for your catalogs to export your product information:     - cost and general settings     - category and columns mappings     - your will be able to create and manage your custom column     - put in place exlusion filters based on simple conditions on your product data     - override product values     - get product vision for a channel catalog scope - Analyze and optimize your performance of your catalogs on all yours channels with different type of reportings by day, channel, category and by product. - Automatize your optimisation by using rules! - And of course... Manage your orders harvested from all your marketplaces:     - Synchronize your orders in an uniformized way     - Get the available actions and update the order status - ...and more!  ## Authentication credentials The public API with the base path **/v2/public** have been put in place to give you an entry point to our system for the user registration, login and lost password. The public API does not require any credentials. We give you the some public list of values and public channels for our public commercial web site [www.beezup.com](http://www.beezup.com).  The user API with the base path **/v2/user** requires a token which is available on this page: https://go.beezup.com/Account/MyAccount  ## Things to keep in mind ### API Rate Limits - The BeezUP REST API is limited to 100 calls/minute.  ### Media type The default media type for requests and responses is application/json. Where noted, some operations support other content types. If no additional content type is mentioned for a specific operation, then the media type is application/json.  ### Required content type The required and default encoding for the request and responses is UTF8.  ### Required date time format All our date time are formatted in ISO 8601 format: 2014-06-24T16:25:00Z.  ### Base URL The Base URL of the BeezUP API Order Management REST API conforms to the following template.  https://api.beezup.com  All URLs returned by the BeezUP API are relative to this base URL, and all requests to the REST API must use this base URL template.  You can test our API on https://api-docs.beezup.com/swagger-ui\\ You can contact us on [gitter, #BeezUP/API](https://gitter.im/beezUP/API) 
 
 OpenAPI spec version: 2.0
 Contact: support@beezup.com
@@ -14,54 +14,36 @@ require 'date'
 module SwaggerClient
 
   class ChannelInfo
-    attr_accessor :channel_id
+    # The channel name
+    attr_accessor :name
 
-    attr_accessor :channel_name
+    # The channel home url
+    attr_accessor :home_url
 
-    attr_accessor :channel_logo_url
+    # The channel logo url
+    attr_accessor :logo_url
 
-    # Indicae a description to the channel
-    attr_accessor :channel_description
-
-    # Indicate the BeezUP offer
-    attr_accessor :beez_up_offer
-
-    attr_accessor :sales_contact
-
-    attr_accessor :details
-
-    attr_accessor :key_numbers
-
-    attr_accessor :technical_contact
+    # The type list related to a channel
+    attr_accessor :types
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'channel_id' => :'channelId',
-        :'channel_name' => :'channelName',
-        :'channel_logo_url' => :'channelLogoUrl',
-        :'channel_description' => :'channelDescription',
-        :'beez_up_offer' => :'beezUPOffer',
-        :'sales_contact' => :'salesContact',
-        :'details' => :'details',
-        :'key_numbers' => :'keyNumbers',
-        :'technical_contact' => :'technicalContact'
+        :'name' => :'name',
+        :'home_url' => :'homeUrl',
+        :'logo_url' => :'logoUrl',
+        :'types' => :'types'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'channel_id' => :'BeezUPCommonChannelId',
-        :'channel_name' => :'BeezUPCommonChannelName',
-        :'channel_logo_url' => :'BeezUPCommonHttpUrl',
-        :'channel_description' => :'String',
-        :'beez_up_offer' => :'String',
-        :'sales_contact' => :'ChannelInfoSalesContact',
-        :'details' => :'ChannelInfoDetails',
-        :'key_numbers' => :'ChannelInfoKeyNumbers',
-        :'technical_contact' => :'ChannelInfoTechnicalContact'
+        :'name' => :'String',
+        :'home_url' => :'String',
+        :'logo_url' => :'String',
+        :'types' => :'Array<String>'
       }
     end
 
@@ -73,40 +55,22 @@ module SwaggerClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'channelId')
-        self.channel_id = attributes[:'channelId']
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
       end
 
-      if attributes.has_key?(:'channelName')
-        self.channel_name = attributes[:'channelName']
+      if attributes.has_key?(:'homeUrl')
+        self.home_url = attributes[:'homeUrl']
       end
 
-      if attributes.has_key?(:'channelLogoUrl')
-        self.channel_logo_url = attributes[:'channelLogoUrl']
+      if attributes.has_key?(:'logoUrl')
+        self.logo_url = attributes[:'logoUrl']
       end
 
-      if attributes.has_key?(:'channelDescription')
-        self.channel_description = attributes[:'channelDescription']
-      end
-
-      if attributes.has_key?(:'beezUPOffer')
-        self.beez_up_offer = attributes[:'beezUPOffer']
-      end
-
-      if attributes.has_key?(:'salesContact')
-        self.sales_contact = attributes[:'salesContact']
-      end
-
-      if attributes.has_key?(:'details')
-        self.details = attributes[:'details']
-      end
-
-      if attributes.has_key?(:'keyNumbers')
-        self.key_numbers = attributes[:'keyNumbers']
-      end
-
-      if attributes.has_key?(:'technicalContact')
-        self.technical_contact = attributes[:'technicalContact']
+      if attributes.has_key?(:'types')
+        if (value = attributes[:'types']).is_a?(Array)
+          self.types = value
+        end
       end
 
     end
@@ -115,12 +79,20 @@ module SwaggerClient
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @channel_id.nil?
-        invalid_properties.push("invalid value for 'channel_id', channel_id cannot be nil.")
+      if @name.nil?
+        invalid_properties.push("invalid value for 'name', name cannot be nil.")
       end
 
-      if @channel_name.nil?
-        invalid_properties.push("invalid value for 'channel_name', channel_name cannot be nil.")
+      if @home_url.nil?
+        invalid_properties.push("invalid value for 'home_url', home_url cannot be nil.")
+      end
+
+      if @logo_url.nil?
+        invalid_properties.push("invalid value for 'logo_url', logo_url cannot be nil.")
+      end
+
+      if @types.nil?
+        invalid_properties.push("invalid value for 'types', types cannot be nil.")
       end
 
       return invalid_properties
@@ -129,8 +101,10 @@ module SwaggerClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @channel_id.nil?
-      return false if @channel_name.nil?
+      return false if @name.nil?
+      return false if @home_url.nil?
+      return false if @logo_url.nil?
+      return false if @types.nil?
       return true
     end
 
@@ -139,15 +113,10 @@ module SwaggerClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          channel_id == o.channel_id &&
-          channel_name == o.channel_name &&
-          channel_logo_url == o.channel_logo_url &&
-          channel_description == o.channel_description &&
-          beez_up_offer == o.beez_up_offer &&
-          sales_contact == o.sales_contact &&
-          details == o.details &&
-          key_numbers == o.key_numbers &&
-          technical_contact == o.technical_contact
+          name == o.name &&
+          home_url == o.home_url &&
+          logo_url == o.logo_url &&
+          types == o.types
     end
 
     # @see the `==` method
@@ -159,7 +128,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [channel_id, channel_name, channel_logo_url, channel_description, beez_up_offer, sales_contact, details, key_numbers, technical_contact].hash
+      [name, home_url, logo_url, types].hash
     end
 
     # Builds the object from hash

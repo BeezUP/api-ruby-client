@@ -1,12 +1,12 @@
 # SwaggerClient::MarketplacesChannelCatalogsSettingsApi
 
-All URIs are relative to *https://api.beezup.comv2*
+All URIs are relative to *https://api.beezup.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_channel_catalog_marketplace_properties**](MarketplacesChannelCatalogsSettingsApi.md#get_channel_catalog_marketplace_properties) | **GET** /v2/user/marketplaces/channelcatalogs/{channelCatalogId}/properties | Get the marketplace properties for a channel catalog
-[**get_channel_catalog_marketplace_settings**](MarketplacesChannelCatalogsSettingsApi.md#get_channel_catalog_marketplace_settings) | **GET** /v2/user/marketplaces/channelcatalogs/{channelCatalogId}/settings | Get the marketplace settings for a channel catalog
-[**set_channel_catalog_marketplace_settings**](MarketplacesChannelCatalogsSettingsApi.md#set_channel_catalog_marketplace_settings) | **POST** /v2/user/marketplaces/channelcatalogs/{channelCatalogId}/settings | Save new marketplace settings for a channel catalog
+[**get_channel_catalog_marketplace_properties**](MarketplacesChannelCatalogsSettingsApi.md#get_channel_catalog_marketplace_properties) | **GET** /user/marketplaces/channelcatalogs/{channelCatalogId}/properties | Get the marketplace properties for a channel catalog
+[**get_channel_catalog_marketplace_settings**](MarketplacesChannelCatalogsSettingsApi.md#get_channel_catalog_marketplace_settings) | **GET** /user/marketplaces/channelcatalogs/{channelCatalogId}/settings | Get the marketplace settings for a channel catalog
+[**set_channel_catalog_marketplace_settings**](MarketplacesChannelCatalogsSettingsApi.md#set_channel_catalog_marketplace_settings) | **POST** /user/marketplaces/channelcatalogs/{channelCatalogId}/settings | Save new marketplace settings for a channel catalog
 
 
 # **get_channel_catalog_marketplace_properties**

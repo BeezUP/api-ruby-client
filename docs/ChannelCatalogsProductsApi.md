@@ -1,11 +1,68 @@
 # SwaggerClient::ChannelCatalogsProductsApi
 
-All URIs are relative to *https://api.beezup.comv2*
+All URIs are relative to *https://api.beezup.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_channel_catalog_product_info**](ChannelCatalogsProductsApi.md#get_channel_catalog_product_info) | **GET** /v2/user/channelCatalogs/{channelCatalogId}/products/{productId} | Get channel catalog product information
-[**get_channel_catalog_product_info_list**](ChannelCatalogsProductsApi.md#get_channel_catalog_product_info_list) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/products | Get channel catalog product information list
+[**get_channel_catalog_product_by_channel_catalog**](ChannelCatalogsProductsApi.md#get_channel_catalog_product_by_channel_catalog) | **POST** /user/channelCatalogs/products/{productId} | Get channel catalog products related to these channel catalogs
+[**get_channel_catalog_product_info**](ChannelCatalogsProductsApi.md#get_channel_catalog_product_info) | **GET** /user/channelCatalogs/{channelCatalogId}/products/{productId} | Get channel catalog product information
+[**get_channel_catalog_product_info_list**](ChannelCatalogsProductsApi.md#get_channel_catalog_product_info_list) | **POST** /user/channelCatalogs/{channelCatalogId}/products | Get channel catalog product information list
+
+
+# **get_channel_catalog_product_by_channel_catalog**
+> ChannelCatalogProductByChannelCatalogResponse get_channel_catalog_product_by_channel_catalog(product_id, opts)
+
+Get channel catalog products related to these channel catalogs
+
+### Example
+```ruby
+# load the gem
+require 'swagger_client'
+# setup authorization
+SwaggerClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Ocp-Apim-Subscription-Key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Ocp-Apim-Subscription-Key'] = 'Bearer'
+end
+
+api_instance = SwaggerClient::ChannelCatalogsProductsApi.new
+
+product_id = "578419df-1bbf-41a6-96fa-862e42182b67" # String | The product identifier
+
+opts = { 
+  request: SwaggerClient::ChannelCatalogProductByChannelCatalogRequest.new # ChannelCatalogProductByChannelCatalogRequest | 
+}
+
+begin
+  #Get channel catalog products related to these channel catalogs
+  result = api_instance.get_channel_catalog_product_by_channel_catalog(product_id, opts)
+  p result
+rescue SwaggerClient::ApiError => e
+  puts "Exception when calling ChannelCatalogsProductsApi->get_channel_catalog_product_by_channel_catalog: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **String**| The product identifier | 
+ **request** | [**ChannelCatalogProductByChannelCatalogRequest**](ChannelCatalogProductByChannelCatalogRequest.md)|  | [optional] 
+
+### Return type
+
+[**ChannelCatalogProductByChannelCatalogResponse**](ChannelCatalogProductByChannelCatalogResponse.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 
 
 # **get_channel_catalog_product_info**

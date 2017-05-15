@@ -3,11 +3,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**marketplace_technical_code** | [**MarketplaceTechnicalCode**](MarketplaceTechnicalCode.md) |  | 
+**marketplace_technical_code** | [**BeezUPCommonMarketplaceTechnicalCode**](BeezUPCommonMarketplaceTechnicalCode.md) |  | 
 **account_id** | [**AccountId**](AccountId.md) |  | 
 **beez_up_order_id** | [**BeezUPOrderId**](BeezUPOrderId.md) |  | 
 **beez_up_order_url** | [**BeezUPCommonHttpUrl**](BeezUPCommonHttpUrl.md) |  | [optional] 
-**marketplace_business_code** | [**MarketplaceBusinessCode**](MarketplaceBusinessCode.md) |  | 
+**marketplace_business_code** | [**BeezUPCommonMarketplaceBusinessCode**](BeezUPCommonMarketplaceBusinessCode.md) |  | 
 **order_marketplace_order_id** | [**MarketplaceOrderId**](MarketplaceOrderId.md) |  | 
 **order_status_beez_up_order_status** | [**BeezUPOrderStatus**](BeezUPOrderStatus.md) |  | 
 **order_status_marketplace_order_status** | [**MarketplaceOrderStatus**](MarketplaceOrderStatus.md) |  | [optional] 

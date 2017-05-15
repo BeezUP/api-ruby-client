@@ -1,12 +1,12 @@
 # SwaggerClient::ChannelCatalogsCategoryMappingsApi
 
-All URIs are relative to *https://api.beezup.comv2*
+All URIs are relative to *https://api.beezup.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_channel_catalog_categories**](ChannelCatalogsCategoryMappingsApi.md#get_channel_catalog_categories) | **GET** /v2/user/channelCatalogs/{channelCatalogId}/categoryMappings | Get channel catalog categories
-[**map_channel_catalog_category**](ChannelCatalogsCategoryMappingsApi.md#map_channel_catalog_category) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/categoryMappings/map | Map channel catalog category
-[**unmap_channel_catalog_category**](ChannelCatalogsCategoryMappingsApi.md#unmap_channel_catalog_category) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/categoryMappings/unmap | Unmap channel catalog category
+[**get_channel_catalog_categories**](ChannelCatalogsCategoryMappingsApi.md#get_channel_catalog_categories) | **GET** /user/channelCatalogs/{channelCatalogId}/categoryMappings | Get channel catalog categories
+[**map_channel_catalog_category**](ChannelCatalogsCategoryMappingsApi.md#map_channel_catalog_category) | **POST** /user/channelCatalogs/{channelCatalogId}/categoryMappings/map | Map channel catalog category
+[**unmap_channel_catalog_category**](ChannelCatalogsCategoryMappingsApi.md#unmap_channel_catalog_category) | **POST** /user/channelCatalogs/{channelCatalogId}/categoryMappings/unmap | Unmap channel catalog category
 
 
 # **get_channel_catalog_categories**

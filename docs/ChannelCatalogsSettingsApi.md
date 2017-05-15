@@ -1,13 +1,13 @@
 # SwaggerClient::ChannelCatalogsSettingsApi
 
-All URIs are relative to *https://api.beezup.comv2*
+All URIs are relative to *https://api.beezup.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**configure_channel_catalog_cost_settings**](ChannelCatalogsSettingsApi.md#configure_channel_catalog_cost_settings) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/settings/cost | Disable a channel catalog
-[**configure_channel_catalog_general_settings**](ChannelCatalogsSettingsApi.md#configure_channel_catalog_general_settings) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/settings/general | Disable a channel catalog
-[**disable_channel_catalog**](ChannelCatalogsSettingsApi.md#disable_channel_catalog) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/disable | Disable a channel catalog
-[**enable_channel_catalog**](ChannelCatalogsSettingsApi.md#enable_channel_catalog) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/enable | Enable a channel catalog
+[**configure_channel_catalog_cost_settings**](ChannelCatalogsSettingsApi.md#configure_channel_catalog_cost_settings) | **POST** /user/channelCatalogs/{channelCatalogId}/settings/cost | Disable a channel catalog
+[**configure_channel_catalog_general_settings**](ChannelCatalogsSettingsApi.md#configure_channel_catalog_general_settings) | **POST** /user/channelCatalogs/{channelCatalogId}/settings/general | Disable a channel catalog
+[**disable_channel_catalog**](ChannelCatalogsSettingsApi.md#disable_channel_catalog) | **POST** /user/channelCatalogs/{channelCatalogId}/disable | Disable a channel catalog
+[**enable_channel_catalog**](ChannelCatalogsSettingsApi.md#enable_channel_catalog) | **POST** /user/channelCatalogs/{channelCatalogId}/enable | Enable a channel catalog
 
 
 # **configure_channel_catalog_cost_settings**

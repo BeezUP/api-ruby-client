@@ -1,13 +1,13 @@
 # SwaggerClient::ChannelCatalogsGlobalApi
 
-All URIs are relative to *https://api.beezup.comv2*
+All URIs are relative to *https://api.beezup.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_channel_catalog**](ChannelCatalogsGlobalApi.md#create_channel_catalog) | **POST** /v2/user/channelCatalogs/ | Create a new channel catalog
-[**delete_channel_catalog**](ChannelCatalogsGlobalApi.md#delete_channel_catalog) | **DELETE** /v2/user/channelCatalogs/{channelCatalogId} | Delete the channel catalog
-[**get_channel_catalog**](ChannelCatalogsGlobalApi.md#get_channel_catalog) | **GET** /v2/user/channelCatalogs/{channelCatalogId} | Get the channel catalog information
-[**get_channel_catalogs**](ChannelCatalogsGlobalApi.md#get_channel_catalogs) | **GET** /v2/user/channelCatalogs/ | List all your current channel catalogs
+[**create_channel_catalog**](ChannelCatalogsGlobalApi.md#create_channel_catalog) | **POST** /user/channelCatalogs/ | Create a new channel catalog
+[**delete_channel_catalog**](ChannelCatalogsGlobalApi.md#delete_channel_catalog) | **DELETE** /user/channelCatalogs/{channelCatalogId} | Delete the channel catalog
+[**get_channel_catalog**](ChannelCatalogsGlobalApi.md#get_channel_catalog) | **GET** /user/channelCatalogs/{channelCatalogId} | Get the channel catalog information
+[**get_channel_catalogs**](ChannelCatalogsGlobalApi.md#get_channel_catalogs) | **GET** /user/channelCatalogs/ | List all your current channel catalogs
 
 
 # **create_channel_catalog**
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 
 # **delete_channel_catalog**
-> delete_channel_catalog
+> delete_channel_catalog(channel_catalog_id, )
 
 Delete the channel catalog
 
@@ -81,16 +81,22 @@ end
 
 api_instance = SwaggerClient::ChannelCatalogsGlobalApi.new
 
+channel_catalog_id = "6d6b04de-406b-4539-8e7e-bf3e8da5dfb0" # String | The channel catalog identifier
+
+
 begin
   #Delete the channel catalog
-  api_instance.delete_channel_catalog
+  api_instance.delete_channel_catalog(channel_catalog_id, )
 rescue SwaggerClient::ApiError => e
   puts "Exception when calling ChannelCatalogsGlobalApi->delete_channel_catalog: #{e}"
 end
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **channel_catalog_id** | **String**| The channel catalog identifier | 
 
 ### Return type
 

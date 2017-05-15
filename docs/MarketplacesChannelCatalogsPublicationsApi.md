@@ -1,10 +1,10 @@
 # SwaggerClient::MarketplacesChannelCatalogsPublicationsApi
 
-All URIs are relative to *https://api.beezup.comv2*
+All URIs are relative to *https://api.beezup.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_publications**](MarketplacesChannelCatalogsPublicationsApi.md#get_publications) | **GET** /v2/user/marketplaces/channelcatalogs/publications/{marketplaceTechnicalCode}/{accountId}/history | Fetch the publication history for an account, sorted by descending start date
+[**get_publications**](MarketplacesChannelCatalogsPublicationsApi.md#get_publications) | **GET** /user/marketplaces/channelcatalogs/publications/{marketplaceTechnicalCode}/{accountId}/history | Fetch the publication history for an account, sorted by descending start date
 
 
 # **get_publications**
