@@ -30,7 +30,11 @@
   "produces": [
     "application/json"
   ],
-  "tags": null,
+  "tags": [
+    {
+      "name": "BeezUP"
+    }
+  ],
   "paths": {
     "/v2/public/security/login": {
       "post": {
@@ -18388,7 +18392,11 @@
     "description": "Find the documentation for BeezUP's API here",
     "url": "https://beezup.github.io/api-docs/"
   },
-  "x-tagGroups": null,
+  "x-tagGroups": [
+    {
+      "name": "BeezUP"
+    }
+  ],
   "parameters": {
     "executionId": {
       "name": "executionId",
