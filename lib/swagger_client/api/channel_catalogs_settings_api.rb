@@ -1,5 +1,5 @@
 =begin
-#Public - Security
+#BeezUP API
 
 #This API will allow you to create your account and to get your tokens. \\ If you lost your password, you have an operation to get it back. 
 

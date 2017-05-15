@@ -1,7 +1,7 @@
 =begin
 #BeezUP API
 
-#This is the RESTful API of BeezUP which allows you to manage everything related to BeezUP
+#This API will allow you to create your account and to get your tokens. \\ If you lost your password, you have an operation to get it back. 
 
 OpenAPI spec version: 2.0
 Contact: support@beezup.com
@@ -544,6 +544,47 @@ require 'swagger_client/models/vat_number'
 require 'swagger_client/models/what_i_do'
 
 # APIs
+require 'swagger_client/api/analytics_optimisations_api'
+require 'swagger_client/api/analytics_reports_api'
+require 'swagger_client/api/analytics_rules_api'
+require 'swagger_client/api/analytics_tracking_api'
+require 'swagger_client/api/catalogs_auto_api'
+require 'swagger_client/api/catalogs_catalog_api'
+require 'swagger_client/api/catalogs_global_api'
+require 'swagger_client/api/catalogs_importation_catalog_info_api'
+require 'swagger_client/api/catalogs_importation_process_api'
+require 'swagger_client/api/channel_catalogs_category_mappings_api'
+require 'swagger_client/api/channel_catalogs_column_mappings_api'
+require 'swagger_client/api/channel_catalogs_exclusion_filters_api'
+require 'swagger_client/api/channel_catalogs_exportations_api'
+require 'swagger_client/api/channel_catalogs_global_api'
+require 'swagger_client/api/channel_catalogs_products_api'
+require 'swagger_client/api/channel_catalogs_products_optimisation_api'
+require 'swagger_client/api/channel_catalogs_products_overrides_api'
+require 'swagger_client/api/channel_catalogs_settings_api'
+require 'swagger_client/api/channels_channels_global_api'
+require 'swagger_client/api/customer_account_api'
+require 'swagger_client/api/customer_alerts_api'
+require 'swagger_client/api/customer_contracts_api'
+require 'swagger_client/api/customer_friends_api'
+require 'swagger_client/api/customer_invoices_api'
+require 'swagger_client/api/customer_rights_api'
+require 'swagger_client/api/customer_security_api'
+require 'swagger_client/api/customer_shares_api'
+require 'swagger_client/api/customer_stores_api'
+require 'swagger_client/api/marketplaces_channel_catalogs_global_api'
+require 'swagger_client/api/marketplaces_channel_catalogs_publications_api'
+require 'swagger_client/api/marketplaces_channel_catalogs_settings_api'
+require 'swagger_client/api/marketplaces_orders_auto_transitions_api'
+require 'swagger_client/api/marketplaces_orders_batches_api'
+require 'swagger_client/api/marketplaces_orders_exports_api'
+require 'swagger_client/api/marketplaces_orders_global_api'
+require 'swagger_client/api/marketplaces_orders_list_api'
+require 'swagger_client/api/marketplaces_orders_order_api'
+require 'swagger_client/api/public_channels_public_channels_api'
+require 'swagger_client/api/public_list_of_values_lov_api'
+require 'swagger_client/api/public_security_security_api'
+require 'swagger_client/api/user_list_of_values_lov_api'
 
 module SwaggerClient
   class << self
