@@ -1,7 +1,7 @@
 =begin
 #BeezUP API
 
-#This is the RESTful API of BeezUP which allows you to manage everything related to BeezUP
+#This API will allow you to create your account and to get your tokens. \\ If you lost your password, you have an operation to get it back. 
 
 OpenAPI spec version: 2.0
 Contact: support@beezup.com
@@ -122,7 +122,7 @@ describe 'BeezUPApi' do
   # 
   # @param store_id Your store identifier
   # @param [Hash] opts the optional parameters
-  # @return [Array<BeezUPCommonLink2>]
+  # @return [LinksImportationGetImportationMonitoringLink]
   describe 'auto_start_auto_import test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -320,7 +320,7 @@ describe 'BeezUPApi' do
   # @param change_order_type The Order change type
   # @param user_name Sometimes the user in the e-commerce application is not the same as user associated with the current subscription key. We recommend providing your application&#39;s user login.
   # @param request 
-  # @param if_match ETag value to identify the last known version of requested Order, to ensure that you are making a change on the lastest version of the order.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
+  # @param if_match ETag value to identify the last known version of requested resource.\\ To ensure that you are making a change on the lastest version of the resource.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
   # @param [Hash] opts the optional parameters
   # @option opts [BOOLEAN] :test_mode If true, the operation will be not be sent to marketplace. But the validation will be taken in account.
   # @return [nil]
@@ -486,9 +486,22 @@ describe 'BeezUPApi' do
   # unit tests for delete_channel_catalog
   # Delete the channel catalog
   # 
+  # @param channel_catalog_id The channel catalog identifier
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'delete_channel_catalog test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for delete_channel_catalog_exportation_cache
+  # Delete the exportation cache
+  # 
+  # @param channel_catalog_id The channel catalog identifier
+  # @param [Hash] opts the optional parameters
+  # @return [nil]
+  describe 'delete_channel_catalog_exportation_cache test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -636,7 +649,6 @@ describe 'BeezUPApi' do
   # unit tests for export_orders
   # Request a new Order report exportation to be generated
   # A new file will be generated containing a summary of all the Orders matching the requested filter settings.
-  # @param format The type of the file to export
   # @param request 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -757,6 +769,32 @@ describe 'BeezUPApi' do
     end
   end
 
+  # unit tests for get_channel_catalog_exportation_cache_info
+  # Get the exportation cache information
+  # 
+  # @param channel_catalog_id The channel catalog identifier
+  # @param [Hash] opts the optional parameters
+  # @return [ChannelCatalogExportCacheInfoResponse]
+  describe 'get_channel_catalog_exportation_cache_info test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_channel_catalog_exportation_history
+  # Get the exportation history
+  # 
+  # @param channel_catalog_id The channel catalog identifier
+  # @param page_number The page number you want to get
+  # @param page_size The entry count you want to get
+  # @param [Hash] opts the optional parameters
+  # @return [ChannelCatalogExportationHistory]
+  describe 'get_channel_catalog_exportation_history test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for get_channel_catalog_marketplace_properties
   # Get the marketplace properties for a channel catalog
   # 
@@ -776,6 +814,19 @@ describe 'BeezUPApi' do
   # @param [Hash] opts the optional parameters
   # @return [ChannelCatalogMarketplaceSettings]
   describe 'get_channel_catalog_marketplace_settings test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_channel_catalog_product_by_channel_catalog
+  # Get channel catalog products related to these channel catalogs
+  # 
+  # @param product_id The product identifier
+  # @param [Hash] opts the optional parameters
+  # @option opts [ChannelCatalogProductByChannelCatalogRequest] :request 
+  # @return [ChannelCatalogProductByChannelCatalogResponse]
+  describe 'get_channel_catalog_product_by_channel_catalog test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -853,6 +904,30 @@ describe 'BeezUPApi' do
   # @param [Hash] opts the optional parameters
   # @return [ChannelInfo]
   describe 'get_channel_info test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_channels
+  # The channel list for one country
+  # 
+  # @param country_iso_code The country iso code alpha 3 based on this: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3#Decoding_table \\ To know which country are available you have to use the operation: GetChannelsByCountry 
+  # @param accept_encoding Allows the client to indicate wether it accepts a compressed encoding to reduce traffic size.
+  # @param [Hash] opts the optional parameters
+  # @return [ChannelInfoList]
+  describe 'get_channels test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_channels_index
+  # Get public channel index
+  # Use this operation to get the correct link to the channels and to the list of values
+  # @param [Hash] opts the optional parameters
+  # @return [PublicChannelIndex]
+  describe 'get_channels_index test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -944,7 +1019,7 @@ describe 'BeezUPApi' do
   # @param account_id The account identifier
   # @param beez_up_order_id The BeezUP Order identifier
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :if_none_match ETag value to identify the last known version of requested Order\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
+  # @option opts [String] :if_none_match ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
   # @return [Order]
   describe 'get_order test' do
     it "should work" do
@@ -956,7 +1031,7 @@ describe 'BeezUPApi' do
   # Get a paginated list of Order report exportations
   # 
   # @param page_number The page number you want to get
-  # @param page_size The count of Order report exportations you want to get
+  # @param page_size The entry count you want to get
   # @param store_id The store identifier to regroup the order exportations
   # @param [Hash] opts the optional parameters
   # @return [OrderExportations]
@@ -980,12 +1055,23 @@ describe 'BeezUPApi' do
     end
   end
 
+  # unit tests for get_order_index
+  # Get all actions you can do on the order API
+  # 
+  # @param [Hash] opts the optional parameters
+  # @return [OrderIndex]
+  describe 'get_order_index test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for get_order_list_full
   # Get a paginated list of all Orders with all Order and Order Item(s) properties
   # The purpose of this operation is to reduce the amount of request to the API.\\ \\ Previous implmentation of this feature only returned a partial (light) version of the Orders. The purpose of this API is to reduce the number of incoming requests by returning the complete (full) Order and Order Item(s) properties. 
   # @param accept_encoding Allows the client to indicate wether it accepts a compressed encoding to reduce traffic size
+  # @param request 
   # @param [Hash] opts the optional parameters
-  # @option opts [OrderListRequest] :request 
   # @return [OrderListFull]
   describe 'get_order_list_full test' do
     it "should work" do
@@ -996,8 +1082,8 @@ describe 'BeezUPApi' do
   # unit tests for get_order_list_light
   # Get a paginated list of all Orders without details
   # 
+  # @param request 
   # @param [Hash] opts the optional parameters
-  # @option opts [OrderListRequest] :request 
   # @return [OrderListLight]
   describe 'get_order_list_light test' do
     it "should work" do
@@ -1011,6 +1097,32 @@ describe 'BeezUPApi' do
   # @param [Hash] opts the optional parameters
   # @return [ProfilePictureInfoResponse]
   describe 'get_profile_picture_info test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_public_list_of_values
+  # Get the list of values related to this list name
+  # 
+  # @param list_name The list of value name your want to get
+  # @param [Hash] opts the optional parameters
+  # @option opts [Array<String>] :accept_language Indicates that the client accepts the following languages.
+  # @option opts [String] :if_none_match ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
+  # @return [PublicListOfValuesResponse]
+  describe 'get_public_list_of_values test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_public_lov_index
+  # Get all list names
+  # 
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :if_none_match ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
+  # @return [PublicLovIndex]
+  describe 'get_public_lov_index test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -1306,48 +1418,26 @@ describe 'BeezUPApi' do
     end
   end
 
-  # unit tests for get_user_list_group
-  # Get list of values related to this group name
-  # 
-  # @param list_group_name The list group name your want to get
-  # @param [Hash] opts the optional parameters
-  # @return [Array<BeezUPCommonLOVLink2>]
-  describe 'get_user_list_group test' do
-    it "should work" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  # unit tests for get_user_list_group_names
-  # Get list of group of list name
-  # 
-  # @param [Hash] opts the optional parameters
-  # @return [Array<BeezUPCommonLOVLink2>]
-  describe 'get_user_list_group_names test' do
-    it "should work" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  # unit tests for get_user_list_names
-  # Get all list names
-  # 
-  # @param [Hash] opts the optional parameters
-  # @return [Array<BeezUPCommonLOVLink2>]
-  describe 'get_user_list_names test' do
-    it "should work" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
   # unit tests for get_user_list_of_values
   # Get the list of values related to this list name
   # 
   # @param list_name The list of value name your want to get
   # @param [Hash] opts the optional parameters
   # @option opts [Array<String>] :accept_language Indicates that the client accepts the following languages.
-  # @return [Array<BeezUPCommonListOfValueItem>]
+  # @option opts [String] :if_none_match ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
+  # @return [UserListOfValuesResponse]
   describe 'get_user_list_of_values test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_user_lov_index
+  # Get all list names
+  # 
+  # @param [Hash] opts the optional parameters
+  # @return [UserLovIndex]
+  describe 'get_user_lov_index test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -1656,7 +1746,7 @@ describe 'BeezUPApi' do
   # @param store_id Your store identifier
   # @param request 
   # @param [Hash] opts the optional parameters
-  # @return [Array<BeezUPCommonLink2>]
+  # @return [LinksImportationGetImportationMonitoringLink]
   describe 'importation_start_manual_update test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1704,12 +1794,36 @@ describe 'BeezUPApi' do
     end
   end
 
+  # unit tests for login
+  # Login
+  # User Login - The login will give your tokens
+  # @param request 
+  # @param [Hash] opts the optional parameters
+  # @return [ApiCredentials]
+  describe 'login test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for logout
   # Log out the current user from go2
   # Log out the current user from go2
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'logout test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for lost_password
+  # Lost password
+  # Lost password - Your password will be regenerated and sent to your email
+  # @param email Your email
+  # @param [Hash] opts the optional parameters
+  # @return [nil]
+  describe 'lost_password test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -1858,6 +1972,18 @@ describe 'BeezUPApi' do
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'reenable_channel_catalog_product test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for register
+  # User Registration
+  # User Registration - Create a new user on BeezUP
+  # @param request 
+  # @param [Hash] opts the optional parameters
+  # @return [nil]
+  describe 'register test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

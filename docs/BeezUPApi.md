@@ -1,169 +1,179 @@
 # SwaggerClient::BeezUPApi
 
-All URIs are relative to *https://api.beezup.comv2*
+All URIs are relative to *https://api.beezup.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**activate_user_account**](BeezUPApi.md#activate_user_account) | **POST** /v2/user/customer/account/activate | Activate the user account
-[**auto_configure_auto_import_interval**](BeezUPApi.md#auto_configure_auto_import_interval) | **POST** /v2/user/catalogs/{storeId}/autoImport/scheduling/interval | Configure Auto Import Interval
-[**auto_delete_auto_import**](BeezUPApi.md#auto_delete_auto_import) | **DELETE** /v2/user/catalogs/{storeId}/autoImport | Delete Auto Import
-[**auto_get_auto_import_configuration**](BeezUPApi.md#auto_get_auto_import_configuration) | **GET** /v2/user/catalogs/{storeId}/autoImport | Get the auto import configuration
-[**auto_pause_auto_import**](BeezUPApi.md#auto_pause_auto_import) | **POST** /v2/user/catalogs/{storeId}/autoImport/pause | Pause Auto Import
-[**auto_resume_auto_import**](BeezUPApi.md#auto_resume_auto_import) | **POST** /v2/user/catalogs/{storeId}/autoImport/resume | Resume Auto Import
-[**auto_schedule_auto_import**](BeezUPApi.md#auto_schedule_auto_import) | **POST** /v2/user/catalogs/{storeId}/autoImport/scheduling/schedules | Configure Auto Import Schedules
-[**auto_start_auto_import**](BeezUPApi.md#auto_start_auto_import) | **POST** /v2/user/catalogs/{storeId}/autoImport/start | Start Auto Import Manually
-[**catalog_change_catalog_column_user_name**](BeezUPApi.md#catalog_change_catalog_column_user_name) | **POST** /v2/user/catalogs/{storeId}/catalogColumns/{columnId}/rename | Change Catalog Column User Name
-[**catalog_change_custom_column_expression**](BeezUPApi.md#catalog_change_custom_column_expression) | **PUT** /v2/user/catalogs/{storeId}/customColumns/{columnId}/expression | Change custom column expression
-[**catalog_change_custom_column_user_name**](BeezUPApi.md#catalog_change_custom_column_user_name) | **POST** /v2/user/catalogs/{storeId}/customColumns/{columnId}/rename | Change Custom Column User Name
-[**catalog_compute_expression**](BeezUPApi.md#catalog_compute_expression) | **POST** /v2/user/catalogs/{storeId}/customColumns/computeExpression | Compute the expression for this catalog.
-[**catalog_delete_custom_column**](BeezUPApi.md#catalog_delete_custom_column) | **DELETE** /v2/user/catalogs/{storeId}/customColumns/{columnId} | Delete custom column
-[**catalog_get_beez_up_columns**](BeezUPApi.md#catalog_get_beez_up_columns) | **GET** /v2/user/catalogs/beezupColumns | Get the BeezUP columns
-[**catalog_get_catalog_columns**](BeezUPApi.md#catalog_get_catalog_columns) | **GET** /v2/user/catalogs/{storeId}/catalogColumns | Get catalog column list
-[**catalog_get_categories**](BeezUPApi.md#catalog_get_categories) | **GET** /v2/user/catalogs/{storeId}/categories | Get category list
-[**catalog_get_custom_column_expression**](BeezUPApi.md#catalog_get_custom_column_expression) | **GET** /v2/user/catalogs/{storeId}/customColumns/{columnId}/expression | Get the encrypted custom column expression
-[**catalog_get_custom_columns**](BeezUPApi.md#catalog_get_custom_columns) | **GET** /v2/user/catalogs/{storeId}/customColumns | Get custom column list
-[**catalog_get_product**](BeezUPApi.md#catalog_get_product) | **GET** /v2/user/catalogs/{storeId}/products/{productId} | Get product
-[**catalog_get_products**](BeezUPApi.md#catalog_get_products) | **POST** /v2/user/catalogs/{storeId}/products | Get product list
-[**catalog_get_random_products**](BeezUPApi.md#catalog_get_random_products) | **GET** /v2/user/catalogs/{storeId}/products/random | Get random product list
-[**catalog_save_custom_column**](BeezUPApi.md#catalog_save_custom_column) | **PUT** /v2/user/catalogs/{storeId}/customColumns/{columnId} | Create or replace a custom column
-[**change_order**](BeezUPApi.md#change_order) | **POST** /v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/{changeOrderType} | Change your marketplace Order Information (accept, ship, etc.)
-[**change_order_list**](BeezUPApi.md#change_order_list) | **POST** /v2/user/marketplaces/orders/batches/changeOrders/{changeOrderType} | Send a batch of operations to change your marketplace Order information (accept, ship, etc.)
-[**change_password**](BeezUPApi.md#change_password) | **POST** /v2/user/customer/account/changePassword | Change user password
-[**clear_merchant_order_info**](BeezUPApi.md#clear_merchant_order_info) | **POST** /v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/clearMerchantOrderInfo | Clear an Order&#39;s merchant information
-[**clear_merchant_order_info_list**](BeezUPApi.md#clear_merchant_order_info_list) | **POST** /v2/user/marketplaces/orders/batches/clearMerchantOrderInfos | Send a batch of operations to clear an Order&#39;s merchant information
-[**configure_automatic_transitions**](BeezUPApi.md#configure_automatic_transitions) | **POST** /v2/user/marketplaces/orders/automaticTransitions | Configure new or existing automatic Order status transition
-[**configure_channel_catalog_cost_settings**](BeezUPApi.md#configure_channel_catalog_cost_settings) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/settings/cost | Disable a channel catalog
-[**configure_channel_catalog_exclusion_filters**](BeezUPApi.md#configure_channel_catalog_exclusion_filters) | **PUT** /v2/user/channelCatalogs/{channelCatalogId}/exclusionFilters | Configure channel catalog exclusion filters
-[**configure_channel_catalog_general_settings**](BeezUPApi.md#configure_channel_catalog_general_settings) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/settings/general | Disable a channel catalog
-[**create_channel_catalog**](BeezUPApi.md#create_channel_catalog) | **POST** /v2/user/channelCatalogs/ | Create a new channel catalog
-[**create_contract**](BeezUPApi.md#create_contract) | **POST** /v2/user/customer/contracts | Create a new contract
-[**create_rule**](BeezUPApi.md#create_rule) | **POST** /v2/user/analytics/{storeId}/rules | Rule creation
-[**create_store**](BeezUPApi.md#create_store) | **POST** /v2/user/customer/stores | Create a new store
-[**delete_channel_catalog**](BeezUPApi.md#delete_channel_catalog) | **DELETE** /v2/user/channelCatalogs/{channelCatalogId} | Delete the channel catalog
-[**delete_channel_catalog_product_value_override**](BeezUPApi.md#delete_channel_catalog_product_value_override) | **DELETE** /v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides/{channelColumnId} | Delete a specific channel catalog product value override
-[**delete_next_contract**](BeezUPApi.md#delete_next_contract) | **DELETE** /v2/user/customer/contracts/next | Delete your next contract
-[**delete_report_filter**](BeezUPApi.md#delete_report_filter) | **DELETE** /v2/user/analytics/{storeId}/reports/filters/{reportFilterId} | Delete the report filter
-[**delete_rule**](BeezUPApi.md#delete_rule) | **DELETE** /v2/user/analytics/{storeId}/rules/{ruleId} | Delete Rule
-[**delete_share**](BeezUPApi.md#delete_share) | **DELETE** /v2/user/customer/stores/{storeId}/shares/{userId} | Delete a share to another user
-[**delete_store**](BeezUPApi.md#delete_store) | **DELETE** /v2/user/customer/stores/{storeId} | Delete a store
-[**disable_channel_catalog**](BeezUPApi.md#disable_channel_catalog) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/disable | Disable a channel catalog
-[**disable_channel_catalog_product**](BeezUPApi.md#disable_channel_catalog_product) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/disable | Disable channel catalog product
-[**disable_rule**](BeezUPApi.md#disable_rule) | **POST** /v2/user/analytics/{storeId}/rules/{ruleId}/disable | Disable rule
-[**enable_channel_catalog**](BeezUPApi.md#enable_channel_catalog) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/enable | Enable a channel catalog
-[**enable_rule**](BeezUPApi.md#enable_rule) | **POST** /v2/user/analytics/{storeId}/rules/{ruleId}/enable | Enable rule
-[**export_orders**](BeezUPApi.md#export_orders) | **POST** /v2/user/marketplaces/orders/exportations | Request a new Order report exportation to be generated
-[**export_store_report_by_category**](BeezUPApi.md#export_store_report_by_category) | **POST** /v2/user/analytics/{storeId}/reports/bycategory/export | Export the report by category
-[**export_store_report_by_channel**](BeezUPApi.md#export_store_report_by_channel) | **POST** /v2/user/analytics/{storeId}/reports/bychannel/export | Export the report by channel
-[**export_store_report_by_product**](BeezUPApi.md#export_store_report_by_product) | **POST** /v2/user/analytics/{storeId}/reports/byproduct/export | Export the report by product
-[**get_automatic_transitions**](BeezUPApi.md#get_automatic_transitions) | **GET** /v2/user/marketplaces/orders/automaticTransitions | Get list of configured automatic Order status transitions
-[**get_available_channels**](BeezUPApi.md#get_available_channels) | **GET** /v2/user/channels/ | List all available channel for this store
-[**get_billing_periods**](BeezUPApi.md#get_billing_periods) | **GET** /v2/user/customer/billingPeriods | Get billing periods conditions
-[**get_channel_catalog**](BeezUPApi.md#get_channel_catalog) | **GET** /v2/user/channelCatalogs/{channelCatalogId} | Get the channel catalog information
-[**get_channel_catalog_categories**](BeezUPApi.md#get_channel_catalog_categories) | **GET** /v2/user/channelCatalogs/{channelCatalogId}/categoryMappings | Get channel catalog categories
-[**get_channel_catalog_exclusion_filter_operators**](BeezUPApi.md#get_channel_catalog_exclusion_filter_operators) | **GET** /v2/user/channelCatalogs/exclusionFilterOperators | Get channel catalog exclusion filter operators
-[**get_channel_catalog_marketplace_properties**](BeezUPApi.md#get_channel_catalog_marketplace_properties) | **GET** /v2/user/marketplaces/channelcatalogs/{channelCatalogId}/properties | Get the marketplace properties for a channel catalog
-[**get_channel_catalog_marketplace_settings**](BeezUPApi.md#get_channel_catalog_marketplace_settings) | **GET** /v2/user/marketplaces/channelcatalogs/{channelCatalogId}/settings | Get the marketplace settings for a channel catalog
-[**get_channel_catalog_product_info**](BeezUPApi.md#get_channel_catalog_product_info) | **GET** /v2/user/channelCatalogs/{channelCatalogId}/products/{productId} | Get channel catalog product information
-[**get_channel_catalog_product_info_list**](BeezUPApi.md#get_channel_catalog_product_info_list) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/products | Get channel catalog product information list
-[**get_channel_catalogs**](BeezUPApi.md#get_channel_catalogs) | **GET** /v2/user/channelCatalogs/ | List all your current channel catalogs
-[**get_channel_categories**](BeezUPApi.md#get_channel_categories) | **GET** /v2/user/channels/{channelId}/categories | Get channel categories
-[**get_channel_columns**](BeezUPApi.md#get_channel_columns) | **POST** /v2/user/channels/{channelId}/columns | Get channel columns
-[**get_channel_info**](BeezUPApi.md#get_channel_info) | **GET** /v2/user/channels/{channelId} | Get channel information
-[**get_contracts**](BeezUPApi.md#get_contracts) | **GET** /v2/user/customer/contracts | Get contract list
-[**get_credit_card_info**](BeezUPApi.md#get_credit_card_info) | **GET** /v2/user/customer/account/creditCardInfo | Get credit card information
-[**get_friend_info**](BeezUPApi.md#get_friend_info) | **GET** /v2/user/customer/friends/{userId} | Get friend information
-[**get_invoices**](BeezUPApi.md#get_invoices) | **GET** /v2/user/customer/invoices | Get all your invoices
-[**get_marketplace_account_stores**](BeezUPApi.md#get_marketplace_account_stores) | **GET** /v2/user/marketplaces/channelcatalogs/ | Get  you marketplace channel catalog list
-[**get_marketplace_accounts_synchronization**](BeezUPApi.md#get_marketplace_accounts_synchronization) | **GET** /v2/user/marketplaces/orders/status | Get current synchronization status between your marketplaces and BeezUP accounts
-[**get_offer**](BeezUPApi.md#get_offer) | **POST** /v2/user/customer/offers | Get offer pricing
-[**get_order**](BeezUPApi.md#get_order) | **GET** /v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId} | Get full Order and Order Item(s) properties
-[**get_order_exportations**](BeezUPApi.md#get_order_exportations) | **GET** /v2/user/marketplaces/orders/exportations | Get a paginated list of Order report exportations
-[**get_order_history**](BeezUPApi.md#get_order_history) | **GET** /v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/history | Get an Order&#39;s harvest and change history
-[**get_order_list_full**](BeezUPApi.md#get_order_list_full) | **POST** /v2/user/marketplaces/orders/list/full | Get a paginated list of all Orders with all Order and Order Item(s) properties
-[**get_order_list_light**](BeezUPApi.md#get_order_list_light) | **POST** /v2/user/marketplaces/orders/list/light | Get a paginated list of all Orders without details
-[**get_profile_picture_info**](BeezUPApi.md#get_profile_picture_info) | **GET** /v2/user/customer/account/profilePictureInfo | Get profile picture information
-[**get_publications**](BeezUPApi.md#get_publications) | **GET** /v2/user/marketplaces/channelcatalogs/publications/{marketplaceTechnicalCode}/{accountId}/history | Fetch the publication history for an account, sorted by descending start date
-[**get_report_filter**](BeezUPApi.md#get_report_filter) | **GET** /v2/user/analytics/{storeId}/reports/filters/{reportFilterId} | Get the report filter description
-[**get_report_filters**](BeezUPApi.md#get_report_filters) | **GET** /v2/user/analytics/{storeId}/reports/filters | Get report filter list for the given store
-[**get_rights**](BeezUPApi.md#get_rights) | **POST** /v2/user/customer/stores/{storeId}/rights | Get store&#39;s rights
-[**get_rule**](BeezUPApi.md#get_rule) | **GET** /v2/user/analytics/{storeId}/rules/{ruleId} | Gets the rule
-[**get_rules**](BeezUPApi.md#get_rules) | **GET** /v2/user/analytics/{storeId}/rules | Gets the list of rules for a given store
-[**get_rules_executions**](BeezUPApi.md#get_rules_executions) | **GET** /v2/user/analytics/{storeId}/rules/executions | Get the rules execution history
-[**get_shares**](BeezUPApi.md#get_shares) | **GET** /v2/user/customer/stores/{storeId}/shares | Get shares related to this store
-[**get_standard_offers**](BeezUPApi.md#get_standard_offers) | **GET** /v2/user/customer/offers | Get all standard offers
-[**get_store**](BeezUPApi.md#get_store) | **GET** /v2/user/customer/stores/{storeId} | Get store&#39;s information
-[**get_store_alerts**](BeezUPApi.md#get_store_alerts) | **GET** /v2/user/customer/stores/{storeId}/alerts | Get store&#39;s alerts
-[**get_store_report_by_category**](BeezUPApi.md#get_store_report_by_category) | **POST** /v2/user/analytics/{storeId}/reports/bycategory | Get the report by category
-[**get_store_report_by_channel**](BeezUPApi.md#get_store_report_by_channel) | **POST** /v2/user/analytics/{storeId}/reports/bychannel | Get the report by channel
-[**get_store_report_by_day**](BeezUPApi.md#get_store_report_by_day) | **POST** /v2/user/analytics/{storeId}/reports/byday | Get the report by day
-[**get_store_report_by_day_export**](BeezUPApi.md#get_store_report_by_day_export) | **POST** /v2/user/analytics/{storeId}/reports/byday/export | Get the report by day
-[**get_store_report_by_product**](BeezUPApi.md#get_store_report_by_product) | **POST** /v2/user/analytics/{storeId}/reports/byproduct | Get the report by product
-[**get_store_tracked_clicks**](BeezUPApi.md#get_store_tracked_clicks) | **GET** /v2/user/analytics/{storeId}/tracking/clicks | Get the latest clicks tracked
-[**get_store_tracked_external_orders**](BeezUPApi.md#get_store_tracked_external_orders) | **GET** /v2/user/analytics/{storeId}/tracking/externalorders | Get the latest external orders tracked
-[**get_store_tracked_orders**](BeezUPApi.md#get_store_tracked_orders) | **GET** /v2/user/analytics/{storeId}/tracking/orders | Get the latest orders tracked
-[**get_store_tracking_status**](BeezUPApi.md#get_store_tracking_status) | **GET** /v2/user/analytics/{storeId}/tracking/status | Get store tracking synchronization status
-[**get_stores**](BeezUPApi.md#get_stores) | **GET** /v2/user/customer/stores | Get store list
-[**get_tracking_status**](BeezUPApi.md#get_tracking_status) | **GET** /v2/user/analytics/tracking/status | Display the synchronization status of the clicks and orders
-[**get_user_account_info**](BeezUPApi.md#get_user_account_info) | **GET** /v2/user/customer/account | Get user account information
-[**get_user_list_group**](BeezUPApi.md#get_user_list_group) | **GET** /v2/user/lov/groups/{listGroupName} | Get list of values related to this group name
-[**get_user_list_group_names**](BeezUPApi.md#get_user_list_group_names) | **GET** /v2/user/lov/groups | Get list of group of list name
-[**get_user_list_names**](BeezUPApi.md#get_user_list_names) | **GET** /v2/user/lov/ | Get all list names
-[**get_user_list_of_values**](BeezUPApi.md#get_user_list_of_values) | **GET** /v2/user/lov/{listName} | Get the list of values related to this list name
-[**harvest_all**](BeezUPApi.md#harvest_all) | **POST** /v2/user/marketplaces/orders/harvest | Send harvest request to all your marketplaces
-[**harvest_order**](BeezUPApi.md#harvest_order) | **POST** /v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/harvest | Send harvest request for a single Order
-[**importation_activate_auto_import**](BeezUPApi.md#importation_activate_auto_import) | **POST** /v2/user/catalogs/{storeId}/autoImport | Activate the auto importation of the last successful manual catalog importation.
-[**importation_cancel**](BeezUPApi.md#importation_cancel) | **DELETE** /v2/user/catalogs/{storeId}/importations/{executionId} | Cancel importation
-[**importation_commit**](BeezUPApi.md#importation_commit) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/commit | Commit Importation
-[**importation_commit_columns**](BeezUPApi.md#importation_commit_columns) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/commitColumns | Commit columns
-[**importation_configure_catalog_column**](BeezUPApi.md#importation_configure_catalog_column) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId} | Configure catalog column
-[**importation_configure_remaining_catalog_columns**](BeezUPApi.md#importation_configure_remaining_catalog_columns) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/configureRemainingCatalogColumns | Configure remaining catalog columns
-[**importation_delete_custom_column**](BeezUPApi.md#importation_delete_custom_column) | **DELETE** /v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId} | Delete Custom Column
-[**importation_get_custom_column_expression**](BeezUPApi.md#importation_get_custom_column_expression) | **GET** /v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/expression | Get the encrypted custom column expression in this importation
-[**importation_get_custom_columns**](BeezUPApi.md#importation_get_custom_columns) | **GET** /v2/user/catalogs/{storeId}/importations/{executionId}/customColumns | Get custom columns currently place in this importation
-[**importation_get_detected_catalog_columns**](BeezUPApi.md#importation_get_detected_catalog_columns) | **GET** /v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns | Get detected catalog columns during this importation.
-[**importation_get_importation_monitoring**](BeezUPApi.md#importation_get_importation_monitoring) | **GET** /v2/user/catalogs/{storeId}/importations/{executionId} | Get the importation status
-[**importation_get_manual_update_last_input_config**](BeezUPApi.md#importation_get_manual_update_last_input_config) | **GET** /v2/user/catalogs/{storeId}/inputConfiguration | Get the last input configuration
-[**importation_get_product_sample**](BeezUPApi.md#importation_get_product_sample) | **GET** /v2/user/catalogs/{storeId}/importations/{executionId}/productSamples/{productSampleIndex} | Get the product sample related to this importation with all columns (catalog and custom)
-[**importation_get_product_sample_custom_column_value**](BeezUPApi.md#importation_get_product_sample_custom_column_value) | **GET** /v2/user/catalogs/{storeId}/importations/{executionId}/productSamples/{productSampleIndex}/customColumns/{columnId} | Get product sample custom column value related to this importation.
-[**importation_get_reportings**](BeezUPApi.md#importation_get_reportings) | **GET** /v2/user/catalogs/{storeId}/importations | Get the latest catalog importation reporting
-[**importation_ignore_column**](BeezUPApi.md#importation_ignore_column) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/ignore | Ignore Column
-[**importation_map_catalog_column**](BeezUPApi.md#importation_map_catalog_column) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/map | Map catalog column to a BeezUP column
-[**importation_map_custom_column**](BeezUPApi.md#importation_map_custom_column) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/map | Map custom column to a BeezUP column
-[**importation_reattend_column**](BeezUPApi.md#importation_reattend_column) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/reattend | Reattend Column
-[**importation_save_custom_column**](BeezUPApi.md#importation_save_custom_column) | **PUT** /v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId} | Create or replace a custom column
-[**importation_start_manual_update**](BeezUPApi.md#importation_start_manual_update) | **POST** /v2/user/catalogs/{storeId}/importations | Start Manual Import
-[**importation_technical_progression**](BeezUPApi.md#importation_technical_progression) | **GET** /v2/user/catalogs/{storeId}/importations/{executionId}/technicalProgression | Get technical progression
-[**importation_unmap_catalog_column**](BeezUPApi.md#importation_unmap_catalog_column) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/unmap | Unmap catalog column
-[**importation_unmap_custom_column**](BeezUPApi.md#importation_unmap_custom_column) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/unmap | Unmap custom column
-[**logout**](BeezUPApi.md#logout) | **POST** /v2/user/customer/security/logout | Log out the current user from go2
-[**map_channel_catalog_category**](BeezUPApi.md#map_channel_catalog_category) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/categoryMappings/map | Map channel catalog category
-[**map_channel_catalog_columns**](BeezUPApi.md#map_channel_catalog_columns) | **PUT** /v2/user/channelCatalogs/{channelCatalogId}/columnMappings | Configure channel catalog column mappings
-[**move_down_rule**](BeezUPApi.md#move_down_rule) | **POST** /v2/user/analytics/{storeId}/rules/{ruleId}/movedown | Move the rule down
-[**move_up_rule**](BeezUPApi.md#move_up_rule) | **POST** /v2/user/analytics/{storeId}/rules/{ruleId}/moveup | Move the rule up
-[**optimise**](BeezUPApi.md#optimise) | **POST** /v2/user/analytics/{storeId}/optimisations/{actionName} | Optimise products
-[**optimise_by_category**](BeezUPApi.md#optimise_by_category) | **POST** /v2/user/analytics/{storeId}/optimisations/bycategory/{catalogCategoryId}/{actionName} | Optimise products&#39;s category
-[**optimise_by_channel**](BeezUPApi.md#optimise_by_channel) | **POST** /v2/user/analytics/{storeId}/optimisations/bychannel/{channelId}/{actionName} | Optimise products&#39;s category
-[**optimise_by_product**](BeezUPApi.md#optimise_by_product) | **POST** /v2/user/analytics/{storeId}/optimisations/byproduct/{productId}/{actionName} | Optimise products
-[**override_channel_catalog_product_overrides**](BeezUPApi.md#override_channel_catalog_product_overrides) | **PUT** /v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides | Override channel catalog product values
-[**reactivate_current_contract**](BeezUPApi.md#reactivate_current_contract) | **POST** /v2/user/customer/contracts/current/reenableAutoRenewal | Reactivate your terminated contract.
-[**reenable_channel_catalog_product**](BeezUPApi.md#reenable_channel_catalog_product) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/reenable | Reenable channel catalog product
-[**resend_email_activation**](BeezUPApi.md#resend_email_activation) | **POST** /v2/user/customer/account/resendEmailActivation | Resend email activation
-[**run_rule**](BeezUPApi.md#run_rule) | **POST** /v2/user/analytics/{storeId}/rules/{ruleId}/run | Run rule
-[**run_rules**](BeezUPApi.md#run_rules) | **POST** /v2/user/analytics/{storeId}/rules/run | Run all rules for this store
-[**save_company_info**](BeezUPApi.md#save_company_info) | **PUT** /v2/user/customer/account/companyInfo | Change company information
-[**save_credit_card_info**](BeezUPApi.md#save_credit_card_info) | **PUT** /v2/user/customer/account/creditCardInfo | Save user credit card info
-[**save_personal_info**](BeezUPApi.md#save_personal_info) | **PUT** /v2/user/customer/account/personalInfo | Save user personal information
-[**save_profile_picture_info**](BeezUPApi.md#save_profile_picture_info) | **PUT** /v2/user/customer/account/profilePictureInfo | Change user picture information
-[**save_report_filter**](BeezUPApi.md#save_report_filter) | **PUT** /v2/user/analytics/{storeId}/reports/filters/{reportFilterId} | Save the report filter
-[**save_store_alert**](BeezUPApi.md#save_store_alert) | **PUT** /v2/user/customer/stores/{storeId}/alerts/{alertId} | Save store alert
-[**set_channel_catalog_marketplace_settings**](BeezUPApi.md#set_channel_catalog_marketplace_settings) | **POST** /v2/user/marketplaces/channelcatalogs/{channelCatalogId}/settings | Save new marketplace settings for a channel catalog
-[**set_merchant_order_info**](BeezUPApi.md#set_merchant_order_info) | **POST** /v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/setMerchantOrderInfo | Set an Order&#39;s merchant information
-[**set_merchant_order_info_list**](BeezUPApi.md#set_merchant_order_info_list) | **POST** /v2/user/marketplaces/orders/batches/setMerchantOrderInfos | Send a batch of operations to set an Order&#39;s merchant information
-[**share**](BeezUPApi.md#share) | **POST** /v2/user/customer/stores/{storeId}/shares | Share a store to another user
-[**terminate_current_contract**](BeezUPApi.md#terminate_current_contract) | **POST** /v2/user/customer/contracts/current/disableAutoRenewal | Schedule termination of your current contract at the end of the commitment.
-[**unmap_channel_catalog_category**](BeezUPApi.md#unmap_channel_catalog_category) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/categoryMappings/unmap | Unmap channel catalog category
-[**update_rule**](BeezUPApi.md#update_rule) | **PATCH** /v2/user/analytics/{storeId}/rules/{ruleId} | Update Rule
-[**update_store**](BeezUPApi.md#update_store) | **PATCH** /v2/user/customer/stores/{storeId} | Update some store&#39;s information.
+[**activate_user_account**](BeezUPApi.md#activate_user_account) | **POST** /user/customer/account/activate | Activate the user account
+[**auto_configure_auto_import_interval**](BeezUPApi.md#auto_configure_auto_import_interval) | **POST** /user/catalogs/{storeId}/autoImport/scheduling/interval | Configure Auto Import Interval
+[**auto_delete_auto_import**](BeezUPApi.md#auto_delete_auto_import) | **DELETE** /user/catalogs/{storeId}/autoImport | Delete Auto Import
+[**auto_get_auto_import_configuration**](BeezUPApi.md#auto_get_auto_import_configuration) | **GET** /user/catalogs/{storeId}/autoImport | Get the auto import configuration
+[**auto_pause_auto_import**](BeezUPApi.md#auto_pause_auto_import) | **POST** /user/catalogs/{storeId}/autoImport/pause | Pause Auto Import
+[**auto_resume_auto_import**](BeezUPApi.md#auto_resume_auto_import) | **POST** /user/catalogs/{storeId}/autoImport/resume | Resume Auto Import
+[**auto_schedule_auto_import**](BeezUPApi.md#auto_schedule_auto_import) | **POST** /user/catalogs/{storeId}/autoImport/scheduling/schedules | Configure Auto Import Schedules
+[**auto_start_auto_import**](BeezUPApi.md#auto_start_auto_import) | **POST** /user/catalogs/{storeId}/autoImport/start | Start Auto Import Manually
+[**catalog_change_catalog_column_user_name**](BeezUPApi.md#catalog_change_catalog_column_user_name) | **POST** /user/catalogs/{storeId}/catalogColumns/{columnId}/rename | Change Catalog Column User Name
+[**catalog_change_custom_column_expression**](BeezUPApi.md#catalog_change_custom_column_expression) | **PUT** /user/catalogs/{storeId}/customColumns/{columnId}/expression | Change custom column expression
+[**catalog_change_custom_column_user_name**](BeezUPApi.md#catalog_change_custom_column_user_name) | **POST** /user/catalogs/{storeId}/customColumns/{columnId}/rename | Change Custom Column User Name
+[**catalog_compute_expression**](BeezUPApi.md#catalog_compute_expression) | **POST** /user/catalogs/{storeId}/customColumns/computeExpression | Compute the expression for this catalog.
+[**catalog_delete_custom_column**](BeezUPApi.md#catalog_delete_custom_column) | **DELETE** /user/catalogs/{storeId}/customColumns/{columnId} | Delete custom column
+[**catalog_get_beez_up_columns**](BeezUPApi.md#catalog_get_beez_up_columns) | **GET** /user/catalogs/beezupColumns | Get the BeezUP columns
+[**catalog_get_catalog_columns**](BeezUPApi.md#catalog_get_catalog_columns) | **GET** /user/catalogs/{storeId}/catalogColumns | Get catalog column list
+[**catalog_get_categories**](BeezUPApi.md#catalog_get_categories) | **GET** /user/catalogs/{storeId}/categories | Get category list
+[**catalog_get_custom_column_expression**](BeezUPApi.md#catalog_get_custom_column_expression) | **GET** /user/catalogs/{storeId}/customColumns/{columnId}/expression | Get the encrypted custom column expression
+[**catalog_get_custom_columns**](BeezUPApi.md#catalog_get_custom_columns) | **GET** /user/catalogs/{storeId}/customColumns | Get custom column list
+[**catalog_get_product**](BeezUPApi.md#catalog_get_product) | **GET** /user/catalogs/{storeId}/products/{productId} | Get product
+[**catalog_get_products**](BeezUPApi.md#catalog_get_products) | **POST** /user/catalogs/{storeId}/products | Get product list
+[**catalog_get_random_products**](BeezUPApi.md#catalog_get_random_products) | **GET** /user/catalogs/{storeId}/products/random | Get random product list
+[**catalog_save_custom_column**](BeezUPApi.md#catalog_save_custom_column) | **PUT** /user/catalogs/{storeId}/customColumns/{columnId} | Create or replace a custom column
+[**change_order**](BeezUPApi.md#change_order) | **POST** /user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/{changeOrderType} | Change your marketplace Order Information (accept, ship, etc.)
+[**change_order_list**](BeezUPApi.md#change_order_list) | **POST** /user/marketplaces/orders/batches/changeOrders/{changeOrderType} | Send a batch of operations to change your marketplace Order information (accept, ship, etc.)
+[**change_password**](BeezUPApi.md#change_password) | **POST** /user/customer/account/changePassword | Change user password
+[**clear_merchant_order_info**](BeezUPApi.md#clear_merchant_order_info) | **POST** /user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/clearMerchantOrderInfo | Clear an Order&#39;s merchant information
+[**clear_merchant_order_info_list**](BeezUPApi.md#clear_merchant_order_info_list) | **POST** /user/marketplaces/orders/batches/clearMerchantOrderInfos | Send a batch of operations to clear an Order&#39;s merchant information
+[**configure_automatic_transitions**](BeezUPApi.md#configure_automatic_transitions) | **POST** /user/marketplaces/orders/automaticTransitions | Configure new or existing automatic Order status transition
+[**configure_channel_catalog_cost_settings**](BeezUPApi.md#configure_channel_catalog_cost_settings) | **POST** /user/channelCatalogs/{channelCatalogId}/settings/cost | Disable a channel catalog
+[**configure_channel_catalog_exclusion_filters**](BeezUPApi.md#configure_channel_catalog_exclusion_filters) | **PUT** /user/channelCatalogs/{channelCatalogId}/exclusionFilters | Configure channel catalog exclusion filters
+[**configure_channel_catalog_general_settings**](BeezUPApi.md#configure_channel_catalog_general_settings) | **POST** /user/channelCatalogs/{channelCatalogId}/settings/general | Disable a channel catalog
+[**create_channel_catalog**](BeezUPApi.md#create_channel_catalog) | **POST** /user/channelCatalogs/ | Create a new channel catalog
+[**create_contract**](BeezUPApi.md#create_contract) | **POST** /user/customer/contracts | Create a new contract
+[**create_rule**](BeezUPApi.md#create_rule) | **POST** /user/analytics/{storeId}/rules | Rule creation
+[**create_store**](BeezUPApi.md#create_store) | **POST** /user/customer/stores | Create a new store
+[**delete_channel_catalog**](BeezUPApi.md#delete_channel_catalog) | **DELETE** /user/channelCatalogs/{channelCatalogId} | Delete the channel catalog
+[**delete_channel_catalog_exportation_cache**](BeezUPApi.md#delete_channel_catalog_exportation_cache) | **DELETE** /user/channelCatalogs/{channelCatalogId}/exportations/cache | Delete the exportation cache
+[**delete_channel_catalog_product_value_override**](BeezUPApi.md#delete_channel_catalog_product_value_override) | **DELETE** /user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides/{channelColumnId} | Delete a specific channel catalog product value override
+[**delete_next_contract**](BeezUPApi.md#delete_next_contract) | **DELETE** /user/customer/contracts/next | Delete your next contract
+[**delete_report_filter**](BeezUPApi.md#delete_report_filter) | **DELETE** /user/analytics/{storeId}/reports/filters/{reportFilterId} | Delete the report filter
+[**delete_rule**](BeezUPApi.md#delete_rule) | **DELETE** /user/analytics/{storeId}/rules/{ruleId} | Delete Rule
+[**delete_share**](BeezUPApi.md#delete_share) | **DELETE** /user/customer/stores/{storeId}/shares/{userId} | Delete a share to another user
+[**delete_store**](BeezUPApi.md#delete_store) | **DELETE** /user/customer/stores/{storeId} | Delete a store
+[**disable_channel_catalog**](BeezUPApi.md#disable_channel_catalog) | **POST** /user/channelCatalogs/{channelCatalogId}/disable | Disable a channel catalog
+[**disable_channel_catalog_product**](BeezUPApi.md#disable_channel_catalog_product) | **POST** /user/channelCatalogs/{channelCatalogId}/products/{productId}/disable | Disable channel catalog product
+[**disable_rule**](BeezUPApi.md#disable_rule) | **POST** /user/analytics/{storeId}/rules/{ruleId}/disable | Disable rule
+[**enable_channel_catalog**](BeezUPApi.md#enable_channel_catalog) | **POST** /user/channelCatalogs/{channelCatalogId}/enable | Enable a channel catalog
+[**enable_rule**](BeezUPApi.md#enable_rule) | **POST** /user/analytics/{storeId}/rules/{ruleId}/enable | Enable rule
+[**export_orders**](BeezUPApi.md#export_orders) | **POST** /user/marketplaces/orders/exportations | Request a new Order report exportation to be generated
+[**export_store_report_by_category**](BeezUPApi.md#export_store_report_by_category) | **POST** /user/analytics/{storeId}/reports/bycategory/export | Export the report by category
+[**export_store_report_by_channel**](BeezUPApi.md#export_store_report_by_channel) | **POST** /user/analytics/{storeId}/reports/bychannel/export | Export the report by channel
+[**export_store_report_by_product**](BeezUPApi.md#export_store_report_by_product) | **POST** /user/analytics/{storeId}/reports/byproduct/export | Export the report by product
+[**get_automatic_transitions**](BeezUPApi.md#get_automatic_transitions) | **GET** /user/marketplaces/orders/automaticTransitions | Get list of configured automatic Order status transitions
+[**get_available_channels**](BeezUPApi.md#get_available_channels) | **GET** /user/channels/ | List all available channel for this store
+[**get_billing_periods**](BeezUPApi.md#get_billing_periods) | **GET** /user/customer/billingPeriods | Get billing periods conditions
+[**get_channel_catalog**](BeezUPApi.md#get_channel_catalog) | **GET** /user/channelCatalogs/{channelCatalogId} | Get the channel catalog information
+[**get_channel_catalog_categories**](BeezUPApi.md#get_channel_catalog_categories) | **GET** /user/channelCatalogs/{channelCatalogId}/categoryMappings | Get channel catalog categories
+[**get_channel_catalog_exclusion_filter_operators**](BeezUPApi.md#get_channel_catalog_exclusion_filter_operators) | **GET** /user/channelCatalogs/exclusionFilterOperators | Get channel catalog exclusion filter operators
+[**get_channel_catalog_exportation_cache_info**](BeezUPApi.md#get_channel_catalog_exportation_cache_info) | **GET** /user/channelCatalogs/{channelCatalogId}/exportations/cache | Get the exportation cache information
+[**get_channel_catalog_exportation_history**](BeezUPApi.md#get_channel_catalog_exportation_history) | **GET** /user/channelCatalogs/{channelCatalogId}/exportations/history | Get the exportation history
+[**get_channel_catalog_marketplace_properties**](BeezUPApi.md#get_channel_catalog_marketplace_properties) | **GET** /user/marketplaces/channelcatalogs/{channelCatalogId}/properties | Get the marketplace properties for a channel catalog
+[**get_channel_catalog_marketplace_settings**](BeezUPApi.md#get_channel_catalog_marketplace_settings) | **GET** /user/marketplaces/channelcatalogs/{channelCatalogId}/settings | Get the marketplace settings for a channel catalog
+[**get_channel_catalog_product_by_channel_catalog**](BeezUPApi.md#get_channel_catalog_product_by_channel_catalog) | **POST** /user/channelCatalogs/products/{productId} | Get channel catalog products related to these channel catalogs
+[**get_channel_catalog_product_info**](BeezUPApi.md#get_channel_catalog_product_info) | **GET** /user/channelCatalogs/{channelCatalogId}/products/{productId} | Get channel catalog product information
+[**get_channel_catalog_product_info_list**](BeezUPApi.md#get_channel_catalog_product_info_list) | **POST** /user/channelCatalogs/{channelCatalogId}/products | Get channel catalog product information list
+[**get_channel_catalogs**](BeezUPApi.md#get_channel_catalogs) | **GET** /user/channelCatalogs/ | List all your current channel catalogs
+[**get_channel_categories**](BeezUPApi.md#get_channel_categories) | **GET** /user/channels/{channelId}/categories | Get channel categories
+[**get_channel_columns**](BeezUPApi.md#get_channel_columns) | **POST** /user/channels/{channelId}/columns | Get channel columns
+[**get_channel_info**](BeezUPApi.md#get_channel_info) | **GET** /user/channels/{channelId} | Get channel information
+[**get_channels**](BeezUPApi.md#get_channels) | **GET** /public/channels/{countryIsoCode} | The channel list for one country
+[**get_channels_index**](BeezUPApi.md#get_channels_index) | **GET** /public/channels/ | Get public channel index
+[**get_contracts**](BeezUPApi.md#get_contracts) | **GET** /user/customer/contracts | Get contract list
+[**get_credit_card_info**](BeezUPApi.md#get_credit_card_info) | **GET** /user/customer/account/creditCardInfo | Get credit card information
+[**get_friend_info**](BeezUPApi.md#get_friend_info) | **GET** /user/customer/friends/{userId} | Get friend information
+[**get_invoices**](BeezUPApi.md#get_invoices) | **GET** /user/customer/invoices | Get all your invoices
+[**get_marketplace_account_stores**](BeezUPApi.md#get_marketplace_account_stores) | **GET** /user/marketplaces/channelcatalogs/ | Get  you marketplace channel catalog list
+[**get_marketplace_accounts_synchronization**](BeezUPApi.md#get_marketplace_accounts_synchronization) | **GET** /user/marketplaces/orders/status | Get current synchronization status between your marketplaces and BeezUP accounts
+[**get_offer**](BeezUPApi.md#get_offer) | **POST** /user/customer/offers | Get offer pricing
+[**get_order**](BeezUPApi.md#get_order) | **GET** /user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId} | Get full Order and Order Item(s) properties
+[**get_order_exportations**](BeezUPApi.md#get_order_exportations) | **GET** /user/marketplaces/orders/exportations | Get a paginated list of Order report exportations
+[**get_order_history**](BeezUPApi.md#get_order_history) | **GET** /user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/history | Get an Order&#39;s harvest and change history
+[**get_order_index**](BeezUPApi.md#get_order_index) | **GET** /user/marketplaces/orders/ | Get all actions you can do on the order API
+[**get_order_list_full**](BeezUPApi.md#get_order_list_full) | **POST** /user/marketplaces/orders/list/full | Get a paginated list of all Orders with all Order and Order Item(s) properties
+[**get_order_list_light**](BeezUPApi.md#get_order_list_light) | **POST** /user/marketplaces/orders/list/light | Get a paginated list of all Orders without details
+[**get_profile_picture_info**](BeezUPApi.md#get_profile_picture_info) | **GET** /user/customer/account/profilePictureInfo | Get profile picture information
+[**get_public_list_of_values**](BeezUPApi.md#get_public_list_of_values) | **GET** /public/lov/{listName} | Get the list of values related to this list name
+[**get_public_lov_index**](BeezUPApi.md#get_public_lov_index) | **GET** /public/lov/ | Get all list names
+[**get_publications**](BeezUPApi.md#get_publications) | **GET** /user/marketplaces/channelcatalogs/publications/{marketplaceTechnicalCode}/{accountId}/history | Fetch the publication history for an account, sorted by descending start date
+[**get_report_filter**](BeezUPApi.md#get_report_filter) | **GET** /user/analytics/{storeId}/reports/filters/{reportFilterId} | Get the report filter description
+[**get_report_filters**](BeezUPApi.md#get_report_filters) | **GET** /user/analytics/{storeId}/reports/filters | Get report filter list for the given store
+[**get_rights**](BeezUPApi.md#get_rights) | **POST** /user/customer/stores/{storeId}/rights | Get store&#39;s rights
+[**get_rule**](BeezUPApi.md#get_rule) | **GET** /user/analytics/{storeId}/rules/{ruleId} | Gets the rule
+[**get_rules**](BeezUPApi.md#get_rules) | **GET** /user/analytics/{storeId}/rules | Gets the list of rules for a given store
+[**get_rules_executions**](BeezUPApi.md#get_rules_executions) | **GET** /user/analytics/{storeId}/rules/executions | Get the rules execution history
+[**get_shares**](BeezUPApi.md#get_shares) | **GET** /user/customer/stores/{storeId}/shares | Get shares related to this store
+[**get_standard_offers**](BeezUPApi.md#get_standard_offers) | **GET** /user/customer/offers | Get all standard offers
+[**get_store**](BeezUPApi.md#get_store) | **GET** /user/customer/stores/{storeId} | Get store&#39;s information
+[**get_store_alerts**](BeezUPApi.md#get_store_alerts) | **GET** /user/customer/stores/{storeId}/alerts | Get store&#39;s alerts
+[**get_store_report_by_category**](BeezUPApi.md#get_store_report_by_category) | **POST** /user/analytics/{storeId}/reports/bycategory | Get the report by category
+[**get_store_report_by_channel**](BeezUPApi.md#get_store_report_by_channel) | **POST** /user/analytics/{storeId}/reports/bychannel | Get the report by channel
+[**get_store_report_by_day**](BeezUPApi.md#get_store_report_by_day) | **POST** /user/analytics/{storeId}/reports/byday | Get the report by day
+[**get_store_report_by_day_export**](BeezUPApi.md#get_store_report_by_day_export) | **POST** /user/analytics/{storeId}/reports/byday/export | Get the report by day
+[**get_store_report_by_product**](BeezUPApi.md#get_store_report_by_product) | **POST** /user/analytics/{storeId}/reports/byproduct | Get the report by product
+[**get_store_tracked_clicks**](BeezUPApi.md#get_store_tracked_clicks) | **GET** /user/analytics/{storeId}/tracking/clicks | Get the latest clicks tracked
+[**get_store_tracked_external_orders**](BeezUPApi.md#get_store_tracked_external_orders) | **GET** /user/analytics/{storeId}/tracking/externalorders | Get the latest external orders tracked
+[**get_store_tracked_orders**](BeezUPApi.md#get_store_tracked_orders) | **GET** /user/analytics/{storeId}/tracking/orders | Get the latest orders tracked
+[**get_store_tracking_status**](BeezUPApi.md#get_store_tracking_status) | **GET** /user/analytics/{storeId}/tracking/status | Get store tracking synchronization status
+[**get_stores**](BeezUPApi.md#get_stores) | **GET** /user/customer/stores | Get store list
+[**get_tracking_status**](BeezUPApi.md#get_tracking_status) | **GET** /user/analytics/tracking/status | Display the synchronization status of the clicks and orders
+[**get_user_account_info**](BeezUPApi.md#get_user_account_info) | **GET** /user/customer/account | Get user account information
+[**get_user_list_of_values**](BeezUPApi.md#get_user_list_of_values) | **GET** /user/lov/{listName} | Get the list of values related to this list name
+[**get_user_lov_index**](BeezUPApi.md#get_user_lov_index) | **GET** /user/lov/ | Get all list names
+[**harvest_all**](BeezUPApi.md#harvest_all) | **POST** /user/marketplaces/orders/harvest | Send harvest request to all your marketplaces
+[**harvest_order**](BeezUPApi.md#harvest_order) | **POST** /user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/harvest | Send harvest request for a single Order
+[**importation_activate_auto_import**](BeezUPApi.md#importation_activate_auto_import) | **POST** /user/catalogs/{storeId}/autoImport | Activate the auto importation of the last successful manual catalog importation.
+[**importation_cancel**](BeezUPApi.md#importation_cancel) | **DELETE** /user/catalogs/{storeId}/importations/{executionId} | Cancel importation
+[**importation_commit**](BeezUPApi.md#importation_commit) | **POST** /user/catalogs/{storeId}/importations/{executionId}/commit | Commit Importation
+[**importation_commit_columns**](BeezUPApi.md#importation_commit_columns) | **POST** /user/catalogs/{storeId}/importations/{executionId}/commitColumns | Commit columns
+[**importation_configure_catalog_column**](BeezUPApi.md#importation_configure_catalog_column) | **POST** /user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId} | Configure catalog column
+[**importation_configure_remaining_catalog_columns**](BeezUPApi.md#importation_configure_remaining_catalog_columns) | **POST** /user/catalogs/{storeId}/importations/{executionId}/configureRemainingCatalogColumns | Configure remaining catalog columns
+[**importation_delete_custom_column**](BeezUPApi.md#importation_delete_custom_column) | **DELETE** /user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId} | Delete Custom Column
+[**importation_get_custom_column_expression**](BeezUPApi.md#importation_get_custom_column_expression) | **GET** /user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/expression | Get the encrypted custom column expression in this importation
+[**importation_get_custom_columns**](BeezUPApi.md#importation_get_custom_columns) | **GET** /user/catalogs/{storeId}/importations/{executionId}/customColumns | Get custom columns currently place in this importation
+[**importation_get_detected_catalog_columns**](BeezUPApi.md#importation_get_detected_catalog_columns) | **GET** /user/catalogs/{storeId}/importations/{executionId}/catalogColumns | Get detected catalog columns during this importation.
+[**importation_get_importation_monitoring**](BeezUPApi.md#importation_get_importation_monitoring) | **GET** /user/catalogs/{storeId}/importations/{executionId} | Get the importation status
+[**importation_get_manual_update_last_input_config**](BeezUPApi.md#importation_get_manual_update_last_input_config) | **GET** /user/catalogs/{storeId}/inputConfiguration | Get the last input configuration
+[**importation_get_product_sample**](BeezUPApi.md#importation_get_product_sample) | **GET** /user/catalogs/{storeId}/importations/{executionId}/productSamples/{productSampleIndex} | Get the product sample related to this importation with all columns (catalog and custom)
+[**importation_get_product_sample_custom_column_value**](BeezUPApi.md#importation_get_product_sample_custom_column_value) | **GET** /user/catalogs/{storeId}/importations/{executionId}/productSamples/{productSampleIndex}/customColumns/{columnId} | Get product sample custom column value related to this importation.
+[**importation_get_reportings**](BeezUPApi.md#importation_get_reportings) | **GET** /user/catalogs/{storeId}/importations | Get the latest catalog importation reporting
+[**importation_ignore_column**](BeezUPApi.md#importation_ignore_column) | **POST** /user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/ignore | Ignore Column
+[**importation_map_catalog_column**](BeezUPApi.md#importation_map_catalog_column) | **POST** /user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/map | Map catalog column to a BeezUP column
+[**importation_map_custom_column**](BeezUPApi.md#importation_map_custom_column) | **POST** /user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/map | Map custom column to a BeezUP column
+[**importation_reattend_column**](BeezUPApi.md#importation_reattend_column) | **POST** /user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/reattend | Reattend Column
+[**importation_save_custom_column**](BeezUPApi.md#importation_save_custom_column) | **PUT** /user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId} | Create or replace a custom column
+[**importation_start_manual_update**](BeezUPApi.md#importation_start_manual_update) | **POST** /user/catalogs/{storeId}/importations | Start Manual Import
+[**importation_technical_progression**](BeezUPApi.md#importation_technical_progression) | **GET** /user/catalogs/{storeId}/importations/{executionId}/technicalProgression | Get technical progression
+[**importation_unmap_catalog_column**](BeezUPApi.md#importation_unmap_catalog_column) | **POST** /user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/unmap | Unmap catalog column
+[**importation_unmap_custom_column**](BeezUPApi.md#importation_unmap_custom_column) | **POST** /user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/unmap | Unmap custom column
+[**login**](BeezUPApi.md#login) | **POST** /public/security/login | Login
+[**logout**](BeezUPApi.md#logout) | **POST** /user/customer/security/logout | Log out the current user from go2
+[**lost_password**](BeezUPApi.md#lost_password) | **POST** /public/security/lostpassword | Lost password
+[**map_channel_catalog_category**](BeezUPApi.md#map_channel_catalog_category) | **POST** /user/channelCatalogs/{channelCatalogId}/categoryMappings/map | Map channel catalog category
+[**map_channel_catalog_columns**](BeezUPApi.md#map_channel_catalog_columns) | **PUT** /user/channelCatalogs/{channelCatalogId}/columnMappings | Configure channel catalog column mappings
+[**move_down_rule**](BeezUPApi.md#move_down_rule) | **POST** /user/analytics/{storeId}/rules/{ruleId}/movedown | Move the rule down
+[**move_up_rule**](BeezUPApi.md#move_up_rule) | **POST** /user/analytics/{storeId}/rules/{ruleId}/moveup | Move the rule up
+[**optimise**](BeezUPApi.md#optimise) | **POST** /user/analytics/{storeId}/optimisations/{actionName} | Optimise products
+[**optimise_by_category**](BeezUPApi.md#optimise_by_category) | **POST** /user/analytics/{storeId}/optimisations/bycategory/{catalogCategoryId}/{actionName} | Optimise products&#39;s category
+[**optimise_by_channel**](BeezUPApi.md#optimise_by_channel) | **POST** /user/analytics/{storeId}/optimisations/bychannel/{channelId}/{actionName} | Optimise products&#39;s category
+[**optimise_by_product**](BeezUPApi.md#optimise_by_product) | **POST** /user/analytics/{storeId}/optimisations/byproduct/{productId}/{actionName} | Optimise products
+[**override_channel_catalog_product_overrides**](BeezUPApi.md#override_channel_catalog_product_overrides) | **PUT** /user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides | Override channel catalog product values
+[**reactivate_current_contract**](BeezUPApi.md#reactivate_current_contract) | **POST** /user/customer/contracts/current/reenableAutoRenewal | Reactivate your terminated contract.
+[**reenable_channel_catalog_product**](BeezUPApi.md#reenable_channel_catalog_product) | **POST** /user/channelCatalogs/{channelCatalogId}/products/{productId}/reenable | Reenable channel catalog product
+[**register**](BeezUPApi.md#register) | **POST** /public/security/register | User Registration
+[**resend_email_activation**](BeezUPApi.md#resend_email_activation) | **POST** /user/customer/account/resendEmailActivation | Resend email activation
+[**run_rule**](BeezUPApi.md#run_rule) | **POST** /user/analytics/{storeId}/rules/{ruleId}/run | Run rule
+[**run_rules**](BeezUPApi.md#run_rules) | **POST** /user/analytics/{storeId}/rules/run | Run all rules for this store
+[**save_company_info**](BeezUPApi.md#save_company_info) | **PUT** /user/customer/account/companyInfo | Change company information
+[**save_credit_card_info**](BeezUPApi.md#save_credit_card_info) | **PUT** /user/customer/account/creditCardInfo | Save user credit card info
+[**save_personal_info**](BeezUPApi.md#save_personal_info) | **PUT** /user/customer/account/personalInfo | Save user personal information
+[**save_profile_picture_info**](BeezUPApi.md#save_profile_picture_info) | **PUT** /user/customer/account/profilePictureInfo | Change user picture information
+[**save_report_filter**](BeezUPApi.md#save_report_filter) | **PUT** /user/analytics/{storeId}/reports/filters/{reportFilterId} | Save the report filter
+[**save_store_alert**](BeezUPApi.md#save_store_alert) | **PUT** /user/customer/stores/{storeId}/alerts/{alertId} | Save store alert
+[**set_channel_catalog_marketplace_settings**](BeezUPApi.md#set_channel_catalog_marketplace_settings) | **POST** /user/marketplaces/channelcatalogs/{channelCatalogId}/settings | Save new marketplace settings for a channel catalog
+[**set_merchant_order_info**](BeezUPApi.md#set_merchant_order_info) | **POST** /user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/setMerchantOrderInfo | Set an Order&#39;s merchant information
+[**set_merchant_order_info_list**](BeezUPApi.md#set_merchant_order_info_list) | **POST** /user/marketplaces/orders/batches/setMerchantOrderInfos | Send a batch of operations to set an Order&#39;s merchant information
+[**share**](BeezUPApi.md#share) | **POST** /user/customer/stores/{storeId}/shares | Share a store to another user
+[**terminate_current_contract**](BeezUPApi.md#terminate_current_contract) | **POST** /user/customer/contracts/current/disableAutoRenewal | Schedule termination of your current contract at the end of the commitment.
+[**unmap_channel_catalog_category**](BeezUPApi.md#unmap_channel_catalog_category) | **POST** /user/channelCatalogs/{channelCatalogId}/categoryMappings/unmap | Unmap channel catalog category
+[**update_rule**](BeezUPApi.md#update_rule) | **PATCH** /user/analytics/{storeId}/rules/{ruleId} | Update Rule
+[**update_store**](BeezUPApi.md#update_store) | **PATCH** /user/customer/stores/{storeId} | Update some store&#39;s information.
 
 
 # **activate_user_account**
@@ -531,7 +541,7 @@ nil (empty response body)
 
 
 # **auto_start_auto_import**
-> Array&lt;BeezUPCommonLink2&gt; auto_start_auto_import(store_id, )
+> LinksImportationGetImportationMonitoringLink auto_start_auto_import(store_id, )
 
 Start Auto Import Manually
 
@@ -569,7 +579,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Array&lt;BeezUPCommonLink2&gt;**](BeezUPCommonLink2.md)
+[**LinksImportationGetImportationMonitoringLink**](LinksImportationGetImportationMonitoringLink.md)
 
 ### Authorization
 
@@ -1379,7 +1389,7 @@ user_name = "user_name_example" # String | Sometimes the user in the e-commerce 
 
 request = SwaggerClient::ChangeOrderRequest.new # ChangeOrderRequest | 
 
-if_match = "if_match_example" # String | ETag value to identify the last known version of requested Order, to ensure that you are making a change on the lastest version of the order.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
+if_match = "if_match_example" # String | ETag value to identify the last known version of requested resource.\\ To ensure that you are making a change on the lastest version of the resource.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
 
 opts = { 
   test_mode: false # BOOLEAN | If true, the operation will be not be sent to marketplace. But the validation will be taken in account.
@@ -1403,7 +1413,7 @@ Name | Type | Description  | Notes
  **change_order_type** | **String**| The Order change type | 
  **user_name** | **String**| Sometimes the user in the e-commerce application is not the same as user associated with the current subscription key. We recommend providing your application&#39;s user login. | 
  **request** | [**ChangeOrderRequest**](ChangeOrderRequest.md)|  | 
- **if_match** | **String**| ETag value to identify the last known version of requested Order, to ensure that you are making a change on the lastest version of the order.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  | 
+ **if_match** | **String**| ETag value to identify the last known version of requested resource.\\ To ensure that you are making a change on the lastest version of the resource.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  | 
  **test_mode** | **BOOLEAN**| If true, the operation will be not be sent to marketplace. But the validation will be taken in account. | [optional] [default to false]
 
 ### Return type
@@ -1666,7 +1676,7 @@ end
 
 api_instance = SwaggerClient::BeezUPApi.new
 
-request = SwaggerClient::SaveAutomaticTransitionRequest.new # SaveAutomaticTransitionRequest | 
+request = SwaggerClient::ConfigureAutomaticTransitionRequest.new # ConfigureAutomaticTransitionRequest | 
 
 
 begin
@@ -1681,7 +1691,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**SaveAutomaticTransitionRequest**](SaveAutomaticTransitionRequest.md)|  | 
+ **request** | [**ConfigureAutomaticTransitionRequest**](ConfigureAutomaticTransitionRequest.md)|  | 
 
 ### Return type
 
@@ -2073,7 +2083,7 @@ Name | Type | Description  | Notes
 
 
 # **delete_channel_catalog**
-> delete_channel_catalog
+> delete_channel_catalog(channel_catalog_id, )
 
 Delete the channel catalog
 
@@ -2091,16 +2101,73 @@ end
 
 api_instance = SwaggerClient::BeezUPApi.new
 
+channel_catalog_id = "6d6b04de-406b-4539-8e7e-bf3e8da5dfb0" # String | The channel catalog identifier
+
+
 begin
   #Delete the channel catalog
-  api_instance.delete_channel_catalog
+  api_instance.delete_channel_catalog(channel_catalog_id, )
 rescue SwaggerClient::ApiError => e
   puts "Exception when calling BeezUPApi->delete_channel_catalog: #{e}"
 end
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **channel_catalog_id** | **String**| The channel catalog identifier | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **delete_channel_catalog_exportation_cache**
+> delete_channel_catalog_exportation_cache(channel_catalog_id, )
+
+Delete the exportation cache
+
+### Example
+```ruby
+# load the gem
+require 'swagger_client'
+# setup authorization
+SwaggerClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Ocp-Apim-Subscription-Key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Ocp-Apim-Subscription-Key'] = 'Bearer'
+end
+
+api_instance = SwaggerClient::BeezUPApi.new
+
+channel_catalog_id = "6d6b04de-406b-4539-8e7e-bf3e8da5dfb0" # String | The channel catalog identifier
+
+
+begin
+  #Delete the exportation cache
+  api_instance.delete_channel_catalog_exportation_cache(channel_catalog_id, )
+rescue SwaggerClient::ApiError => e
+  puts "Exception when calling BeezUPApi->delete_channel_catalog_exportation_cache: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **channel_catalog_id** | **String**| The channel catalog identifier | 
 
 ### Return type
 
@@ -2699,7 +2766,7 @@ nil (empty response body)
 
 
 # **export_orders**
-> export_orders(format, request)
+> export_orders(request)
 
 Request a new Order report exportation to be generated
 
@@ -2719,14 +2786,12 @@ end
 
 api_instance = SwaggerClient::BeezUPApi.new
 
-format = "csv" # String | The type of the file to export
-
 request = SwaggerClient::ExportOrderListRequest.new # ExportOrderListRequest | 
 
 
 begin
   #Request a new Order report exportation to be generated
-  api_instance.export_orders(format, request)
+  api_instance.export_orders(request)
 rescue SwaggerClient::ApiError => e
   puts "Exception when calling BeezUPApi->export_orders: #{e}"
 end
@@ -2736,7 +2801,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **String**| The type of the file to export | [default to csv]
  **request** | [**ExportOrderListRequest**](ExportOrderListRequest.md)|  | 
 
 ### Return type
@@ -3228,6 +3292,116 @@ This endpoint does not need any parameter.
 
 
 
+# **get_channel_catalog_exportation_cache_info**
+> ChannelCatalogExportCacheInfoResponse get_channel_catalog_exportation_cache_info(channel_catalog_id, )
+
+Get the exportation cache information
+
+### Example
+```ruby
+# load the gem
+require 'swagger_client'
+# setup authorization
+SwaggerClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Ocp-Apim-Subscription-Key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Ocp-Apim-Subscription-Key'] = 'Bearer'
+end
+
+api_instance = SwaggerClient::BeezUPApi.new
+
+channel_catalog_id = "6d6b04de-406b-4539-8e7e-bf3e8da5dfb0" # String | The channel catalog identifier
+
+
+begin
+  #Get the exportation cache information
+  result = api_instance.get_channel_catalog_exportation_cache_info(channel_catalog_id, )
+  p result
+rescue SwaggerClient::ApiError => e
+  puts "Exception when calling BeezUPApi->get_channel_catalog_exportation_cache_info: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **channel_catalog_id** | **String**| The channel catalog identifier | 
+
+### Return type
+
+[**ChannelCatalogExportCacheInfoResponse**](ChannelCatalogExportCacheInfoResponse.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **get_channel_catalog_exportation_history**
+> ChannelCatalogExportationHistory get_channel_catalog_exportation_history(channel_catalog_id, page_number, page_size, )
+
+Get the exportation history
+
+### Example
+```ruby
+# load the gem
+require 'swagger_client'
+# setup authorization
+SwaggerClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Ocp-Apim-Subscription-Key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Ocp-Apim-Subscription-Key'] = 'Bearer'
+end
+
+api_instance = SwaggerClient::BeezUPApi.new
+
+channel_catalog_id = "6d6b04de-406b-4539-8e7e-bf3e8da5dfb0" # String | The channel catalog identifier
+
+page_number = 1 # Integer | The page number you want to get
+
+page_size = 25 # Integer | The entry count you want to get
+
+
+begin
+  #Get the exportation history
+  result = api_instance.get_channel_catalog_exportation_history(channel_catalog_id, page_number, page_size, )
+  p result
+rescue SwaggerClient::ApiError => e
+  puts "Exception when calling BeezUPApi->get_channel_catalog_exportation_history: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **channel_catalog_id** | **String**| The channel catalog identifier | 
+ **page_number** | **Integer**| The page number you want to get | 
+ **page_size** | **Integer**| The entry count you want to get | 
+
+### Return type
+
+[**ChannelCatalogExportationHistory**](ChannelCatalogExportationHistory.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
 # **get_channel_catalog_marketplace_properties**
 > ChannelCatalogMarketplaceProperties get_channel_catalog_marketplace_properties(channel_catalog_id)
 
@@ -3320,6 +3494,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ChannelCatalogMarketplaceSettings**](ChannelCatalogMarketplaceSettings.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **get_channel_catalog_product_by_channel_catalog**
+> ChannelCatalogProductByChannelCatalogResponse get_channel_catalog_product_by_channel_catalog(product_id, opts)
+
+Get channel catalog products related to these channel catalogs
+
+### Example
+```ruby
+# load the gem
+require 'swagger_client'
+# setup authorization
+SwaggerClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Ocp-Apim-Subscription-Key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Ocp-Apim-Subscription-Key'] = 'Bearer'
+end
+
+api_instance = SwaggerClient::BeezUPApi.new
+
+product_id = "578419df-1bbf-41a6-96fa-862e42182b67" # String | The product identifier
+
+opts = { 
+  request: SwaggerClient::ChannelCatalogProductByChannelCatalogRequest.new # ChannelCatalogProductByChannelCatalogRequest | 
+}
+
+begin
+  #Get channel catalog products related to these channel catalogs
+  result = api_instance.get_channel_catalog_product_by_channel_catalog(product_id, opts)
+  p result
+rescue SwaggerClient::ApiError => e
+  puts "Exception when calling BeezUPApi->get_channel_catalog_product_by_channel_catalog: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **String**| The product identifier | 
+ **request** | [**ChannelCatalogProductByChannelCatalogRequest**](ChannelCatalogProductByChannelCatalogRequest.md)|  | [optional] 
+
+### Return type
+
+[**ChannelCatalogProductByChannelCatalogResponse**](ChannelCatalogProductByChannelCatalogResponse.md)
 
 ### Authorization
 
@@ -3654,6 +3884,95 @@ Name | Type | Description  | Notes
 ### Authorization
 
 [api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **get_channels**
+> ChannelInfoList get_channels(country_iso_code, accept_encoding)
+
+The channel list for one country
+
+### Example
+```ruby
+# load the gem
+require 'swagger_client'
+
+api_instance = SwaggerClient::BeezUPApi.new
+
+country_iso_code = "country_iso_code_example" # String | The country iso code alpha 3 based on this: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3#Decoding_table \\ To know which country are available you have to use the operation: GetChannelsByCountry 
+
+accept_encoding = ["accept_encoding_example"] # Array<String> | Allows the client to indicate wether it accepts a compressed encoding to reduce traffic size.
+
+
+begin
+  #The channel list for one country
+  result = api_instance.get_channels(country_iso_code, accept_encoding)
+  p result
+rescue SwaggerClient::ApiError => e
+  puts "Exception when calling BeezUPApi->get_channels: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **country_iso_code** | **String**| The country iso code alpha 3 based on this: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3#Decoding_table \\ To know which country are available you have to use the operation: GetChannelsByCountry  | 
+ **accept_encoding** | [**Array&lt;String&gt;**](String.md)| Allows the client to indicate wether it accepts a compressed encoding to reduce traffic size. | 
+
+### Return type
+
+[**ChannelInfoList**](ChannelInfoList.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **get_channels_index**
+> PublicChannelIndex get_channels_index
+
+Get public channel index
+
+Use this operation to get the correct link to the channels and to the list of values
+
+### Example
+```ruby
+# load the gem
+require 'swagger_client'
+
+api_instance = SwaggerClient::BeezUPApi.new
+
+begin
+  #Get public channel index
+  result = api_instance.get_channels_index
+  p result
+rescue SwaggerClient::ApiError => e
+  puts "Exception when calling BeezUPApi->get_channels_index: #{e}"
+end
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**PublicChannelIndex**](PublicChannelIndex.md)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 
@@ -4024,7 +4343,7 @@ account_id = 1001 # Integer | The account identifier
 beez_up_order_id = "00000000000000000000000000000000000000000000000" # String | The BeezUP Order identifier
 
 opts = { 
-  if_none_match: "if_none_match_example" # String | ETag value to identify the last known version of requested Order\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
+  if_none_match: "if_none_match_example" # String | ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
 }
 
 begin
@@ -4043,7 +4362,7 @@ Name | Type | Description  | Notes
  **marketplace_technical_code** | **String**| The marketplace technical code | 
  **account_id** | **Integer**| The account identifier | 
  **beez_up_order_id** | **String**| The BeezUP Order identifier | 
- **if_none_match** | **String**| ETag value to identify the last known version of requested Order\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  | [optional] 
+ **if_none_match** | **String**| ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  | [optional] 
 
 ### Return type
 
@@ -4081,7 +4400,7 @@ api_instance = SwaggerClient::BeezUPApi.new
 
 page_number = 1 # Integer | The page number you want to get
 
-page_size = 25 # Integer | The count of Order report exportations you want to get
+page_size = 25 # Integer | The entry count you want to get
 
 store_id = "store_id_example" # String | The store identifier to regroup the order exportations
 
@@ -4100,7 +4419,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page_number** | **Integer**| The page number you want to get | 
- **page_size** | **Integer**| The count of Order report exportations you want to get | 
+ **page_size** | **Integer**| The entry count you want to get | 
  **store_id** | **String**| The store identifier to regroup the order exportations | 
 
 ### Return type
@@ -4176,8 +4495,54 @@ Name | Type | Description  | Notes
 
 
 
+# **get_order_index**
+> OrderIndex get_order_index
+
+Get all actions you can do on the order API
+
+### Example
+```ruby
+# load the gem
+require 'swagger_client'
+# setup authorization
+SwaggerClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Ocp-Apim-Subscription-Key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Ocp-Apim-Subscription-Key'] = 'Bearer'
+end
+
+api_instance = SwaggerClient::BeezUPApi.new
+
+begin
+  #Get all actions you can do on the order API
+  result = api_instance.get_order_index
+  p result
+rescue SwaggerClient::ApiError => e
+  puts "Exception when calling BeezUPApi->get_order_index: #{e}"
+end
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**OrderIndex**](OrderIndex.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
 # **get_order_list_full**
-> OrderListFull get_order_list_full(accept_encoding, opts)
+> OrderListFull get_order_list_full(accept_encoding, request)
 
 Get a paginated list of all Orders with all Order and Order Item(s) properties
 
@@ -4199,13 +4564,12 @@ api_instance = SwaggerClient::BeezUPApi.new
 
 accept_encoding = ["accept_encoding_example"] # Array<String> | Allows the client to indicate wether it accepts a compressed encoding to reduce traffic size
 
-opts = { 
-  request: SwaggerClient::OrderListRequest.new # OrderListRequest | 
-}
+request = SwaggerClient::OrderListRequest.new # OrderListRequest | 
+
 
 begin
   #Get a paginated list of all Orders with all Order and Order Item(s) properties
-  result = api_instance.get_order_list_full(accept_encoding, opts)
+  result = api_instance.get_order_list_full(accept_encoding, request)
   p result
 rescue SwaggerClient::ApiError => e
   puts "Exception when calling BeezUPApi->get_order_list_full: #{e}"
@@ -4217,7 +4581,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accept_encoding** | [**Array&lt;String&gt;**](String.md)| Allows the client to indicate wether it accepts a compressed encoding to reduce traffic size | 
- **request** | [**OrderListRequest**](OrderListRequest.md)|  | [optional] 
+ **request** | [**OrderListRequest**](OrderListRequest.md)|  | 
 
 ### Return type
 
@@ -4235,7 +4599,7 @@ Name | Type | Description  | Notes
 
 
 # **get_order_list_light**
-> OrderListLight get_order_list_light(opts)
+> OrderListLight get_order_list_light(request)
 
 Get a paginated list of all Orders without details
 
@@ -4253,13 +4617,12 @@ end
 
 api_instance = SwaggerClient::BeezUPApi.new
 
-opts = { 
-  request: SwaggerClient::OrderListRequest.new # OrderListRequest | 
-}
+request = SwaggerClient::OrderListRequest.new # OrderListRequest | 
+
 
 begin
   #Get a paginated list of all Orders without details
-  result = api_instance.get_order_list_light(opts)
+  result = api_instance.get_order_list_light(request)
   p result
 rescue SwaggerClient::ApiError => e
   puts "Exception when calling BeezUPApi->get_order_list_light: #{e}"
@@ -4270,7 +4633,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**OrderListRequest**](OrderListRequest.md)|  | [optional] 
+ **request** | [**OrderListRequest**](OrderListRequest.md)|  | 
 
 ### Return type
 
@@ -4325,6 +4688,103 @@ This endpoint does not need any parameter.
 ### Authorization
 
 [api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **get_public_list_of_values**
+> PublicListOfValuesResponse get_public_list_of_values(list_name, opts)
+
+Get the list of values related to this list name
+
+### Example
+```ruby
+# load the gem
+require 'swagger_client'
+
+api_instance = SwaggerClient::BeezUPApi.new
+
+list_name = "list_name_example" # String | The list of value name your want to get
+
+opts = { 
+  accept_language: ["accept_language_example"], # Array<String> | Indicates that the client accepts the following languages.
+  if_none_match: "if_none_match_example" # String | ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
+}
+
+begin
+  #Get the list of values related to this list name
+  result = api_instance.get_public_list_of_values(list_name, opts)
+  p result
+rescue SwaggerClient::ApiError => e
+  puts "Exception when calling BeezUPApi->get_public_list_of_values: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list_name** | **String**| The list of value name your want to get | 
+ **accept_language** | [**Array&lt;String&gt;**](String.md)| Indicates that the client accepts the following languages. | [optional] 
+ **if_none_match** | **String**| ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  | [optional] 
+
+### Return type
+
+[**PublicListOfValuesResponse**](PublicListOfValuesResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **get_public_lov_index**
+> PublicLovIndex get_public_lov_index(opts)
+
+Get all list names
+
+### Example
+```ruby
+# load the gem
+require 'swagger_client'
+
+api_instance = SwaggerClient::BeezUPApi.new
+
+opts = { 
+  if_none_match: "if_none_match_example" # String | ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
+}
+
+begin
+  #Get all list names
+  result = api_instance.get_public_lov_index(opts)
+  p result
+rescue SwaggerClient::ApiError => e
+  puts "Exception when calling BeezUPApi->get_public_lov_index: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **if_none_match** | **String**| ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  | [optional] 
+
+### Return type
+
+[**PublicLovIndex**](PublicLovIndex.md)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 
@@ -5575,152 +6035,8 @@ This endpoint does not need any parameter.
 
 
 
-# **get_user_list_group**
-> Array&lt;BeezUPCommonLOVLink2&gt; get_user_list_group(list_group_name)
-
-Get list of values related to this group name
-
-### Example
-```ruby
-# load the gem
-require 'swagger_client'
-# setup authorization
-SwaggerClient.configure do |config|
-  # Configure API key authorization: api_key
-  config.api_key['Ocp-Apim-Subscription-Key'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  #config.api_key_prefix['Ocp-Apim-Subscription-Key'] = 'Bearer'
-end
-
-api_instance = SwaggerClient::BeezUPApi.new
-
-list_group_name = "list_group_name_example" # String | The list group name your want to get
-
-
-begin
-  #Get list of values related to this group name
-  result = api_instance.get_user_list_group(list_group_name)
-  p result
-rescue SwaggerClient::ApiError => e
-  puts "Exception when calling BeezUPApi->get_user_list_group: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list_group_name** | **String**| The list group name your want to get | 
-
-### Return type
-
-[**Array&lt;BeezUPCommonLOVLink2&gt;**](BeezUPCommonLOVLink2.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
-# **get_user_list_group_names**
-> Array&lt;BeezUPCommonLOVLink2&gt; get_user_list_group_names
-
-Get list of group of list name
-
-### Example
-```ruby
-# load the gem
-require 'swagger_client'
-# setup authorization
-SwaggerClient.configure do |config|
-  # Configure API key authorization: api_key
-  config.api_key['Ocp-Apim-Subscription-Key'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  #config.api_key_prefix['Ocp-Apim-Subscription-Key'] = 'Bearer'
-end
-
-api_instance = SwaggerClient::BeezUPApi.new
-
-begin
-  #Get list of group of list name
-  result = api_instance.get_user_list_group_names
-  p result
-rescue SwaggerClient::ApiError => e
-  puts "Exception when calling BeezUPApi->get_user_list_group_names: #{e}"
-end
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**Array&lt;BeezUPCommonLOVLink2&gt;**](BeezUPCommonLOVLink2.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
-# **get_user_list_names**
-> Array&lt;BeezUPCommonLOVLink2&gt; get_user_list_names
-
-Get all list names
-
-### Example
-```ruby
-# load the gem
-require 'swagger_client'
-# setup authorization
-SwaggerClient.configure do |config|
-  # Configure API key authorization: api_key
-  config.api_key['Ocp-Apim-Subscription-Key'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  #config.api_key_prefix['Ocp-Apim-Subscription-Key'] = 'Bearer'
-end
-
-api_instance = SwaggerClient::BeezUPApi.new
-
-begin
-  #Get all list names
-  result = api_instance.get_user_list_names
-  p result
-rescue SwaggerClient::ApiError => e
-  puts "Exception when calling BeezUPApi->get_user_list_names: #{e}"
-end
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**Array&lt;BeezUPCommonLOVLink2&gt;**](BeezUPCommonLOVLink2.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
 # **get_user_list_of_values**
-> Array&lt;BeezUPCommonListOfValueItem&gt; get_user_list_of_values(list_name, opts)
+> UserListOfValuesResponse get_user_list_of_values(list_name, opts)
 
 Get the list of values related to this list name
 
@@ -5741,7 +6057,8 @@ api_instance = SwaggerClient::BeezUPApi.new
 list_name = "list_name_example" # String | The list of value name your want to get
 
 opts = { 
-  accept_language: ["accept_language_example"] # Array<String> | Indicates that the client accepts the following languages.
+  accept_language: ["accept_language_example"], # Array<String> | Indicates that the client accepts the following languages.
+  if_none_match: "if_none_match_example" # String | ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
 }
 
 begin
@@ -5759,10 +6076,57 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list_name** | **String**| The list of value name your want to get | 
  **accept_language** | [**Array&lt;String&gt;**](String.md)| Indicates that the client accepts the following languages. | [optional] 
+ **if_none_match** | **String**| ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  | [optional] 
 
 ### Return type
 
-[**Array&lt;BeezUPCommonListOfValueItem&gt;**](BeezUPCommonListOfValueItem.md)
+[**UserListOfValuesResponse**](UserListOfValuesResponse.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **get_user_lov_index**
+> UserLovIndex get_user_lov_index
+
+Get all list names
+
+### Example
+```ruby
+# load the gem
+require 'swagger_client'
+# setup authorization
+SwaggerClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Ocp-Apim-Subscription-Key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Ocp-Apim-Subscription-Key'] = 'Bearer'
+end
+
+api_instance = SwaggerClient::BeezUPApi.new
+
+begin
+  #Get all list names
+  result = api_instance.get_user_lov_index
+  p result
+rescue SwaggerClient::ApiError => e
+  puts "Exception when calling BeezUPApi->get_user_lov_index: #{e}"
+end
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**UserLovIndex**](UserLovIndex.md)
 
 ### Authorization
 
@@ -7008,7 +7372,7 @@ nil (empty response body)
 
 
 # **importation_start_manual_update**
-> Array&lt;BeezUPCommonLink2&gt; importation_start_manual_update(store_id, request)
+> LinksImportationGetImportationMonitoringLink importation_start_manual_update(store_id, request)
 
 Start Manual Import
 
@@ -7049,7 +7413,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Array&lt;BeezUPCommonLink2&gt;**](BeezUPCommonLink2.md)
+[**LinksImportationGetImportationMonitoringLink**](LinksImportationGetImportationMonitoringLink.md)
 
 ### Authorization
 
@@ -7231,6 +7595,53 @@ nil (empty response body)
 
 
 
+# **login**
+> ApiCredentials login(request)
+
+Login
+
+User Login - The login will give your tokens
+
+### Example
+```ruby
+# load the gem
+require 'swagger_client'
+
+api_instance = SwaggerClient::BeezUPApi.new
+
+request = SwaggerClient::LoginRequest.new # LoginRequest | 
+
+
+begin
+  #Login
+  result = api_instance.login(request)
+  p result
+rescue SwaggerClient::ApiError => e
+  puts "Exception when calling BeezUPApi->login: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**LoginRequest**](LoginRequest.md)|  | 
+
+### Return type
+
+[**ApiCredentials**](ApiCredentials.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
 # **logout**
 > logout
 
@@ -7270,6 +7681,52 @@ nil (empty response body)
 ### Authorization
 
 [api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **lost_password**
+> lost_password(email)
+
+Lost password
+
+Lost password - Your password will be regenerated and sent to your email
+
+### Example
+```ruby
+# load the gem
+require 'swagger_client'
+
+api_instance = SwaggerClient::BeezUPApi.new
+
+email = SwaggerClient::BeezUPCommonEmail.new # BeezUPCommonEmail | Your email
+
+
+begin
+  #Lost password
+  api_instance.lost_password(email)
+rescue SwaggerClient::ApiError => e
+  puts "Exception when calling BeezUPApi->lost_password: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **email** | [**BeezUPCommonEmail**](BeezUPCommonEmail.md)| Your email | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 
@@ -7890,6 +8347,52 @@ nil (empty response body)
 ### Authorization
 
 [api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **register**
+> register(request)
+
+User Registration
+
+User Registration - Create a new user on BeezUP
+
+### Example
+```ruby
+# load the gem
+require 'swagger_client'
+
+api_instance = SwaggerClient::BeezUPApi.new
+
+request = SwaggerClient::RegisterRequest.new # RegisterRequest | 
+
+
+begin
+  #User Registration
+  api_instance.register(request)
+rescue SwaggerClient::ApiError => e
+  puts "Exception when calling BeezUPApi->register: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**RegisterRequest**](RegisterRequest.md)|  | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 

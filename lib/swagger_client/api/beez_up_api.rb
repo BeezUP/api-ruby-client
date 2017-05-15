@@ -1,7 +1,7 @@
 =begin
 #BeezUP API
 
-#This is the RESTful API of BeezUP which allows you to manage everything related to BeezUP
+#This API will allow you to create your account and to get your tokens. \\ If you lost your password, you have an operation to get it back. 
 
 OpenAPI spec version: 2.0
 Contact: support@beezup.com
@@ -41,7 +41,7 @@ module SwaggerClient
       # verify the required parameter 'email_activation_id' is set
       fail ArgumentError, "Missing the required parameter 'email_activation_id' when calling BeezUPApi.activate_user_account" if email_activation_id.nil?
       # resource path
-      local_var_path = "/v2/user/customer/account/activate".sub('{format}','json')
+      local_var_path = "/user/customer/account/activate".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -97,7 +97,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.auto_configure_auto_import_interval" if request.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/autoImport/scheduling/interval".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/autoImport/scheduling/interval".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -149,7 +149,7 @@ module SwaggerClient
       # verify the required parameter 'store_id' is set
       fail ArgumentError, "Missing the required parameter 'store_id' when calling BeezUPApi.auto_delete_auto_import" if store_id.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/autoImport".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/autoImport".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -201,7 +201,7 @@ module SwaggerClient
       # verify the required parameter 'store_id' is set
       fail ArgumentError, "Missing the required parameter 'store_id' when calling BeezUPApi.auto_get_auto_import_configuration" if store_id.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/autoImport".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/autoImport".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -254,7 +254,7 @@ module SwaggerClient
       # verify the required parameter 'store_id' is set
       fail ArgumentError, "Missing the required parameter 'store_id' when calling BeezUPApi.auto_pause_auto_import" if store_id.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/autoImport/pause".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/autoImport/pause".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -306,7 +306,7 @@ module SwaggerClient
       # verify the required parameter 'store_id' is set
       fail ArgumentError, "Missing the required parameter 'store_id' when calling BeezUPApi.auto_resume_auto_import" if store_id.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/autoImport/resume".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/autoImport/resume".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -362,7 +362,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.auto_schedule_auto_import" if request.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/autoImport/scheduling/schedules".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/autoImport/scheduling/schedules".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -396,7 +396,7 @@ module SwaggerClient
     # 
     # @param store_id Your store identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<BeezUPCommonLink2>]
+    # @return [LinksImportationGetImportationMonitoringLink]
     def auto_start_auto_import(store_id, opts = {})
       data, _status_code, _headers = auto_start_auto_import_with_http_info(store_id, opts)
       return data
@@ -406,7 +406,7 @@ module SwaggerClient
     # 
     # @param store_id Your store identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Array<BeezUPCommonLink2>, Fixnum, Hash)>] Array<BeezUPCommonLink2> data, response status code and response headers
+    # @return [Array<(LinksImportationGetImportationMonitoringLink, Fixnum, Hash)>] LinksImportationGetImportationMonitoringLink data, response status code and response headers
     def auto_start_auto_import_with_http_info(store_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: BeezUPApi.auto_start_auto_import ..."
@@ -414,7 +414,7 @@ module SwaggerClient
       # verify the required parameter 'store_id' is set
       fail ArgumentError, "Missing the required parameter 'store_id' when calling BeezUPApi.auto_start_auto_import" if store_id.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/autoImport/start".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/autoImport/start".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -438,7 +438,7 @@ module SwaggerClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Array<BeezUPCommonLink2>')
+        :return_type => 'LinksImportationGetImportationMonitoringLink')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: BeezUPApi#auto_start_auto_import\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -475,7 +475,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.catalog_change_catalog_column_user_name" if request.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/catalogColumns/{columnId}/rename".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'columnId' + '}', column_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/catalogColumns/{columnId}/rename".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'columnId' + '}', column_id.to_s)
 
       # query parameters
       query_params = {}
@@ -535,7 +535,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.catalog_change_custom_column_expression" if request.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/customColumns/{columnId}/expression".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'columnId' + '}', column_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/customColumns/{columnId}/expression".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'columnId' + '}', column_id.to_s)
 
       # query parameters
       query_params = {}
@@ -595,7 +595,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.catalog_change_custom_column_user_name" if request.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/customColumns/{columnId}/rename".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'columnId' + '}', column_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/customColumns/{columnId}/rename".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'columnId' + '}', column_id.to_s)
 
       # query parameters
       query_params = {}
@@ -651,7 +651,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.catalog_compute_expression" if request.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/customColumns/computeExpression".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/customColumns/computeExpression".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -708,7 +708,7 @@ module SwaggerClient
       # verify the required parameter 'column_id' is set
       fail ArgumentError, "Missing the required parameter 'column_id' when calling BeezUPApi.catalog_delete_custom_column" if column_id.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/customColumns/{columnId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'columnId' + '}', column_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/customColumns/{columnId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'columnId' + '}', column_id.to_s)
 
       # query parameters
       query_params = {}
@@ -756,7 +756,7 @@ module SwaggerClient
         @api_client.config.logger.debug "Calling API: BeezUPApi.catalog_get_beez_up_columns ..."
       end
       # resource path
-      local_var_path = "/v2/user/catalogs/beezupColumns".sub('{format}','json')
+      local_var_path = "/user/catalogs/beezupColumns".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -809,7 +809,7 @@ module SwaggerClient
       # verify the required parameter 'store_id' is set
       fail ArgumentError, "Missing the required parameter 'store_id' when calling BeezUPApi.catalog_get_catalog_columns" if store_id.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/catalogColumns".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/catalogColumns".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -866,7 +866,7 @@ module SwaggerClient
       # verify the required parameter 'accept_encoding' is set
       fail ArgumentError, "Missing the required parameter 'accept_encoding' when calling BeezUPApi.catalog_get_categories" if accept_encoding.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/categories".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/categories".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -924,7 +924,7 @@ module SwaggerClient
       # verify the required parameter 'column_id' is set
       fail ArgumentError, "Missing the required parameter 'column_id' when calling BeezUPApi.catalog_get_custom_column_expression" if column_id.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/customColumns/{columnId}/expression".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'columnId' + '}', column_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/customColumns/{columnId}/expression".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'columnId' + '}', column_id.to_s)
 
       # query parameters
       query_params = {}
@@ -977,7 +977,7 @@ module SwaggerClient
       # verify the required parameter 'store_id' is set
       fail ArgumentError, "Missing the required parameter 'store_id' when calling BeezUPApi.catalog_get_custom_columns" if store_id.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/customColumns".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/customColumns".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -1034,7 +1034,7 @@ module SwaggerClient
       # verify the required parameter 'product_id' is set
       fail ArgumentError, "Missing the required parameter 'product_id' when calling BeezUPApi.catalog_get_product" if product_id.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/products/{productId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'productId' + '}', product_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/products/{productId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'productId' + '}', product_id.to_s)
 
       # query parameters
       query_params = {}
@@ -1089,7 +1089,7 @@ module SwaggerClient
       # verify the required parameter 'store_id' is set
       fail ArgumentError, "Missing the required parameter 'store_id' when calling BeezUPApi.catalog_get_products" if store_id.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/products".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/products".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -1152,7 +1152,7 @@ module SwaggerClient
       end
 
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/products/random".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/products/random".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -1214,7 +1214,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.catalog_save_custom_column" if request.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/customColumns/{columnId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'columnId' + '}', column_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/customColumns/{columnId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'columnId' + '}', column_id.to_s)
 
       # query parameters
       query_params = {}
@@ -1252,7 +1252,7 @@ module SwaggerClient
     # @param change_order_type The Order change type
     # @param user_name Sometimes the user in the e-commerce application is not the same as user associated with the current subscription key. We recommend providing your application&#39;s user login.
     # @param request 
-    # @param if_match ETag value to identify the last known version of requested Order, to ensure that you are making a change on the lastest version of the order.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
+    # @param if_match ETag value to identify the last known version of requested resource.\\ To ensure that you are making a change on the lastest version of the resource.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :test_mode If true, the operation will be not be sent to marketplace. But the validation will be taken in account. (default to false)
     # @return [nil]
@@ -1269,7 +1269,7 @@ module SwaggerClient
     # @param change_order_type The Order change type
     # @param user_name Sometimes the user in the e-commerce application is not the same as user associated with the current subscription key. We recommend providing your application&#39;s user login.
     # @param request 
-    # @param if_match ETag value to identify the last known version of requested Order, to ensure that you are making a change on the lastest version of the order.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
+    # @param if_match ETag value to identify the last known version of requested resource.\\ To ensure that you are making a change on the lastest version of the resource.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :test_mode If true, the operation will be not be sent to marketplace. But the validation will be taken in account.
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -1292,7 +1292,7 @@ module SwaggerClient
       # verify the required parameter 'if_match' is set
       fail ArgumentError, "Missing the required parameter 'if_match' when calling BeezUPApi.change_order" if if_match.nil?
       # resource path
-      local_var_path = "/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/{changeOrderType}".sub('{format}','json').sub('{' + 'marketplaceTechnicalCode' + '}', marketplace_technical_code.to_s).sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'beezUPOrderId' + '}', beez_up_order_id.to_s).sub('{' + 'changeOrderType' + '}', change_order_type.to_s)
+      local_var_path = "/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/{changeOrderType}".sub('{format}','json').sub('{' + 'marketplaceTechnicalCode' + '}', marketplace_technical_code.to_s).sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'beezUPOrderId' + '}', beez_up_order_id.to_s).sub('{' + 'changeOrderType' + '}', change_order_type.to_s)
 
       # query parameters
       query_params = {}
@@ -1357,7 +1357,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.change_order_list" if request.nil?
       # resource path
-      local_var_path = "/v2/user/marketplaces/orders/batches/changeOrders/{changeOrderType}".sub('{format}','json').sub('{' + 'changeOrderType' + '}', change_order_type.to_s)
+      local_var_path = "/user/marketplaces/orders/batches/changeOrders/{changeOrderType}".sub('{format}','json').sub('{' + 'changeOrderType' + '}', change_order_type.to_s)
 
       # query parameters
       query_params = {}
@@ -1412,7 +1412,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.change_password" if request.nil?
       # resource path
-      local_var_path = "/v2/user/customer/account/changePassword".sub('{format}','json')
+      local_var_path = "/user/customer/account/changePassword".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -1472,7 +1472,7 @@ module SwaggerClient
       # verify the required parameter 'beez_up_order_id' is set
       fail ArgumentError, "Missing the required parameter 'beez_up_order_id' when calling BeezUPApi.clear_merchant_order_info" if beez_up_order_id.nil?
       # resource path
-      local_var_path = "/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/clearMerchantOrderInfo".sub('{format}','json').sub('{' + 'marketplaceTechnicalCode' + '}', marketplace_technical_code.to_s).sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'beezUPOrderId' + '}', beez_up_order_id.to_s)
+      local_var_path = "/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/clearMerchantOrderInfo".sub('{format}','json').sub('{' + 'marketplaceTechnicalCode' + '}', marketplace_technical_code.to_s).sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'beezUPOrderId' + '}', beez_up_order_id.to_s)
 
       # query parameters
       query_params = {}
@@ -1524,7 +1524,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.clear_merchant_order_info_list" if request.nil?
       # resource path
-      local_var_path = "/v2/user/marketplaces/orders/batches/clearMerchantOrderInfos".sub('{format}','json')
+      local_var_path = "/user/marketplaces/orders/batches/clearMerchantOrderInfos".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -1577,7 +1577,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.configure_automatic_transitions" if request.nil?
       # resource path
-      local_var_path = "/v2/user/marketplaces/orders/automaticTransitions".sub('{format}','json')
+      local_var_path = "/user/marketplaces/orders/automaticTransitions".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -1633,7 +1633,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.configure_channel_catalog_cost_settings" if request.nil?
       # resource path
-      local_var_path = "/v2/user/channelCatalogs/{channelCatalogId}/settings/cost".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s)
+      local_var_path = "/user/channelCatalogs/{channelCatalogId}/settings/cost".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s)
 
       # query parameters
       query_params = {}
@@ -1689,7 +1689,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.configure_channel_catalog_exclusion_filters" if request.nil?
       # resource path
-      local_var_path = "/v2/user/channelCatalogs/{channelCatalogId}/exclusionFilters".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s)
+      local_var_path = "/user/channelCatalogs/{channelCatalogId}/exclusionFilters".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s)
 
       # query parameters
       query_params = {}
@@ -1745,7 +1745,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.configure_channel_catalog_general_settings" if request.nil?
       # resource path
-      local_var_path = "/v2/user/channelCatalogs/{channelCatalogId}/settings/general".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s)
+      local_var_path = "/user/channelCatalogs/{channelCatalogId}/settings/general".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s)
 
       # query parameters
       query_params = {}
@@ -1797,7 +1797,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.create_channel_catalog" if request.nil?
       # resource path
-      local_var_path = "/v2/user/channelCatalogs/".sub('{format}','json')
+      local_var_path = "/user/channelCatalogs/".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -1850,7 +1850,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.create_contract" if request.nil?
       # resource path
-      local_var_path = "/v2/user/customer/contracts".sub('{format}','json')
+      local_var_path = "/user/customer/contracts".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -1907,7 +1907,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.create_rule" if request.nil?
       # resource path
-      local_var_path = "/v2/user/analytics/{storeId}/rules".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/analytics/{storeId}/rules".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -1957,7 +1957,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.create_store" if request.nil?
       # resource path
-      local_var_path = "/v2/user/customer/stores".sub('{format}','json')
+      local_var_path = "/user/customer/stores".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -1990,23 +1990,27 @@ module SwaggerClient
 
     # Delete the channel catalog
     # 
+    # @param channel_catalog_id The channel catalog identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def delete_channel_catalog(opts = {})
-      delete_channel_catalog_with_http_info(opts)
+    def delete_channel_catalog(channel_catalog_id, opts = {})
+      delete_channel_catalog_with_http_info(channel_catalog_id, opts)
       return nil
     end
 
     # Delete the channel catalog
     # 
+    # @param channel_catalog_id The channel catalog identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def delete_channel_catalog_with_http_info(opts = {})
+    def delete_channel_catalog_with_http_info(channel_catalog_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: BeezUPApi.delete_channel_catalog ..."
       end
+      # verify the required parameter 'channel_catalog_id' is set
+      fail ArgumentError, "Missing the required parameter 'channel_catalog_id' when calling BeezUPApi.delete_channel_catalog" if channel_catalog_id.nil?
       # resource path
-      local_var_path = "/v2/user/channelCatalogs/{channelCatalogId}".sub('{format}','json')
+      local_var_path = "/user/channelCatalogs/{channelCatalogId}".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s)
 
       # query parameters
       query_params = {}
@@ -2032,6 +2036,58 @@ module SwaggerClient
         :auth_names => auth_names)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: BeezUPApi#delete_channel_catalog\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Delete the exportation cache
+    # 
+    # @param channel_catalog_id The channel catalog identifier
+    # @param [Hash] opts the optional parameters
+    # @return [nil]
+    def delete_channel_catalog_exportation_cache(channel_catalog_id, opts = {})
+      delete_channel_catalog_exportation_cache_with_http_info(channel_catalog_id, opts)
+      return nil
+    end
+
+    # Delete the exportation cache
+    # 
+    # @param channel_catalog_id The channel catalog identifier
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def delete_channel_catalog_exportation_cache_with_http_info(channel_catalog_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: BeezUPApi.delete_channel_catalog_exportation_cache ..."
+      end
+      # verify the required parameter 'channel_catalog_id' is set
+      fail ArgumentError, "Missing the required parameter 'channel_catalog_id' when calling BeezUPApi.delete_channel_catalog_exportation_cache" if channel_catalog_id.nil?
+      # resource path
+      local_var_path = "/user/channelCatalogs/{channelCatalogId}/exportations/cache".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['api_key']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: BeezUPApi#delete_channel_catalog_exportation_cache\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -2066,7 +2122,7 @@ module SwaggerClient
       # verify the required parameter 'channel_column_id' is set
       fail ArgumentError, "Missing the required parameter 'channel_column_id' when calling BeezUPApi.delete_channel_catalog_product_value_override" if channel_column_id.nil?
       # resource path
-      local_var_path = "/v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides/{channelColumnId}".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s).sub('{' + 'productId' + '}', product_id.to_s).sub('{' + 'channelColumnId' + '}', channel_column_id.to_s)
+      local_var_path = "/user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides/{channelColumnId}".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s).sub('{' + 'productId' + '}', product_id.to_s).sub('{' + 'channelColumnId' + '}', channel_column_id.to_s)
 
       # query parameters
       query_params = {}
@@ -2114,7 +2170,7 @@ module SwaggerClient
         @api_client.config.logger.debug "Calling API: BeezUPApi.delete_next_contract ..."
       end
       # resource path
-      local_var_path = "/v2/user/customer/contracts/next".sub('{format}','json')
+      local_var_path = "/user/customer/contracts/next".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -2170,7 +2226,7 @@ module SwaggerClient
       # verify the required parameter 'report_filter_id' is set
       fail ArgumentError, "Missing the required parameter 'report_filter_id' when calling BeezUPApi.delete_report_filter" if report_filter_id.nil?
       # resource path
-      local_var_path = "/v2/user/analytics/{storeId}/reports/filters/{reportFilterId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'reportFilterId' + '}', report_filter_id.to_s)
+      local_var_path = "/user/analytics/{storeId}/reports/filters/{reportFilterId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'reportFilterId' + '}', report_filter_id.to_s)
 
       # query parameters
       query_params = {}
@@ -2226,7 +2282,7 @@ module SwaggerClient
       # verify the required parameter 'rule_id' is set
       fail ArgumentError, "Missing the required parameter 'rule_id' when calling BeezUPApi.delete_rule" if rule_id.nil?
       # resource path
-      local_var_path = "/v2/user/analytics/{storeId}/rules/{ruleId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'ruleId' + '}', rule_id.to_s)
+      local_var_path = "/user/analytics/{storeId}/rules/{ruleId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'ruleId' + '}', rule_id.to_s)
 
       # query parameters
       query_params = {}
@@ -2282,7 +2338,7 @@ module SwaggerClient
       # verify the required parameter 'user_id' is set
       fail ArgumentError, "Missing the required parameter 'user_id' when calling BeezUPApi.delete_share" if user_id.nil?
       # resource path
-      local_var_path = "/v2/user/customer/stores/{storeId}/shares/{userId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'userId' + '}', user_id.to_s)
+      local_var_path = "/user/customer/stores/{storeId}/shares/{userId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'userId' + '}', user_id.to_s)
 
       # query parameters
       query_params = {}
@@ -2334,7 +2390,7 @@ module SwaggerClient
       # verify the required parameter 'store_id' is set
       fail ArgumentError, "Missing the required parameter 'store_id' when calling BeezUPApi.delete_store" if store_id.nil?
       # resource path
-      local_var_path = "/v2/user/customer/stores/{storeId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/customer/stores/{storeId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -2386,7 +2442,7 @@ module SwaggerClient
       # verify the required parameter 'channel_catalog_id' is set
       fail ArgumentError, "Missing the required parameter 'channel_catalog_id' when calling BeezUPApi.disable_channel_catalog" if channel_catalog_id.nil?
       # resource path
-      local_var_path = "/v2/user/channelCatalogs/{channelCatalogId}/disable".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s)
+      local_var_path = "/user/channelCatalogs/{channelCatalogId}/disable".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s)
 
       # query parameters
       query_params = {}
@@ -2442,7 +2498,7 @@ module SwaggerClient
       # verify the required parameter 'product_id' is set
       fail ArgumentError, "Missing the required parameter 'product_id' when calling BeezUPApi.disable_channel_catalog_product" if product_id.nil?
       # resource path
-      local_var_path = "/v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/disable".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s).sub('{' + 'productId' + '}', product_id.to_s)
+      local_var_path = "/user/channelCatalogs/{channelCatalogId}/products/{productId}/disable".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s).sub('{' + 'productId' + '}', product_id.to_s)
 
       # query parameters
       query_params = {}
@@ -2498,7 +2554,7 @@ module SwaggerClient
       # verify the required parameter 'rule_id' is set
       fail ArgumentError, "Missing the required parameter 'rule_id' when calling BeezUPApi.disable_rule" if rule_id.nil?
       # resource path
-      local_var_path = "/v2/user/analytics/{storeId}/rules/{ruleId}/disable".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'ruleId' + '}', rule_id.to_s)
+      local_var_path = "/user/analytics/{storeId}/rules/{ruleId}/disable".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'ruleId' + '}', rule_id.to_s)
 
       # query parameters
       query_params = {}
@@ -2550,7 +2606,7 @@ module SwaggerClient
       # verify the required parameter 'channel_catalog_id' is set
       fail ArgumentError, "Missing the required parameter 'channel_catalog_id' when calling BeezUPApi.enable_channel_catalog" if channel_catalog_id.nil?
       # resource path
-      local_var_path = "/v2/user/channelCatalogs/{channelCatalogId}/enable".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s)
+      local_var_path = "/user/channelCatalogs/{channelCatalogId}/enable".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s)
 
       # query parameters
       query_params = {}
@@ -2606,7 +2662,7 @@ module SwaggerClient
       # verify the required parameter 'rule_id' is set
       fail ArgumentError, "Missing the required parameter 'rule_id' when calling BeezUPApi.enable_rule" if rule_id.nil?
       # resource path
-      local_var_path = "/v2/user/analytics/{storeId}/rules/{ruleId}/enable".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'ruleId' + '}', rule_id.to_s)
+      local_var_path = "/user/analytics/{storeId}/rules/{ruleId}/enable".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'ruleId' + '}', rule_id.to_s)
 
       # query parameters
       query_params = {}
@@ -2638,39 +2694,30 @@ module SwaggerClient
 
     # Request a new Order report exportation to be generated
     # A new file will be generated containing a summary of all the Orders matching the requested filter settings.
-    # @param format The type of the file to export
     # @param request 
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def export_orders(format, request, opts = {})
-      export_orders_with_http_info(format, request, opts)
+    def export_orders(request, opts = {})
+      export_orders_with_http_info(request, opts)
       return nil
     end
 
     # Request a new Order report exportation to be generated
     # A new file will be generated containing a summary of all the Orders matching the requested filter settings.
-    # @param format The type of the file to export
     # @param request 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def export_orders_with_http_info(format, request, opts = {})
+    def export_orders_with_http_info(request, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: BeezUPApi.export_orders ..."
-      end
-      # verify the required parameter 'format' is set
-      fail ArgumentError, "Missing the required parameter 'format' when calling BeezUPApi.export_orders" if format.nil?
-      # verify enum value
-      unless ['csv'].include?(format)
-        fail ArgumentError, "invalid value for 'format', must be one of csv"
       end
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.export_orders" if request.nil?
       # resource path
-      local_var_path = "/v2/user/marketplaces/orders/exportations".sub('{format}','json')
+      local_var_path = "/user/marketplaces/orders/exportations".sub('{format}','json')
 
       # query parameters
       query_params = {}
-      query_params[:'format'] = format
 
       # header parameters
       header_params = {}
@@ -2731,7 +2778,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.export_store_report_by_category" if request.nil?
       # resource path
-      local_var_path = "/v2/user/analytics/{storeId}/reports/bycategory/export".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/analytics/{storeId}/reports/bycategory/export".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -2797,7 +2844,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.export_store_report_by_channel" if request.nil?
       # resource path
-      local_var_path = "/v2/user/analytics/{storeId}/reports/bychannel/export".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/analytics/{storeId}/reports/bychannel/export".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -2863,7 +2910,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.export_store_report_by_product" if request.nil?
       # resource path
-      local_var_path = "/v2/user/analytics/{storeId}/reports/byproduct/export".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/analytics/{storeId}/reports/byproduct/export".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -2913,7 +2960,7 @@ module SwaggerClient
         @api_client.config.logger.debug "Calling API: BeezUPApi.get_automatic_transitions ..."
       end
       # resource path
-      local_var_path = "/v2/user/marketplaces/orders/automaticTransitions".sub('{format}','json')
+      local_var_path = "/user/marketplaces/orders/automaticTransitions".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -2966,7 +3013,7 @@ module SwaggerClient
       # verify the required parameter 'store_id' is set
       fail ArgumentError, "Missing the required parameter 'store_id' when calling BeezUPApi.get_available_channels" if store_id.nil?
       # resource path
-      local_var_path = "/v2/user/channels/".sub('{format}','json')
+      local_var_path = "/user/channels/".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -3016,7 +3063,7 @@ module SwaggerClient
         @api_client.config.logger.debug "Calling API: BeezUPApi.get_billing_periods ..."
       end
       # resource path
-      local_var_path = "/v2/user/customer/billingPeriods".sub('{format}','json')
+      local_var_path = "/user/customer/billingPeriods".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -3069,7 +3116,7 @@ module SwaggerClient
       # verify the required parameter 'channel_catalog_id' is set
       fail ArgumentError, "Missing the required parameter 'channel_catalog_id' when calling BeezUPApi.get_channel_catalog" if channel_catalog_id.nil?
       # resource path
-      local_var_path = "/v2/user/channelCatalogs/{channelCatalogId}".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s)
+      local_var_path = "/user/channelCatalogs/{channelCatalogId}".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s)
 
       # query parameters
       query_params = {}
@@ -3122,7 +3169,7 @@ module SwaggerClient
       # verify the required parameter 'channel_catalog_id' is set
       fail ArgumentError, "Missing the required parameter 'channel_catalog_id' when calling BeezUPApi.get_channel_catalog_categories" if channel_catalog_id.nil?
       # resource path
-      local_var_path = "/v2/user/channelCatalogs/{channelCatalogId}/categoryMappings".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s)
+      local_var_path = "/user/channelCatalogs/{channelCatalogId}/categoryMappings".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s)
 
       # query parameters
       query_params = {}
@@ -3171,7 +3218,7 @@ module SwaggerClient
         @api_client.config.logger.debug "Calling API: BeezUPApi.get_channel_catalog_exclusion_filter_operators ..."
       end
       # resource path
-      local_var_path = "/v2/user/channelCatalogs/exclusionFilterOperators".sub('{format}','json')
+      local_var_path = "/user/channelCatalogs/exclusionFilterOperators".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -3202,6 +3249,134 @@ module SwaggerClient
       return data, status_code, headers
     end
 
+    # Get the exportation cache information
+    # 
+    # @param channel_catalog_id The channel catalog identifier
+    # @param [Hash] opts the optional parameters
+    # @return [ChannelCatalogExportCacheInfoResponse]
+    def get_channel_catalog_exportation_cache_info(channel_catalog_id, opts = {})
+      data, _status_code, _headers = get_channel_catalog_exportation_cache_info_with_http_info(channel_catalog_id, opts)
+      return data
+    end
+
+    # Get the exportation cache information
+    # 
+    # @param channel_catalog_id The channel catalog identifier
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(ChannelCatalogExportCacheInfoResponse, Fixnum, Hash)>] ChannelCatalogExportCacheInfoResponse data, response status code and response headers
+    def get_channel_catalog_exportation_cache_info_with_http_info(channel_catalog_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: BeezUPApi.get_channel_catalog_exportation_cache_info ..."
+      end
+      # verify the required parameter 'channel_catalog_id' is set
+      fail ArgumentError, "Missing the required parameter 'channel_catalog_id' when calling BeezUPApi.get_channel_catalog_exportation_cache_info" if channel_catalog_id.nil?
+      # resource path
+      local_var_path = "/user/channelCatalogs/{channelCatalogId}/exportations/cache".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['api_key']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'ChannelCatalogExportCacheInfoResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: BeezUPApi#get_channel_catalog_exportation_cache_info\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get the exportation history
+    # 
+    # @param channel_catalog_id The channel catalog identifier
+    # @param page_number The page number you want to get
+    # @param page_size The entry count you want to get
+    # @param [Hash] opts the optional parameters
+    # @return [ChannelCatalogExportationHistory]
+    def get_channel_catalog_exportation_history(channel_catalog_id, page_number, page_size, opts = {})
+      data, _status_code, _headers = get_channel_catalog_exportation_history_with_http_info(channel_catalog_id, page_number, page_size, opts)
+      return data
+    end
+
+    # Get the exportation history
+    # 
+    # @param channel_catalog_id The channel catalog identifier
+    # @param page_number The page number you want to get
+    # @param page_size The entry count you want to get
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(ChannelCatalogExportationHistory, Fixnum, Hash)>] ChannelCatalogExportationHistory data, response status code and response headers
+    def get_channel_catalog_exportation_history_with_http_info(channel_catalog_id, page_number, page_size, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: BeezUPApi.get_channel_catalog_exportation_history ..."
+      end
+      # verify the required parameter 'channel_catalog_id' is set
+      fail ArgumentError, "Missing the required parameter 'channel_catalog_id' when calling BeezUPApi.get_channel_catalog_exportation_history" if channel_catalog_id.nil?
+      # verify the required parameter 'page_number' is set
+      fail ArgumentError, "Missing the required parameter 'page_number' when calling BeezUPApi.get_channel_catalog_exportation_history" if page_number.nil?
+      if page_number < 1
+        fail ArgumentError, 'invalid value for "page_number" when calling BeezUPApi.get_channel_catalog_exportation_history, must be greater than or equal to 1.'
+      end
+
+      # verify the required parameter 'page_size' is set
+      fail ArgumentError, "Missing the required parameter 'page_size' when calling BeezUPApi.get_channel_catalog_exportation_history" if page_size.nil?
+      if page_size > 100
+        fail ArgumentError, 'invalid value for "page_size" when calling BeezUPApi.get_channel_catalog_exportation_history, must be smaller than or equal to 100.'
+      end
+
+      if page_size < 25
+        fail ArgumentError, 'invalid value for "page_size" when calling BeezUPApi.get_channel_catalog_exportation_history, must be greater than or equal to 25.'
+      end
+
+      # resource path
+      local_var_path = "/user/channelCatalogs/{channelCatalogId}/exportations/history".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'pageNumber'] = page_number
+      query_params[:'pageSize'] = page_size
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['api_key']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'ChannelCatalogExportationHistory')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: BeezUPApi#get_channel_catalog_exportation_history\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Get the marketplace properties for a channel catalog
     # 
     # @param channel_catalog_id 
@@ -3224,7 +3399,7 @@ module SwaggerClient
       # verify the required parameter 'channel_catalog_id' is set
       fail ArgumentError, "Missing the required parameter 'channel_catalog_id' when calling BeezUPApi.get_channel_catalog_marketplace_properties" if channel_catalog_id.nil?
       # resource path
-      local_var_path = "/v2/user/marketplaces/channelcatalogs/{channelCatalogId}/properties".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s)
+      local_var_path = "/user/marketplaces/channelcatalogs/{channelCatalogId}/properties".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s)
 
       # query parameters
       query_params = {}
@@ -3277,7 +3452,7 @@ module SwaggerClient
       # verify the required parameter 'channel_catalog_id' is set
       fail ArgumentError, "Missing the required parameter 'channel_catalog_id' when calling BeezUPApi.get_channel_catalog_marketplace_settings" if channel_catalog_id.nil?
       # resource path
-      local_var_path = "/v2/user/marketplaces/channelcatalogs/{channelCatalogId}/settings".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s)
+      local_var_path = "/user/marketplaces/channelcatalogs/{channelCatalogId}/settings".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s)
 
       # query parameters
       query_params = {}
@@ -3308,6 +3483,61 @@ module SwaggerClient
       return data, status_code, headers
     end
 
+    # Get channel catalog products related to these channel catalogs
+    # 
+    # @param product_id The product identifier
+    # @param [Hash] opts the optional parameters
+    # @option opts [ChannelCatalogProductByChannelCatalogRequest] :request 
+    # @return [ChannelCatalogProductByChannelCatalogResponse]
+    def get_channel_catalog_product_by_channel_catalog(product_id, opts = {})
+      data, _status_code, _headers = get_channel_catalog_product_by_channel_catalog_with_http_info(product_id, opts)
+      return data
+    end
+
+    # Get channel catalog products related to these channel catalogs
+    # 
+    # @param product_id The product identifier
+    # @param [Hash] opts the optional parameters
+    # @option opts [ChannelCatalogProductByChannelCatalogRequest] :request 
+    # @return [Array<(ChannelCatalogProductByChannelCatalogResponse, Fixnum, Hash)>] ChannelCatalogProductByChannelCatalogResponse data, response status code and response headers
+    def get_channel_catalog_product_by_channel_catalog_with_http_info(product_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: BeezUPApi.get_channel_catalog_product_by_channel_catalog ..."
+      end
+      # verify the required parameter 'product_id' is set
+      fail ArgumentError, "Missing the required parameter 'product_id' when calling BeezUPApi.get_channel_catalog_product_by_channel_catalog" if product_id.nil?
+      # resource path
+      local_var_path = "/user/channelCatalogs/products/{productId}".sub('{format}','json').sub('{' + 'productId' + '}', product_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'request'])
+      auth_names = ['api_key']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'ChannelCatalogProductByChannelCatalogResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: BeezUPApi#get_channel_catalog_product_by_channel_catalog\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Get channel catalog product information
     # 
     # @param channel_catalog_id The channel catalog identifier
@@ -3334,7 +3564,7 @@ module SwaggerClient
       # verify the required parameter 'product_id' is set
       fail ArgumentError, "Missing the required parameter 'product_id' when calling BeezUPApi.get_channel_catalog_product_info" if product_id.nil?
       # resource path
-      local_var_path = "/v2/user/channelCatalogs/{channelCatalogId}/products/{productId}".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s).sub('{' + 'productId' + '}', product_id.to_s)
+      local_var_path = "/user/channelCatalogs/{channelCatalogId}/products/{productId}".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s).sub('{' + 'productId' + '}', product_id.to_s)
 
       # query parameters
       query_params = {}
@@ -3389,7 +3619,7 @@ module SwaggerClient
       # verify the required parameter 'channel_catalog_id' is set
       fail ArgumentError, "Missing the required parameter 'channel_catalog_id' when calling BeezUPApi.get_channel_catalog_product_info_list" if channel_catalog_id.nil?
       # resource path
-      local_var_path = "/v2/user/channelCatalogs/{channelCatalogId}/products".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s)
+      local_var_path = "/user/channelCatalogs/{channelCatalogId}/products".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s)
 
       # query parameters
       query_params = {}
@@ -3440,7 +3670,7 @@ module SwaggerClient
         @api_client.config.logger.debug "Calling API: BeezUPApi.get_channel_catalogs ..."
       end
       # resource path
-      local_var_path = "/v2/user/channelCatalogs/".sub('{format}','json')
+      local_var_path = "/user/channelCatalogs/".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -3498,7 +3728,7 @@ module SwaggerClient
       # verify the required parameter 'accept_encoding' is set
       fail ArgumentError, "Missing the required parameter 'accept_encoding' when calling BeezUPApi.get_channel_categories" if accept_encoding.nil?
       # resource path
-      local_var_path = "/v2/user/channels/{channelId}/categories".sub('{format}','json').sub('{' + 'channelId' + '}', channel_id.to_s)
+      local_var_path = "/user/channels/{channelId}/categories".sub('{format}','json').sub('{' + 'channelId' + '}', channel_id.to_s)
 
       # query parameters
       query_params = {}
@@ -3558,7 +3788,7 @@ module SwaggerClient
       # verify the required parameter 'accept_encoding' is set
       fail ArgumentError, "Missing the required parameter 'accept_encoding' when calling BeezUPApi.get_channel_columns" if accept_encoding.nil?
       # resource path
-      local_var_path = "/v2/user/channels/{channelId}/columns".sub('{format}','json').sub('{' + 'channelId' + '}', channel_id.to_s)
+      local_var_path = "/user/channels/{channelId}/columns".sub('{format}','json').sub('{' + 'channelId' + '}', channel_id.to_s)
 
       # query parameters
       query_params = {}
@@ -3612,7 +3842,7 @@ module SwaggerClient
       # verify the required parameter 'channel_id' is set
       fail ArgumentError, "Missing the required parameter 'channel_id' when calling BeezUPApi.get_channel_info" if channel_id.nil?
       # resource path
-      local_var_path = "/v2/user/channels/{channelId}".sub('{format}','json').sub('{' + 'channelId' + '}', channel_id.to_s)
+      local_var_path = "/user/channels/{channelId}".sub('{format}','json').sub('{' + 'channelId' + '}', channel_id.to_s)
 
       # query parameters
       query_params = {}
@@ -3643,6 +3873,113 @@ module SwaggerClient
       return data, status_code, headers
     end
 
+    # The channel list for one country
+    # 
+    # @param country_iso_code The country iso code alpha 3 based on this: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3#Decoding_table \\ To know which country are available you have to use the operation: GetChannelsByCountry 
+    # @param accept_encoding Allows the client to indicate wether it accepts a compressed encoding to reduce traffic size.
+    # @param [Hash] opts the optional parameters
+    # @return [ChannelInfoList]
+    def get_channels(country_iso_code, accept_encoding, opts = {})
+      data, _status_code, _headers = get_channels_with_http_info(country_iso_code, accept_encoding, opts)
+      return data
+    end
+
+    # The channel list for one country
+    # 
+    # @param country_iso_code The country iso code alpha 3 based on this: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3#Decoding_table \\ To know which country are available you have to use the operation: GetChannelsByCountry 
+    # @param accept_encoding Allows the client to indicate wether it accepts a compressed encoding to reduce traffic size.
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(ChannelInfoList, Fixnum, Hash)>] ChannelInfoList data, response status code and response headers
+    def get_channels_with_http_info(country_iso_code, accept_encoding, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: BeezUPApi.get_channels ..."
+      end
+      # verify the required parameter 'country_iso_code' is set
+      fail ArgumentError, "Missing the required parameter 'country_iso_code' when calling BeezUPApi.get_channels" if country_iso_code.nil?
+      # verify the required parameter 'accept_encoding' is set
+      fail ArgumentError, "Missing the required parameter 'accept_encoding' when calling BeezUPApi.get_channels" if accept_encoding.nil?
+      # resource path
+      local_var_path = "/public/channels/{countryIsoCode}".sub('{format}','json').sub('{' + 'countryIsoCode' + '}', country_iso_code.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'Accept-Encoding'] = @api_client.build_collection_param(accept_encoding, :csv)
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'ChannelInfoList')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: BeezUPApi#get_channels\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get public channel index
+    # Use this operation to get the correct link to the channels and to the list of values
+    # @param [Hash] opts the optional parameters
+    # @return [PublicChannelIndex]
+    def get_channels_index(opts = {})
+      data, _status_code, _headers = get_channels_index_with_http_info(opts)
+      return data
+    end
+
+    # Get public channel index
+    # Use this operation to get the correct link to the channels and to the list of values
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(PublicChannelIndex, Fixnum, Hash)>] PublicChannelIndex data, response status code and response headers
+    def get_channels_index_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: BeezUPApi.get_channels_index ..."
+      end
+      # resource path
+      local_var_path = "/public/channels/".sub('{format}','json')
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'PublicChannelIndex')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: BeezUPApi#get_channels_index\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Get contract list
     # 
     # @param [Hash] opts the optional parameters
@@ -3661,7 +3998,7 @@ module SwaggerClient
         @api_client.config.logger.debug "Calling API: BeezUPApi.get_contracts ..."
       end
       # resource path
-      local_var_path = "/v2/user/customer/contracts".sub('{format}','json')
+      local_var_path = "/user/customer/contracts".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -3710,7 +4047,7 @@ module SwaggerClient
         @api_client.config.logger.debug "Calling API: BeezUPApi.get_credit_card_info ..."
       end
       # resource path
-      local_var_path = "/v2/user/customer/account/creditCardInfo".sub('{format}','json')
+      local_var_path = "/user/customer/account/creditCardInfo".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -3763,7 +4100,7 @@ module SwaggerClient
       # verify the required parameter 'user_id' is set
       fail ArgumentError, "Missing the required parameter 'user_id' when calling BeezUPApi.get_friend_info" if user_id.nil?
       # resource path
-      local_var_path = "/v2/user/customer/friends/{userId}".sub('{format}','json').sub('{' + 'userId' + '}', user_id.to_s)
+      local_var_path = "/user/customer/friends/{userId}".sub('{format}','json').sub('{' + 'userId' + '}', user_id.to_s)
 
       # query parameters
       query_params = {}
@@ -3812,7 +4149,7 @@ module SwaggerClient
         @api_client.config.logger.debug "Calling API: BeezUPApi.get_invoices ..."
       end
       # resource path
-      local_var_path = "/v2/user/customer/invoices".sub('{format}','json')
+      local_var_path = "/user/customer/invoices".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -3861,7 +4198,7 @@ module SwaggerClient
         @api_client.config.logger.debug "Calling API: BeezUPApi.get_marketplace_account_stores ..."
       end
       # resource path
-      local_var_path = "/v2/user/marketplaces/channelcatalogs/".sub('{format}','json')
+      local_var_path = "/user/marketplaces/channelcatalogs/".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -3910,7 +4247,7 @@ module SwaggerClient
         @api_client.config.logger.debug "Calling API: BeezUPApi.get_marketplace_accounts_synchronization ..."
       end
       # resource path
-      local_var_path = "/v2/user/marketplaces/orders/status".sub('{format}','json')
+      local_var_path = "/user/marketplaces/orders/status".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -3963,7 +4300,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.get_offer" if request.nil?
       # resource path
-      local_var_path = "/v2/user/customer/offers".sub('{format}','json')
+      local_var_path = "/user/customer/offers".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -4000,7 +4337,7 @@ module SwaggerClient
     # @param account_id The account identifier
     # @param beez_up_order_id The BeezUP Order identifier
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :if_none_match ETag value to identify the last known version of requested Order\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
+    # @option opts [String] :if_none_match ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
     # @return [Order]
     def get_order(marketplace_technical_code, account_id, beez_up_order_id, opts = {})
       data, _status_code, _headers = get_order_with_http_info(marketplace_technical_code, account_id, beez_up_order_id, opts)
@@ -4013,7 +4350,7 @@ module SwaggerClient
     # @param account_id The account identifier
     # @param beez_up_order_id The BeezUP Order identifier
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :if_none_match ETag value to identify the last known version of requested Order\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
+    # @option opts [String] :if_none_match ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
     # @return [Array<(Order, Fixnum, Hash)>] Order data, response status code and response headers
     def get_order_with_http_info(marketplace_technical_code, account_id, beez_up_order_id, opts = {})
       if @api_client.config.debugging
@@ -4026,7 +4363,7 @@ module SwaggerClient
       # verify the required parameter 'beez_up_order_id' is set
       fail ArgumentError, "Missing the required parameter 'beez_up_order_id' when calling BeezUPApi.get_order" if beez_up_order_id.nil?
       # resource path
-      local_var_path = "/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}".sub('{format}','json').sub('{' + 'marketplaceTechnicalCode' + '}', marketplace_technical_code.to_s).sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'beezUPOrderId' + '}', beez_up_order_id.to_s)
+      local_var_path = "/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}".sub('{format}','json').sub('{' + 'marketplaceTechnicalCode' + '}', marketplace_technical_code.to_s).sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'beezUPOrderId' + '}', beez_up_order_id.to_s)
 
       # query parameters
       query_params = {}
@@ -4061,7 +4398,7 @@ module SwaggerClient
     # Get a paginated list of Order report exportations
     # 
     # @param page_number The page number you want to get
-    # @param page_size The count of Order report exportations you want to get
+    # @param page_size The entry count you want to get
     # @param store_id The store identifier to regroup the order exportations
     # @param [Hash] opts the optional parameters
     # @return [OrderExportations]
@@ -4073,7 +4410,7 @@ module SwaggerClient
     # Get a paginated list of Order report exportations
     # 
     # @param page_number The page number you want to get
-    # @param page_size The count of Order report exportations you want to get
+    # @param page_size The entry count you want to get
     # @param store_id The store identifier to regroup the order exportations
     # @param [Hash] opts the optional parameters
     # @return [Array<(OrderExportations, Fixnum, Hash)>] OrderExportations data, response status code and response headers
@@ -4100,7 +4437,7 @@ module SwaggerClient
       # verify the required parameter 'store_id' is set
       fail ArgumentError, "Missing the required parameter 'store_id' when calling BeezUPApi.get_order_exportations" if store_id.nil?
       # resource path
-      local_var_path = "/v2/user/marketplaces/orders/exportations".sub('{format}','json')
+      local_var_path = "/user/marketplaces/orders/exportations".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -4164,7 +4501,7 @@ module SwaggerClient
       # verify the required parameter 'beez_up_order_id' is set
       fail ArgumentError, "Missing the required parameter 'beez_up_order_id' when calling BeezUPApi.get_order_history" if beez_up_order_id.nil?
       # resource path
-      local_var_path = "/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/history".sub('{format}','json').sub('{' + 'marketplaceTechnicalCode' + '}', marketplace_technical_code.to_s).sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'beezUPOrderId' + '}', beez_up_order_id.to_s)
+      local_var_path = "/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/history".sub('{format}','json').sub('{' + 'marketplaceTechnicalCode' + '}', marketplace_technical_code.to_s).sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'beezUPOrderId' + '}', beez_up_order_id.to_s)
 
       # query parameters
       query_params = {}
@@ -4195,31 +4532,82 @@ module SwaggerClient
       return data, status_code, headers
     end
 
+    # Get all actions you can do on the order API
+    # 
+    # @param [Hash] opts the optional parameters
+    # @return [OrderIndex]
+    def get_order_index(opts = {})
+      data, _status_code, _headers = get_order_index_with_http_info(opts)
+      return data
+    end
+
+    # Get all actions you can do on the order API
+    # 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(OrderIndex, Fixnum, Hash)>] OrderIndex data, response status code and response headers
+    def get_order_index_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: BeezUPApi.get_order_index ..."
+      end
+      # resource path
+      local_var_path = "/user/marketplaces/orders/".sub('{format}','json')
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['api_key']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'OrderIndex')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: BeezUPApi#get_order_index\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Get a paginated list of all Orders with all Order and Order Item(s) properties
     # The purpose of this operation is to reduce the amount of request to the API.\\ \\ Previous implmentation of this feature only returned a partial (light) version of the Orders. The purpose of this API is to reduce the number of incoming requests by returning the complete (full) Order and Order Item(s) properties. 
     # @param accept_encoding Allows the client to indicate wether it accepts a compressed encoding to reduce traffic size
+    # @param request 
     # @param [Hash] opts the optional parameters
-    # @option opts [OrderListRequest] :request 
     # @return [OrderListFull]
-    def get_order_list_full(accept_encoding, opts = {})
-      data, _status_code, _headers = get_order_list_full_with_http_info(accept_encoding, opts)
+    def get_order_list_full(accept_encoding, request, opts = {})
+      data, _status_code, _headers = get_order_list_full_with_http_info(accept_encoding, request, opts)
       return data
     end
 
     # Get a paginated list of all Orders with all Order and Order Item(s) properties
     # The purpose of this operation is to reduce the amount of request to the API.\\ \\ Previous implmentation of this feature only returned a partial (light) version of the Orders. The purpose of this API is to reduce the number of incoming requests by returning the complete (full) Order and Order Item(s) properties. 
     # @param accept_encoding Allows the client to indicate wether it accepts a compressed encoding to reduce traffic size
+    # @param request 
     # @param [Hash] opts the optional parameters
-    # @option opts [OrderListRequest] :request 
     # @return [Array<(OrderListFull, Fixnum, Hash)>] OrderListFull data, response status code and response headers
-    def get_order_list_full_with_http_info(accept_encoding, opts = {})
+    def get_order_list_full_with_http_info(accept_encoding, request, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: BeezUPApi.get_order_list_full ..."
       end
       # verify the required parameter 'accept_encoding' is set
       fail ArgumentError, "Missing the required parameter 'accept_encoding' when calling BeezUPApi.get_order_list_full" if accept_encoding.nil?
+      # verify the required parameter 'request' is set
+      fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.get_order_list_full" if request.nil?
       # resource path
-      local_var_path = "/v2/user/marketplaces/orders/list/full".sub('{format}','json')
+      local_var_path = "/user/marketplaces/orders/list/full".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -4236,7 +4624,7 @@ module SwaggerClient
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(opts[:'request'])
+      post_body = @api_client.object_to_http_body(request)
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
@@ -4253,25 +4641,27 @@ module SwaggerClient
 
     # Get a paginated list of all Orders without details
     # 
+    # @param request 
     # @param [Hash] opts the optional parameters
-    # @option opts [OrderListRequest] :request 
     # @return [OrderListLight]
-    def get_order_list_light(opts = {})
-      data, _status_code, _headers = get_order_list_light_with_http_info(opts)
+    def get_order_list_light(request, opts = {})
+      data, _status_code, _headers = get_order_list_light_with_http_info(request, opts)
       return data
     end
 
     # Get a paginated list of all Orders without details
     # 
+    # @param request 
     # @param [Hash] opts the optional parameters
-    # @option opts [OrderListRequest] :request 
     # @return [Array<(OrderListLight, Fixnum, Hash)>] OrderListLight data, response status code and response headers
-    def get_order_list_light_with_http_info(opts = {})
+    def get_order_list_light_with_http_info(request, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: BeezUPApi.get_order_list_light ..."
       end
+      # verify the required parameter 'request' is set
+      fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.get_order_list_light" if request.nil?
       # resource path
-      local_var_path = "/v2/user/marketplaces/orders/list/light".sub('{format}','json')
+      local_var_path = "/user/marketplaces/orders/list/light".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -4287,7 +4677,7 @@ module SwaggerClient
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(opts[:'request'])
+      post_body = @api_client.object_to_http_body(request)
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
@@ -4320,7 +4710,7 @@ module SwaggerClient
         @api_client.config.logger.debug "Calling API: BeezUPApi.get_profile_picture_info ..."
       end
       # resource path
-      local_var_path = "/v2/user/customer/account/profilePictureInfo".sub('{format}','json')
+      local_var_path = "/user/customer/account/profilePictureInfo".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -4347,6 +4737,117 @@ module SwaggerClient
         :return_type => 'ProfilePictureInfoResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: BeezUPApi#get_profile_picture_info\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get the list of values related to this list name
+    # 
+    # @param list_name The list of value name your want to get
+    # @param [Hash] opts the optional parameters
+    # @option opts [Array<String>] :accept_language Indicates that the client accepts the following languages.
+    # @option opts [String] :if_none_match ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
+    # @return [PublicListOfValuesResponse]
+    def get_public_list_of_values(list_name, opts = {})
+      data, _status_code, _headers = get_public_list_of_values_with_http_info(list_name, opts)
+      return data
+    end
+
+    # Get the list of values related to this list name
+    # 
+    # @param list_name The list of value name your want to get
+    # @param [Hash] opts the optional parameters
+    # @option opts [Array<String>] :accept_language Indicates that the client accepts the following languages.
+    # @option opts [String] :if_none_match ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
+    # @return [Array<(PublicListOfValuesResponse, Fixnum, Hash)>] PublicListOfValuesResponse data, response status code and response headers
+    def get_public_list_of_values_with_http_info(list_name, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: BeezUPApi.get_public_list_of_values ..."
+      end
+      # verify the required parameter 'list_name' is set
+      fail ArgumentError, "Missing the required parameter 'list_name' when calling BeezUPApi.get_public_list_of_values" if list_name.nil?
+      # resource path
+      local_var_path = "/public/lov/{listName}".sub('{format}','json').sub('{' + 'listName' + '}', list_name.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'Accept-Language'] = @api_client.build_collection_param(opts[:'accept_language'], :csv) if !opts[:'accept_language'].nil?
+      header_params[:'If-None-Match'] = opts[:'if_none_match'] if !opts[:'if_none_match'].nil?
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'PublicListOfValuesResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: BeezUPApi#get_public_list_of_values\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get all list names
+    # 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :if_none_match ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
+    # @return [PublicLovIndex]
+    def get_public_lov_index(opts = {})
+      data, _status_code, _headers = get_public_lov_index_with_http_info(opts)
+      return data
+    end
+
+    # Get all list names
+    # 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :if_none_match ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
+    # @return [Array<(PublicLovIndex, Fixnum, Hash)>] PublicLovIndex data, response status code and response headers
+    def get_public_lov_index_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: BeezUPApi.get_public_lov_index ..."
+      end
+      # resource path
+      local_var_path = "/public/lov/".sub('{format}','json')
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'If-None-Match'] = opts[:'if_none_match'] if !opts[:'if_none_match'].nil?
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'PublicLovIndex')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: BeezUPApi#get_public_lov_index\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -4394,7 +4895,7 @@ module SwaggerClient
         fail ArgumentError, 'invalid value for "publication_types", must include one of PublishProducts, PublishOffers, Unpublish'
       end
       # resource path
-      local_var_path = "/v2/user/marketplaces/channelcatalogs/publications/{marketplaceTechnicalCode}/{accountId}/history".sub('{format}','json').sub('{' + 'marketplaceTechnicalCode' + '}', marketplace_technical_code.to_s).sub('{' + 'accountId' + '}', account_id.to_s)
+      local_var_path = "/user/marketplaces/channelcatalogs/publications/{marketplaceTechnicalCode}/{accountId}/history".sub('{format}','json').sub('{' + 'marketplaceTechnicalCode' + '}', marketplace_technical_code.to_s).sub('{' + 'accountId' + '}', account_id.to_s)
 
       # query parameters
       query_params = {}
@@ -4454,7 +4955,7 @@ module SwaggerClient
       # verify the required parameter 'report_filter_id' is set
       fail ArgumentError, "Missing the required parameter 'report_filter_id' when calling BeezUPApi.get_report_filter" if report_filter_id.nil?
       # resource path
-      local_var_path = "/v2/user/analytics/{storeId}/reports/filters/{reportFilterId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'reportFilterId' + '}', report_filter_id.to_s)
+      local_var_path = "/user/analytics/{storeId}/reports/filters/{reportFilterId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'reportFilterId' + '}', report_filter_id.to_s)
 
       # query parameters
       query_params = {}
@@ -4507,7 +5008,7 @@ module SwaggerClient
       # verify the required parameter 'store_id' is set
       fail ArgumentError, "Missing the required parameter 'store_id' when calling BeezUPApi.get_report_filters" if store_id.nil?
       # resource path
-      local_var_path = "/v2/user/analytics/{storeId}/reports/filters".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/analytics/{storeId}/reports/filters".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -4564,7 +5065,7 @@ module SwaggerClient
       # verify the required parameter 'functionality_code_list' is set
       fail ArgumentError, "Missing the required parameter 'functionality_code_list' when calling BeezUPApi.get_rights" if functionality_code_list.nil?
       # resource path
-      local_var_path = "/v2/user/customer/stores/{storeId}/rights".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/customer/stores/{storeId}/rights".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -4621,7 +5122,7 @@ module SwaggerClient
       # verify the required parameter 'rule_id' is set
       fail ArgumentError, "Missing the required parameter 'rule_id' when calling BeezUPApi.get_rule" if rule_id.nil?
       # resource path
-      local_var_path = "/v2/user/analytics/{storeId}/rules/{ruleId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'ruleId' + '}', rule_id.to_s)
+      local_var_path = "/user/analytics/{storeId}/rules/{ruleId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'ruleId' + '}', rule_id.to_s)
 
       # query parameters
       query_params = {}
@@ -4674,7 +5175,7 @@ module SwaggerClient
       # verify the required parameter 'store_id' is set
       fail ArgumentError, "Missing the required parameter 'store_id' when calling BeezUPApi.get_rules" if store_id.nil?
       # resource path
-      local_var_path = "/v2/user/analytics/{storeId}/rules".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/analytics/{storeId}/rules".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -4747,7 +5248,7 @@ module SwaggerClient
       end
 
       # resource path
-      local_var_path = "/v2/user/analytics/{storeId}/rules/executions".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/analytics/{storeId}/rules/executions".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -4802,7 +5303,7 @@ module SwaggerClient
       # verify the required parameter 'store_id' is set
       fail ArgumentError, "Missing the required parameter 'store_id' when calling BeezUPApi.get_shares" if store_id.nil?
       # resource path
-      local_var_path = "/v2/user/customer/stores/{storeId}/shares".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/customer/stores/{storeId}/shares".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -4851,7 +5352,7 @@ module SwaggerClient
         @api_client.config.logger.debug "Calling API: BeezUPApi.get_standard_offers ..."
       end
       # resource path
-      local_var_path = "/v2/user/customer/offers".sub('{format}','json')
+      local_var_path = "/user/customer/offers".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -4904,7 +5405,7 @@ module SwaggerClient
       # verify the required parameter 'store_id' is set
       fail ArgumentError, "Missing the required parameter 'store_id' when calling BeezUPApi.get_store" if store_id.nil?
       # resource path
-      local_var_path = "/v2/user/customer/stores/{storeId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/customer/stores/{storeId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -4957,7 +5458,7 @@ module SwaggerClient
       # verify the required parameter 'store_id' is set
       fail ArgumentError, "Missing the required parameter 'store_id' when calling BeezUPApi.get_store_alerts" if store_id.nil?
       # resource path
-      local_var_path = "/v2/user/customer/stores/{storeId}/alerts".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/customer/stores/{storeId}/alerts".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -5014,7 +5515,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.get_store_report_by_category" if request.nil?
       # resource path
-      local_var_path = "/v2/user/analytics/{storeId}/reports/bycategory".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/analytics/{storeId}/reports/bycategory".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -5071,7 +5572,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.get_store_report_by_channel" if request.nil?
       # resource path
-      local_var_path = "/v2/user/analytics/{storeId}/reports/bychannel".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/analytics/{storeId}/reports/bychannel".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -5128,7 +5629,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.get_store_report_by_day" if request.nil?
       # resource path
-      local_var_path = "/v2/user/analytics/{storeId}/reports/byday".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/analytics/{storeId}/reports/byday".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -5193,7 +5694,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.get_store_report_by_day_export" if request.nil?
       # resource path
-      local_var_path = "/v2/user/analytics/{storeId}/reports/byday/export".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/analytics/{storeId}/reports/byday/export".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -5251,7 +5752,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.get_store_report_by_product" if request.nil?
       # resource path
-      local_var_path = "/v2/user/analytics/{storeId}/reports/byproduct".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/analytics/{storeId}/reports/byproduct".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -5314,7 +5815,7 @@ module SwaggerClient
       end
 
       # resource path
-      local_var_path = "/v2/user/analytics/{storeId}/tracking/clicks".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/analytics/{storeId}/tracking/clicks".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -5378,7 +5879,7 @@ module SwaggerClient
       end
 
       # resource path
-      local_var_path = "/v2/user/analytics/{storeId}/tracking/externalorders".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/analytics/{storeId}/tracking/externalorders".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -5442,7 +5943,7 @@ module SwaggerClient
       end
 
       # resource path
-      local_var_path = "/v2/user/analytics/{storeId}/tracking/orders".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/analytics/{storeId}/tracking/orders".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -5496,7 +5997,7 @@ module SwaggerClient
       # verify the required parameter 'store_id' is set
       fail ArgumentError, "Missing the required parameter 'store_id' when calling BeezUPApi.get_store_tracking_status" if store_id.nil?
       # resource path
-      local_var_path = "/v2/user/analytics/{storeId}/tracking/status".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/analytics/{storeId}/tracking/status".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -5545,7 +6046,7 @@ module SwaggerClient
         @api_client.config.logger.debug "Calling API: BeezUPApi.get_stores ..."
       end
       # resource path
-      local_var_path = "/v2/user/customer/stores".sub('{format}','json')
+      local_var_path = "/user/customer/stores".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -5594,7 +6095,7 @@ module SwaggerClient
         @api_client.config.logger.debug "Calling API: BeezUPApi.get_tracking_status ..."
       end
       # resource path
-      local_var_path = "/v2/user/analytics/tracking/status".sub('{format}','json')
+      local_var_path = "/user/analytics/tracking/status".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -5643,7 +6144,7 @@ module SwaggerClient
         @api_client.config.logger.debug "Calling API: BeezUPApi.get_user_account_info ..."
       end
       # resource path
-      local_var_path = "/v2/user/customer/account".sub('{format}','json')
+      local_var_path = "/user/customer/account".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -5674,163 +6175,13 @@ module SwaggerClient
       return data, status_code, headers
     end
 
-    # Get list of values related to this group name
-    # 
-    # @param list_group_name The list group name your want to get
-    # @param [Hash] opts the optional parameters
-    # @return [Array<BeezUPCommonLOVLink2>]
-    def get_user_list_group(list_group_name, opts = {})
-      data, _status_code, _headers = get_user_list_group_with_http_info(list_group_name, opts)
-      return data
-    end
-
-    # Get list of values related to this group name
-    # 
-    # @param list_group_name The list group name your want to get
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(Array<BeezUPCommonLOVLink2>, Fixnum, Hash)>] Array<BeezUPCommonLOVLink2> data, response status code and response headers
-    def get_user_list_group_with_http_info(list_group_name, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: BeezUPApi.get_user_list_group ..."
-      end
-      # verify the required parameter 'list_group_name' is set
-      fail ArgumentError, "Missing the required parameter 'list_group_name' when calling BeezUPApi.get_user_list_group" if list_group_name.nil?
-      # resource path
-      local_var_path = "/v2/user/lov/groups/{listGroupName}".sub('{format}','json').sub('{' + 'listGroupName' + '}', list_group_name.to_s)
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = ['api_key']
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'Array<BeezUPCommonLOVLink2>')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: BeezUPApi#get_user_list_group\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Get list of group of list name
-    # 
-    # @param [Hash] opts the optional parameters
-    # @return [Array<BeezUPCommonLOVLink2>]
-    def get_user_list_group_names(opts = {})
-      data, _status_code, _headers = get_user_list_group_names_with_http_info(opts)
-      return data
-    end
-
-    # Get list of group of list name
-    # 
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(Array<BeezUPCommonLOVLink2>, Fixnum, Hash)>] Array<BeezUPCommonLOVLink2> data, response status code and response headers
-    def get_user_list_group_names_with_http_info(opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: BeezUPApi.get_user_list_group_names ..."
-      end
-      # resource path
-      local_var_path = "/v2/user/lov/groups".sub('{format}','json')
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = ['api_key']
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'Array<BeezUPCommonLOVLink2>')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: BeezUPApi#get_user_list_group_names\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Get all list names
-    # 
-    # @param [Hash] opts the optional parameters
-    # @return [Array<BeezUPCommonLOVLink2>]
-    def get_user_list_names(opts = {})
-      data, _status_code, _headers = get_user_list_names_with_http_info(opts)
-      return data
-    end
-
-    # Get all list names
-    # 
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(Array<BeezUPCommonLOVLink2>, Fixnum, Hash)>] Array<BeezUPCommonLOVLink2> data, response status code and response headers
-    def get_user_list_names_with_http_info(opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: BeezUPApi.get_user_list_names ..."
-      end
-      # resource path
-      local_var_path = "/v2/user/lov/".sub('{format}','json')
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = ['api_key']
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'Array<BeezUPCommonLOVLink2>')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: BeezUPApi#get_user_list_names\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
     # Get the list of values related to this list name
     # 
     # @param list_name The list of value name your want to get
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :accept_language Indicates that the client accepts the following languages.
-    # @return [Array<BeezUPCommonListOfValueItem>]
+    # @option opts [String] :if_none_match ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
+    # @return [UserListOfValuesResponse]
     def get_user_list_of_values(list_name, opts = {})
       data, _status_code, _headers = get_user_list_of_values_with_http_info(list_name, opts)
       return data
@@ -5841,7 +6192,8 @@ module SwaggerClient
     # @param list_name The list of value name your want to get
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :accept_language Indicates that the client accepts the following languages.
-    # @return [Array<(Array<BeezUPCommonListOfValueItem>, Fixnum, Hash)>] Array<BeezUPCommonListOfValueItem> data, response status code and response headers
+    # @option opts [String] :if_none_match ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
+    # @return [Array<(UserListOfValuesResponse, Fixnum, Hash)>] UserListOfValuesResponse data, response status code and response headers
     def get_user_list_of_values_with_http_info(list_name, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: BeezUPApi.get_user_list_of_values ..."
@@ -5849,7 +6201,7 @@ module SwaggerClient
       # verify the required parameter 'list_name' is set
       fail ArgumentError, "Missing the required parameter 'list_name' when calling BeezUPApi.get_user_list_of_values" if list_name.nil?
       # resource path
-      local_var_path = "/v2/user/lov/{listName}".sub('{format}','json').sub('{' + 'listName' + '}', list_name.to_s)
+      local_var_path = "/user/lov/{listName}".sub('{format}','json').sub('{' + 'listName' + '}', list_name.to_s)
 
       # query parameters
       query_params = {}
@@ -5861,6 +6213,7 @@ module SwaggerClient
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'Accept-Language'] = @api_client.build_collection_param(opts[:'accept_language'], :csv) if !opts[:'accept_language'].nil?
+      header_params[:'If-None-Match'] = opts[:'if_none_match'] if !opts[:'if_none_match'].nil?
 
       # form parameters
       form_params = {}
@@ -5874,9 +6227,58 @@ module SwaggerClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Array<BeezUPCommonListOfValueItem>')
+        :return_type => 'UserListOfValuesResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: BeezUPApi#get_user_list_of_values\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get all list names
+    # 
+    # @param [Hash] opts the optional parameters
+    # @return [UserLovIndex]
+    def get_user_lov_index(opts = {})
+      data, _status_code, _headers = get_user_lov_index_with_http_info(opts)
+      return data
+    end
+
+    # Get all list names
+    # 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(UserLovIndex, Fixnum, Hash)>] UserLovIndex data, response status code and response headers
+    def get_user_lov_index_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: BeezUPApi.get_user_lov_index ..."
+      end
+      # resource path
+      local_var_path = "/user/lov/".sub('{format}','json')
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['api_key']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'UserLovIndex')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: BeezUPApi#get_user_lov_index\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -5899,7 +6301,7 @@ module SwaggerClient
         @api_client.config.logger.debug "Calling API: BeezUPApi.harvest_all ..."
       end
       # resource path
-      local_var_path = "/v2/user/marketplaces/orders/harvest".sub('{format}','json')
+      local_var_path = "/user/marketplaces/orders/harvest".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -5959,7 +6361,7 @@ module SwaggerClient
       # verify the required parameter 'beez_up_order_id' is set
       fail ArgumentError, "Missing the required parameter 'beez_up_order_id' when calling BeezUPApi.harvest_order" if beez_up_order_id.nil?
       # resource path
-      local_var_path = "/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/harvest".sub('{format}','json').sub('{' + 'marketplaceTechnicalCode' + '}', marketplace_technical_code.to_s).sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'beezUPOrderId' + '}', beez_up_order_id.to_s)
+      local_var_path = "/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/harvest".sub('{format}','json').sub('{' + 'marketplaceTechnicalCode' + '}', marketplace_technical_code.to_s).sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'beezUPOrderId' + '}', beez_up_order_id.to_s)
 
       # query parameters
       query_params = {}
@@ -6011,7 +6413,7 @@ module SwaggerClient
       # verify the required parameter 'store_id' is set
       fail ArgumentError, "Missing the required parameter 'store_id' when calling BeezUPApi.importation_activate_auto_import" if store_id.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/autoImport".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/autoImport".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -6067,7 +6469,7 @@ module SwaggerClient
       # verify the required parameter 'execution_id' is set
       fail ArgumentError, "Missing the required parameter 'execution_id' when calling BeezUPApi.importation_cancel" if execution_id.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/importations/{executionId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/importations/{executionId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s)
 
       # query parameters
       query_params = {}
@@ -6123,7 +6525,7 @@ module SwaggerClient
       # verify the required parameter 'execution_id' is set
       fail ArgumentError, "Missing the required parameter 'execution_id' when calling BeezUPApi.importation_commit" if execution_id.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/importations/{executionId}/commit".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/importations/{executionId}/commit".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s)
 
       # query parameters
       query_params = {}
@@ -6179,7 +6581,7 @@ module SwaggerClient
       # verify the required parameter 'execution_id' is set
       fail ArgumentError, "Missing the required parameter 'execution_id' when calling BeezUPApi.importation_commit_columns" if execution_id.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/importations/{executionId}/commitColumns".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/importations/{executionId}/commitColumns".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s)
 
       # query parameters
       query_params = {}
@@ -6243,7 +6645,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.importation_configure_catalog_column" if request.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s).sub('{' + 'columnId' + '}', column_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s).sub('{' + 'columnId' + '}', column_id.to_s)
 
       # query parameters
       query_params = {}
@@ -6299,7 +6701,7 @@ module SwaggerClient
       # verify the required parameter 'execution_id' is set
       fail ArgumentError, "Missing the required parameter 'execution_id' when calling BeezUPApi.importation_configure_remaining_catalog_columns" if execution_id.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/importations/{executionId}/configureRemainingCatalogColumns".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/importations/{executionId}/configureRemainingCatalogColumns".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s)
 
       # query parameters
       query_params = {}
@@ -6359,7 +6761,7 @@ module SwaggerClient
       # verify the required parameter 'column_id' is set
       fail ArgumentError, "Missing the required parameter 'column_id' when calling BeezUPApi.importation_delete_custom_column" if column_id.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s).sub('{' + 'columnId' + '}', column_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s).sub('{' + 'columnId' + '}', column_id.to_s)
 
       # query parameters
       query_params = {}
@@ -6419,7 +6821,7 @@ module SwaggerClient
       # verify the required parameter 'column_id' is set
       fail ArgumentError, "Missing the required parameter 'column_id' when calling BeezUPApi.importation_get_custom_column_expression" if column_id.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/expression".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s).sub('{' + 'columnId' + '}', column_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/expression".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s).sub('{' + 'columnId' + '}', column_id.to_s)
 
       # query parameters
       query_params = {}
@@ -6476,7 +6878,7 @@ module SwaggerClient
       # verify the required parameter 'execution_id' is set
       fail ArgumentError, "Missing the required parameter 'execution_id' when calling BeezUPApi.importation_get_custom_columns" if execution_id.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/importations/{executionId}/customColumns".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/importations/{executionId}/customColumns".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s)
 
       # query parameters
       query_params = {}
@@ -6533,7 +6935,7 @@ module SwaggerClient
       # verify the required parameter 'execution_id' is set
       fail ArgumentError, "Missing the required parameter 'execution_id' when calling BeezUPApi.importation_get_detected_catalog_columns" if execution_id.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/importations/{executionId}/catalogColumns".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s)
 
       # query parameters
       query_params = {}
@@ -6590,7 +6992,7 @@ module SwaggerClient
       # verify the required parameter 'execution_id' is set
       fail ArgumentError, "Missing the required parameter 'execution_id' when calling BeezUPApi.importation_get_importation_monitoring" if execution_id.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/importations/{executionId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/importations/{executionId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s)
 
       # query parameters
       query_params = {}
@@ -6643,7 +7045,7 @@ module SwaggerClient
       # verify the required parameter 'store_id' is set
       fail ArgumentError, "Missing the required parameter 'store_id' when calling BeezUPApi.importation_get_manual_update_last_input_config" if store_id.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/inputConfiguration".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/inputConfiguration".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -6712,7 +7114,7 @@ module SwaggerClient
       end
 
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/importations/{executionId}/productSamples/{productSampleIndex}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s).sub('{' + 'productSampleIndex' + '}', product_sample_index.to_s)
+      local_var_path = "/user/catalogs/{storeId}/importations/{executionId}/productSamples/{productSampleIndex}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s).sub('{' + 'productSampleIndex' + '}', product_sample_index.to_s)
 
       # query parameters
       query_params = {}
@@ -6785,7 +7187,7 @@ module SwaggerClient
       # verify the required parameter 'column_id' is set
       fail ArgumentError, "Missing the required parameter 'column_id' when calling BeezUPApi.importation_get_product_sample_custom_column_value" if column_id.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/importations/{executionId}/productSamples/{productSampleIndex}/customColumns/{columnId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s).sub('{' + 'productSampleIndex' + '}', product_sample_index.to_s).sub('{' + 'columnId' + '}', column_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/importations/{executionId}/productSamples/{productSampleIndex}/customColumns/{columnId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s).sub('{' + 'productSampleIndex' + '}', product_sample_index.to_s).sub('{' + 'columnId' + '}', column_id.to_s)
 
       # query parameters
       query_params = {}
@@ -6838,7 +7240,7 @@ module SwaggerClient
       # verify the required parameter 'store_id' is set
       fail ArgumentError, "Missing the required parameter 'store_id' when calling BeezUPApi.importation_get_reportings" if store_id.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/importations".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/importations".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -6899,7 +7301,7 @@ module SwaggerClient
       # verify the required parameter 'column_id' is set
       fail ArgumentError, "Missing the required parameter 'column_id' when calling BeezUPApi.importation_ignore_column" if column_id.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/ignore".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s).sub('{' + 'columnId' + '}', column_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/ignore".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s).sub('{' + 'columnId' + '}', column_id.to_s)
 
       # query parameters
       query_params = {}
@@ -6963,7 +7365,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.importation_map_catalog_column" if request.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/map".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s).sub('{' + 'columnId' + '}', column_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/map".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s).sub('{' + 'columnId' + '}', column_id.to_s)
 
       # query parameters
       query_params = {}
@@ -7027,7 +7429,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.importation_map_custom_column" if request.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/map".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s).sub('{' + 'columnId' + '}', column_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/map".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s).sub('{' + 'columnId' + '}', column_id.to_s)
 
       # query parameters
       query_params = {}
@@ -7087,7 +7489,7 @@ module SwaggerClient
       # verify the required parameter 'column_id' is set
       fail ArgumentError, "Missing the required parameter 'column_id' when calling BeezUPApi.importation_reattend_column" if column_id.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/reattend".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s).sub('{' + 'columnId' + '}', column_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/reattend".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s).sub('{' + 'columnId' + '}', column_id.to_s)
 
       # query parameters
       query_params = {}
@@ -7151,7 +7553,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.importation_save_custom_column" if request.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s).sub('{' + 'columnId' + '}', column_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s).sub('{' + 'columnId' + '}', column_id.to_s)
 
       # query parameters
       query_params = {}
@@ -7186,7 +7588,7 @@ module SwaggerClient
     # @param store_id Your store identifier
     # @param request 
     # @param [Hash] opts the optional parameters
-    # @return [Array<BeezUPCommonLink2>]
+    # @return [LinksImportationGetImportationMonitoringLink]
     def importation_start_manual_update(store_id, request, opts = {})
       data, _status_code, _headers = importation_start_manual_update_with_http_info(store_id, request, opts)
       return data
@@ -7197,7 +7599,7 @@ module SwaggerClient
     # @param store_id Your store identifier
     # @param request 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Array<BeezUPCommonLink2>, Fixnum, Hash)>] Array<BeezUPCommonLink2> data, response status code and response headers
+    # @return [Array<(LinksImportationGetImportationMonitoringLink, Fixnum, Hash)>] LinksImportationGetImportationMonitoringLink data, response status code and response headers
     def importation_start_manual_update_with_http_info(store_id, request, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: BeezUPApi.importation_start_manual_update ..."
@@ -7207,7 +7609,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.importation_start_manual_update" if request.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/importations".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/importations".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -7231,7 +7633,7 @@ module SwaggerClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Array<BeezUPCommonLink2>')
+        :return_type => 'LinksImportationGetImportationMonitoringLink')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: BeezUPApi#importation_start_manual_update\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -7264,7 +7666,7 @@ module SwaggerClient
       # verify the required parameter 'execution_id' is set
       fail ArgumentError, "Missing the required parameter 'execution_id' when calling BeezUPApi.importation_technical_progression" if execution_id.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/importations/{executionId}/technicalProgression".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/importations/{executionId}/technicalProgression".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s)
 
       # query parameters
       query_params = {}
@@ -7325,7 +7727,7 @@ module SwaggerClient
       # verify the required parameter 'column_id' is set
       fail ArgumentError, "Missing the required parameter 'column_id' when calling BeezUPApi.importation_unmap_catalog_column" if column_id.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/unmap".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s).sub('{' + 'columnId' + '}', column_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/unmap".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s).sub('{' + 'columnId' + '}', column_id.to_s)
 
       # query parameters
       query_params = {}
@@ -7385,7 +7787,7 @@ module SwaggerClient
       # verify the required parameter 'column_id' is set
       fail ArgumentError, "Missing the required parameter 'column_id' when calling BeezUPApi.importation_unmap_custom_column" if column_id.nil?
       # resource path
-      local_var_path = "/v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/unmap".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s).sub('{' + 'columnId' + '}', column_id.to_s)
+      local_var_path = "/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/unmap".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'executionId' + '}', execution_id.to_s).sub('{' + 'columnId' + '}', column_id.to_s)
 
       # query parameters
       query_params = {}
@@ -7415,6 +7817,59 @@ module SwaggerClient
       return data, status_code, headers
     end
 
+    # Login
+    # User Login - The login will give your tokens
+    # @param request 
+    # @param [Hash] opts the optional parameters
+    # @return [ApiCredentials]
+    def login(request, opts = {})
+      data, _status_code, _headers = login_with_http_info(request, opts)
+      return data
+    end
+
+    # Login
+    # User Login - The login will give your tokens
+    # @param request 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(ApiCredentials, Fixnum, Hash)>] ApiCredentials data, response status code and response headers
+    def login_with_http_info(request, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: BeezUPApi.login ..."
+      end
+      # verify the required parameter 'request' is set
+      fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.login" if request.nil?
+      # resource path
+      local_var_path = "/public/security/login".sub('{format}','json')
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(request)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'ApiCredentials')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: BeezUPApi#login\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Log out the current user from go2
     # Log out the current user from go2
     # @param [Hash] opts the optional parameters
@@ -7433,7 +7888,7 @@ module SwaggerClient
         @api_client.config.logger.debug "Calling API: BeezUPApi.logout ..."
       end
       # resource path
-      local_var_path = "/v2/user/customer/security/logout".sub('{format}','json')
+      local_var_path = "/user/customer/security/logout".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -7459,6 +7914,58 @@ module SwaggerClient
         :auth_names => auth_names)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: BeezUPApi#logout\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Lost password
+    # Lost password - Your password will be regenerated and sent to your email
+    # @param email Your email
+    # @param [Hash] opts the optional parameters
+    # @return [nil]
+    def lost_password(email, opts = {})
+      lost_password_with_http_info(email, opts)
+      return nil
+    end
+
+    # Lost password
+    # Lost password - Your password will be regenerated and sent to your email
+    # @param email Your email
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def lost_password_with_http_info(email, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: BeezUPApi.lost_password ..."
+      end
+      # verify the required parameter 'email' is set
+      fail ArgumentError, "Missing the required parameter 'email' when calling BeezUPApi.lost_password" if email.nil?
+      # resource path
+      local_var_path = "/public/security/lostpassword".sub('{format}','json')
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(email)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: BeezUPApi#lost_password\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -7489,7 +7996,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.map_channel_catalog_category" if request.nil?
       # resource path
-      local_var_path = "/v2/user/channelCatalogs/{channelCatalogId}/categoryMappings/map".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s)
+      local_var_path = "/user/channelCatalogs/{channelCatalogId}/categoryMappings/map".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s)
 
       # query parameters
       query_params = {}
@@ -7545,7 +8052,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.map_channel_catalog_columns" if request.nil?
       # resource path
-      local_var_path = "/v2/user/channelCatalogs/{channelCatalogId}/columnMappings".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s)
+      local_var_path = "/user/channelCatalogs/{channelCatalogId}/columnMappings".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s)
 
       # query parameters
       query_params = {}
@@ -7601,7 +8108,7 @@ module SwaggerClient
       # verify the required parameter 'rule_id' is set
       fail ArgumentError, "Missing the required parameter 'rule_id' when calling BeezUPApi.move_down_rule" if rule_id.nil?
       # resource path
-      local_var_path = "/v2/user/analytics/{storeId}/rules/{ruleId}/movedown".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'ruleId' + '}', rule_id.to_s)
+      local_var_path = "/user/analytics/{storeId}/rules/{ruleId}/movedown".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'ruleId' + '}', rule_id.to_s)
 
       # query parameters
       query_params = {}
@@ -7657,7 +8164,7 @@ module SwaggerClient
       # verify the required parameter 'rule_id' is set
       fail ArgumentError, "Missing the required parameter 'rule_id' when calling BeezUPApi.move_up_rule" if rule_id.nil?
       # resource path
-      local_var_path = "/v2/user/analytics/{storeId}/rules/{ruleId}/moveup".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'ruleId' + '}', rule_id.to_s)
+      local_var_path = "/user/analytics/{storeId}/rules/{ruleId}/moveup".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'ruleId' + '}', rule_id.to_s)
 
       # query parameters
       query_params = {}
@@ -7721,7 +8228,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.optimise" if request.nil?
       # resource path
-      local_var_path = "/v2/user/analytics/{storeId}/optimisations/{actionName}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'actionName' + '}', action_name.to_s)
+      local_var_path = "/user/analytics/{storeId}/optimisations/{actionName}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'actionName' + '}', action_name.to_s)
 
       # query parameters
       query_params = {}
@@ -7787,7 +8294,7 @@ module SwaggerClient
         fail ArgumentError, "invalid value for 'action_name', must be one of reenable, disable"
       end
       # resource path
-      local_var_path = "/v2/user/analytics/{storeId}/optimisations/bycategory/{catalogCategoryId}/{actionName}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'catalogCategoryId' + '}', catalog_category_id.to_s).sub('{' + 'actionName' + '}', action_name.to_s)
+      local_var_path = "/user/analytics/{storeId}/optimisations/bycategory/{catalogCategoryId}/{actionName}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'catalogCategoryId' + '}', catalog_category_id.to_s).sub('{' + 'actionName' + '}', action_name.to_s)
 
       # query parameters
       query_params = {}
@@ -7851,7 +8358,7 @@ module SwaggerClient
         fail ArgumentError, "invalid value for 'action_name', must be one of reenable, disable"
       end
       # resource path
-      local_var_path = "/v2/user/analytics/{storeId}/optimisations/bychannel/{channelId}/{actionName}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'channelId' + '}', channel_id.to_s).sub('{' + 'actionName' + '}', action_name.to_s)
+      local_var_path = "/user/analytics/{storeId}/optimisations/bychannel/{channelId}/{actionName}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'channelId' + '}', channel_id.to_s).sub('{' + 'actionName' + '}', action_name.to_s)
 
       # query parameters
       query_params = {}
@@ -7917,7 +8424,7 @@ module SwaggerClient
         fail ArgumentError, "invalid value for 'action_name', must be one of reenable, disable"
       end
       # resource path
-      local_var_path = "/v2/user/analytics/{storeId}/optimisations/byproduct/{productId}/{actionName}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'productId' + '}', product_id.to_s).sub('{' + 'actionName' + '}', action_name.to_s)
+      local_var_path = "/user/analytics/{storeId}/optimisations/byproduct/{productId}/{actionName}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'productId' + '}', product_id.to_s).sub('{' + 'actionName' + '}', action_name.to_s)
 
       # query parameters
       query_params = {}
@@ -7977,7 +8484,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.override_channel_catalog_product_overrides" if request.nil?
       # resource path
-      local_var_path = "/v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s).sub('{' + 'productId' + '}', product_id.to_s)
+      local_var_path = "/user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s).sub('{' + 'productId' + '}', product_id.to_s)
 
       # query parameters
       query_params = {}
@@ -8025,7 +8532,7 @@ module SwaggerClient
         @api_client.config.logger.debug "Calling API: BeezUPApi.reactivate_current_contract ..."
       end
       # resource path
-      local_var_path = "/v2/user/customer/contracts/current/reenableAutoRenewal".sub('{format}','json')
+      local_var_path = "/user/customer/contracts/current/reenableAutoRenewal".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -8081,7 +8588,7 @@ module SwaggerClient
       # verify the required parameter 'product_id' is set
       fail ArgumentError, "Missing the required parameter 'product_id' when calling BeezUPApi.reenable_channel_catalog_product" if product_id.nil?
       # resource path
-      local_var_path = "/v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/reenable".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s).sub('{' + 'productId' + '}', product_id.to_s)
+      local_var_path = "/user/channelCatalogs/{channelCatalogId}/products/{productId}/reenable".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s).sub('{' + 'productId' + '}', product_id.to_s)
 
       # query parameters
       query_params = {}
@@ -8111,6 +8618,58 @@ module SwaggerClient
       return data, status_code, headers
     end
 
+    # User Registration
+    # User Registration - Create a new user on BeezUP
+    # @param request 
+    # @param [Hash] opts the optional parameters
+    # @return [nil]
+    def register(request, opts = {})
+      register_with_http_info(request, opts)
+      return nil
+    end
+
+    # User Registration
+    # User Registration - Create a new user on BeezUP
+    # @param request 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def register_with_http_info(request, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: BeezUPApi.register ..."
+      end
+      # verify the required parameter 'request' is set
+      fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.register" if request.nil?
+      # resource path
+      local_var_path = "/public/security/register".sub('{format}','json')
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(request)
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: BeezUPApi#register\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Resend email activation
     # 
     # @param [Hash] opts the optional parameters
@@ -8129,7 +8688,7 @@ module SwaggerClient
         @api_client.config.logger.debug "Calling API: BeezUPApi.resend_email_activation ..."
       end
       # resource path
-      local_var_path = "/v2/user/customer/account/resendEmailActivation".sub('{format}','json')
+      local_var_path = "/user/customer/account/resendEmailActivation".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -8185,7 +8744,7 @@ module SwaggerClient
       # verify the required parameter 'rule_id' is set
       fail ArgumentError, "Missing the required parameter 'rule_id' when calling BeezUPApi.run_rule" if rule_id.nil?
       # resource path
-      local_var_path = "/v2/user/analytics/{storeId}/rules/{ruleId}/run".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'ruleId' + '}', rule_id.to_s)
+      local_var_path = "/user/analytics/{storeId}/rules/{ruleId}/run".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'ruleId' + '}', rule_id.to_s)
 
       # query parameters
       query_params = {}
@@ -8237,7 +8796,7 @@ module SwaggerClient
       # verify the required parameter 'store_id' is set
       fail ArgumentError, "Missing the required parameter 'store_id' when calling BeezUPApi.run_rules" if store_id.nil?
       # resource path
-      local_var_path = "/v2/user/analytics/{storeId}/rules/run".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/analytics/{storeId}/rules/run".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -8289,7 +8848,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.save_company_info" if request.nil?
       # resource path
-      local_var_path = "/v2/user/customer/account/companyInfo".sub('{format}','json')
+      local_var_path = "/user/customer/account/companyInfo".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -8341,7 +8900,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.save_credit_card_info" if request.nil?
       # resource path
-      local_var_path = "/v2/user/customer/account/creditCardInfo".sub('{format}','json')
+      local_var_path = "/user/customer/account/creditCardInfo".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -8393,7 +8952,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.save_personal_info" if request.nil?
       # resource path
-      local_var_path = "/v2/user/customer/account/personalInfo".sub('{format}','json')
+      local_var_path = "/user/customer/account/personalInfo".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -8445,7 +9004,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.save_profile_picture_info" if request.nil?
       # resource path
-      local_var_path = "/v2/user/customer/account/profilePictureInfo".sub('{format}','json')
+      local_var_path = "/user/customer/account/profilePictureInfo".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -8505,7 +9064,7 @@ module SwaggerClient
       # verify the required parameter 'report_filter' is set
       fail ArgumentError, "Missing the required parameter 'report_filter' when calling BeezUPApi.save_report_filter" if report_filter.nil?
       # resource path
-      local_var_path = "/v2/user/analytics/{storeId}/reports/filters/{reportFilterId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'reportFilterId' + '}', report_filter_id.to_s)
+      local_var_path = "/user/analytics/{storeId}/reports/filters/{reportFilterId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'reportFilterId' + '}', report_filter_id.to_s)
 
       # query parameters
       query_params = {}
@@ -8565,7 +9124,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.save_store_alert" if request.nil?
       # resource path
-      local_var_path = "/v2/user/customer/stores/{storeId}/alerts/{alertId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'alertId' + '}', alert_id.to_s)
+      local_var_path = "/user/customer/stores/{storeId}/alerts/{alertId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'alertId' + '}', alert_id.to_s)
 
       # query parameters
       query_params = {}
@@ -8621,7 +9180,7 @@ module SwaggerClient
       # verify the required parameter 'model' is set
       fail ArgumentError, "Missing the required parameter 'model' when calling BeezUPApi.set_channel_catalog_marketplace_settings" if model.nil?
       # resource path
-      local_var_path = "/v2/user/marketplaces/channelcatalogs/{channelCatalogId}/settings".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s)
+      local_var_path = "/user/marketplaces/channelcatalogs/{channelCatalogId}/settings".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s)
 
       # query parameters
       query_params = {}
@@ -8685,7 +9244,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.set_merchant_order_info" if request.nil?
       # resource path
-      local_var_path = "/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/setMerchantOrderInfo".sub('{format}','json').sub('{' + 'marketplaceTechnicalCode' + '}', marketplace_technical_code.to_s).sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'beezUPOrderId' + '}', beez_up_order_id.to_s)
+      local_var_path = "/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/setMerchantOrderInfo".sub('{format}','json').sub('{' + 'marketplaceTechnicalCode' + '}', marketplace_technical_code.to_s).sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'beezUPOrderId' + '}', beez_up_order_id.to_s)
 
       # query parameters
       query_params = {}
@@ -8737,7 +9296,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.set_merchant_order_info_list" if request.nil?
       # resource path
-      local_var_path = "/v2/user/marketplaces/orders/batches/setMerchantOrderInfos".sub('{format}','json')
+      local_var_path = "/user/marketplaces/orders/batches/setMerchantOrderInfos".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -8794,7 +9353,7 @@ module SwaggerClient
       # verify the required parameter 'email' is set
       fail ArgumentError, "Missing the required parameter 'email' when calling BeezUPApi.share" if email.nil?
       # resource path
-      local_var_path = "/v2/user/customer/stores/{storeId}/shares".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/customer/stores/{storeId}/shares".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
@@ -8846,7 +9405,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.terminate_current_contract" if request.nil?
       # resource path
-      local_var_path = "/v2/user/customer/contracts/current/disableAutoRenewal".sub('{format}','json')
+      local_var_path = "/user/customer/contracts/current/disableAutoRenewal".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -8902,7 +9461,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.unmap_channel_catalog_category" if request.nil?
       # resource path
-      local_var_path = "/v2/user/channelCatalogs/{channelCatalogId}/categoryMappings/unmap".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s)
+      local_var_path = "/user/channelCatalogs/{channelCatalogId}/categoryMappings/unmap".sub('{format}','json').sub('{' + 'channelCatalogId' + '}', channel_catalog_id.to_s)
 
       # query parameters
       query_params = {}
@@ -8962,7 +9521,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.update_rule" if request.nil?
       # resource path
-      local_var_path = "/v2/user/analytics/{storeId}/rules/{ruleId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'ruleId' + '}', rule_id.to_s)
+      local_var_path = "/user/analytics/{storeId}/rules/{ruleId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s).sub('{' + 'ruleId' + '}', rule_id.to_s)
 
       # query parameters
       query_params = {}
@@ -9018,7 +9577,7 @@ module SwaggerClient
       # verify the required parameter 'request' is set
       fail ArgumentError, "Missing the required parameter 'request' when calling BeezUPApi.update_store" if request.nil?
       # resource path
-      local_var_path = "/v2/user/customer/stores/{storeId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
+      local_var_path = "/user/customer/stores/{storeId}".sub('{format}','json').sub('{' + 'storeId' + '}', store_id.to_s)
 
       # query parameters
       query_params = {}
