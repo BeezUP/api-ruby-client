@@ -2945,6 +2945,7 @@ module SwaggerClient
     # Get list of configured automatic Order status transitions
     # 
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :if_none_match ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
     # @return [AutomaticTransitionInfos]
     def get_automatic_transitions(opts = {})
       data, _status_code, _headers = get_automatic_transitions_with_http_info(opts)
@@ -2954,6 +2955,7 @@ module SwaggerClient
     # Get list of configured automatic Order status transitions
     # 
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :if_none_match ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
     # @return [Array<(AutomaticTransitionInfos, Fixnum, Hash)>] AutomaticTransitionInfos data, response status code and response headers
     def get_automatic_transitions_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -2971,6 +2973,7 @@ module SwaggerClient
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'If-None-Match'] = opts[:'if_none_match'] if !opts[:'if_none_match'].nil?
 
       # form parameters
       form_params = {}
@@ -4232,6 +4235,7 @@ module SwaggerClient
     # Get current synchronization status between your marketplaces and BeezUP accounts
     # 
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :if_none_match ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
     # @return [AccountSynchronizations]
     def get_marketplace_accounts_synchronization(opts = {})
       data, _status_code, _headers = get_marketplace_accounts_synchronization_with_http_info(opts)
@@ -4241,6 +4245,7 @@ module SwaggerClient
     # Get current synchronization status between your marketplaces and BeezUP accounts
     # 
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :if_none_match ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
     # @return [Array<(AccountSynchronizations, Fixnum, Hash)>] AccountSynchronizations data, response status code and response headers
     def get_marketplace_accounts_synchronization_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -4258,6 +4263,7 @@ module SwaggerClient
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'If-None-Match'] = opts[:'if_none_match'] if !opts[:'if_none_match'].nil?
 
       # form parameters
       form_params = {}
@@ -4401,6 +4407,7 @@ module SwaggerClient
     # @param page_size The entry count you want to get
     # @param store_id The store identifier to regroup the order exportations
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :if_none_match ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
     # @return [OrderExportations]
     def get_order_exportations(page_number, page_size, store_id, opts = {})
       data, _status_code, _headers = get_order_exportations_with_http_info(page_number, page_size, store_id, opts)
@@ -4413,6 +4420,7 @@ module SwaggerClient
     # @param page_size The entry count you want to get
     # @param store_id The store identifier to regroup the order exportations
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :if_none_match ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
     # @return [Array<(OrderExportations, Fixnum, Hash)>] OrderExportations data, response status code and response headers
     def get_order_exportations_with_http_info(page_number, page_size, store_id, opts = {})
       if @api_client.config.debugging
@@ -4451,6 +4459,7 @@ module SwaggerClient
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'If-None-Match'] = opts[:'if_none_match'] if !opts[:'if_none_match'].nil?
 
       # form parameters
       form_params = {}
@@ -4477,6 +4486,7 @@ module SwaggerClient
     # @param account_id The account identifier
     # @param beez_up_order_id The BeezUP Order identifier
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :if_none_match ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
     # @return [OrderHistory]
     def get_order_history(marketplace_technical_code, account_id, beez_up_order_id, opts = {})
       data, _status_code, _headers = get_order_history_with_http_info(marketplace_technical_code, account_id, beez_up_order_id, opts)
@@ -4489,6 +4499,7 @@ module SwaggerClient
     # @param account_id The account identifier
     # @param beez_up_order_id The BeezUP Order identifier
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :if_none_match ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
     # @return [Array<(OrderHistory, Fixnum, Hash)>] OrderHistory data, response status code and response headers
     def get_order_history_with_http_info(marketplace_technical_code, account_id, beez_up_order_id, opts = {})
       if @api_client.config.debugging
@@ -4512,6 +4523,7 @@ module SwaggerClient
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'If-None-Match'] = opts[:'if_none_match'] if !opts[:'if_none_match'].nil?
 
       # form parameters
       form_params = {}
@@ -4535,6 +4547,7 @@ module SwaggerClient
     # Get all actions you can do on the order API
     # 
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :if_none_match ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
     # @return [OrderIndex]
     def get_order_index(opts = {})
       data, _status_code, _headers = get_order_index_with_http_info(opts)
@@ -4544,6 +4557,7 @@ module SwaggerClient
     # Get all actions you can do on the order API
     # 
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :if_none_match ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
     # @return [Array<(OrderIndex, Fixnum, Hash)>] OrderIndex data, response status code and response headers
     def get_order_index_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -4561,6 +4575,7 @@ module SwaggerClient
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'If-None-Match'] = opts[:'if_none_match'] if !opts[:'if_none_match'].nil?
 
       # form parameters
       form_params = {}
@@ -6387,6 +6402,69 @@ module SwaggerClient
         :auth_names => auth_names)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: BeezUPApi#harvest_order\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get the meta information about the order (ETag, Last-Modified)
+    # The purpose of this operation is to reduce the bandwith usage by getting just the meta information about the order (ETag, Last-Modified) with the body. This could be useful  
+    # @param marketplace_technical_code The marketplace technical code
+    # @param account_id The account identifier
+    # @param beez_up_order_id The BeezUP Order identifier
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :if_none_match ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
+    # @return [nil]
+    def head_order(marketplace_technical_code, account_id, beez_up_order_id, opts = {})
+      head_order_with_http_info(marketplace_technical_code, account_id, beez_up_order_id, opts)
+      return nil
+    end
+
+    # Get the meta information about the order (ETag, Last-Modified)
+    # The purpose of this operation is to reduce the bandwith usage by getting just the meta information about the order (ETag, Last-Modified) with the body. This could be useful  
+    # @param marketplace_technical_code The marketplace technical code
+    # @param account_id The account identifier
+    # @param beez_up_order_id The BeezUP Order identifier
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :if_none_match ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def head_order_with_http_info(marketplace_technical_code, account_id, beez_up_order_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: BeezUPApi.head_order ..."
+      end
+      # verify the required parameter 'marketplace_technical_code' is set
+      fail ArgumentError, "Missing the required parameter 'marketplace_technical_code' when calling BeezUPApi.head_order" if marketplace_technical_code.nil?
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling BeezUPApi.head_order" if account_id.nil?
+      # verify the required parameter 'beez_up_order_id' is set
+      fail ArgumentError, "Missing the required parameter 'beez_up_order_id' when calling BeezUPApi.head_order" if beez_up_order_id.nil?
+      # resource path
+      local_var_path = "/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}".sub('{format}','json').sub('{' + 'marketplaceTechnicalCode' + '}', marketplace_technical_code.to_s).sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'beezUPOrderId' + '}', beez_up_order_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'If-None-Match'] = opts[:'if_none_match'] if !opts[:'if_none_match'].nil?
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['api_key']
+      data, status_code, headers = @api_client.call_api(:HEAD, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: BeezUPApi#head_order\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -9603,6 +9681,55 @@ module SwaggerClient
         :auth_names => auth_names)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: BeezUPApi#update_store\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # The index of all operations and LOV
+    # 
+    # @param [Hash] opts the optional parameters
+    # @return [CustomerIndex]
+    def user_customer_get(opts = {})
+      data, _status_code, _headers = user_customer_get_with_http_info(opts)
+      return data
+    end
+
+    # The index of all operations and LOV
+    # 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(CustomerIndex, Fixnum, Hash)>] CustomerIndex data, response status code and response headers
+    def user_customer_get_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: BeezUPApi.user_customer_get ..."
+      end
+      # resource path
+      local_var_path = "/user/customer/".sub('{format}','json')
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['api_key']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'CustomerIndex')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: BeezUPApi#user_customer_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

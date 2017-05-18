@@ -26,6 +26,9 @@ module SwaggerClient
     # The expiration UTC date of the cache
     attr_accessor :expiration_utc_date
 
+    # The feed url
+    attr_accessor :feed_url
+
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -33,7 +36,8 @@ module SwaggerClient
         :'cache_status' => :'cacheStatus',
         :'last_update_utc_date' => :'lastUpdateUtcDate',
         :'last_content_change_utc_date' => :'lastContentChangeUtcDate',
-        :'expiration_utc_date' => :'expirationUtcDate'
+        :'expiration_utc_date' => :'expirationUtcDate',
+        :'feed_url' => :'feedUrl'
       }
     end
 
@@ -43,7 +47,8 @@ module SwaggerClient
         :'cache_status' => :'String',
         :'last_update_utc_date' => :'DateTime',
         :'last_content_change_utc_date' => :'DateTime',
-        :'expiration_utc_date' => :'DateTime'
+        :'expiration_utc_date' => :'DateTime',
+        :'feed_url' => :'String'
       }
     end
 
@@ -69,6 +74,10 @@ module SwaggerClient
 
       if attributes.has_key?(:'expirationUtcDate')
         self.expiration_utc_date = attributes[:'expirationUtcDate']
+      end
+
+      if attributes.has_key?(:'feedUrl')
+        self.feed_url = attributes[:'feedUrl']
       end
 
     end
@@ -99,7 +108,8 @@ module SwaggerClient
           cache_status == o.cache_status &&
           last_update_utc_date == o.last_update_utc_date &&
           last_content_change_utc_date == o.last_content_change_utc_date &&
-          expiration_utc_date == o.expiration_utc_date
+          expiration_utc_date == o.expiration_utc_date &&
+          feed_url == o.feed_url
     end
 
     # @see the `==` method
@@ -111,7 +121,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [cache_status, last_update_utc_date, last_content_change_utc_date, expiration_utc_date].hash
+      [cache_status, last_update_utc_date, last_content_change_utc_date, expiration_utc_date, feed_url].hash
     end
 
     # Builds the object from hash

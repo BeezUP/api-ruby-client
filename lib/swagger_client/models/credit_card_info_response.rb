@@ -73,17 +73,12 @@ module SwaggerClient
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @current_payment_method.nil?
-        invalid_properties.push("invalid value for 'current_payment_method', current_payment_method cannot be nil.")
-      end
-
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @current_payment_method.nil?
       return true
     end
 

@@ -118,6 +118,7 @@ Method | HTTP request | Description
 [**get_user_lov_index**](BeezUPApi.md#get_user_lov_index) | **GET** /user/lov/ | Get all list names
 [**harvest_all**](BeezUPApi.md#harvest_all) | **POST** /user/marketplaces/orders/harvest | Send harvest request to all your marketplaces
 [**harvest_order**](BeezUPApi.md#harvest_order) | **POST** /user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/harvest | Send harvest request for a single Order
+[**head_order**](BeezUPApi.md#head_order) | **HEAD** /user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId} | Get the meta information about the order (ETag, Last-Modified)
 [**importation_activate_auto_import**](BeezUPApi.md#importation_activate_auto_import) | **POST** /user/catalogs/{storeId}/autoImport | Activate the auto importation of the last successful manual catalog importation.
 [**importation_cancel**](BeezUPApi.md#importation_cancel) | **DELETE** /user/catalogs/{storeId}/importations/{executionId} | Cancel importation
 [**importation_commit**](BeezUPApi.md#importation_commit) | **POST** /user/catalogs/{storeId}/importations/{executionId}/commit | Commit Importation
@@ -174,6 +175,7 @@ Method | HTTP request | Description
 [**unmap_channel_catalog_category**](BeezUPApi.md#unmap_channel_catalog_category) | **POST** /user/channelCatalogs/{channelCatalogId}/categoryMappings/unmap | Unmap channel catalog category
 [**update_rule**](BeezUPApi.md#update_rule) | **PATCH** /user/analytics/{storeId}/rules/{ruleId} | Update Rule
 [**update_store**](BeezUPApi.md#update_store) | **PATCH** /user/customer/stores/{storeId} | Update some store&#39;s information.
+[**user_customer_get**](BeezUPApi.md#user_customer_get) | **GET** /user/customer/ | The index of all operations and LOV
 
 
 # **activate_user_account**
@@ -2999,7 +3001,7 @@ Name | Type | Description  | Notes
 
 
 # **get_automatic_transitions**
-> AutomaticTransitionInfos get_automatic_transitions
+> AutomaticTransitionInfos get_automatic_transitions(opts)
 
 Get list of configured automatic Order status transitions
 
@@ -3017,9 +3019,13 @@ end
 
 api_instance = SwaggerClient::BeezUPApi.new
 
+opts = { 
+  if_none_match: "if_none_match_example" # String | ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
+}
+
 begin
   #Get list of configured automatic Order status transitions
-  result = api_instance.get_automatic_transitions
+  result = api_instance.get_automatic_transitions(opts)
   p result
 rescue SwaggerClient::ApiError => e
   puts "Exception when calling BeezUPApi->get_automatic_transitions: #{e}"
@@ -3027,7 +3033,10 @@ end
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **if_none_match** | **String**| ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  | [optional] 
 
 ### Return type
 
@@ -4218,7 +4227,7 @@ This endpoint does not need any parameter.
 
 
 # **get_marketplace_accounts_synchronization**
-> AccountSynchronizations get_marketplace_accounts_synchronization
+> AccountSynchronizations get_marketplace_accounts_synchronization(opts)
 
 Get current synchronization status between your marketplaces and BeezUP accounts
 
@@ -4236,9 +4245,13 @@ end
 
 api_instance = SwaggerClient::BeezUPApi.new
 
+opts = { 
+  if_none_match: "if_none_match_example" # String | ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
+}
+
 begin
   #Get current synchronization status between your marketplaces and BeezUP accounts
-  result = api_instance.get_marketplace_accounts_synchronization
+  result = api_instance.get_marketplace_accounts_synchronization(opts)
   p result
 rescue SwaggerClient::ApiError => e
   puts "Exception when calling BeezUPApi->get_marketplace_accounts_synchronization: #{e}"
@@ -4246,7 +4259,10 @@ end
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **if_none_match** | **String**| ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  | [optional] 
 
 ### Return type
 
@@ -4380,7 +4396,7 @@ Name | Type | Description  | Notes
 
 
 # **get_order_exportations**
-> OrderExportations get_order_exportations(page_number, page_size, store_id)
+> OrderExportations get_order_exportations(page_number, page_size, store_id, opts)
 
 Get a paginated list of Order report exportations
 
@@ -4404,10 +4420,13 @@ page_size = 25 # Integer | The entry count you want to get
 
 store_id = "store_id_example" # String | The store identifier to regroup the order exportations
 
+opts = { 
+  if_none_match: "if_none_match_example" # String | ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
+}
 
 begin
   #Get a paginated list of Order report exportations
-  result = api_instance.get_order_exportations(page_number, page_size, store_id)
+  result = api_instance.get_order_exportations(page_number, page_size, store_id, opts)
   p result
 rescue SwaggerClient::ApiError => e
   puts "Exception when calling BeezUPApi->get_order_exportations: #{e}"
@@ -4421,6 +4440,7 @@ Name | Type | Description  | Notes
  **page_number** | **Integer**| The page number you want to get | 
  **page_size** | **Integer**| The entry count you want to get | 
  **store_id** | **String**| The store identifier to regroup the order exportations | 
+ **if_none_match** | **String**| ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  | [optional] 
 
 ### Return type
 
@@ -4438,7 +4458,7 @@ Name | Type | Description  | Notes
 
 
 # **get_order_history**
-> OrderHistory get_order_history(marketplace_technical_code, account_id, beez_up_order_id, )
+> OrderHistory get_order_history(marketplace_technical_code, account_id, beez_up_order_id, , opts)
 
 Get an Order's harvest and change history
 
@@ -4462,10 +4482,13 @@ account_id = 1001 # Integer | The account identifier
 
 beez_up_order_id = "00000000000000000000000000000000000000000000000" # String | The BeezUP Order identifier
 
+opts = { 
+  if_none_match: "if_none_match_example" # String | ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
+}
 
 begin
   #Get an Order's harvest and change history
-  result = api_instance.get_order_history(marketplace_technical_code, account_id, beez_up_order_id, )
+  result = api_instance.get_order_history(marketplace_technical_code, account_id, beez_up_order_id, , opts)
   p result
 rescue SwaggerClient::ApiError => e
   puts "Exception when calling BeezUPApi->get_order_history: #{e}"
@@ -4479,6 +4502,7 @@ Name | Type | Description  | Notes
  **marketplace_technical_code** | **String**| The marketplace technical code | 
  **account_id** | **Integer**| The account identifier | 
  **beez_up_order_id** | **String**| The BeezUP Order identifier | 
+ **if_none_match** | **String**| ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  | [optional] 
 
 ### Return type
 
@@ -4496,7 +4520,7 @@ Name | Type | Description  | Notes
 
 
 # **get_order_index**
-> OrderIndex get_order_index
+> OrderIndex get_order_index(opts)
 
 Get all actions you can do on the order API
 
@@ -4514,9 +4538,13 @@ end
 
 api_instance = SwaggerClient::BeezUPApi.new
 
+opts = { 
+  if_none_match: "if_none_match_example" # String | ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
+}
+
 begin
   #Get all actions you can do on the order API
-  result = api_instance.get_order_index
+  result = api_instance.get_order_index(opts)
   p result
 rescue SwaggerClient::ApiError => e
   puts "Exception when calling BeezUPApi->get_order_index: #{e}"
@@ -4524,7 +4552,10 @@ end
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **if_none_match** | **String**| ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  | [optional] 
 
 ### Return type
 
@@ -6225,6 +6256,69 @@ Name | Type | Description  | Notes
  **marketplace_technical_code** | **String**| The marketplace technical code | 
  **account_id** | **Integer**| The account identifier | 
  **beez_up_order_id** | **String**| The BeezUP Order identifier | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **head_order**
+> head_order(marketplace_technical_code, account_id, beez_up_order_id, , opts)
+
+Get the meta information about the order (ETag, Last-Modified)
+
+The purpose of this operation is to reduce the bandwith usage by getting just the meta information about the order (ETag, Last-Modified) with the body. This could be useful  
+
+### Example
+```ruby
+# load the gem
+require 'swagger_client'
+# setup authorization
+SwaggerClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Ocp-Apim-Subscription-Key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Ocp-Apim-Subscription-Key'] = 'Bearer'
+end
+
+api_instance = SwaggerClient::BeezUPApi.new
+
+marketplace_technical_code = "Amazon" # String | The marketplace technical code
+
+account_id = 1001 # Integer | The account identifier
+
+beez_up_order_id = "00000000000000000000000000000000000000000000000" # String | The BeezUP Order identifier
+
+opts = { 
+  if_none_match: "if_none_match_example" # String | ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
+}
+
+begin
+  #Get the meta information about the order (ETag, Last-Modified)
+  api_instance.head_order(marketplace_technical_code, account_id, beez_up_order_id, , opts)
+rescue SwaggerClient::ApiError => e
+  puts "Exception when calling BeezUPApi->head_order: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **marketplace_technical_code** | **String**| The marketplace technical code | 
+ **account_id** | **Integer**| The account identifier | 
+ **beez_up_order_id** | **String**| The BeezUP Order identifier | 
+ **if_none_match** | **String**| ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  | [optional] 
 
 ### Return type
 
@@ -9301,6 +9395,52 @@ Name | Type | Description  | Notes
 ### Return type
 
 nil (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **user_customer_get**
+> CustomerIndex user_customer_get
+
+The index of all operations and LOV
+
+### Example
+```ruby
+# load the gem
+require 'swagger_client'
+# setup authorization
+SwaggerClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Ocp-Apim-Subscription-Key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Ocp-Apim-Subscription-Key'] = 'Bearer'
+end
+
+api_instance = SwaggerClient::BeezUPApi.new
+
+begin
+  #The index of all operations and LOV
+  result = api_instance.user_customer_get
+  p result
+rescue SwaggerClient::ApiError => e
+  puts "Exception when calling BeezUPApi->user_customer_get: #{e}"
+end
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**CustomerIndex**](CustomerIndex.md)
 
 ### Authorization
 

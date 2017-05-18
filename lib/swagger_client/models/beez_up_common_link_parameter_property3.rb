@@ -14,6 +14,9 @@ require 'date'
 module SwaggerClient
 
   class BeezUPCommonLinkParameterProperty3
+    # The label corresponding to the link parameter property. This label is automatically translated based on the Accept-Language http header.
+    attr_accessor :label
+
     # The value of the parameter. It can be an integer a string or an object.
     attr_accessor :value
 
@@ -36,6 +39,7 @@ module SwaggerClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'label' => :'label',
         :'value' => :'value',
         :'required' => :'required',
         :'type' => :'type',
@@ -49,6 +53,7 @@ module SwaggerClient
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'label' => :'String',
         :'value' => :'Object',
         :'required' => :'BOOLEAN',
         :'type' => :'BeezUPCommonParameterType',
@@ -66,6 +71,10 @@ module SwaggerClient
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
+
+      if attributes.has_key?(:'label')
+        self.label = attributes[:'label']
+      end
 
       if attributes.has_key?(:'value')
         self.value = attributes[:'value']
@@ -101,12 +110,17 @@ module SwaggerClient
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @type.nil?
+        invalid_properties.push("invalid value for 'type', type cannot be nil.")
+      end
+
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @type.nil?
       return true
     end
 
@@ -115,6 +129,7 @@ module SwaggerClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          label == o.label &&
           value == o.value &&
           required == o.required &&
           type == o.type &&
@@ -133,7 +148,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [value, required, type, lov_link, lov_required, description, schema].hash
+      [label, value, required, type, lov_link, lov_required, description, schema].hash
     end
 
     # Builds the object from hash

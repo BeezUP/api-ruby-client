@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **links** | [**CreditCardInfoResponseLinks**](CreditCardInfoResponseLinks.md) |  | [optional] 
-**current_payment_method** | [**PaymentMethod**](PaymentMethod.md) |  | 
+**current_payment_method** | [**PaymentMethod**](PaymentMethod.md) |  | [optional] 
 **credit_card_info** | [**CreditCardInfoWithCardType**](CreditCardInfoWithCardType.md) |  | [optional] 
 **info** | [**BeezUPCommonInfoSummaries**](BeezUPCommonInfoSummaries.md) |  | [optional] 
 

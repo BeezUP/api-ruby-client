@@ -196,6 +196,7 @@ Class | Method | HTTP request | Description
 *SwaggerClient::BeezUPApi* | [**get_user_lov_index**](docs/BeezUPApi.md#get_user_lov_index) | **GET** /user/lov/ | Get all list names
 *SwaggerClient::BeezUPApi* | [**harvest_all**](docs/BeezUPApi.md#harvest_all) | **POST** /user/marketplaces/orders/harvest | Send harvest request to all your marketplaces
 *SwaggerClient::BeezUPApi* | [**harvest_order**](docs/BeezUPApi.md#harvest_order) | **POST** /user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/harvest | Send harvest request for a single Order
+*SwaggerClient::BeezUPApi* | [**head_order**](docs/BeezUPApi.md#head_order) | **HEAD** /user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId} | Get the meta information about the order (ETag, Last-Modified)
 *SwaggerClient::BeezUPApi* | [**importation_activate_auto_import**](docs/BeezUPApi.md#importation_activate_auto_import) | **POST** /user/catalogs/{storeId}/autoImport | Activate the auto importation of the last successful manual catalog importation.
 *SwaggerClient::BeezUPApi* | [**importation_cancel**](docs/BeezUPApi.md#importation_cancel) | **DELETE** /user/catalogs/{storeId}/importations/{executionId} | Cancel importation
 *SwaggerClient::BeezUPApi* | [**importation_commit**](docs/BeezUPApi.md#importation_commit) | **POST** /user/catalogs/{storeId}/importations/{executionId}/commit | Commit Importation
@@ -252,6 +253,7 @@ Class | Method | HTTP request | Description
 *SwaggerClient::BeezUPApi* | [**unmap_channel_catalog_category**](docs/BeezUPApi.md#unmap_channel_catalog_category) | **POST** /user/channelCatalogs/{channelCatalogId}/categoryMappings/unmap | Unmap channel catalog category
 *SwaggerClient::BeezUPApi* | [**update_rule**](docs/BeezUPApi.md#update_rule) | **PATCH** /user/analytics/{storeId}/rules/{ruleId} | Update Rule
 *SwaggerClient::BeezUPApi* | [**update_store**](docs/BeezUPApi.md#update_store) | **PATCH** /user/customer/stores/{storeId} | Update some store's information.
+*SwaggerClient::BeezUPApi* | [**user_customer_get**](docs/BeezUPApi.md#user_customer_get) | **GET** /user/customer/ | The index of all operations and LOV
 
 
 ## Documentation for Models
@@ -456,6 +458,9 @@ Class | Method | HTTP request | Description
  - [SwaggerClient::CurrentContractInfoLinks](docs/CurrentContractInfoLinks.md)
  - [SwaggerClient::CustomColumn](docs/CustomColumn.md)
  - [SwaggerClient::CustomColumns](docs/CustomColumns.md)
+ - [SwaggerClient::CustomerIndex](docs/CustomerIndex.md)
+ - [SwaggerClient::CustomerIndexLinks](docs/CustomerIndexLinks.md)
+ - [SwaggerClient::CustomerIndexLovLinks](docs/CustomerIndexLovLinks.md)
  - [SwaggerClient::DateSearchType](docs/DateSearchType.md)
  - [SwaggerClient::DetectedCatalogColumn](docs/DetectedCatalogColumn.md)
  - [SwaggerClient::DetectedCatalogColumns](docs/DetectedCatalogColumns.md)

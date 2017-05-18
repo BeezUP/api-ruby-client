@@ -704,6 +704,7 @@ describe 'BeezUPApi' do
   # Get list of configured automatic Order status transitions
   # 
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :if_none_match ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
   # @return [AutomaticTransitionInfos]
   describe 'get_automatic_transitions test' do
     it "should work" do
@@ -993,6 +994,7 @@ describe 'BeezUPApi' do
   # Get current synchronization status between your marketplaces and BeezUP accounts
   # 
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :if_none_match ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
   # @return [AccountSynchronizations]
   describe 'get_marketplace_accounts_synchronization test' do
     it "should work" do
@@ -1034,6 +1036,7 @@ describe 'BeezUPApi' do
   # @param page_size The entry count you want to get
   # @param store_id The store identifier to regroup the order exportations
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :if_none_match ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
   # @return [OrderExportations]
   describe 'get_order_exportations test' do
     it "should work" do
@@ -1048,6 +1051,7 @@ describe 'BeezUPApi' do
   # @param account_id The account identifier
   # @param beez_up_order_id The BeezUP Order identifier
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :if_none_match ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
   # @return [OrderHistory]
   describe 'get_order_history test' do
     it "should work" do
@@ -1059,6 +1063,7 @@ describe 'BeezUPApi' do
   # Get all actions you can do on the order API
   # 
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :if_none_match ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
   # @return [OrderIndex]
   describe 'get_order_index test' do
     it "should work" do
@@ -1463,6 +1468,21 @@ describe 'BeezUPApi' do
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'harvest_order test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for head_order
+  # Get the meta information about the order (ETag, Last-Modified)
+  # The purpose of this operation is to reduce the bandwith usage by getting just the meta information about the order (ETag, Last-Modified) with the body. This could be useful  
+  # @param marketplace_technical_code The marketplace technical code
+  # @param account_id The account identifier
+  # @param beez_up_order_id The BeezUP Order identifier
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :if_none_match ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
+  # @return [nil]
+  describe 'head_order test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -2201,6 +2221,17 @@ describe 'BeezUPApi' do
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'update_store test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for user_customer_get
+  # The index of all operations and LOV
+  # 
+  # @param [Hash] opts the optional parameters
+  # @return [CustomerIndex]
+  describe 'user_customer_get test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

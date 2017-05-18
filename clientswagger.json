@@ -49,6 +49,11 @@
     },
     {
       "name": "BeezUP",
+      "description": "All global operations",
+      "x-displayName": "Global"
+    },
+    {
+      "name": "BeezUP",
       "description": "All user account operations",
       "x-displayName": "Account"
     },
@@ -709,6 +714,27 @@
           },
           "default": {
             "$ref": "#/responses/GeneralError"
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/user/customer/": {
+      "get": {
+        "tags": [
+          "BeezUP"
+        ],
+        "summary": "The index of all operations and LOV",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/customerIndex"
+            }
           }
         },
         "security": [
@@ -4892,12 +4918,20 @@
         "x-tagGroups": "Martketplaces Orders",
         "operationId": "GetOrderIndex",
         "summary": "Get all actions you can do on the order API",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ifNoneMatchParameter"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Order index",
             "schema": {
               "$ref": "#/definitions/orderIndex"
             }
+          },
+          "304": {
+            "$ref": "#/responses/304_NotModified"
           },
           "default": {
             "$ref": "#/responses/GeneralError"
@@ -4919,12 +4953,20 @@
         "x-tagGroups": "Martketplaces Orders",
         "operationId": "GetMarketplaceAccountsSynchronization",
         "summary": "Get current synchronization status between your marketplaces and BeezUP accounts",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ifNoneMatchParameter"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Successfully fetched current synchronization status",
             "schema": {
               "$ref": "#/definitions/accountSynchronizations"
             }
+          },
+          "304": {
+            "$ref": "#/responses/304_NotModified"
           },
           "default": {
             "$ref": "#/responses/GeneralError"
@@ -4986,12 +5028,20 @@
         ],
         "operationId": "GetAutomaticTransitions",
         "summary": "Get list of configured automatic Order status transitions",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ifNoneMatchParameter"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Successfully fetched list of configured automatic Order status transitions",
             "schema": {
               "$ref": "#/definitions/automaticTransitionInfos"
             }
+          },
+          "304": {
+            "$ref": "#/responses/304_NotModified"
           },
           "default": {
             "$ref": "#/responses/GeneralError"
@@ -5159,6 +5209,9 @@
             "type": "string",
             "format": "guid",
             "description": "The store identifier to regroup the order exportations"
+          },
+          {
+            "$ref": "#/parameters/ifNoneMatchParameter"
           }
         ],
         "responses": {
@@ -5167,6 +5220,9 @@
             "schema": {
               "$ref": "#/definitions/orderExportations"
             }
+          },
+          "304": {
+            "$ref": "#/responses/304_NotModified"
           },
           "400": {
             "description": "Could not process request for given parameters values. Please check error message for more details.",
@@ -5345,6 +5401,62 @@
       }
     },
     "/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}": {
+      "head": {
+        "tags": [
+          "BeezUP"
+        ],
+        "operationId": "HeadOrder",
+        "summary": "Get the meta information about the order (ETag, Last-Modified)",
+        "description": "The purpose of this operation is to reduce the bandwith usage by getting just the meta information about the order (ETag, Last-Modified) with the body.\nThis could be useful \n",
+        "parameters": [
+          {
+            "$ref": "#/parameters/marketplaceTechnicalCodeParameter"
+          },
+          {
+            "$ref": "#/parameters/accountIdParameter"
+          },
+          {
+            "$ref": "#/parameters/beezUPOrderIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ifNoneMatchParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully fetched Order and Order Item(s) properties",
+            "headers": {
+              "Last-Modified": {
+                "type": "string",
+                "format": "date-time",
+                "description": "Last modification UTC date of the order\\\nFor more details go to this link: https://tools.ietf.org/html/rfc7232#section-2.2\n"
+              },
+              "ETag": {
+                "type": "string",
+                "description": "ETag value to identify the current version of requested Order\\\nFor more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3\n"
+              }
+            }
+          },
+          "304": {
+            "$ref": "#/responses/304_NotModified"
+          },
+          "404": {
+            "description": "Requested Order could not be found",
+            "schema": {
+              "$ref": "#/definitions/BeezUP.Common.ErrorResponseMessage"
+            }
+          },
+          "default": {
+            "$ref": "#/responses/GeneralError"
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      },
       "get": {
         "tags": [
           "BeezUP"
@@ -5369,6 +5481,11 @@
           "200": {
             "description": "Successfully fetched Order and Order Item(s) properties",
             "headers": {
+              "Last-Modified": {
+                "type": "string",
+                "format": "date-time",
+                "description": "Last modification UTC date of the order\\\nFor more details go to this link: https://tools.ietf.org/html/rfc7232#section-2.2\n"
+              },
               "ETag": {
                 "type": "string",
                 "description": "ETag value to identify the current version of requested Order\\\nFor more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3\n"
@@ -5379,13 +5496,7 @@
             }
           },
           "304": {
-            "description": "The ETag sent in the http header If-None-Match did not change. So you can keep your version.",
-            "headers": {
-              "ETag": {
-                "type": "string",
-                "description": "ETag value to identify the current version of requested Order\\\nFor more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3\n"
-              }
-            }
+            "$ref": "#/responses/304_NotModified"
           },
           "404": {
             "description": "Requested Order could not be found",
@@ -5421,6 +5532,9 @@
           },
           {
             "$ref": "#/parameters/beezUPOrderIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ifNoneMatchParameter"
           }
         ],
         "responses": {
@@ -5429,6 +5543,9 @@
             "schema": {
               "$ref": "#/definitions/orderHistory"
             }
+          },
+          "304": {
+            "$ref": "#/responses/304_NotModified"
           },
           "404": {
             "description": "Requested Order could not be found",
@@ -5474,6 +5591,12 @@
                 "type": "integer",
                 "description": "Indicates the duration in seconds to wait to be able to make this request again"
               }
+            }
+          },
+          "404": {
+            "description": "Requested Order could not be found",
+            "schema": {
+              "$ref": "#/definitions/BeezUP.Common.ErrorResponseMessage"
             }
           },
           "409": {
@@ -7436,6 +7559,28 @@
         }
       }
     },
+    "customerIndex": {
+      "description": "The index of the customer API",
+      "type": "object",
+      "required": [
+        "links",
+        "lovLinks"
+      ],
+      "properties": {
+        "links": {
+          "$ref": "#/definitions/customerIndexLinks"
+        },
+        "lovLinks": {
+          "$ref": "#/definitions/customerIndexLovLinks"
+        }
+      }
+    },
+    "customerIndexLinks": {
+      "type": "object"
+    },
+    "customerIndexLovLinks": {
+      "type": "object"
+    },
     "links.shareLink": {
       "allOf": [
         {
@@ -8062,8 +8207,7 @@
         "firstName",
         "email",
         "countryIsoCodeAlpha3",
-        "company",
-        "whatIDo"
+        "company"
       ],
       "type": "object",
       "properties": {
@@ -9279,8 +9423,7 @@
     "creditCardInfoResponse": {
       "type": "object",
       "required": [
-        "links",
-        "currentPaymentMethod"
+        "links"
       ],
       "properties": {
         "links": {
@@ -11198,6 +11341,11 @@
           "format": "date-time",
           "description": "The expiration UTC date of the cache",
           "example": "2014-08-25T08:02:31.584Z"
+        },
+        "feedUrl": {
+          "description": "The feed url",
+          "type": "string",
+          "example": "https://www.scootmotoshop.com/feed.xml"
         }
       }
     },
@@ -14987,9 +15135,6 @@
         "lastModificationUtcDate": {
           "format": "date-time",
           "type": "string"
-        },
-        "info": {
-          "$ref": "#/definitions/BeezUP.Common.InfoSummaries"
         }
       }
     },
@@ -17742,6 +17887,11 @@
         "href"
       ],
       "properties": {
+        "label": {
+          "type": "string",
+          "description": "The label corresponding to the link. This label is automatically translated based on the Accept-Language http header.",
+          "example": "The translated label"
+        },
         "docUrl": {
           "$ref": "#/definitions/BeezUP.Common.DocUrl"
         },
@@ -17769,9 +17919,17 @@
             "$ref": "#/definitions/BeezUP.Common.LinkParameter3"
           }
         },
-        "templated": {
+        "urlTemplated": {
           "type": "boolean",
           "description": "indicates whether the href is templated or not"
+        },
+        "allRequiredParamsProvided": {
+          "type": "boolean",
+          "description": "indicates whether all required params have been provided"
+        },
+        "allOptionalParamsProvided": {
+          "type": "boolean",
+          "description": "indicates whether all optionals params have been provided"
         },
         "info": {
           "$ref": "#/definitions/BeezUP.Common.InfoSummaries"
@@ -17845,6 +18003,11 @@
         "in"
       ],
       "properties": {
+        "label": {
+          "type": "string",
+          "description": "The label corresponding to the link parameter. This label is automatically translated based on the Accept-Language http header.",
+          "example": "The translated label"
+        },
         "value": {
           "type": "object",
           "description": "The value of the parameter. It can be an integer a string or an object.",
@@ -17895,7 +18058,15 @@
     },
     "BeezUP.Common.LinkParameterProperty3": {
       "type": "object",
+      "required": [
+        "type"
+      ],
       "properties": {
+        "label": {
+          "type": "string",
+          "description": "The label corresponding to the link parameter property. This label is automatically translated based on the Accept-Language http header.",
+          "example": "The translated label"
+        },
         "value": {
           "type": "object",
           "description": "The value of the parameter. It can be an integer a string or an object.",
@@ -18297,6 +18468,7 @@
         "BeezUP",
         "BeezUP",
         "BeezUP",
+        "BeezUP",
         "BeezUP"
       ]
     },
@@ -18630,6 +18802,20 @@
       "description": "Occurs when something goes wrong",
       "schema": {
         "$ref": "#/definitions/BeezUP.Common.ErrorResponseMessage"
+      }
+    },
+    "304_NotModified": {
+      "description": "The ETag sent in the http header If-None-Match did not change. So you are up to date !",
+      "headers": {
+        "Last-Modified": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last modification UTC date of the resource\\\nFor more details go to this link: https://tools.ietf.org/html/rfc7232#section-2.2\n"
+        },
+        "ETag": {
+          "type": "string",
+          "description": "ETag value to identify the current version of the resource\\\nFor more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3\n"
+        }
       }
     },
     "412_PreConditionFailed": {

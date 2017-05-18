@@ -31,6 +31,12 @@ describe 'LinksConfigureAutomaticTransitionsLink' do
       expect(@instance).to be_instance_of(SwaggerClient::LinksConfigureAutomaticTransitionsLink)
     end
   end
+  describe 'test attribute "label"' do
+    it 'should work' do
+       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   describe 'test attribute "doc_url"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -67,7 +73,19 @@ describe 'LinksConfigureAutomaticTransitionsLink' do
     end
   end
 
-  describe 'test attribute "templated"' do
+  describe 'test attribute "url_templated"' do
+    it 'should work' do
+       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  describe 'test attribute "all_required_params_provided"' do
+    it 'should work' do
+       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  describe 'test attribute "all_optional_params_provided"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

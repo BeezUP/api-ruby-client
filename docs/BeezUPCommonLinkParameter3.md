@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**label** | **String** | The label corresponding to the link parameter. This label is automatically translated based on the Accept-Language http header. | [optional] 
 **value** | **Object** | The value of the parameter. It can be an integer a string or an object. | [optional] 
 **required** | **BOOLEAN** |  | [optional] [default to false]
 **_in** | [**BeezUPCommonParameterIn**](BeezUPCommonParameterIn.md) |  | 

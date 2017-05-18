@@ -21,16 +21,13 @@ module SwaggerClient
 
     attr_accessor :last_modification_utc_date
 
-    attr_accessor :info
-
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'change_order_reportings' => :'changeOrderReportings',
         :'harvest_order_reportings' => :'harvestOrderReportings',
-        :'last_modification_utc_date' => :'lastModificationUtcDate',
-        :'info' => :'info'
+        :'last_modification_utc_date' => :'lastModificationUtcDate'
       }
     end
 
@@ -39,8 +36,7 @@ module SwaggerClient
       {
         :'change_order_reportings' => :'Array<ChangeOrderReporting>',
         :'harvest_order_reportings' => :'Array<HarvestOrderReporting>',
-        :'last_modification_utc_date' => :'DateTime',
-        :'info' => :'BeezUPCommonInfoSummaries'
+        :'last_modification_utc_date' => :'DateTime'
       }
     end
 
@@ -68,10 +64,6 @@ module SwaggerClient
         self.last_modification_utc_date = attributes[:'lastModificationUtcDate']
       end
 
-      if attributes.has_key?(:'info')
-        self.info = attributes[:'info']
-      end
-
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -94,8 +86,7 @@ module SwaggerClient
       self.class == o.class &&
           change_order_reportings == o.change_order_reportings &&
           harvest_order_reportings == o.harvest_order_reportings &&
-          last_modification_utc_date == o.last_modification_utc_date &&
-          info == o.info
+          last_modification_utc_date == o.last_modification_utc_date
     end
 
     # @see the `==` method
@@ -107,7 +98,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [change_order_reportings, harvest_order_reportings, last_modification_utc_date, info].hash
+      [change_order_reportings, harvest_order_reportings, last_modification_utc_date].hash
     end
 
     # Builds the object from hash

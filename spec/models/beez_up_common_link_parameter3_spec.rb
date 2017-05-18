@@ -31,6 +31,12 @@ describe 'BeezUPCommonLinkParameter3' do
       expect(@instance).to be_instance_of(SwaggerClient::BeezUPCommonLinkParameter3)
     end
   end
+  describe 'test attribute "label"' do
+    it 'should work' do
+       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   describe 'test attribute "value"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

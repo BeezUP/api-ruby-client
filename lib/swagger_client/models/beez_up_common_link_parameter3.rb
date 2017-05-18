@@ -14,6 +14,9 @@ require 'date'
 module SwaggerClient
 
   class BeezUPCommonLinkParameter3
+    # The label corresponding to the link parameter. This label is automatically translated based on the Accept-Language http header.
+    attr_accessor :label
+
     # The value of the parameter. It can be an integer a string or an object.
     attr_accessor :value
 
@@ -41,6 +44,7 @@ module SwaggerClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'label' => :'label',
         :'value' => :'value',
         :'required' => :'required',
         :'_in' => :'in',
@@ -56,6 +60,7 @@ module SwaggerClient
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'label' => :'String',
         :'value' => :'Object',
         :'required' => :'BOOLEAN',
         :'_in' => :'BeezUPCommonParameterIn',
@@ -75,6 +80,10 @@ module SwaggerClient
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
+
+      if attributes.has_key?(:'label')
+        self.label = attributes[:'label']
+      end
 
       if attributes.has_key?(:'value')
         self.value = attributes[:'value']
@@ -141,6 +150,7 @@ module SwaggerClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          label == o.label &&
           value == o.value &&
           required == o.required &&
           _in == o._in &&
@@ -161,7 +171,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [value, required, _in, type, lov_link, lov_required, description, schema, properties].hash
+      [label, value, required, _in, type, lov_link, lov_required, description, schema, properties].hash
     end
 
     # Builds the object from hash

@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **profile_picture_url** | [**FriendProfilePictureUrl**](FriendProfilePictureUrl.md) |  | [optional] 
 **country_iso_code_alpha3** | [**FriendCountryIsoCodeAlpha3**](FriendCountryIsoCodeAlpha3.md) |  | 
 **company** | **String** | Your friend&#39;s user company name | 
-**what_i_do** | **String** | Your friend&#39;s user occupation in his company | 
+**what_i_do** | **String** | Your friend&#39;s user occupation in his company | [optional] 
 
 

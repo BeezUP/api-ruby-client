@@ -134,10 +134,6 @@ module SwaggerClient
         invalid_properties.push("invalid value for 'company', company cannot be nil.")
       end
 
-      if @what_i_do.nil?
-        invalid_properties.push("invalid value for 'what_i_do', what_i_do cannot be nil.")
-      end
-
       return invalid_properties
     end
 
@@ -150,7 +146,6 @@ module SwaggerClient
       return false if @email.nil?
       return false if @country_iso_code_alpha3.nil?
       return false if @company.nil?
-      return false if @what_i_do.nil?
       return true
     end
 

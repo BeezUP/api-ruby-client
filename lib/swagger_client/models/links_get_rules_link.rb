@@ -14,6 +14,9 @@ require 'date'
 module SwaggerClient
 
   class LinksGetRulesLink
+    # The label corresponding to the link. This label is automatically translated based on the Accept-Language http header.
+    attr_accessor :label
+
     attr_accessor :doc_url
 
     # The description of the link
@@ -28,7 +31,13 @@ module SwaggerClient
     attr_accessor :parameters
 
     # indicates whether the href is templated or not
-    attr_accessor :templated
+    attr_accessor :url_templated
+
+    # indicates whether all required params have been provided
+    attr_accessor :all_required_params_provided
+
+    # indicates whether all optionals params have been provided
+    attr_accessor :all_optional_params_provided
 
     attr_accessor :info
 
@@ -36,13 +45,16 @@ module SwaggerClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'label' => :'label',
         :'doc_url' => :'docUrl',
         :'description' => :'description',
         :'href' => :'href',
         :'operation_id' => :'operationId',
         :'method' => :'method',
         :'parameters' => :'parameters',
-        :'templated' => :'templated',
+        :'url_templated' => :'urlTemplated',
+        :'all_required_params_provided' => :'allRequiredParamsProvided',
+        :'all_optional_params_provided' => :'allOptionalParamsProvided',
         :'info' => :'info'
       }
     end
@@ -50,13 +62,16 @@ module SwaggerClient
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'label' => :'String',
         :'doc_url' => :'BeezUPCommonDocUrl',
         :'description' => :'String',
         :'href' => :'BeezUPCommonHref',
         :'operation_id' => :'BeezUPCommonOperationId',
         :'method' => :'BeezUPCommonHttpMethod',
         :'parameters' => :'Hash<String, BeezUPCommonLinkParameter3>',
-        :'templated' => :'BOOLEAN',
+        :'url_templated' => :'BOOLEAN',
+        :'all_required_params_provided' => :'BOOLEAN',
+        :'all_optional_params_provided' => :'BOOLEAN',
         :'info' => :'BeezUPCommonInfoSummaries'
       }
     end
@@ -68,6 +83,10 @@ module SwaggerClient
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
+
+      if attributes.has_key?(:'label')
+        self.label = attributes[:'label']
+      end
 
       if attributes.has_key?(:'docUrl')
         self.doc_url = attributes[:'docUrl']
@@ -95,8 +114,16 @@ module SwaggerClient
         end
       end
 
-      if attributes.has_key?(:'templated')
-        self.templated = attributes[:'templated']
+      if attributes.has_key?(:'urlTemplated')
+        self.url_templated = attributes[:'urlTemplated']
+      end
+
+      if attributes.has_key?(:'allRequiredParamsProvided')
+        self.all_required_params_provided = attributes[:'allRequiredParamsProvided']
+      end
+
+      if attributes.has_key?(:'allOptionalParamsProvided')
+        self.all_optional_params_provided = attributes[:'allOptionalParamsProvided']
       end
 
       if attributes.has_key?(:'info')
@@ -128,13 +155,16 @@ module SwaggerClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          label == o.label &&
           doc_url == o.doc_url &&
           description == o.description &&
           href == o.href &&
           operation_id == o.operation_id &&
           method == o.method &&
           parameters == o.parameters &&
-          templated == o.templated &&
+          url_templated == o.url_templated &&
+          all_required_params_provided == o.all_required_params_provided &&
+          all_optional_params_provided == o.all_optional_params_provided &&
           info == o.info
     end
 
@@ -147,7 +177,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [doc_url, description, href, operation_id, method, parameters, templated, info].hash
+      [label, doc_url, description, href, operation_id, method, parameters, url_templated, all_required_params_provided, all_optional_params_provided, info].hash
     end
 
     # Builds the object from hash
